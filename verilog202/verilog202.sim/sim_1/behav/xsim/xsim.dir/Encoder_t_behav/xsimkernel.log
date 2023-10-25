@@ -1,0 +1,7 @@
+Running: xsim.dir/Encoder_t_behav/xsimk.exe -simmode gui -wdb Encoder_t_behav.wdb -simrunnum 0 -socket 60680
+Design successfully loaded
+Design Loading Memory Usage: 6816 KB (Peak: 6816 KB)
+Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 7648 KB (Peak: 7648 KB)
+Simulation CPU Usage: 15 ms

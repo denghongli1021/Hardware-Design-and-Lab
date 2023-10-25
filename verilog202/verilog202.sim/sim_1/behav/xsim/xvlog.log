@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/user/verilog202/verilog202.srcs/sources_1/imports/lab2_template/lab2_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Encoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/user/verilog202/verilog202.srcs/sources_1/imports/Desktop/lab2_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Parameterized_Ping_Pong_Counter
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/user/verilog202/verilog202.srcs/sim_1/new/lab2_2_t.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lab2_2_t
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/user/verilog202/verilog202.srcs/sim_1/imports/Simulation_Source/Lab2_2_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Encoder_t

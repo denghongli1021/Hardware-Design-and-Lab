@@ -1,0 +1,42 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Tue Oct  3 17:51:11 2023
+| Host         : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
+| Command      : report_drc -file lab3_1_drc_opted.rpt -pb lab3_1_drc_opted.pb -rpx lab3_1_drc_opted.rpx
+| Design       : lab3_1
+| Device       : xc7a35tcpg236-1
+| Speed File   : -1
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 1
++-------------+----------+-------------------------------------------------------------+------------+
+| Rule        | Severity | Description                                                 | Violations |
++-------------+----------+-------------------------------------------------------------+------------+
+| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 1          |
++-------------+----------+-------------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+PLHOLDVIO-2#1 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT div1/led[15]_i_3 is driving clock pin of 4 cells. This could lead to large hold time violations. Involved cells are:
+led_reg[12], led_reg[13], led_reg[14], led_reg[15]
+Related violations: <none>
+
+

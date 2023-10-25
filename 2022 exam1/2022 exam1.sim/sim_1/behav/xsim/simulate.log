@@ -1,0 +1,8 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+Function 1              PASS!
+Function 2              PASS!
+Function 3              PASS!
+Function 4          PASS!
+Pattern Score:          28/28
+$finish called at time : 84 ns : File "C:/Users/user/2022 exam1/2022 exam1.srcs/sources_1/imports/code/exam1_A_tb.v" Line 142

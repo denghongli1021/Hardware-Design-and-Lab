@@ -1,0 +1,992 @@
+/*
+
+Xilinx Vivado v2019.2 (64-bit) [Major: 2019, Minor: 2]
+SW Build: 2708876 on Wed Nov  6 21:40:23 MST 2019
+IP Build: 2700528 on Thu Nov  7 00:09:20 MST 2019
+
+Process ID (PID): 47828
+License: Customer
+
+Current time: 	Wed Oct 25 17:29:03 CST 2023
+Time zone: 	Taipei Standard Time (Asia/Taipei)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 49 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	user
+User home directory: C:/Users/user
+User working directory: C:/Users/user/verilog501
+User country: 	TW
+User language: 	zh
+User locale: 	zh_TW
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.2
+RDI_DATADIR: C:/Xilinx/Vivado/2019.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.2/bin
+
+Vivado preferences file location: C:/Users/user/AppData/Roaming/Xilinx/Vivado/2019.2/vivado.xml
+Vivado preferences directory: C:/Users/user/AppData/Roaming/Xilinx/Vivado/2019.2/
+Vivado layouts directory: C:/Users/user/AppData/Roaming/Xilinx/Vivado/2019.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/user/verilog501/vivado.log
+Vivado journal file location: 	C:/Users/user/verilog501/vivado.jou
+Engine tmp dir: 	C:/Users/user/verilog501/.Xil/Vivado-47828-LAPTOP-FQ5SKUKF
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.2
+
+
+GUI allocated memory:	156 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 679 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: PROJECT_OPEN_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bB (cr):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\user\verilog501\verilog501.xpr. Version: Vivado v2019.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/user/verilog501/verilog501.xpr 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 95 MB (+97368kb) [00:00:08]
+// [Engine Memory]: 629 MB (+508525kb) [00:00:08]
+// [GUI Memory]: 114 MB (+14829kb) [00:00:08]
+// WARNING: HEventQueue.dispatchEvent() is taking  1889 ms.
+// Tcl Message: open_project C:/Users/user/verilog501/verilog501.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'. 
+// Project name: verilog501; location: C:/Users/user/verilog501; part: xc7a35tcpg236-1
+// [Engine Memory]: 680 MB (+19484kb) [00:00:10]
+dismissDialog("Open Project"); // bB (cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 683 MB. GUI used memory: 54 MB. Current time: 10/25/23, 5:29:04 PM CST
+// a (cr): Critical Messages: addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 26 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cr)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files]", 1); // B (F, cr)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files]", 1); // B (F, cr)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files]", 1); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, KeyboardDecoder.v]", 2, false, false, false, false, true, false); // B (F, cr) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // af (ao, cr)
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ai (ao, cr)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cr): Remove Sources: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 730 MB. GUI used memory: 55 MB. Current time: 10/25/23, 5:29:34 PM CST
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+// [Engine Memory]: 730 MB (+17002kb) [00:00:41]
+dismissDialog("Remove Sources"); // aE (cr)
+// Tcl Message: export_ip_user_files -of_objects  [get_files C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/keyboard_sample/KeyboardDecoder.v] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/keyboard_sample/KeyboardDecoder.v 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, SampleDisplay.v]", 3, false, false, false, false, true, false); // B (F, cr) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // af (ao, cr)
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ai (ao, cr)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cr): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+dismissDialog("Remove Sources"); // aE (cr)
+// Tcl Message: export_ip_user_files -of_objects  [get_files C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/keyboard_sample/SampleDisplay.v] -no_script -reset -force -quiet 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/keyboard_sample/SampleDisplay.v 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, SevenSegment.v]", 4, false, false, false, false, true, false); // B (F, cr) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ai (ao, cr)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cr): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+dismissDialog("Remove Sources"); // aE (cr)
+// Tcl Message: export_ip_user_files -of_objects  [get_files C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/keyboard_sample/SevenSegment.v] -no_script -reset -force -quiet 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/keyboard_sample/SevenSegment.v 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, one_pulse.v]", 5, false, false, false, false, true, false); // B (F, cr) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ai (ao, cr)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cr): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+dismissDialog("Remove Sources"); // aE (cr)
+// Tcl Message: export_ip_user_files -of_objects  [get_files C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/keyboard_sample/one_pulse.v] -no_script -reset -force -quiet 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/keyboard_sample/one_pulse.v 
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // aa (q, cr)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // af (cr)
+selectMenuItem(PAResourceCommand.PACommandNames_NEW_PROJECT, "New..."); // ai (cr)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // aa (q, cr)
+// Run Command: PAResourceCommand.PACommandNames_NEW_PROJECT
+// f (cr): New Project: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, f)
+setText(PAResourceOtoP.ProjectNameChooser_PROJECT_NAME, "verilog5_sample", true); // ac (Q, f)
+selectButton("NEXT", "Next >"); // JButton (j, f)
+selectButton("NEXT", "Next >"); // JButton (j, f)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a (E, f)
+// Elapsed time: 14 seconds
+String[] filenames31467 = {"C:/Users/user/Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/KeyboardDecoder.v", "C:/Users/user/Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/SampleDisplay.v", "C:/Users/user/Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/SevenSegment.v", "C:/Users/user/Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/one_pulse.v"};
+setFileChooser(filenames31467);
+selectCheckBox(PAResourceQtoS.SrcChooserPanel_SCAN_AND_ADD_RTL_INCLUDE_FILES_INTO, "Scan and add RTL include files into project", true); // g (bm, f): TRUE
+selectCheckBox(PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO, "Copy sources into project", true); // g (bm, f): TRUE
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES, "Add Directories"); // a (E, f)
+dismissFolderChooser();
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES, "Add Directories"); // a (E, f)
+setFolderChooser("C:/Users/user/Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/ip");
+selectButton("NEXT", "Next >"); // JButton (j, f)
+selectButton(PAResourceAtoD.ConstraintsChooserPanel_ADD_FILES, "Add Files"); // a (E, f)
+setFileChooser("C:/Users/user/Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/KeyboardConstraints.xdc");
+selectButton("NEXT", "Next >"); // JButton (j, f)
+selectComboBox(PAResourceEtoH.FPGAChooser_FAMILY, "Artix-7", 1); // v (C, f)
+selectComboBox(PAResourceEtoH.FPGAChooser_PACKAGE, "cpg236", 1); // v (C, f)
+selectComboBox(PAResourceEtoH.FPGAChooser_SPEED, "-1", 1); // v (C, f)
+selectTable(PAResourceEtoH.FPGAChooser_FPGA_TABLE, "xc7a35tcpg236-1 ; 236 ; 106 ; 20800 ; 41600 ; 50 ; 0 ; 90 ; 2 ; 2 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 1 ; 5 ;  ;  ;  ;  ; 0.95 ; 0.95 ; 1.05", 1, "236", 1); // w (O, f)
+selectButton("NEXT", "Next >"); // JButton (j, f)
+// TclEventType: PROJECT_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 752 MB. GUI used memory: 58 MB. Current time: 10/25/23, 5:30:49 PM CST
+// bB (f):  Create Project : addNotify
+selectButton("OptionPane.button", "Yes"); // JButton (A, H)
+// Tcl Message: close_project 
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: create_project verilog5_sample C:/Users/user/verilog5_sample -part xc7a35tcpg236-1 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 771 MB (+4834kb) [00:01:57]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -scan_for_includes {C:/Users/user/Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/ip/Keyboard-Controller/keyboard_cntr_1.0/src/KeyboardCtrl.v C:/Users/user/Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/ip/Keyboard-Controller/keyboard_cntr_1.0/src/Ps2Interface.v C:/Users/user/Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/SampleDisplay.v C:/Users/user/Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/KeyboardDecoder.v C:/Users/user/Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/SevenSegment.v C:/Users/user/Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/one_pulse.v} 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: import_files -force 
+// Tcl Message: INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1' 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: import_files -fileset constrs_1 -force -norecurse C:/Users/user/Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/KeyboardConstraints.xdc 
+selectButton("FINISH", "Finish"); // JButton (j, f)
+// 'g' command handler elapsed time: 64 seconds
+dismissDialog("Create Project"); // bB (f)
+dismissDialog("New Project"); // f (cr)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Utility Sources]", 1); // B (F, cr)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 0); // B (F, cr)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Utility Sources, utils_1]", 8, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Utility Sources, utils_1]", 8, false, false, false, false, false, true); // B (F, cr) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, KeyboardConstraints.xdc]", 5, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyboardCtrl (KeyboardCtrl.v)]", 2, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): No Implementation Results Available: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// f (cr): Launch Runs: addNotify
+dismissDialog("No Implementation Results Available"); // A (cr)
+selectComboBox(PAResourceItoN.NumJobsChooser_NUMBER_OF_JOBS, "8", 7); // e (be, f)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// 'cw' command handler elapsed time: 3 seconds
+// TclEventType: RUN_LAUNCH
+dismissDialog("Launch Runs"); // f (cr)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// bB (cr):  Generate Bitstream : addNotify
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: [Wed Oct 25 17:31:10 2023] Launched synth_1... Run output will be captured here: C:/Users/user/verilog5_sample/verilog5_sample.runs/synth_1/runme.log [Wed Oct 25 17:31:10 2023] Launched impl_1... Run output will be captured here: C:/Users/user/verilog5_sample/verilog5_sample.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+dismissDialog("Generate Bitstream"); // bB (cr)
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// aj (cr): Synthesis Failed: addNotify
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 107 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aj)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // aj (cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SampleDisplay (SampleDisplay.v)]", 1, true); // B (F, cr) - Node
+// [GUI Memory]: 122 MB (+2144kb) [00:04:14]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SampleDisplay (SampleDisplay.v)]", 1, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyboardCtrl (KeyboardCtrl.v)]", 4); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyboardCtrl (KeyboardCtrl.v)]", 4, true, false, false, false, true, false); // B (F, cr) - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // af (ao, cr)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // af (ao, cr)
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ai (ao, cr)
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: set_property top KeyboardCtrl [current_fileset] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 786 MB. GUI used memory: 63 MB. Current time: 10/25/23, 6:00:52 PM CST
+// Elapsed time: 2227 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SampleDisplay (SampleDisplay.v), key_de : KeyboardDecoder (KeyboardDecoder.v)]", 5); // B (F, cr)
+// Elapsed time: 41 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SampleDisplay (SampleDisplay.v), key_de : KeyboardDecoder (KeyboardDecoder.v), inst : xil_defaultlib.KeyboardCtrl_0]", 6, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SampleDisplay (SampleDisplay.v), key_de : KeyboardDecoder (KeyboardDecoder.v), inst : xil_defaultlib.KeyboardCtrl_0]", 6, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SampleDisplay (SampleDisplay.v), key_de : KeyboardDecoder (KeyboardDecoder.v), inst : xil_defaultlib.KeyboardCtrl_0]", 6, false, false, false, false, false, true); // B (F, cr) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SampleDisplay (SampleDisplay.v), key_de : KeyboardDecoder (KeyboardDecoder.v), inst : xil_defaultlib.KeyboardCtrl_0]", 6, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SampleDisplay (SampleDisplay.v), key_de : KeyboardDecoder (KeyboardDecoder.v), inst : xil_defaultlib.KeyboardCtrl_0]", 6, false, false, false, false, false, true); // B (F, cr) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SampleDisplay (SampleDisplay.v), key_de : KeyboardDecoder (KeyboardDecoder.v), inst : xil_defaultlib.KeyboardCtrl_0]", 6, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SampleDisplay (SampleDisplay.v), key_de : KeyboardDecoder (KeyboardDecoder.v)]", 5, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SampleDisplay (SampleDisplay.v), key_de : KeyboardDecoder (KeyboardDecoder.v)]", 5, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+// Elapsed time: 15 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SampleDisplay (SampleDisplay.v), key_de : KeyboardDecoder (KeyboardDecoder.v)]", 5); // B (F, cr)
+// Elapsed time: 21 seconds
+selectCodeEditor("KeyboardDecoder.v", 95, 164); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): No Implementation Results Available: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("No Implementation Results Available"); // A (cr)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (cr): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// TclEventType: RUN_LAUNCH
+dismissDialog("Launch Runs"); // f (cr)
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: [Wed Oct 25 18:12:15 2023] Launched synth_1... Run output will be captured here: C:/Users/user/verilog5_sample/verilog5_sample.runs/synth_1/runme.log [Wed Oct 25 18:12:15 2023] Launched impl_1... Run output will be captured here: C:/Users/user/verilog5_sample/verilog5_sample.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Failed: addNotify
+// Elapsed time: 113 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aj)
+// Run Command: PAResourceCommand.PACommandNames_LOG_WINDOW
+dismissDialog("Bitstream Generation Failed"); // aj (cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 86 seconds
+selectButton(PAResourceQtoS.StaleMoreAction_OUT_OF_DATE_DETAILS, "details"); // h (ds, cr)
+selectButton(RDIResource.HPopupTitle_CLOSE, (String) null); // k (n, ResizableWindow)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (cr)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (cr): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// TclEventType: RUN_LAUNCH
+dismissDialog("Launch Runs"); // f (cr)
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: [Wed Oct 25 18:15:46 2023] Launched synth_1... Run output will be captured here: C:/Users/user/verilog5_sample/verilog5_sample.runs/synth_1/runme.log [Wed Oct 25 18:15:46 2023] Launched impl_1... Run output will be captured here: C:/Users/user/verilog5_sample/verilog5_sample.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Failed: addNotify
+// Elapsed time: 106 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aj)
+// Run Command: PAResourceCommand.PACommandNames_LOG_WINDOW
+dismissDialog("Bitstream Generation Failed"); // aj (cr)
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aL (aI, cr)
+// Elapsed time: 15 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // E (f, cr)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cr): Add Sources: addNotify
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES, "Add or create constraints"); // a (o, c)
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceAtoD.ConstraintsChooserPanel_ADD_FILES, "Add Files"); // a (E, c)
+// Elapsed time: 13 seconds
+dismissFileChooser();
+selectButton("CANCEL", "Cancel"); // JButton (j, c)
+// 'h' command handler elapsed time: 19 seconds
+// [GUI Memory]: 138 MB (+10770kb) [00:49:20]
+dismissDialog("Add Sources"); // c (cr)
+// Elapsed time: 297 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Vivado 12-584] No ports matched 'display[0]'. [C:/Users/user/verilog5_sample/verilog5_sample.srcs/constrs_1/imports/keyboard_sample/KeyboardConstraints.xdc:7]. ]", 7, true); // ah (O, cr) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\user\verilog5_sample\verilog5_sample.srcs\constrs_1\imports\keyboard_sample\KeyboardConstraints.xdc;-;;-;16;-;line;-;7;-;;-;16;-;"); // ah (O, cr)
+// [Engine Memory]: 854 MB (+46624kb) [00:55:24]
+// Elapsed time: 66 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Vivado 12-584] No ports matched 'display[0]'. [C:/Users/user/verilog5_sample/verilog5_sample.srcs/constrs_1/imports/keyboard_sample/KeyboardConstraints.xdc:7]. ]", 7, true); // ah (O, cr) - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 859 MB. GUI used memory: 67 MB. Current time: 10/25/23, 6:24:18 PM CST
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Vivado 12-584] No ports matched 'display[0]'. [C:/Users/user/verilog5_sample/verilog5_sample.srcs/constrs_1/imports/keyboard_sample/KeyboardConstraints.xdc:7]. ]", 7, true); // ah (O, cr) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Vivado 12-584] No ports matched 'display[0]'. [C:/Users/user/verilog5_sample/verilog5_sample.srcs/constrs_1/imports/keyboard_sample/KeyboardConstraints.xdc:7]. ]", 7, true); // ah (O, cr) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\user\verilog5_sample\verilog5_sample.srcs\constrs_1\imports\keyboard_sample\KeyboardConstraints.xdc;-;;-;16;-;line;-;7;-;;-;16;-;"); // ah (O, cr)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Vivado 12-584] No ports matched 'display[0]'. [C:/Users/user/verilog5_sample/verilog5_sample.srcs/constrs_1/imports/keyboard_sample/KeyboardConstraints.xdc:7]. ]", 7, true); // ah (O, cr) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\user\verilog5_sample\verilog5_sample.srcs\constrs_1\imports\keyboard_sample\KeyboardConstraints.xdc;-;;-;16;-;line;-;7;-;;-;16;-;"); // ah (O, cr)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Vivado 12-584] No ports matched 'display[0]'. [C:/Users/user/verilog5_sample/verilog5_sample.srcs/constrs_1/imports/keyboard_sample/KeyboardConstraints.xdc:7]. , [Vivado 12-584] No ports matched 'display[2]'. [C:/Users/user/verilog5_sample/verilog5_sample.srcs/constrs_1/imports/keyboard_sample/KeyboardConstraints.xdc:12]. ]", 12, false, false, false, false, false, true); // ah (O, cr) - Double Click
+// Elapsed time: 10 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, (String) null, 33, false); // ah (O, cr)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "port;-;key_in;-;;-;10;-;"); // ah (O, cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 903 MB. GUI used memory: 66 MB. Current time: 10/25/23, 6:24:33 PM CST
+selectButton("OptionPane.button", "Yes"); // JButton (A, G)
+// bB (cr):  Open Implemented Design : addNotify
+// [Engine Memory]: 903 MB (+7172kb) [00:55:41]
+// Tcl Message: open_run impl_1 
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_CNS_STALE
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 1,569 MB. GUI used memory: 66 MB. Current time: 10/25/23, 6:24:47 PM CST
+// [Engine Memory]: 1,601 MB (+684210kb) [00:55:54]
+// Xgd.load filename: C:/Xilinx/Vivado/2019.2/data/parts/xilinx/artix7/devint/artix7/xc7a35t/xc7a35t.xgd; ZipEntry: xc7a35t_detail.xgd elapsed time: 0.7s
+// [Engine Memory]: 1,700 MB (+19509kb) [00:55:55]
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// TclEventType: DESIGN_NEW
+// [GUI Memory]: 146 MB (+409kb) [00:55:56]
+// Device: addNotify
+// DeviceView Instantiated
+// WARNING: HEventQueue.dispatchEvent() is taking  1732 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: INFO: [Device 21-403] Loading part xc7a35tcpg236-1 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1861.930 ; gain = 0.000 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2019.2 INFO: [Project 1-570] Preparing netlist for logic optimization INFO: [Timing 38-478] Restoring timing data from binary archive. INFO: [Timing 38-479] Binary timing data restore complete. INFO: [Project 1-856] Restoring constraints from binary archive. INFO: [Project 1-853] Binary constraint restore complete. 
+// Tcl Message: Reading XDEF placement. Reading placer database... Reading XDEF routing. 
+// Tcl Message: Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1861.930 ; gain = 0.000 
+// Tcl Message: Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1861.930 ; gain = 0.000 Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1861.930 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 2 instances were transformed.   IOBUF => IOBUF (IBUF, OBUFT): 2 instances  
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Tcl Message: open_run: Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1886.789 ; gain = 24.859 
+// TclEventType: DRC_ADDED
+// TclEventType: METHODOLOGY_ADDED
+// TclEventType: POWER_UPDATED
+// TclEventType: TIMING_SUMMARY_UPDATED
+// [Engine Memory]: 1,786 MB (+1547kb) [00:55:59]
+// [GUI Memory]: 157 MB (+4449kb) [00:55:59]
+// Schematic: addNotify
+// PAPropertyPanels.initPanels (key_in) elapsed time: 0.2s
+// Elapsed time: 17 seconds
+dismissDialog("Open Implemented Design"); // bB (cr)
+// [Engine Memory]: 1,879 MB (+3349kb) [00:55:59]
+// Device view-level: 0.3
+// Device view-level: 0.9
+// HMemoryUtils.trashcanNow. Engine heap size: 1,923 MB. GUI used memory: 105 MB. Current time: 10/25/23, 6:24:55 PM CST
+// Device view-level: 1.2
+// Device view-level: 1.5
+// Device view-level: 1.8
+// [GUI Memory]: 169 MB (+4455kb) [00:56:01]
+// Device view-level: 1.5
+// Device view-level: 1.2
+// HMemoryUtils.trashcanNow. Engine heap size: 1,923 MB. GUI used memory: 105 MB. Current time: 10/25/23, 6:24:56 PM CST
+// Device view-level: 0.9
+// Device view-level: 1.2
+// HMemoryUtils.trashcanNow. Engine heap size: 1,923 MB. GUI used memory: 105 MB. Current time: 10/25/23, 6:24:58 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,923 MB. GUI used memory: 105 MB. Current time: 10/25/23, 6:24:59 PM CST
+// Device view-level: 0.9
+// HMemoryUtils.trashcanNow. Engine heap size: 1,923 MB. GUI used memory: 127 MB. Current time: 10/25/23, 6:25:00 PM CST
+// Device view-level: 0.6
+// Device view-level: 0.3
+// [GUI Memory]: 182 MB (+4799kb) [00:56:08]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,923 MB. GUI used memory: 106 MB. Current time: 10/25/23, 6:25:03 PM CST
+// Elapsed time: 15 seconds
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k (aA, cr)
+closeTask("Implementation", "Implemented Design", "DesignTask.RESULTS_ANALYSIS");
+// A (cr): Confirm Close: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (A)
+// bB (cr):  Close : addNotify
+dismissDialog("Confirm Close"); // A (cr)
+// TclEventType: DESIGN_CLOSE
+// TclEventType: TIMING_RESULTS_UNLOAD
+// HMemoryUtils.trashcanNow. Engine heap size: 1,953 MB. GUI used memory: 74 MB. Current time: 10/25/23, 6:25:10 PM CST
+// Engine heap size: 1,953 MB. GUI used memory: 75 MB. Current time: 10/25/23, 6:25:10 PM CST
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: close_design 
+// TclEventType: DESIGN_CLOSE
+dismissDialog("Close"); // bB (cr)
+// Elapsed time: 1121 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 9); // B (F, cr)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Utility Sources]", 12); // B (F, cr)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Utility Sources]", 12); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Utility Sources, utils_1]", 13, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Utility Sources, utils_1]", 13, false, false, false, false, false, true); // B (F, cr) - Double Click
+// Elapsed time: 14 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Settings]", 1, false); // u (O, cr)
+// Run Command: RDIResourceCommand.RDICommands_SETTINGS
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// I (cr): Settings: addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  1110 ms.
+// Elapsed time: 14 seconds
+expandTree(PAResourceQtoS.SettingsDialog_PROJECT_TREE, "[projectRoot, IP]", 6); // L (E, I)
+selectTree(PAResourceQtoS.SettingsDialog_PROJECT_TREE, "[projectRoot, IP, Repository]", 7, false); // L (E, I)
+selectButton(PAResourceQtoS.SettingsProjectIPRepositoryPage_REFRESH_ALL, "Refresh All"); // a (E, I)
+// TclEventType: CREATE_IP_CATALOG
+// Tcl Message: update_ip_catalog -rebuild 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+selectButton(PAResourceQtoS.SettingsProjectIPRepositoryPage_ADD_REPOSITORY, "Add Repository"); // E (f, I)
+setFolderChooser("C:/Users/user/Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/ip");
+// TclEventType: PROJECT_CHANGE
+// Tcl Message: set_property  ip_repo_paths  C:/Users/user/Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/ip [current_project] 
+// TclEventType: CREATE_IP_CATALOG
+// Tcl Message: update_ip_catalog 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/user/Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/ip'. 
+// c (I): Add Repository: addNotify
+selectButton(RDIResource.AddRepositoryInfoDialog_OK, "OK"); // a (c)
+dismissDialog("Add Repository"); // c (I)
+selectButton(RDIResource.BaseDialog_APPLY, "Apply"); // a (I)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+dismissDialog("Settings"); // I (cr)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, IP Catalog]", 4, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_CORE_GEN
+// bB (SwingUtilities.SharedOwnerFrame):  Open IP Catalog : addNotify
+dismissDialog("Open IP Catalog"); // bB (SwingUtilities.SharedOwnerFrame)
+// Elapsed time: 39 seconds
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "User Repository ;  ;  ;  ; ", 0); // L (O, cr)
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "UserIP ;  ;  ;  ; ", 1); // L (O, cr)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "KeyboardCtrl_v1_0 ;  ; Production ; Included ; xilinx.com:user:KeyboardCtrl:1.0", 2, "KeyboardCtrl_v1_0", 0, false); // L (O, cr)
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "KeyboardCtrl_v1_0 ;  ; Production ; Included ; xilinx.com:user:KeyboardCtrl:1.0", 2); // L (O, cr)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "KeyboardCtrl_v1_0 ;  ; Production ; Included ; xilinx.com:user:KeyboardCtrl:1.0", 2, "KeyboardCtrl_v1_0", 0, false, false, false, false, false, true); // L (O, cr) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_CORE
+// TclEventType: LOAD_FEATURE
+// r (cr): Customize IP: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (r)
+selectButton("OptionPane.button", "OK"); // JButton (A, H)
+// TclEventType: CREATE_IP_CORE
+// TclEventType: REPORT_IP_STATUS_STALE
+dismissDialog("Customize IP"); // r (cr)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: create_ip -name KeyboardCtrl -vendor xilinx.com -library user -version 1.0 -module_name KeyboardCtrl_0 -dir c:/Users/user/verilog5_sample/verilog5_sample.srcs/sources_1/ip 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: generate_target {instantiation_template} [get_files c:/Users/user/verilog5_sample/verilog5_sample.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'KeyboardCtrl_0'... 
+// aI (cr): Generate Output Products: addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectRadioButton(PAResourceQtoS.SimpleOutputProductDialog_SYNTHESIZE_DESIGN_GLOBALLY, "Global"); // a (Q, aI)
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (aI)
+// bB (cr):  Managing Output Products : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: set_property generate_synth_checkpoint false [get_files  c:/Users/user/verilog5_sample/verilog5_sample.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci] 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: generate_target all [get_files  c:/Users/user/verilog5_sample/verilog5_sample.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'KeyboardCtrl_0'... INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'KeyboardCtrl_0'... INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'KeyboardCtrl_0'... 
+// Tcl Message: export_ip_user_files -of_objects [get_files c:/Users/user/verilog5_sample/verilog5_sample.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: FILE_SET_CHANGE
+selectButton("OptionPane.button", "OK"); // JButton (A, G)
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyboardCtrl_0 (KeyboardCtrl_0.xci)]", 6, false); // B (F, cr)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "KeyboardCtrl_v1_0 ;  ; Production ; Included ; xilinx.com:user:KeyboardCtrl:1.0", 2, "KeyboardCtrl_v1_0", 0, false); // L (O, cr)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "KeyboardCtrl_v1_0 ;  ; Production ; Included ; xilinx.com:user:KeyboardCtrl:1.0", 2, "KeyboardCtrl_v1_0", 0, false, false, false, false, false, true); // L (O, cr) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_CORE
+// r (cr): Customize IP: addNotify
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "KeyboardCtrl_v1_0 ;  ; Production ; Included ; xilinx.com:user:KeyboardCtrl:1.0", 2, "KeyboardCtrl_v1_0", 0, false); // L (O, cr)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (r)
+// TclEventType: CREATE_IP_CORE
+// TclEventType: REPORT_IP_STATUS_STALE
+dismissDialog("Customize IP"); // r (cr)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: create_ip -name KeyboardCtrl -vendor xilinx.com -library user -version 1.0 -module_name KeyboardCtrl_1 -dir c:/Users/user/verilog5_sample/verilog5_sample.srcs/sources_1/ip 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: generate_target {instantiation_template} [get_files c:/Users/user/verilog5_sample/verilog5_sample.srcs/sources_1/ip/KeyboardCtrl_1/KeyboardCtrl_1.xci] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'KeyboardCtrl_1'... 
+// aI (cr): Generate Output Products: addNotify
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (aI)
+// bB (cr):  Managing Output Products : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: generate_target all [get_files  c:/Users/user/verilog5_sample/verilog5_sample.srcs/sources_1/ip/KeyboardCtrl_1/KeyboardCtrl_1.xci] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'KeyboardCtrl_1'... INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'KeyboardCtrl_1'... 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all KeyboardCtrl_1] } 
+// Tcl Message: export_ip_user_files -of_objects [get_files c:/Users/user/verilog5_sample/verilog5_sample.srcs/sources_1/ip/KeyboardCtrl_1/KeyboardCtrl_1.xci] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] c:/Users/user/verilog5_sample/verilog5_sample.srcs/sources_1/ip/KeyboardCtrl_1/KeyboardCtrl_1.xci] 
+// TclEventType: RUN_ADD
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs -jobs 8 KeyboardCtrl_1_synth_1 
+// Tcl Message: [Wed Oct 25 18:46:27 2023] Launched KeyboardCtrl_1_synth_1... Run output will be captured here: C:/Users/user/verilog5_sample/verilog5_sample.runs/KeyboardCtrl_1_synth_1/runme.log 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: RUN_STATUS_CHANGE
+selectButton("OptionPane.button", "OK"); // JButton (A, G)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 14 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyboardCtrl_0 (KeyboardCtrl_0.xci)]", 6, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyboardCtrl_0 (KeyboardCtrl_0.xci)]", 6, false, false, false, false, true, false); // B (F, cr) - Popup Trigger
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenuItem(PAResourceCommand.PACommandNames_IMPORT_ALL_SRCS, "Copy All Files Into Project"); // ai (ao, Popup.HeavyWeightWindow)
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ai (ao, Popup.HeavyWeightWindow)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cr): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+dismissDialog("Remove Sources"); // aE (cr)
+// Tcl Message: export_ip_user_files -of_objects  [get_files c:/Users/user/verilog5_sample/verilog5_sample.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: remove_files  c:/Users/user/verilog5_sample/verilog5_sample.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci 
+// aE (cr): Remove Sources: addNotify
+// bB (aE):  Remove Sources : addNotify
+dismissDialog("Remove Sources"); // bB (aE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyboardCtrl_1 (KeyboardCtrl_1.xci)]", 7, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyboardCtrl_1 (KeyboardCtrl_1.xci)]", 7, false, false, false, false, true, false); // B (F, cr) - Popup Trigger
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ai (ao, Popup.HeavyWeightWindow)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cr): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+dismissDialog("Remove Sources"); // aE (cr)
+// Tcl Message: export_ip_user_files -of_objects  [get_files c:/Users/user/verilog5_sample/verilog5_sample.srcs/sources_1/ip/KeyboardCtrl_1/KeyboardCtrl_1.xci] -no_script -reset -force -quiet 
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// aE (cr): Remove Sources: addNotify
+// bB (aE):  Remove Sources : addNotify
+// Tcl Message: remove_files  -fileset KeyboardCtrl_1 c:/Users/user/verilog5_sample/verilog5_sample.srcs/sources_1/ip/KeyboardCtrl_1/KeyboardCtrl_1.xci 
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// [GUI Memory]: 194 MB (+2830kb) [01:18:02]
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_DELETE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: INFO: [Project 1-386] Moving file 'c:/Users/user/verilog5_sample/verilog5_sample.srcs/sources_1/ip/KeyboardCtrl_1/KeyboardCtrl_1.xci' from fileset 'KeyboardCtrl_1' to fileset 'sources_1'. 
+dismissDialog("Remove Sources"); // bB (aE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyboardCtrl_0 (KeyboardCtrl_0.xci)]", 6, false, false, false, false, true, false); // B (F, cr) - Popup Trigger
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyboardCtrl_0 (KeyboardCtrl_0.xci)]", 6, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyboardCtrl_1 (KeyboardCtrl_1.xci)]", 7, false); // B (F, cr)
+// [GUI Memory]: 207 MB (+3010kb) [01:18:10]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 6, true, false, false, false, true, false); // B (F, cr) - Popup Trigger - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, IP Catalog]", 4, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_CORE_GEN
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "User Repository ;  ;  ;  ; ", 0, "User Repository", 0, true); // L (O, cr) - Node
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "User Repository ;  ;  ;  ; ", 0); // L (O, cr)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "UserIP ;  ;  ;  ; ", 1, "UserIP", 0, true); // L (O, cr) - Node
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "UserIP ;  ;  ;  ; ", 1); // L (O, cr)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "KeyboardCtrl_v1_0 ;  ; Production ; Included ; xilinx.com:user:KeyboardCtrl:1.0", 2, "KeyboardCtrl_v1_0", 0, false); // L (O, cr)
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "KeyboardCtrl_v1_0 ;  ; Production ; Included ; xilinx.com:user:KeyboardCtrl:1.0", 2); // L (O, cr)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "KeyboardCtrl_v1_0 ;  ; Production ; Included ; xilinx.com:user:KeyboardCtrl:1.0", 2, "KeyboardCtrl_v1_0", 0, false, false, false, false, false, true); // L (O, cr) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_CORE
+// r (cr): Customize IP: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (r)
+// TclEventType: CREATE_IP_CORE
+// TclEventType: REPORT_IP_STATUS_STALE
+dismissDialog("Customize IP"); // r (cr)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: create_ip -name KeyboardCtrl -vendor xilinx.com -library user -version 1.0 -module_name KeyboardCtrl_0 -dir c:/Users/user/verilog5_sample/verilog5_sample.srcs/sources_1/ip 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: generate_target {instantiation_template} [get_files c:/Users/user/verilog5_sample/verilog5_sample.srcs/sources_1/ip/KeyboardCtrl_0_1/KeyboardCtrl_0.xci] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'KeyboardCtrl_0'... 
+// aI (cr): Generate Output Products: addNotify
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (aI)
+// bB (cr):  Managing Output Products : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: generate_target all [get_files  c:/Users/user/verilog5_sample/verilog5_sample.srcs/sources_1/ip/KeyboardCtrl_0_1/KeyboardCtrl_0.xci] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'KeyboardCtrl_0'... INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'KeyboardCtrl_0'... 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all KeyboardCtrl_0] } 
+// Tcl Message: export_ip_user_files -of_objects [get_files c:/Users/user/verilog5_sample/verilog5_sample.srcs/sources_1/ip/KeyboardCtrl_0_1/KeyboardCtrl_0.xci] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] c:/Users/user/verilog5_sample/verilog5_sample.srcs/sources_1/ip/KeyboardCtrl_0_1/KeyboardCtrl_0.xci] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs -jobs 8 KeyboardCtrl_0_synth_1 
+// Tcl Message: [Wed Oct 25 18:47:15 2023] Launched KeyboardCtrl_0_synth_1... Run output will be captured here: C:/Users/user/verilog5_sample/verilog5_sample.runs/KeyboardCtrl_0_synth_1/runme.log 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: RUN_STATUS_CHANGE
+selectButton("OptionPane.button", "OK"); // JButton (A, G)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (cr)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cr): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// TclEventType: RUN_LAUNCH
+dismissDialog("Launch Runs"); // f (cr)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// bB (cr):  Generate Bitstream : addNotify
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: [Wed Oct 25 18:47:26 2023] Launched synth_1... Run output will be captured here: C:/Users/user/verilog5_sample/verilog5_sample.runs/synth_1/runme.log [Wed Oct 25 18:47:26 2023] Launched impl_1... Run output will be captured here: C:/Users/user/verilog5_sample/verilog5_sample.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+dismissDialog("Generate Bitstream"); // bB (cr)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 43 seconds
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k (aA, cr)
+closeTask("Project Manager", "Project Manager", "DesignTask.PROJECT_MANAGER");
+// Run Command: PAResourceCommand.PACommandNames_CLOSE_PROJECT
+// A (cr): Close Project: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (A)
+// 'b' command handler elapsed time: 4 seconds
+dismissDialog("Close Project"); // A (cr)
+closeView(PAResourceOtoP.PAViews_IP_CATALOG, "IP Catalog"); // W
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Failed: addNotify
+// Elapsed time: 172 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aj)
+// Run Command: PAResourceCommand.PACommandNames_LOG_WINDOW
+dismissDialog("Bitstream Generation Failed"); // aj (cr)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, KeyboardCtrl_0 (KeyboardCtrl_0.xci)]", 13); // B (F, cr)
+// A (cr): Show IP Hierarchy: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (A)
+dismissDialog("Show IP Hierarchy"); // A (cr)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SampleDisplay (SampleDisplay.v), key_de : KeyboardDecoder (KeyboardDecoder.v), inst : KeyboardCtrl (KeyboardCtrl.v)]", 4); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyboardCtrl_0 (KeyboardCtrl_0.xci)]", 7, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyboardCtrl_0 (KeyboardCtrl_0.xci)]", 7, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyboardCtrl_0 (KeyboardCtrl_0.xci)]", 7, false, false, false, false, false, true); // B (F, cr) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_RECUSTOMIZE_CORE
+// r (cr): Re-customize IP: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (r)
+dismissDialog("Re-customize IP"); // r (cr)
+// Elapsed time: 14 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SampleDisplay (SampleDisplay.v)]", 1, true, false, false, false, true, false); // B (F, cr) - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // af (ao, cr)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // af (ao, cr)
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ai (ao, cr)
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: set_property top SampleDisplay [current_fileset] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (cr)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cr): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// TclEventType: RUN_LAUNCH
+dismissDialog("Launch Runs"); // f (cr)
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: [Wed Oct 25 18:52:04 2023] Launched synth_1... Run output will be captured here: C:/Users/user/verilog5_sample/verilog5_sample.runs/synth_1/runme.log [Wed Oct 25 18:52:04 2023] Launched impl_1... Run output will be captured here: C:/Users/user/verilog5_sample/verilog5_sample.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Completed: addNotify
+// Elapsed time: 118 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER, "Open Hardware Manager"); // a (Q, aj)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aj)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// bB (cr):  Open Hardware Manager : addNotify
+// TclEventType: HW_SESSION_OPEN
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// Tcl Message: open_hw_manager 
+// [GUI Memory]: 222 MB (+4642kb) [01:25:11]
+dismissDialog("Open Hardware Manager"); // bB (cr)
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h (ds, cr)
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ai (ao, cr)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// bB (cr):  Auto Connect : addNotify
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2019.2   **** Build date : Nov  6 2019 at 22:12:23     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042 
+// Tcl Message: INFO: [Labtools 27-3417] Launching cs_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ****** Xilinx cs_server v2019.2.0   **** Build date : Nov 07 2019-13:28:22     ** Copyright 2017-2019 Xilinx, Inc. All Rights Reserved.    
+// Tcl Message: connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 2172.223 ; gain = 0.000 
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// WARNING: HEventQueue.dispatchEvent() is taking  2979 ms.
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183B3150EA 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/user/verilog5_sample/verilog5_sample.runs/impl_1/SampleDisplay.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// [Engine Memory]: 2,880 MB (+951014kb) [01:25:25]
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Auto Connect"); // bB (cr)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (ds, cr)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cr): Program Device: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 2,881 MB. GUI used memory: 117 MB. Current time: 10/25/23, 6:54:20 PM CST
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bB (cr):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cr)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/user/verilog5_sample/verilog5_sample.runs/impl_1/SampleDisplay.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'I' command handler elapsed time: 3 seconds
+dismissDialog("Program Device"); // bB (cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// Tcl Message: ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183B3150EA 
+// n (cr): Close Hardware Target: addNotify
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+// WARNING: HEventQueue.dispatchEvent() is taking  3595411 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,883 MB. GUI used memory: 112 MB. Current time: 10/25/23, 8:02:11 PM CST
+// WARNING: HEventQueue.dispatchEvent() is taking  1044 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1585 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 8466091 ms. Increasing delay to 25398273 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,883 MB. GUI used memory: 106 MB. Current time: 10/25/23, 10:23:27 PM CST
+// WARNING: HEventQueue.dispatchEvent() is taking  1286 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 1378 ms. Increasing delay to 3000 ms.
+// Elapsed time: 12557 seconds
+selectList(PAResourceAtoD.CmdMsgDialog_MESSAGES, "[Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183B3150EA", 0); // b (F, n)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (n)
+dismissDialog("Close Hardware Target"); // n (cr)
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h (ds, cr)
+// Elapsed time: 203 seconds
+selectButton(PAResourceAtoD.AbstractFileView_CLOSE, (String) null); // k (B, cr)
+selectCodeEditor("SampleDisplay.v", 303, 139); // ch (w, cr)
+// WARNING: HEventQueue.dispatchEvent() is taking  1484675 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,883 MB. GUI used memory: 152 MB. Current time: 10/25/23, 11:00:09 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,883 MB. GUI used memory: 99 MB. Current time: 10/26/23, 12:04:22 AM CST
+// WARNING: HEventQueue.dispatchEvent() is taking  846076 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  275986 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1494 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,883 MB. GUI used memory: 98 MB. Current time: 10/26/23, 12:34:21 AM CST

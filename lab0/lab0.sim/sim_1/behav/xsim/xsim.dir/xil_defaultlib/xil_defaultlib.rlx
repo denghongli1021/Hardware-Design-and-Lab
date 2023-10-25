@@ -1,0 +1,10 @@
+0.6
+2019.2
+Nov  6 2019
+21:57:16
+C:/Users/user/lab0/lab0.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
+C:/Users/user/lab0/lab0.srcs/sim_1/imports/lab0_src/lab0_t.v,1695748642,verilog,,,,lab0_t,,,,,,,,
+C:/Users/user/lab0/lab0.srcs/sources_1/imports/lab0_src/fist_check.v,1695748642,verilog,,C:/Users/user/lab0/lab0.srcs/sources_1/imports/lab0_src/judge.v,,fist_check,,,,,,,,
+C:/Users/user/lab0/lab0.srcs/sources_1/imports/lab0_src/judge.v,1695748642,verilog,,C:/Users/user/lab0/lab0.srcs/sources_1/imports/lab0_src/lab0.v,,judge,,,,,,,,
+C:/Users/user/lab0/lab0.srcs/sources_1/imports/lab0_src/lab0.v,1695748642,verilog,,C:/Users/user/lab0/lab0.srcs/sources_1/imports/lab0_src/slow_fist.v,,lab0,,,,,,,,
+C:/Users/user/lab0/lab0.srcs/sources_1/imports/lab0_src/slow_fist.v,1695748642,verilog,,C:/Users/user/lab0/lab0.srcs/sim_1/imports/lab0_src/lab0_t.v,,slow_fist,,,,,,,,

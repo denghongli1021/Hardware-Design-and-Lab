@@ -1,0 +1,8 @@
+0.6
+2019.2
+Nov  6 2019
+21:57:16
+C:/Users/user/temp_project/temp_project.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
+C:/Users/user/temp_project/temp_project.srcs/sim_1/imports/new/lab2_2_t.v,1695654050,verilog,,,,lab2_2_t,,,,,,,,
+C:/Users/user/temp_project/temp_project.srcs/sources_1/imports/lab2_template/lab2_1.v,1695458980,verilog,,C:/Users/user/temp_project/temp_project.srcs/sources_1/imports/lab2_template/lab2_2.v,,Parameterized_Ping_Pong_Counter,,,,,,,,
+C:/Users/user/temp_project/temp_project.srcs/sources_1/imports/lab2_template/lab2_2.v,1695654046,verilog,,C:/Users/user/temp_project/temp_project.srcs/sim_1/imports/new/lab2_2_t.v,,Encoder,,,,,,,,

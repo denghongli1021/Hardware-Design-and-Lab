@@ -1,0 +1,24 @@
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|              sys_clk_pin |              sys_clk_pin |                                                                                           count_reg[16]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                        count_num_reg[3]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                           count_reg[20]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            count_reg[0]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                        count_num_reg[4]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            count_reg[5]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                           count_reg[14]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            count_reg[7]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            count_reg[1]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            count_reg[6]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            count_reg[9]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                           count_reg[10]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                           count_reg[11]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                           count_reg[22]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                           count_reg[12]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                           count_reg[29]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                           count_reg[30]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                           count_reg[32]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                           count_reg[21]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                       count_num_reg[10]/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+

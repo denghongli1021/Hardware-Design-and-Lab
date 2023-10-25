@@ -1,0 +1,10 @@
+0.6
+2019.2
+Nov  6 2019
+21:57:16
+C:/Users/user/2022 exam1/2022 exam1.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
+C:/Users/user/2022 exam1/2022 exam1.srcs/sources_1/imports/code/exam1_A.v,1698081408,verilog,,C:/Users/user/2022 exam1/2022 exam1.srcs/sources_1/imports/code/exam1_A_tb.v,,exam1_A,,,,,,,,
+C:/Users/user/2022 exam1/2022 exam1.srcs/sources_1/imports/code/exam1_A_tb.v,1698062619,verilog,,,,exam1_A_tb,,,,,,,,
+C:/Users/user/2022 exam1/2022 exam1.srcs/sources_1/imports/code/exam1_B.v,1698073066,verilog,,C:/Users/user/2022 exam1/2022 exam1.srcs/sources_1/imports/code/exam1_B_tb.v,,exam1_B,,,,,,,,
+C:/Users/user/2022 exam1/2022 exam1.srcs/sources_1/imports/code/exam1_B_tb.v,1698062619,verilog,,,,exam1_B_tb,,,,,,,,
+C:/Users/user/2022 exam1/2022 exam1.srcs/sources_1/imports/code/exam1_C.v,1698080034,verilog,,,,SevenSegment;clock_divider;debounce;exam1_C;onepulse,,,,,,,,

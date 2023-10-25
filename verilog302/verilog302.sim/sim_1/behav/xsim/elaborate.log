@@ -1,0 +1,18 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 5449f29a3cac4e05b9b16b876c5cc971 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot lab3_2_t_behav xil_defaultlib.lab3_2_t xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'clk_div_use' [C:/Users/user/verilog302/verilog302.srcs/sim_1/new/lab3_2_t.v:43]
+WARNING: [VRFC 10-3027] 'state' was previously declared with a different range [C:/Users/user/verilog302/verilog302.srcs/sources_1/new/lab3_2.v:41]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.clock_divider(n=24)
+Compiling module xil_defaultlib.clock_divider(n=26)
+Compiling module xil_defaultlib.lab3_2
+Compiling module xil_defaultlib.lab3_2_t
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot lab3_2_t_behav

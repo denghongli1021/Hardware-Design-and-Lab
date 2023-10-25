@@ -1,0 +1,9 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/user/verilog303/verilog303.srcs/sources_1/new/lab3_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clock_divider
+INFO: [VRFC 10-311] analyzing module lab3_3
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/user/verilog303/verilog303.srcs/sim_1/new/lab3_3_t.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lab3_3_t
+ERROR: [VRFC 10-1280] procedural assignment to a non-register clk is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/user/verilog303/verilog303.srcs/sim_1/new/lab3_3_t.v:37]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register en is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/user/verilog303/verilog303.srcs/sim_1/new/lab3_3_t.v:41]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register rst is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/user/verilog303/verilog303.srcs/sim_1/new/lab3_3_t.v:42]
+ERROR: [VRFC 10-2865] module 'lab3_3_t' ignored due to previous errors [C:/Users/user/verilog303/verilog303.srcs/sim_1/new/lab3_3_t.v:23]
