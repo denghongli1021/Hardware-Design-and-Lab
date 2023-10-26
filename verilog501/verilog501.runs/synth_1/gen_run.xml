@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1698225969">
-  <File Type="PA-TCL" Name="SampleDisplay.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="SampleDisplay_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="SampleDisplay_reports.tcl"/>
-  <File Type="RDS-RDS" Name="SampleDisplay.vds"/>
-  <File Type="RDS-UTIL" Name="SampleDisplay_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="SampleDisplay_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="SampleDisplay.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="SampleDisplay_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="SampleDisplay_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1698341852">
+  <File Type="PA-TCL" Name="Lab5.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="Lab5_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="Lab5_reports.tcl"/>
+  <File Type="RDS-RDS" Name="Lab5.vds"/>
+  <File Type="RDS-UTIL" Name="Lab5_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="Lab5_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="Lab5.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="Lab5_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="Lab5_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/lab5_template/lab5/KeyboardDecoder.v">
@@ -29,57 +29,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/lab5_template/lab5/one_pulse.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/one_pulse.v"/>
-        <Attr Name="ImportTime" Val="1697898584"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/lab5_template/keyboard_sample/SampleDisplay.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/SampleDisplay.v"/>
-        <Attr Name="ImportTime" Val="1697898583"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/lab5_template/keyboard_sample/one_pulse.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/one_pulse.v"/>
-        <Attr Name="ImportTime" Val="1697898583"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/lab5_template/keyboard_sample/SevenSegment.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/SevenSegment.v"/>
-        <Attr Name="ImportTime" Val="1697898583"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/lab5_template/keyboard_sample/KeyboardDecoder.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/KeyboardDecoder.v"/>
-        <Attr Name="ImportTime" Val="1697898583"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/lab5_template/lab5/clock_divider.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/clock_divider.v"/>
         <Attr Name="ImportTime" Val="1697898584"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -89,8 +40,16 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/lab5_template/lab5/debounce.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/debounce.v"/>
+        <Attr Name="ImportTime" Val="1697898584"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab5_template/lab5/one_pulse.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/one_pulse.v"/>
         <Attr Name="ImportTime" Val="1697898584"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -99,7 +58,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/lab5_template/lab5/lab5.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/lab5.v"/>
         <Attr Name="ImportTime" Val="1697898584"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -109,7 +67,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="SampleDisplay"/>
+      <Option Name="TopModule" Val="Lab5"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
@@ -142,9 +100,8 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="KeyboardCtrl_0"/>
 </GenRun>
