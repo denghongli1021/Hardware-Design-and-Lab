@@ -160,6 +160,7 @@ always@(posedge clk or posedge btnC2) begin
 	end
 	else if (state == IDLE) begin
 		nums = 16'b1010_1010_1010_1010;
+		get_item_num = 0;
 		// flash_cnt = 0;
 		// flash_sec = 0;
 	end
@@ -237,6 +238,9 @@ always@(posedge clk or posedge btnC2) begin
 	end
 	else if (state == BUY) begin
 		nums = {get_item_num[3:0] , 4'b1010 ,pay_10[3:0] ,pay_1[3:0]} ;
+	end
+	else if (state == CHANGE) begin
+		nums = {get_item_num[3:0] , 4'b1010 ,money_10[3:0] ,money_1[3:0]};
 	end
 end
 	always @ (*) begin
@@ -332,7 +336,10 @@ always @(posedge clk or posedge btnC2) begin
 		end
 		PAYMENT : begin
 			if (been_ready && key_down[LEFT_ENTER] == 1'b1) begin
-				if (money >= item_price) begin
+				if (item_num == 0) begin
+					next_state = CHANGE;
+				end
+				else if (money >= item_price) begin
 					next_state = BUY;
 				end
 				else begin
@@ -342,7 +349,7 @@ always @(posedge clk or posedge btnC2) begin
 		end
 		BUY : begin
 			if (been_ready && key_down[LEFT_ENTER] == 1'b1) begin
-				next_state = IDLE;
+				next_state = CHANGE;
 			end
 			
 			// if (flash_cnt == 4) begin
