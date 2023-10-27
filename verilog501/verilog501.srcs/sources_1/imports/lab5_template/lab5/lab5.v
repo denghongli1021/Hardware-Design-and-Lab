@@ -97,8 +97,8 @@ reg [7:0] money = 0;
 reg [7:0] pay_10 = 0;
 reg [7:0] pay_1 = 0;
 reg [7:0] pay = 0;
-// reg [2:0] flash_cnt = 0;
-// reg [28:0] flash_sec = 0;
+reg [2:0] flash_cnt = 0;
+reg [28:0] flash_sec = 0;
 // Integer_Divider i1(
 //     .A(money),
 //     .B(item_price),
@@ -195,6 +195,7 @@ always@(posedge clk or posedge btnC2) begin
 		pay_1 = pay - pay_10 * 4'b1010;
 		money_10 = money_10 - pay_10;
 		money_1 = money_1 - pay_1;
+		nums = {get_item_num[3:0] , 4'b1010 ,pay_10[3:0] ,pay_1[3:0]} ;
 	end
 	else if (state == PAYMENT) begin
 		nums = {4'b1010 , 4'b1010 , money_10[3:0] ,money_1[3:0]};
@@ -235,9 +236,34 @@ always@(posedge clk or posedge btnC2) begin
 				nums = {4'b1010 , 4'b1010 , money_10[3:0] ,money_1[3:0]};
 			end
 		end
+		// if (been_ready && key_down[LEFT_ENTER] == 1'b1 || next_state == BUY || next_state == CHANGE) begin
+		// 	led = 16'b1111_1111_1111_1111;
+		// end
+		// else begin
+		// 	LED = 16'b0000_0000_0000_0000;
+		// end
 	end
 	else if (state == BUY) begin
-		nums = {get_item_num[3:0] , 4'b1010 ,pay_10[3:0] ,pay_1[3:0]} ;
+		if (flash_sec== 0) begin
+			nums = {get_item_num[3:0] , 4'b1010 ,pay_10[3:0] ,pay_1[3:0]} ;
+				// flash_cnt = flash_cnt + 1;
+				// flash_sec = 0;
+		end
+		else if (flash_sec == 50000000) begin
+			nums = {4'b1011 ,4'b1011 ,4'b1011 ,4'b1011};
+		end
+		else if (flash_sec == 100000000) begin
+			nums = {get_item_num[3:0] , 4'b1010 ,pay_10[3:0] ,pay_1[3:0]} ;
+		end
+		else if (flash_sec == 150000000) begin
+			nums = {4'b1011 ,4'b1011 ,4'b1011 ,4'b1011};
+		end
+		else if (flash_sec == 200000000) begin
+			nums = {get_item_num[3:0] , 4'b1010 ,pay_10[3:0] ,pay_1[3:0]} ;
+		end
+		else if (flash_sec == 250000000) begin
+			nums = {4'b1011 ,4'b1011 ,4'b1011 ,4'b1011};
+		end
 	end
 	else if (state == CHANGE) begin
 		nums = {get_item_num[3:0] , 4'b1010 ,money_10[3:0] ,money_1[3:0]};
@@ -287,20 +313,42 @@ always@(posedge clk or posedge btnC2) begin
 			end
 		end
 		PAYMENT : begin
-			LED = 16'b0000_0000_0000_0000;
+			if (been_ready && key_down[LEFT_ENTER] == 1'b1 || next_state == BUY || next_state == CHANGE) begin
+				LED = 16'b1111_1111_1111_1111;
+			end
+			else begin
+				LED = 16'b0000_0000_0000_0000;
+			end
 		end
 		BUY : begin
-			LED = 16'b1111_1111_1111_1111;
-			// if (flash_sec == 50000000) begin
-			// 	LED = 16'b0000_0000_0000_0000;
-			// end
-			// else if (flash_sec == 100000000) begin
+			//LED = 16'b1111_1111_1111_1111;
+			
+			if (flash_sec== 0) begin
+				LED = 16'b1111_1111_1111_1111;
+				// flash_cnt = flash_cnt + 1;
+				// flash_sec = 0;
+			end
+			else if (flash_sec == 50000000) begin
+				LED = 16'b0000_0000_0000_0000;
+			end
+			else if (flash_sec == 100000000) begin
+				LED = 16'b1111_1111_1111_1111;
+			end
+			else if (flash_sec == 150000000) begin
+				LED = 16'b0000_0000_0000_0000;
+			end
+			else if (flash_sec == 200000000) begin
+				LED = 16'b1111_1111_1111_1111;
+			end
+			else if (flash_sec == 250000000) begin
+				LED = 16'b0000_0000_0000_0000;
+			end
+			// else if (flash_sec == 300000000) begin
 			// 	LED = 16'b1111_1111_1111_1111;
-			// 	// flash_sec = 0;
 			// end
 		end
 		CHANGE : begin
-			LED = 16'b0101_0101_1111_1111;
+			LED = 16'b1111_1111_1111_1111;
 		end	
 		endcase
 	end
@@ -318,8 +366,11 @@ end
 always @(posedge clk or posedge btnC2) begin
 	if (btnC2) begin
 		next_state = IDLE;
+		flash_cnt = 0;
+		flash_sec = 0;
 	end
 	else begin
+		
 		case (state) 
 		IDLE : begin
 			if (btnL2) begin
@@ -348,20 +399,23 @@ always @(posedge clk or posedge btnC2) begin
 			end
 		end
 		BUY : begin
-			if (been_ready && key_down[LEFT_ENTER] == 1'b1) begin
-				next_state = CHANGE;
-			end
-			
-			// if (flash_cnt == 4) begin
+			// if (been_ready && key_down[LEFT_ENTER] == 1'b1) begin
 			// 	next_state = CHANGE;
 			// end
-			// else begin
-			// 	next_state = BUY;
-			// end
+			flash_sec = flash_sec + 1;
+			if (flash_sec == 300000000) begin
+				next_state = CHANGE;
+				flash_sec = 0;
+			end
 		end
 		CHANGE : begin
-			if (been_ready && key_down[LEFT_ENTER] == 1'b1) begin
+			flash_sec = flash_sec + 1;
+			// if (been_ready && key_down[LEFT_ENTER] == 1'b1) begin
+			// 	next_state = IDLE;
+			// end
+			if (flash_sec == 300000000) begin
 				next_state = IDLE;
+				flash_sec = 0;
 			end
 		end
 		default : begin

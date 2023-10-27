@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Sat Oct 28 02:27:11 2023
-# Process ID: 27488
+# Start of session at: Sat Oct 28 03:17:39 2023
+# Process ID: 41492
 # Current directory: C:/Users/user/verilog501/verilog501.runs/synth_1
 # Command line: vivado.exe -log Lab5.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Lab5.tcl
 # Log file: C:/Users/user/verilog501/verilog501.runs/synth_1/Lab5.vds
@@ -19,9 +19,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 34744 
+INFO: Helper process launched with PID 10036 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:00 ; elapsed = 00:00:04 . Memory (MB): peak = 778.855 ; gain = 234.223
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 779.066 ; gain = 234.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Lab5' [C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/lab5.v:1]
 	Parameter LEFT_SHIFT_CODES bound to: 9'b000010010 
@@ -49,22 +49,23 @@ INFO: [Synth 8-6157] synthesizing module 'KeyboardDecoder' [C:/Users/user/verilo
 	Parameter IS_INIT bound to: 8'b10101010 
 	Parameter IS_EXTEND bound to: 8'b11100000 
 	Parameter IS_BREAK bound to: 8'b11110000 
-INFO: [Synth 8-6157] synthesizing module 'KeyboardCtrl_0' [C:/Users/user/verilog501/verilog501.runs/synth_1/.Xil/Vivado-27488-LAPTOP-FQ5SKUKF/realtime/KeyboardCtrl_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'KeyboardCtrl_0' (4#1) [C:/Users/user/verilog501/verilog501.runs/synth_1/.Xil/Vivado-27488-LAPTOP-FQ5SKUKF/realtime/KeyboardCtrl_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'KeyboardCtrl_0' [C:/Users/user/verilog501/verilog501.runs/synth_1/.Xil/Vivado-41492-LAPTOP-FQ5SKUKF/realtime/KeyboardCtrl_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'KeyboardCtrl_0' (4#1) [C:/Users/user/verilog501/verilog501.runs/synth_1/.Xil/Vivado-41492-LAPTOP-FQ5SKUKF/realtime/KeyboardCtrl_0_stub.v:6]
 INFO: [Synth 8-226] default block is never used [C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/KeyboardDecoder.v:64]
 INFO: [Synth 8-6155] done synthesizing module 'KeyboardDecoder' (5#1) [C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/KeyboardDecoder.v:1]
 INFO: [Synth 8-6157] synthesizing module 'SevenSegment' [C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/SevenSegment.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'SevenSegment' (6#1) [C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/SevenSegment.v:1]
 WARNING: [Synth 8-6090] variable 'nums' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/lab5.v:172]
 WARNING: [Synth 8-6090] variable 'nums' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/lab5.v:175]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/lab5.v:203]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/lab5.v:277]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/lab5.v:204]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/lab5.v:303]
 WARNING: [Synth 8-6014] Unused sequential element pay_reg was removed.  [C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/lab5.v:192]
+WARNING: [Synth 8-6014] Unused sequential element flash_cnt_reg was removed.  [C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/lab5.v:369]
 WARNING: [Synth 8-5788] Register nums_reg in module Lab5 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/lab5.v:124]
 WARNING: [Synth 8-5788] Register get_item_num_reg in module Lab5 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/lab5.v:163]
 INFO: [Synth 8-6155] done synthesizing module 'Lab5' (7#1) [C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/lab5.v:1]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 851.430 ; gain = 306.797
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 852.016 ; gain = 306.949
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -77,12 +78,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 851.504 ; gain = 306.871
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 852.016 ; gain = 306.949
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 851.504 ; gain = 306.871
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 852.016 ; gain = 306.949
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 851.504 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 852.016 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -99,20 +100,20 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/Lab5_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 972.422 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 951.184 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 972.422 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 951.184 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 972.422 ; gain = 427.789
+Finished Constraint Validation : Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 951.184 ; gain = 406.117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 972.422 ; gain = 427.789
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 951.184 ; gain = 406.117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -123,7 +124,7 @@ Applied set_property IO_BUFFER_TYPE = NONE for PS2_DATA. (constraint file  c:/Us
 Applied set_property CLOCK_BUFFER_TYPE = NONE for PS2_DATA. (constraint file  c:/Users/user/verilog501/verilog501.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc, line 4).
 Applied set_property DONT_TOUCH = true for key_de/inst. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 972.422 ; gain = 427.789
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 951.184 ; gain = 406.117
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'KeyboardDecoder'
 INFO: [Synth 8-802] inferred FSM for state register 'digit_reg' in module 'SevenSegment'
@@ -150,7 +151,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'digit_reg' using encoding 'sequential' in module 'SevenSegment'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 972.422 ; gain = 427.789
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:13 . Memory (MB): peak = 951.184 ; gain = 406.117
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -163,6 +164,7 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input     29 Bit       Adders := 1     
 	   2 Input      8 Bit       Adders := 1     
 	   3 Input      4 Bit       Adders := 3     
 	   2 Input      4 Bit       Adders := 5     
@@ -179,9 +181,9 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 12    
 +---Muxes : 
 	   2 Input    512 Bit        Muxes := 1     
-	   7 Input     16 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 11    
-	   4 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 17    
+	  11 Input     16 Bit        Muxes := 1     
+	   6 Input     16 Bit        Muxes := 1     
 	   4 Input     10 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 2     
 	   5 Input      4 Bit        Muxes := 2     
@@ -192,9 +194,10 @@ Detailed RTL Component Info :
 	   8 Input      3 Bit        Muxes := 1     
 	   4 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 4     
-	   2 Input      1 Bit        Muxes := 28    
+	   2 Input      1 Bit        Muxes := 30    
 	   4 Input      1 Bit        Muxes := 8     
-	   6 Input      1 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 3     
+	   7 Input      1 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -206,6 +209,7 @@ Hierarchical RTL Component report
 Module Lab5 
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input     29 Bit       Adders := 1     
 	   2 Input      8 Bit       Adders := 1     
 	   3 Input      4 Bit       Adders := 3     
 	   2 Input      4 Bit       Adders := 5     
@@ -218,19 +222,20 @@ Detailed RTL Component Info :
 	                3 Bit    Registers := 2     
 	                2 Bit    Registers := 1     
 +---Muxes : 
-	   7 Input     16 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 11    
-	   4 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 17    
+	  11 Input     16 Bit        Muxes := 1     
+	   6 Input     16 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 2     
 	  21 Input      4 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 15    
 	   6 Input      4 Bit        Muxes := 1     
 	   8 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
-	   6 Input      1 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 17    
-	   4 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 19    
+	   7 Input      1 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
 Module debounce 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -278,9 +283,8 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 INFO: [Synth 8-5587] ROM size for "key_num" is below threshold of ROM address width. It will be mapped to LUTs
-INFO: [Synth 8-3886] merging instance 'item_price_reg[0]' (FDCE) to 'item_price_1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'item_price_1_reg[0]' (FDCE) to 'item_price_reg[0]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\side_reg[1] )
-INFO: [Synth 8-3886] merging instance 'nums_reg[8]' (FDCE) to 'nums_reg[10]'
 INFO: [Synth 8-3886] merging instance 'nums_reg[9]' (FDPE) to 'nums_reg[11]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nums_reg[10] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nums_reg[11] )
@@ -291,12 +295,13 @@ INFO: [Synth 8-3886] merging instance 'LED_reg[3]' (FDCE) to 'LED_reg[7]'
 INFO: [Synth 8-3886] merging instance 'LED_reg[4]' (FDCE) to 'LED_reg[7]'
 INFO: [Synth 8-3886] merging instance 'LED_reg[5]' (FDCE) to 'LED_reg[7]'
 INFO: [Synth 8-3886] merging instance 'LED_reg[6]' (FDCE) to 'LED_reg[7]'
-INFO: [Synth 8-3886] merging instance 'LED_reg[8]' (FDCE) to 'LED_reg[14]'
+INFO: [Synth 8-3886] merging instance 'LED_reg[8]' (FDCE) to 'LED_reg[15]'
 INFO: [Synth 8-3886] merging instance 'LED_reg[9]' (FDCE) to 'LED_reg[15]'
-INFO: [Synth 8-3886] merging instance 'LED_reg[10]' (FDCE) to 'LED_reg[14]'
+INFO: [Synth 8-3886] merging instance 'LED_reg[10]' (FDCE) to 'LED_reg[15]'
 INFO: [Synth 8-3886] merging instance 'LED_reg[11]' (FDCE) to 'LED_reg[15]'
-INFO: [Synth 8-3886] merging instance 'LED_reg[12]' (FDCE) to 'LED_reg[14]'
+INFO: [Synth 8-3886] merging instance 'LED_reg[12]' (FDCE) to 'LED_reg[15]'
 INFO: [Synth 8-3886] merging instance 'LED_reg[13]' (FDCE) to 'LED_reg[15]'
+INFO: [Synth 8-3886] merging instance 'LED_reg[14]' (FDCE) to 'LED_reg[15]'
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nums_reg[5]_LDC )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nums_reg[13]_LDC )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nums_reg[1]_LDC )
@@ -317,12 +322,13 @@ WARNING: [Synth 8-3332] Sequential element (nums_reg[1]_LDC) is unused and will 
 WARNING: [Synth 8-3332] Sequential element (nums_reg[1]_C) is unused and will be removed from module Lab5.
 WARNING: [Synth 8-3332] Sequential element (nums_reg[14]_P) is unused and will be removed from module Lab5.
 WARNING: [Synth 8-3332] Sequential element (nums_reg[12]_P) is unused and will be removed from module Lab5.
+WARNING: [Synth 8-3332] Sequential element (nums_reg[8]_P) is unused and will be removed from module Lab5.
 WARNING: [Synth 8-3332] Sequential element (nums_reg[6]_P) is unused and will be removed from module Lab5.
 WARNING: [Synth 8-3332] Sequential element (nums_reg[4]_P) is unused and will be removed from module Lab5.
 WARNING: [Synth 8-3332] Sequential element (nums_reg[2]_P) is unused and will be removed from module Lab5.
 WARNING: [Synth 8-3332] Sequential element (nums_reg[0]_P) is unused and will be removed from module Lab5.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:41 . Memory (MB): peak = 972.422 ; gain = 427.789
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:44 . Memory (MB): peak = 956.344 ; gain = 411.277
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -335,13 +341,13 @@ Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-565] redefining clock 'sys_clk_pin'
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:47 . Memory (MB): peak = 972.422 ; gain = 427.789
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:51 . Memory (MB): peak = 956.344 ; gain = 411.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:54 . Memory (MB): peak = 1115.105 ; gain = 570.473
+Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:01:01 . Memory (MB): peak = 1133.047 ; gain = 587.980
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -353,7 +359,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:54 . Memory (MB): peak = 1117.043 ; gain = 572.410
+Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:01:02 . Memory (MB): peak = 1134.105 ; gain = 589.039
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -377,13 +383,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:58 . Memory (MB): peak = 1117.043 ; gain = 572.410
+Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:01:05 . Memory (MB): peak = 1134.105 ; gain = 589.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:58 . Memory (MB): peak = 1117.043 ; gain = 572.410
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:01:05 . Memory (MB): peak = 1134.105 ; gain = 589.039
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -402,25 +408,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:58 . Memory (MB): peak = 1117.043 ; gain = 572.410
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:01:05 . Memory (MB): peak = 1134.105 ; gain = 589.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:58 . Memory (MB): peak = 1117.043 ; gain = 572.410
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:01:05 . Memory (MB): peak = 1134.105 ; gain = 589.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:58 . Memory (MB): peak = 1117.043 ; gain = 572.410
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:01:05 . Memory (MB): peak = 1134.105 ; gain = 589.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:58 . Memory (MB): peak = 1117.043 ; gain = 572.410
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:01:05 . Memory (MB): peak = 1134.105 ; gain = 589.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -439,16 +445,16 @@ Report Cell Usage:
 +------+---------------+------+
 |1     |KeyboardCtrl_0 |     1|
 |2     |BUFG           |     1|
-|3     |CARRY4         |    31|
-|4     |LUT1           |     3|
-|5     |LUT2           |    45|
-|6     |LUT3           |    69|
-|7     |LUT4           |   599|
-|8     |LUT5           |    93|
-|9     |LUT6           |   271|
-|10    |MUXF7          |    67|
-|11    |MUXF8          |    31|
-|12    |FDCE           |   611|
+|3     |CARRY4         |    46|
+|4     |LUT1           |     4|
+|5     |LUT2           |    80|
+|6     |LUT3           |    82|
+|7     |LUT4           |   617|
+|8     |LUT5           |    97|
+|9     |LUT6           |   299|
+|10    |MUXF7          |    70|
+|11    |MUXF8          |    33|
+|12    |FDCE           |   640|
 |13    |FDPE           |    11|
 |14    |FDRE           |    24|
 |15    |IBUF           |     4|
@@ -459,40 +465,40 @@ Report Instance Areas:
 +------+----------+----------------+------+
 |      |Instance  |Module          |Cells |
 +------+----------+----------------+------+
-|1     |top       |                |  1899|
+|1     |top       |                |  2047|
 |2     |  a1      |debounce        |     6|
-|3     |  a2      |one_pulse       |     4|
+|3     |  a2      |one_pulse       |     6|
 |4     |  b1      |debounce_0      |     6|
-|5     |  b2      |one_pulse_1     |     2|
+|5     |  b2      |one_pulse_1     |     5|
 |6     |  c1      |debounce_2      |     6|
-|7     |  c2      |one_pulse_3     |     8|
-|8     |  key_de  |KeyboardDecoder |  1514|
+|7     |  c2      |one_pulse_3     |    17|
+|8     |  key_de  |KeyboardDecoder |  1504|
 |9     |    op    |one_pulse_4     |     3|
-|10    |  sev_seg |SevenSegment    |    46|
+|10    |  sev_seg |SevenSegment    |    47|
 +------+----------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:58 . Memory (MB): peak = 1117.043 ; gain = 572.410
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:01:05 . Memory (MB): peak = 1134.105 ; gain = 589.039
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:56 . Memory (MB): peak = 1117.043 ; gain = 451.492
-Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:58 . Memory (MB): peak = 1117.043 ; gain = 572.410
+Synthesis finished with 0 errors, 0 critical warnings and 20 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:01:03 . Memory (MB): peak = 1134.105 ; gain = 489.871
+Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:01:06 . Memory (MB): peak = 1134.105 ; gain = 589.039
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1117.043 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 129 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1134.105 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 149 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1117.043 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1134.105 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-65 Infos, 24 Warnings, 0 Critical Warnings and 0 Errors encountered.
+65 Infos, 26 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:13 ; elapsed = 00:01:04 . Memory (MB): peak = 1117.043 ; gain = 817.504
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1117.043 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:11 ; elapsed = 00:01:12 . Memory (MB): peak = 1134.105 ; gain = 836.016
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1134.105 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/user/verilog501/verilog501.runs/synth_1/Lab5.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Lab5_utilization_synth.rpt -pb Lab5_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Oct 28 02:28:19 2023...
+INFO: [Common 17-206] Exiting Vivado at Sat Oct 28 03:18:55 2023...
