@@ -1,0 +1,14 @@
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|              sys_clk_pin |              sys_clk_pin |                                                                                          money_1_reg[3]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                          money_1_reg[2]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                          money_1_reg[1]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                         money_10_reg[1]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                         money_10_reg[0]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            money_reg[4]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            money_reg[3]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                          money_1_reg[0]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                         item_num_reg[2]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                         item_num_reg[1]/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+

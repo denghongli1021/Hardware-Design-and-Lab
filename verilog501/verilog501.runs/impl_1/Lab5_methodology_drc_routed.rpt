@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Fri Oct 27 01:39:42 2023
+| Date         : Sat Oct 28 01:49:18 2023
 | Host         : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command      : report_methodology -file Lab5_methodology_drc_routed.rpt -pb Lab5_methodology_drc_routed.pb -rpx Lab5_methodology_drc_routed.rpx
 | Design       : Lab5
@@ -23,11 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 29
+             Violations found: 65
 +-----------+------------------+------------------------------------------------------+------------+
 | Rule      | Severity         | Description                                          | Violations |
 +-----------+------------------+------------------------------------------------------+------------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell                          | 7          |
+| TIMING-16 | Warning          | Large setup violation                                | 36         |
 | TIMING-18 | Warning          | Missing input or output delay                        | 21         |
 | XDCC-4    | Warning          | User Clock constraint overwritten with the same name | 1          |
 +-----------+------------------+------------------------------------------------------+------------+
@@ -67,6 +68,186 @@ Related violations: <none>
 TIMING-17#7 Critical Warning
 Non-clocked sequential cell  
 The clock pin sev_seg/display_num_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -1.116 ns between key_de/key_reg[1]/C (clocked by sys_clk_pin) and nums_reg[4]_C/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#2 Warning
+Large setup violation  
+There is a large setup violation of -1.321 ns between key_de/key_reg[1]/C (clocked by sys_clk_pin) and item_num_reg[0]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#3 Warning
+Large setup violation  
+There is a large setup violation of -1.321 ns between key_de/key_reg[1]/C (clocked by sys_clk_pin) and item_num_reg[1]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#4 Warning
+Large setup violation  
+There is a large setup violation of -1.321 ns between key_de/key_reg[1]/C (clocked by sys_clk_pin) and item_num_reg[2]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#5 Warning
+Large setup violation  
+There is a large setup violation of -1.321 ns between key_de/key_reg[1]/C (clocked by sys_clk_pin) and item_num_reg[3]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#6 Warning
+Large setup violation  
+There is a large setup violation of -1.936 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and get_item_num_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#7 Warning
+Large setup violation  
+There is a large setup violation of -10.237 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and money_1_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#8 Warning
+Large setup violation  
+There is a large setup violation of -10.396 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and money_reg[7]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#9 Warning
+Large setup violation  
+There is a large setup violation of -10.657 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and money_1_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#10 Warning
+Large setup violation  
+There is a large setup violation of -5.387 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and item_num_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#11 Warning
+Large setup violation  
+There is a large setup violation of -5.530 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and item_num_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#12 Warning
+Large setup violation  
+There is a large setup violation of -5.621 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and item_num_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#13 Warning
+Large setup violation  
+There is a large setup violation of -5.735 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and item_num_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#14 Warning
+Large setup violation  
+There is a large setup violation of -5.847 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and get_item_num_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#15 Warning
+Large setup violation  
+There is a large setup violation of -6.167 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and get_item_num_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#16 Warning
+Large setup violation  
+There is a large setup violation of -6.821 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and pay_1_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#17 Warning
+Large setup violation  
+There is a large setup violation of -7.347 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and money_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#18 Warning
+Large setup violation  
+There is a large setup violation of -7.467 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and money_1_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#19 Warning
+Large setup violation  
+There is a large setup violation of -7.524 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and money_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#20 Warning
+Large setup violation  
+There is a large setup violation of -8.084 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and pay_10_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#21 Warning
+Large setup violation  
+There is a large setup violation of -8.175 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and pay_10_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#22 Warning
+Large setup violation  
+There is a large setup violation of -8.310 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and money_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#23 Warning
+Large setup violation  
+There is a large setup violation of -8.514 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and money_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#24 Warning
+Large setup violation  
+There is a large setup violation of -8.765 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and pay_10_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#25 Warning
+Large setup violation  
+There is a large setup violation of -8.771 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and money_reg[4]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#26 Warning
+Large setup violation  
+There is a large setup violation of -8.882 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and money_reg[5]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#27 Warning
+Large setup violation  
+There is a large setup violation of -9.077 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and pay_1_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#28 Warning
+Large setup violation  
+There is a large setup violation of -9.086 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and pay_10_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#29 Warning
+Large setup violation  
+There is a large setup violation of -9.303 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and money_10_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#30 Warning
+Large setup violation  
+There is a large setup violation of -9.430 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and pay_1_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#31 Warning
+Large setup violation  
+There is a large setup violation of -9.435 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and money_reg[6]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#32 Warning
+Large setup violation  
+There is a large setup violation of -9.437 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and money_10_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#33 Warning
+Large setup violation  
+There is a large setup violation of -9.490 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and pay_1_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#34 Warning
+Large setup violation  
+There is a large setup violation of -9.847 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and money_1_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#35 Warning
+Large setup violation  
+There is a large setup violation of -9.883 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and money_10_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#36 Warning
+Large setup violation  
+There is a large setup violation of -9.929 ns between item_price_reg[3]_replica/C (clocked by sys_clk_pin) and money_10_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-18#1 Warning

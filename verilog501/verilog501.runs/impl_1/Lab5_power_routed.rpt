@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Fri Oct 27 01:39:42 2023
+| Date             : Sat Oct 28 01:49:19 2023
 | Host             : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command          : report_power -file Lab5_power_routed.rpt -pb Lab5_power_summary_routed.pb -rpx Lab5_power_routed.rpx
 | Design           : Lab5
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.098        |
+| Total On-Chip Power (W)  | 0.111        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.026        |
+| Dynamic (W)              | 0.039        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 84.5         |
-| Junction Temperature (C) | 25.5         |
+| Max Ambient (C)          | 84.4         |
+| Junction Temperature (C) | 25.6         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,16 +53,16 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1719 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      839 |     20800 |            4.03 |
-|   Register     |    <0.001 |      708 |     41600 |            1.70 |
-|   CARRY4       |    <0.001 |        8 |      8150 |            0.10 |
-|   Others       |     0.000 |       21 |       --- |             --- |
-|   F7/F8 Muxes  |     0.000 |       66 |     32600 |            0.20 |
-| Signals        |    <0.001 |      967 |       --- |             --- |
-| I/O            |     0.022 |       33 |       106 |           31.13 |
+| Slice Logic    |     0.001 |     2098 |       --- |             --- |
+|   LUT as Logic |     0.001 |     1087 |     20800 |            5.23 |
+|   CARRY4       |    <0.001 |       35 |      8150 |            0.43 |
+|   Register     |    <0.001 |      748 |     41600 |            1.80 |
+|   Others       |     0.000 |       23 |       --- |             --- |
+|   F7/F8 Muxes  |     0.000 |       95 |     32600 |            0.29 |
+| Signals        |     0.002 |     1221 |       --- |             --- |
+| I/O            |     0.033 |       33 |       106 |           31.13 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.098 |          |           |                 |
+| Total          |     0.111 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,9 +72,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.014 |       0.004 |      0.010 |
-| Vccaux    |       1.800 |     0.013 |       0.001 |      0.013 |
-| Vcco33    |       3.300 |     0.007 |       0.006 |      0.001 |
+| Vccint    |       1.000 |     0.016 |       0.006 |      0.010 |
+| Vccaux    |       1.800 |     0.014 |       0.001 |      0.013 |
+| Vcco33    |       3.300 |     0.010 |       0.009 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -141,7 +141,7 @@ Table of Contents
 +----------+-----------+
 | Name     | Power (W) |
 +----------+-----------+
-| Lab5     |     0.026 |
+| Lab5     |     0.039 |
 |   key_de |     0.003 |
 +----------+-----------+
 
