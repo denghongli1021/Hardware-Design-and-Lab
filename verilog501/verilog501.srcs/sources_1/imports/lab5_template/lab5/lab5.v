@@ -258,7 +258,7 @@ always@(posedge clk or posedge btnC2) begin
 						money_10 = money_10 + 4'b0001;
 					end	
 				end
-				4'b0010: begin
+				4'b0010: begin 
 					money_1 = money_1 + 4'b0101;
 					if (money_1 >= 4'b1010) begin
 						money_1 = money_1 - 4'b1010;
