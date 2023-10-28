@@ -203,6 +203,8 @@ always@(posedge clk or posedge btnC2) begin
 		get_item_num = 0;
 		// flash_cnt = 0;
 		// flash_sec = 0;
+		last_last_change = 0;
+		end_key = 0;
 	end
 	else if (state == SET) begin
 		nums = {item_num[3:0] , 4'b1010 , item_price_10 ,item_price_1};
