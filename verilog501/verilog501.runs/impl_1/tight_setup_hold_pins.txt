@@ -3,16 +3,13 @@
 +--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
 |              sys_clk_pin |              sys_clk_pin |                                                                                          money_1_reg[3]/D|
 |              sys_clk_pin |              sys_clk_pin |                                                                                          money_1_reg[2]/D|
-|              sys_clk_pin |              sys_clk_pin |                                                                                         money_10_reg[2]/D|
 |              sys_clk_pin |              sys_clk_pin |                                                                                         money_10_reg[3]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                         money_10_reg[2]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                           nums_reg[5]_P/D|
 |              sys_clk_pin |              sys_clk_pin |                                                                                           nums_reg[7]_P/D|
 |              sys_clk_pin |              sys_clk_pin |                                                                                         money_10_reg[1]/D|
 |              sys_clk_pin |              sys_clk_pin |                                                                                         money_10_reg[0]/D|
-|              sys_clk_pin |              sys_clk_pin |                                                                                            money_reg[4]/D|
-|              sys_clk_pin |              sys_clk_pin |                                                                                            money_reg[3]/D|
-|              sys_clk_pin |              sys_clk_pin |                                                                                          money_1_reg[0]/D|
-|              sys_clk_pin |              sys_clk_pin |                                                                                         item_num_reg[3]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                          nums_reg[12]_C/D|
 |              sys_clk_pin |              sys_clk_pin |                                                                                         item_num_reg[0]/D|
 |              sys_clk_pin |              sys_clk_pin |                                                                                         item_num_reg[1]/D|
-|              sys_clk_pin |              sys_clk_pin |                                                                                          nums_reg[13]_P/D|
 +--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+

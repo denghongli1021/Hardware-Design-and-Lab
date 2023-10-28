@@ -1,5 +1,5 @@
 module KeyboardDecoder(
-	output reg [511:0] key_down,
+	output reg [127:0] key_down,
 	output wire [8:0] last_change,
 	output reg key_valid,
 	inout wire PS2_DATA,

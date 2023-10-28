@@ -82,7 +82,7 @@ parameter PAYMENT =  3'b010;
 parameter BUY  = 3'b011;
 parameter CHANGE = 3'b100; 
 
-wire [511:0] key_down;
+wire [127:0] key_down;
 wire [8:0] last_change;
 wire been_ready;
 reg [3:0] key_num;
@@ -99,13 +99,53 @@ reg [7:0] pay_1 = 0;
 reg [7:0] pay = 0;
 reg [2:0] flash_cnt = 0;
 reg [28:0] flash_sec = 0;
-// Integer_Divider i1(
-//     .A(money),
-//     .B(item_price),
-// 	.clk(clk),
-// 	.rst(btnC2),
-//     .Quotient(get_item_num)
-// );
+reg [1:0] end_key = 0;
+// reg [8:0] a_change = 0;
+// reg [8:0] b_change = 0;
+reg [8:0] last_last_change = 0;
+
+// always @(posedge clk) begin
+// 	if (btnC2) begin
+// 		not_released = 0;
+// 		a_change = 0;
+// 		b_change = 0;
+// 	end
+// 	// else 
+// 	// if (state == IDLE) begin
+// 	// 	a_change = 0;
+// 	// 	b_change = 0;
+// 	// 	not_released = 0;
+// 	// end
+// 	// else 
+// 	// if (been_ready && key_down[last_change] == 1'b1 && a_change == 0) begin
+// 	// 	a_change = last_change;
+// 	// end
+// 	// else if (been_ready && key_down[last_change] == 1'b1 && b_change == 0 && a_change != last_change) begin
+// 	// 	b_change = last_change;
+// 	// end
+// 	// else if (been_ready && key_down[a_change] == 1'b0 && key_down[b_change] == 1'b0) begin
+// 	// 	a_change = 0;
+// 	// 	b_change = 0;
+// 	// end
+// 	// else if (been_ready && key_down[a_change] == 1'b0) begin
+// 	// 	a_change = last_change;
+// 	// 	b_change = 0;
+// 	// end
+// 	// if (a_change != b_change ) begin
+// 	// 	not_released = 1;
+// 	// end 
+// 	// else if (b_change == 0) begin
+// 	// 	not_released = 0;
+// 	// end
+// 	else if (been_ready && key_down[last_change] == 1'b1 && !not_released) begin
+// 		a_change = last_change;
+// 		not_released = 1;
+// 	end
+// 	else if (been_ready && key_down[a_change] == 0) begin
+// 		not_released = 0;
+// 	end
+// end
+
 KeyboardDecoder key_de (
 	.key_down(key_down),
 	.last_change(last_change),
@@ -166,8 +206,8 @@ always@(posedge clk or posedge btnC2) begin
 	end
 	else if (state == SET) begin
 		nums = {item_num[3:0] , 4'b1010 , item_price_10 ,item_price_1};
-		if (been_ready && key_down[last_change] == 1'b1) begin
-			if (key_num != 4'b1111)begin
+		if (been_ready && key_down[last_change] == 1'b1 && !end_key) begin // &!not_released
+			if (key_num != 4'b1111)begin // && key_down[last_last_change] == 1'b0
 				if (side == 1'b0) begin
 					nums <= {key_num , nums[11:0] };
 					item_num = key_num;				
@@ -178,13 +218,18 @@ always@(posedge clk or posedge btnC2) begin
 					item_price = item_price_1 + item_price_10 * 10;
 				end
 			end
+			end_key = 1;
+			last_last_change = last_change;
+		end
+		else if (been_ready && key_down[last_last_change] == 1'b0) begin
+			end_key = 0;
 		end
 	end
 	else if (state == PAYMENT && next_state == BUY) begin
 		get_item_num = money / item_price;
 		if (get_item_num >= item_num) begin
 			get_item_num = item_num;
-			item_num = 4'b0000;
+			item_num = item_num - get_item_num;
 		end
 		else begin
 			item_num = item_num - get_item_num;
@@ -199,7 +244,7 @@ always@(posedge clk or posedge btnC2) begin
 	end
 	else if (state == PAYMENT) begin
 		nums = {4'b1010 , 4'b1010 , money_10[3:0] ,money_1[3:0]};
-		if (been_ready && key_down[last_change] == 1'b1) begin
+		if (been_ready && key_down[last_change] == 1'b1 && !end_key) begin // &!not_released
 			if (key_num != 4'b1111)begin
 				case (key_num) 
 				4'b0000: begin
@@ -235,6 +280,11 @@ always@(posedge clk or posedge btnC2) begin
 				end
 				nums = {4'b1010 , 4'b1010 , money_10[3:0] ,money_1[3:0]};
 			end
+			end_key = 1;
+			last_last_change = last_change;
+		end
+		else if (been_ready && key_down[last_last_change] == 1'b0) begin
+			end_key = 0;
 		end
 		// if (been_ready && key_down[LEFT_ENTER] == 1'b1 || next_state == BUY || next_state == CHANGE) begin
 		// 	led = 16'b1111_1111_1111_1111;
@@ -320,9 +370,7 @@ always@(posedge clk or posedge btnC2) begin
 				LED = 16'b0000_0000_0000_0000;
 			end
 		end
-		BUY : begin
-			//LED = 16'b1111_1111_1111_1111;
-			
+		BUY : begin			
 			if (flash_sec== 0) begin
 				LED = 16'b1111_1111_1111_1111;
 				// flash_cnt = flash_cnt + 1;
@@ -343,9 +391,6 @@ always@(posedge clk or posedge btnC2) begin
 			else if (flash_sec == 250000000) begin
 				LED = 16'b0000_0000_0000_0000;
 			end
-			// else if (flash_sec == 300000000) begin
-			// 	LED = 16'b1111_1111_1111_1111;
-			// end
 		end
 		CHANGE : begin
 			LED = 16'b1111_1111_1111_1111;
@@ -399,9 +444,6 @@ always @(posedge clk or posedge btnC2) begin
 			end
 		end
 		BUY : begin
-			// if (been_ready && key_down[LEFT_ENTER] == 1'b1) begin
-			// 	next_state = CHANGE;
-			// end
 			flash_sec = flash_sec + 1;
 			if (flash_sec == 300000000) begin
 				next_state = CHANGE;
@@ -410,9 +452,6 @@ always @(posedge clk or posedge btnC2) begin
 		end
 		CHANGE : begin
 			flash_sec = flash_sec + 1;
-			// if (been_ready && key_down[LEFT_ENTER] == 1'b1) begin
-			// 	next_state = IDLE;
-			// end
 			if (flash_sec == 300000000) begin
 				next_state = IDLE;
 				flash_sec = 0;
