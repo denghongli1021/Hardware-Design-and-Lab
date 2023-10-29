@@ -34,8 +34,6 @@ update_ip_catalog
 set_property ip_output_repo c:/Users/user/verilog501/verilog501.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/KeyboardDecoder.v
-  C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/SevenSegment.v
   C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/clock_divider.v
   C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/debounce.v
   C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/one_pulse.v
