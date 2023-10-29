@@ -155,6 +155,12 @@ always@(posedge clk or posedge btnC2) begin
 		// flash_sec = 0;
 		last_last_change = 0;
 		end_key = 0;
+		money = 0;
+		money_1 = 0;
+		money_10 = 0;
+		pay_1 = 0;
+		pay_10 = 0;
+		pay = 0;
 	end
 	else if (state == SET) begin
 		nums = {item_num[3:0] , 4'b1010 , item_price_10 ,item_price_1};
