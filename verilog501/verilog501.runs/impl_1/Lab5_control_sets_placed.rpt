@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Sun Oct 29 21:03:04 2023
+| Date         : Mon Oct 30 00:09:43 2023
 | Host         : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Lab5_control_sets_placed.rpt
 | Design       : Lab5
@@ -59,37 +59,37 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |              22 |            8 |
-| No           | No                    | Yes                    |              92 |           30 |
+| No           | No                    | Yes                    |              92 |           31 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |               4 |            4 |
-| Yes          | No                    | Yes                    |             270 |          106 |
-| Yes          | Yes                   | No                     |               7 |            2 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |             270 |          110 |
+| Yes          | Yes                   | No                     |              11 |            3 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+------------------------------+---------------------------------------------------+-------------------+------------------+----------------+
-|         Clock Signal         |                   Enable Signal                   |  Set/Reset Signal | Slice Load Count | Bel Load Count |
-+------------------------------+---------------------------------------------------+-------------------+------------------+----------------+
-|  clk_IBUF_BUFG               | c2/E[0]                                           |                   |                4 |              4 |
-|  clk_IBUF_BUFG               | key_de/inst/inst/Ps2Interface_i/bits_count        | c2/btnC2          |                2 |              4 |
-|  clk_IBUF_BUFG               | key_de/side_reg[0][0]                             | c2/btnC2          |                3 |              4 |
-|  clk_IBUF_BUFG               | key_de/last_last_change                           | c2/state_reg[0]_0 |                2 |              7 |
-|  sev_seg/clk_divider_reg[15] |                                                   | c2/btnC2          |                3 |              7 |
-|  clk_IBUF_BUFG               | pay_10                                            | c2/btnC2          |                4 |              8 |
-|  clk_IBUF_BUFG               | key_de/inst/inst/Ps2Interface_i/rx_valid          | c2/btnC2          |                1 |              8 |
-|  clk_IBUF_BUFG               | key_de/inst/inst/Ps2Interface_i/rx_finish         | c2/btnC2          |                2 |              8 |
-|  clk_IBUF_BUFG               | key_de/key                                        | c2/btnC2          |                3 |             10 |
-|  clk_IBUF_BUFG               | key_de/inst/inst/Ps2Interface_i/frame[10]_i_1_n_0 | c2/btnC2          |                2 |             11 |
-|  clk_IBUF_BUFG               | key_de/side_reg[0]_0[0]                           | c2/btnC2          |                9 |             15 |
-|  clk_IBUF_BUFG               | key_de/E[0]                                       | c2/btnC2          |                9 |             16 |
-|  clk_IBUF_BUFG               |                                                   |                   |                8 |             22 |
-|  clk_IBUF_BUFG               | LED[15]_i_1_n_0                                   | c2/btnC2          |               16 |             29 |
-|  clk_IBUF_BUFG               | flash_sec[0]_i_1_n_0                              | c2/btnC2          |                8 |             29 |
-|  clk_IBUF_BUFG               |                                                   | c2/btnC2          |               27 |             85 |
-|  clk_IBUF_BUFG               | key_de/op/E[0]                                    | c2/btnC2          |               47 |            128 |
-+------------------------------+---------------------------------------------------+-------------------+------------------+----------------+
++------------------------------+---------------------------------------------------+------------------+------------------+----------------+
+|         Clock Signal         |                   Enable Signal                   | Set/Reset Signal | Slice Load Count | Bel Load Count |
++------------------------------+---------------------------------------------------+------------------+------------------+----------------+
+|  clk_IBUF_BUFG               | key_de/inst/inst/Ps2Interface_i/bits_count        | c2/btnC2         |                2 |              4 |
+|  clk_IBUF_BUFG               | key_de/side_reg[0]_0[0]                           | c2/btnC2         |                4 |              4 |
+|  clk_IBUF_BUFG               | c2/pb_out_reg_2                                   | c2/state_reg[2]  |                1 |              4 |
+|  sev_seg/clk_divider_reg[15] |                                                   | c2/btnC2         |                3 |              7 |
+|  clk_IBUF_BUFG               | c2/last_last_change                               | c2/pb_out_reg_4  |                2 |              7 |
+|  clk_IBUF_BUFG               | key_de/inst/inst/Ps2Interface_i/rx_finish         | c2/btnC2         |                3 |              8 |
+|  clk_IBUF_BUFG               | key_de/inst/inst/Ps2Interface_i/rx_valid          | c2/btnC2         |                2 |              8 |
+|  clk_IBUF_BUFG               | pay_10                                            | c2/btnC2         |                5 |              8 |
+|  clk_IBUF_BUFG               | key_de/key                                        | c2/btnC2         |                4 |             10 |
+|  clk_IBUF_BUFG               | key_de/inst/inst/Ps2Interface_i/frame[10]_i_1_n_0 | c2/btnC2         |                2 |             11 |
+|  clk_IBUF_BUFG               | key_de/side_reg[0][0]                             | c2/btnC2         |                9 |             15 |
+|  clk_IBUF_BUFG               | key_de/E[0]                                       | c2/btnC2         |                9 |             16 |
+|  clk_IBUF_BUFG               |                                                   |                  |                8 |             22 |
+|  clk_IBUF_BUFG               | LED[15]_i_1_n_0                                   | c2/btnC2         |               15 |             29 |
+|  clk_IBUF_BUFG               | flash_sec[0]_i_1_n_0                              | c2/btnC2         |                8 |             29 |
+|  clk_IBUF_BUFG               |                                                   | c2/btnC2         |               28 |             85 |
+|  clk_IBUF_BUFG               | key_de/op/E[0]                                    | c2/btnC2         |               47 |            128 |
++------------------------------+---------------------------------------------------+------------------+------------------+----------------+
 
 

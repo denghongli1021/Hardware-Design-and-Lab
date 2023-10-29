@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1698584473">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1698595670">
   <File Type="BITSTR-BMM" Name="Lab5_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="Lab5_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="Lab5_timing_summary_init.rpt"/>
@@ -113,6 +113,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/Lab5_q2.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/lab5_gt.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
@@ -136,14 +144,6 @@
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/KeyboardDecoder.v"/>
         <Attr Name="ImportTime" Val="1697898584"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/Lab5_q2.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

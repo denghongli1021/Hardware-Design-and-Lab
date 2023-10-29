@@ -138,7 +138,6 @@ end
 always@(posedge clk or posedge btnC2) begin
 	if (btnC2) begin
 		nums = 16'b1010_1010_1010_1010;
-		// temp_nums = 16'b1111_1111_1111_1111;
 		item_num = 9;
 		item_price = 8'b0000_1010;
 		item_price_10 = 1;
@@ -191,8 +190,8 @@ always@(posedge clk or posedge btnC2) begin
 		money = money - pay;
 		pay_10 = pay / 4'b1010;
 		pay_1 = pay - pay_10 * 4'b1010;
-		money_10 = money_10 - pay_10;
-		money_1 = money_1 - pay_1;
+		money_10 = money/10;
+		money_1 = money%10;
 		nums = {get_item_num[3:0] , 4'b1010 ,pay_10[3:0] ,pay_1[3:0]} ;
 	end
 	else if (state == PAYMENT) begin
@@ -243,8 +242,6 @@ always@(posedge clk or posedge btnC2) begin
 	else if (state == BUY) begin
 		if (flash_sec== 0) begin
 			nums = {get_item_num[3:0] , 4'b1010 ,pay_10[3:0] ,pay_1[3:0]} ;
-				// flash_cnt = flash_cnt + 1;
-				// flash_sec = 0;
 		end
 		else if (flash_sec == 50000000) begin
 			nums = {4'b1011 ,4'b1011 ,4'b1011 ,4'b1011};
@@ -321,8 +318,6 @@ always@(posedge clk or posedge btnC2) begin
 		BUY : begin			
 			if (flash_sec== 0) begin
 				LED = 16'b1111_1111_1111_1111;
-				// flash_cnt = flash_cnt + 1;
-				// flash_sec = 0;
 			end
 			else if (flash_sec == 50000000) begin
 				LED = 16'b0000_0000_0000_0000;
