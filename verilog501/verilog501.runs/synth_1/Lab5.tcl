@@ -34,11 +34,18 @@ update_ip_catalog
 set_property ip_output_repo c:/Users/user/verilog501/verilog501.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
+  C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/SevenSegment.v
+  C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/lab5.v
+  C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/KeyboardDecoder.v
+  C:/Users/user/verilog501/verilog501.srcs/sources_1/new/Lab5_q2.v
   C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/clock_divider.v
   C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/debounce.v
+  C:/Users/user/verilog501/verilog501.srcs/sources_1/new/lab5_gt.v
   C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/one_pulse.v
-  C:/Users/user/verilog501/verilog501.srcs/sources_1/imports/lab5_template/lab5/lab5.v
 }
+add_files C:/Users/user/verilog501/verilog501.srcs/sources_1/bd/design_1/design_1.bd
+set_property used_in_implementation false [get_files -all C:/Users/user/verilog501/verilog501.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
+
 read_ip -quiet C:/Users/user/verilog501/verilog501.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
 
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -55,6 +62,8 @@ set_property used_in_implementation false [get_files C:/Users/user/verilog501/ve
 read_xdc C:/Users/user/verilog501/verilog501.srcs/constrs_1/imports/lab5_template/lab5/Basys3_Constraints.xdc
 set_property used_in_implementation false [get_files C:/Users/user/verilog501/verilog501.srcs/constrs_1/imports/lab5_template/lab5/Basys3_Constraints.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 

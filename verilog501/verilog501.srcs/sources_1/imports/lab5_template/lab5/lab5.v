@@ -74,20 +74,20 @@ clock_divider #(27) clk_d (
 	.clk(clk),
     .clk_div(clk_div)
 );
-reg [2:0] state;
-reg [2:0] next_state;
 parameter IDLE = 3'b000;
 parameter SET = 3'b001;
 parameter PAYMENT =  3'b010;
 parameter BUY  = 3'b011;
 parameter CHANGE = 3'b100; 
+reg [2:0] state = IDLE;
+reg [2:0] next_state = IDLE;
 // keyboard
 wire [127:0] key_down;
 wire [8:0] last_change;
 wire been_ready;
 reg [3:0] key_num;
 // state 要用的
-reg [3:0] get_item_num;
+reg [3:0] get_item_num = 0;
 reg [3:0] item_num = 4'd9;
 reg [3:0] item_price_10 = 1;
 reg [3:0] item_price_1 = 0 ;
@@ -101,7 +101,7 @@ reg [7:0] pay = 0;
 reg [2:0] flash_cnt = 0;
 reg [28:0] flash_sec = 0;
 // note 2
-reg [1:0] end_key = 0;
+reg [1:0] end_key = 1;
 reg [8:0] last_last_change = 0;
 KeyboardDecoder key_de (
 	.key_down(key_down),
@@ -124,13 +124,19 @@ SevenSegment sev_seg (
 );
 reg [1:0] side = 0; // 0 for left 1 for right 
 // side
+reg [1:0] release_space = 1;
 always@(posedge clk or posedge btnC2) begin
 	if (btnC2) begin
 		side = 0;
+		release_space = 1;
 	end
 	else if (state == SET) begin // 測看看 side會不會動
-		if (been_ready && key_down[SPACE] == 1'b1) begin
+		if (been_ready && key_down[SPACE] == 1'b1 && release_space) begin
 			side = side ^ 1;
+			release_space = 0;
+		end
+		else if (been_ready && key_down[SPACE] == 1'b0) begin
+			release_space = 1;
 		end
 	end
 end
@@ -154,7 +160,7 @@ always@(posedge clk or posedge btnC2) begin
 		// flash_cnt = 0;
 		// flash_sec = 0;
 		last_last_change = 0;
-		end_key = 0;
+		end_key = 1;
 		money = 0;
 		money_1 = 0;
 		money_10 = 0;
@@ -164,7 +170,7 @@ always@(posedge clk or posedge btnC2) begin
 	end
 	else if (state == SET) begin
 		nums = {item_num[3:0] , 4'b1010 , item_price_10 ,item_price_1};
-		if (been_ready && key_down[last_change] == 1'b1 && !end_key) begin // &!not_released
+		if (been_ready && key_down[last_change] == 1'b1 && end_key == 1) begin // &!not_released
 			if (key_num != 4'b1111)begin // && key_down[last_last_change] == 1'b0
 				if (side == 1'b0) begin
 					nums <= {key_num , nums[11:0] };
@@ -176,16 +182,16 @@ always@(posedge clk or posedge btnC2) begin
 					item_price = item_price_1 + item_price_10 * 10;
 				end
 			end
-			end_key = 1;
+			end_key = 0;
 			last_last_change = last_change;
 		end
-		else if (key_down[last_last_change] == 1'b0) begin
-			end_key = 0;
+		else if (been_ready && key_down[last_last_change] == 1'b0) begin
+			end_key = 1;
 		end
 	end
 	else if (state == PAYMENT && next_state == BUY) begin
 		get_item_num = money / item_price;
-		if (get_item_num >= item_num) begin
+		if (get_item_num >= item_num || money / item_price >= 4'b1010) begin
 			get_item_num = item_num;
 			item_num = item_num - get_item_num;
 		end
@@ -202,7 +208,7 @@ always@(posedge clk or posedge btnC2) begin
 	end
 	else if (state == PAYMENT) begin
 		nums = {4'b1010 , 4'b1010 , money_10[3:0] ,money_1[3:0]};
-		if (been_ready && key_down[last_change] == 1'b1 && !end_key) begin // &!not_released
+		if (been_ready && key_down[last_change] == 1'b1 && end_key == 1) begin // &!not_released
 			if (key_num != 4'b1111)begin
 				case (key_num) 
 				4'b0000: begin
@@ -238,11 +244,11 @@ always@(posedge clk or posedge btnC2) begin
 				end
 				nums = {4'b1010 , 4'b1010 , money_10[3:0] ,money_1[3:0]};
 			end
-			end_key = 1;
+			end_key = 0;
 			last_last_change = last_change;
 		end
 		else if (been_ready && key_down[last_last_change] == 1'b0) begin
-			end_key = 0;
+			end_key = 1;
 		end
 	end
 	else if (state == BUY) begin
@@ -476,7 +482,7 @@ module KeyboardDecoder(
     wire valid;
     wire err;
     
-    wire [511:0] key_decode = 1 << last_change;
+    wire [127:0] key_decode = 1 << last_change;
     assign last_change = {key[9], key[7:0]};
     
     KeyboardCtrl_0 inst (
@@ -558,12 +564,12 @@ module KeyboardDecoder(
     always @ (posedge clk, posedge rst) begin
     	if (rst) begin
     		key_valid <= 1'b0;
-    		key_down <= 511'b0;
+    		key_down <= 127'b0;
     	end else if (key_decode[last_change] && pulse_been_ready) begin
     		key_valid <= 1'b1;
-    		if (key[8] == 0) begin
+    		if (key[8] == 0) begin // key pressed
     			key_down <= key_down | key_decode;
-    		end else begin
+    		end else begin // key released
     			key_down <= key_down & (~key_decode);
     		end
     	end else begin
@@ -640,3 +646,4 @@ module SevenSegment(
     end
     
 endmodule
+

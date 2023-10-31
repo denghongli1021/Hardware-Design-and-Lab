@@ -38,9 +38,9 @@ module Lab5_gt(
   reg [3:0] key_num;
   reg [9:0] last_key;
   
-  // wire shift_down;
   wire [511:0] key_down;
   wire [8:0] last_change;
+  reg [8:0] last_change2;
   wire been_ready;
 
   parameter IDLE = 0, SET = 1, PAYMENT = 2, BUY = 3, CHANGE = 4;
@@ -49,7 +49,10 @@ module Lab5_gt(
   reg [5:0] cnt;
   reg [3:0] items = 4'b1001, pitems = 0;
   reg [7:0] price = 8'b0001_0000, money = 0, pmoney = 0;
-  reg [6:0] price2 = 10, money2 = 0, pmoney2;
+  reg [7:0] price2 = 10, money2 = 0, pmoney2;
+  reg [7:0] p10, p01;
+  reg [7:0] m10, m01;
+  reg pushed;
   // purchased item, money;
   reg LR; // SET state, L = 0, R = 1
   wire btnL2, btnR2, btnL3, btnR3;
@@ -123,7 +126,7 @@ module Lab5_gt(
           // money >= price, next_state = BUY;
           // money < price, next_state = CHANGE;
           if (been_ready && key_down[ENTER]) begin
-            if (money >= price) next_state = BUY;
+            if (money2 >= price2) next_state = BUY;
             else next_state = CHANGE;
           end
         end
@@ -149,87 +152,102 @@ module Lab5_gt(
   // items & price & money
   always @(posedge clk, posedge rst) begin
     if (rst) begin
-      items <= 4'b1001;
-      price <= 8'b0001_0000;
-      money <= 0;
-      price2 <= 10;
-      money2 <= 0;
-      pitems <= 0;
-      pmoney <= 0;
-      pmoney2 <= 0;
+      items = 4'b1001;
+      price = 8'b0001_0000;
+      money = 0;
+      price2 = 10;
+      money2 = 0;
+      pitems = 0;
+      pmoney = 0;
+      pmoney2 = 0;
+      p10 = 0;
+      p01 = 0;
+      pushed = 0;
+      last_change2 = 0;
     end
     else begin
-      items <= items;
-      price <= price;
-      money <= money;
-      price2 <= price2;
-      money2 <= money2;
-      pitems <= pitems;
-      pmoney <= pmoney;
-      pmoney2 <= pmoney2;
-      if (been_ready && key_down[last_change]) begin
-        if (key_num != 4'b1111) begin
-          if (state == SET) begin
-            if (!LR) items <= key_num;
+      if (state == IDLE) begin
+        items = items;
+        money = 0;
+        money2 = 0;
+        pitems = 0;
+        pmoney = 0;
+        pmoney2 = 0;
+        p10 = 0;
+        p01 = 0;
+        pushed = 0;
+        last_change2 = 0;
+      end
+      else if (state == SET) begin
+        if (been_ready && key_down[last_change] && !pushed) begin
+          if (key_num != 4'b1111) begin
+            if (!LR) items = key_num;
             else begin
-              price <= {price[3:0], key_num};
-              price2 <= (price2 / 10) * 10 + key_num;
+              price = {price[3:0], key_num};
+              price2 = price[7:4] * 10 + price[3:0];
             end
           end
-          else if (state == PAYMENT) begin
-            money <= money;
-            if (!key_num) money <= 0;
+            pushed = 1;
+            last_change2 = last_change;
+        end
+        else if (been_ready & !key_down[last_change2]) pushed = 0;
+      end
+      else if (state == PAYMENT && next_state == BUY) begin
+        pitems = money2 / price2;
+        if (pitems > items) pitems = items;
+        items = items - pitems;
+        pmoney2 = price2 * pitems;
+        // pmoney[7:4] = pmoney2 / 10;
+        // pmoney[3:0] = pmoney2 % 10;
+        p10 = pmoney2 / 10;
+        p01 = pmoney2 - p10 * 10;
+        pmoney = {p10[3:0], p01[3:0]};
+        money2 = money2 - pmoney2;
+        m10 = money2 / 10;
+        m01 = money2 % 10;
+        money = {m10[3:0], m01[3:0]};
+      end
+      else if (state == PAYMENT) begin
+        if (been_ready && key_down[last_change] && !pushed) begin
+          if (key_num != 4'b1111) begin
+            if (!key_num) money = 0;
             else if (money != 8'b1001_1001) begin
               case (key_num)
                 1: begin // +1
-                  if (money[3:0] == 4'b1001) money <= {money[7:4] + 1, 4'b0000};
-                  else money <= money + 1;
-                  if (money2 + 1 <= 99) money2 <= money2 + 1;
-                  else money2 <= 99;
+                  if (money[3:0] == 4'b1001) money = {money[7:4] + 1, 4'b0000};
+                  else money = money + 1;
                 end
                 2: begin // +5
                   if (money[3:0] >= 5) begin
-                    if (money[7:4] == 9) money <= 8'b1001_1001;
+                    if (money[7:4] == 9) money = 8'b1001_1001;
                     else begin
                       // money <= {money[7:4] + 1, money[3:0] - 5};
-                      money[7:4] <= money[7:4] + 1;
-                      money[3:0] <= money[3:0] - 5;
+                      money[7:4] = money[7:4] + 1;
+                      money[3:0] = money[3:0] - 5;
                     end 
                   end
-                  else money <= money + 5;
-                  if (money2 + 5 <= 99) money2 <= money2 + 5;
-                  else money2 <= 99;
+                  else money = money + 5;
                 end
                 3: begin // +10
-                  if (money[7:4] == 9) money <= 8'b1001_1001;
-                  else money[7:4] <= money[7:4] + 1;
-                  if (money2 + 10 <= 99) money2 <= money2 + 10;
-                  else money2 <= 99;
+                  if (money[7:4] == 9) money = 8'b1001_1001;
+                  else money[7:4] = money[7:4] + 1;
                 end
                 4: begin // +50
-                  if (money[7:4] >= 5) money <= 8'b1001_1001;
-                  else money[7:4] <= money[7:4] + 5;
-                  if (money2 + 50 <= 99) money2 <= money2 + 50;
+                  if (money[7:4] >= 5) money = 8'b1001_1001;
+                  else money[7:4] = money[7:4] + 5;
                 end
               endcase
+              money2 = money[7:4] * 10 + money[3:0];
             end
           end
+          pushed = 1;
+          last_change2 = last_change;
         end
-      end
-      else if (state == BUY) begin
-        if (money2 >= price2 * items) begin
-          pitems <= items;
-          pmoney2 <= price2 * items;
-          pmoney <= ((price2 * items / 10) << 4) + price2 * items % 10;
-        end
-        else begin
-          pitems <= money2 / price2;
-          pmoney2 <= money2 / price2 * items;
-          pmoney <= ((money2 / price2 * items / 10) << 4) + money2 / price2 * items % 10;
-        end
+        else if (been_ready && !key_down[last_change2]) pushed = 0;
       end
     end
   end
+
   // nums on 7-seg
   always @(posedge clk, posedge rst) begin
     if (rst) nums <= 0;
@@ -239,6 +257,7 @@ module Lab5_gt(
       else if (state == SET) nums <= {items, 4'b1010, price};
       else if (state == PAYMENT) nums <= {8'b1010_1010, money};
       else if (state == BUY) nums <= {pitems, 4'b1010, pmoney};
+      else if (state == CHANGE) nums <= {pitems, 4'b1010, money};
     end
   end
   always @(*) begin

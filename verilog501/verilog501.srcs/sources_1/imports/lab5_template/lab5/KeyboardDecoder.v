@@ -86,6 +86,21 @@ module KeyboardDecoder(
 						key <= {been_extend, been_break, key_in};
 						been_ready  <= 1'b1;
     				end
+				// GET_SIGNAL_DOWN : begin
+				// 		// Only process if we haven't been ready (first time after key press)
+				// 		if (!been_ready) begin
+				// 			key <= {been_extend, been_break, key_in};
+				// 			been_ready <= 1'b1;
+				// 		end
+				// 		// Add logic to detect key release and transition back to WAIT_RELEASE
+				// 		else if (valid == 0) begin
+				// 			state <= WAIT_RELEASE;
+				// 		end
+				// 		// Add logic to ignore additional key presses while still in this state
+				// 		else if (valid == 1) begin
+				// 			been_ready <= 1'b1;
+				// 		end
+				// 	end
     			WAIT_RELEASE : begin
     					if (valid == 1) begin
     						state <= WAIT_RELEASE;

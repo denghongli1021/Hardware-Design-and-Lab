@@ -77,10 +77,17 @@ set rc [catch {
   set_property ip_output_repo C:/Users/user/verilog501/verilog501.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   add_files -quiet C:/Users/user/verilog501/verilog501.runs/synth_1/Lab5.dcp
+  set_msg_config -source 4 -id {BD 41-1661} -limit 0
+  set_param project.isImplRun true
+  add_files C:/Users/user/verilog501/verilog501.srcs/sources_1/bd/design_1/design_1.bd
   read_ip -quiet C:/Users/user/verilog501/verilog501.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
+  set_param project.isImplRun false
   read_xdc C:/Users/user/verilog501/verilog501.srcs/constrs_1/imports/lab5_template/keyboard_sample/KeyboardConstraints.xdc
   read_xdc C:/Users/user/verilog501/verilog501.srcs/constrs_1/imports/lab5_template/lab5/Basys3_Constraints.xdc
+  set_param project.isImplRun true
   link_design -top Lab5 -part xc7a35tcpg236-1
+  set_param project.isImplRun false
+  write_hwdef -force -file Lab5.hwdef
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
