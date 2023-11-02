@@ -158,6 +158,9 @@ proc create_root_design { parentCell } {
 
   # Create ports
 
+  # Create instance: KeyboardCtrl_0, and set properties
+  set KeyboardCtrl_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:KeyboardCtrl:1.0 KeyboardCtrl_0 ]
+
   # Create port connections
 
   # Create address segments

@@ -40,8 +40,9 @@ module SampleDisplay(
 	wire shift_down;
 	wire [511:0] key_down;
 	wire [8:0] last_change;
+	reg [8:0] last_last_change;
 	wire been_ready;
-	
+	reg [1:0] end_key = 0;
 	assign shift_down = (key_down[LEFT_SHIFT_CODES] == 1'b1 || key_down[RIGHT_SHIFT_CODES] == 1'b1) ? 1'b1 : 1'b0;
 	
 	SevenSegment seven_seg (
@@ -67,7 +68,7 @@ module SampleDisplay(
 			nums <= 16'b0;
 		end else begin
 			nums <= nums;
-			if (been_ready && key_down[last_change] == 1'b1) begin
+			if (been_ready && key_down[last_change] == 1'b1 && !end_key) begin
 				if (key_num != 4'b1111)begin
 					if (shift_down == 1'b1) begin
 						nums <= {key_num, nums[15:4]};
@@ -75,6 +76,11 @@ module SampleDisplay(
 						nums <= {nums[11:0], key_num};
 					end
 				end
+				last_last_change = last_change;
+				end_key = 1;
+			end
+			else if (been_ready && key_down[last_last_change] == 1'b0) begin
+				end_key = 0;
 			end
 		end
 	end

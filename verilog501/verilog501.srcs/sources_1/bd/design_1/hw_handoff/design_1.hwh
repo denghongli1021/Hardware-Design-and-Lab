@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Oct 31 20:32:55 2023" VIVADOVERSION="2019.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Nov  2 23:59:52 2023" VIVADOVERSION="2019.2">
 
   <SYSTEMINFO ARCH="artix7" DEVICE="7a35t" NAME="design_1" PACKAGE="cpg236" SPEEDGRADE="-1"/>
 
@@ -7,6 +7,27 @@
 
   <EXTERNALINTERFACES/>
 
-  <MODULES/>
+  <MODULES>
+    <MODULE COREREVISION="2" FULLNAME="/KeyboardCtrl_0" HWVERSION="1.0" INSTANCE="KeyboardCtrl_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="KeyboardCtrl" VLNV="xilinx.com:user:KeyboardCtrl:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="SYSCLK_FREQUENCY_HZ" VALUE="100000000"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_KeyboardCtrl_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="7" NAME="key_in" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" NAME="is_extend" SIGIS="undef"/>
+        <PORT DIR="O" NAME="is_break" SIGIS="undef"/>
+        <PORT DIR="O" NAME="valid" SIGIS="undef"/>
+        <PORT DIR="O" NAME="err" SIGIS="undef"/>
+        <PORT DIR="IO" NAME="PS2_DATA" SIGIS="undef"/>
+        <PORT DIR="IO" NAME="PS2_CLK" SIGIS="undef"/>
+        <PORT DIR="I" NAME="rst" SIGIS="undef"/>
+        <PORT DIR="I" NAME="clk" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
 
 </EDKSYSTEM>

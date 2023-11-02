@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Wed Oct 25 18:52:59 2023
-# Process ID: 50512
+# Start of session at: Sat Oct 28 14:53:38 2023
+# Process ID: 45968
 # Current directory: C:/Users/user/verilog5_sample/verilog5_sample.runs/impl_1
 # Command line: vivado.exe -log SampleDisplay.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source SampleDisplay.tcl -notrace
 # Log file: C:/Users/user/verilog5_sample/verilog5_sample.runs/impl_1/SampleDisplay.vdi

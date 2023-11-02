@@ -8,6 +8,14 @@
       "tool_version": "2019.2",
       "validated": "true"
     },
-    "design_tree": {}
+    "design_tree": {
+      "KeyboardCtrl_0": ""
+    },
+    "components": {
+      "KeyboardCtrl_0": {
+        "vlnv": "xilinx.com:user:KeyboardCtrl:1.0",
+        "xci_name": "design_1_KeyboardCtrl_0_0"
+      }
+    }
   }
 }
