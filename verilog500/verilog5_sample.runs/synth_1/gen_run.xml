@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1698475961">
+  <File Type="PA-TCL" Name="SampleDisplay.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="SampleDisplay_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="SampleDisplay_reports.tcl"/>
+  <File Type="RDS-RDS" Name="SampleDisplay.vds"/>
+  <File Type="RDS-UTIL" Name="SampleDisplay_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="SampleDisplay_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="SampleDisplay.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="SampleDisplay_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="SampleDisplay_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/keyboard_sample/ip/Keyboard-Controller/keyboard_cntr_1.0/src/KeyboardCtrl.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/ip/Keyboard-Controller/keyboard_cntr_1.0/src/KeyboardCtrl.v"/>
+        <Attr Name="ImportTime" Val="1697898583"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/keyboard_sample/KeyboardDecoder.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/KeyboardDecoder.v"/>
+        <Attr Name="ImportTime" Val="1697898583"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/keyboard_sample/ip/Keyboard-Controller/keyboard_cntr_1.0/src/Ps2Interface.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/ip/Keyboard-Controller/keyboard_cntr_1.0/src/Ps2Interface.v"/>
+        <Attr Name="ImportTime" Val="1697898583"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/keyboard_sample/SevenSegment.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/SevenSegment.v"/>
+        <Attr Name="ImportTime" Val="1697898583"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/keyboard_sample/one_pulse.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/one_pulse.v"/>
+        <Attr Name="ImportTime" Val="1697898583"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/keyboard_sample/SampleDisplay.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/SampleDisplay.v"/>
+        <Attr Name="ImportTime" Val="1697898583"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="SampleDisplay"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/keyboard_sample/KeyboardConstraints.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/KeyboardConstraints.xdc"/>
+        <Attr Name="ImportTime" Val="1697898583"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>
