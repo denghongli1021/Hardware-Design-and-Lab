@@ -18,9 +18,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 60540 
+INFO: Helper process launched with PID 21400 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 780.152 ; gain = 234.500
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 779.891 ; gain = 234.828
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'lab6_2' [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:1]
 INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/debounce.v:1]
@@ -35,17 +35,15 @@ INFO: [Synth 8-6157] synthesizing module 'KeyboardDecoder' [C:/Users/user/verilo
 	Parameter IS_INIT bound to: 8'b10101010 
 	Parameter IS_EXTEND bound to: 8'b11100000 
 	Parameter IS_BREAK bound to: 8'b11110000 
-INFO: [Synth 8-6157] synthesizing module 'KeyboardCtrl_0' [C:/Users/user/verilog602/verilog602.runs/synth_1/.Xil/Vivado-63064-LAPTOP-FQ5SKUKF/realtime/KeyboardCtrl_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'KeyboardCtrl_0' (3#1) [C:/Users/user/verilog602/verilog602.runs/synth_1/.Xil/Vivado-63064-LAPTOP-FQ5SKUKF/realtime/KeyboardCtrl_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'KeyboardCtrl_0' [C:/Users/user/verilog602/verilog602.runs/synth_1/.Xil/Vivado-49976-LAPTOP-FQ5SKUKF/realtime/KeyboardCtrl_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'KeyboardCtrl_0' (3#1) [C:/Users/user/verilog602/verilog602.runs/synth_1/.Xil/Vivado-49976-LAPTOP-FQ5SKUKF/realtime/KeyboardCtrl_0_stub.v:6]
 INFO: [Synth 8-226] default block is never used [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/KeyboardDecoder.v:64]
 INFO: [Synth 8-6155] done synthesizing module 'KeyboardDecoder' (4#1) [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/KeyboardDecoder.v:1]
 INFO: [Synth 8-6157] synthesizing module 'clock_divider' [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/clock_divider.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (5#1) [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/clock_divider.v:1]
-INFO: [Synth 8-6157] synthesizing module 'mem_addr_gen' [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:95]
-INFO: [Synth 8-6155] done synthesizing module 'mem_addr_gen' (6#1) [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:95]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [C:/Users/user/verilog602/verilog602.runs/synth_1/.Xil/Vivado-63064-LAPTOP-FQ5SKUKF/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (7#1) [C:/Users/user/verilog602/verilog602.runs/synth_1/.Xil/Vivado-63064-LAPTOP-FQ5SKUKF/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'vga_controller' [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:361]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [C:/Users/user/verilog602/verilog602.runs/synth_1/.Xil/Vivado-49976-LAPTOP-FQ5SKUKF/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (6#1) [C:/Users/user/verilog602/verilog602.runs/synth_1/.Xil/Vivado-49976-LAPTOP-FQ5SKUKF/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'vga_controller' [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:624]
 	Parameter HD bound to: 640 - type: integer 
 	Parameter HF bound to: 16 - type: integer 
 	Parameter HS bound to: 96 - type: integer 
@@ -58,113 +56,14 @@ INFO: [Synth 8-6157] synthesizing module 'vga_controller' [C:/Users/user/verilog
 	Parameter VT bound to: 525 - type: integer 
 	Parameter hsync_default bound to: 1'b1 
 	Parameter vsync_default bound to: 1'b1 
-INFO: [Synth 8-6155] done synthesizing module 'vga_controller' (8#1) [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:361]
+INFO: [Synth 8-6155] done synthesizing module 'vga_controller' (7#1) [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:624]
 WARNING: [Synth 8-3848] Net pass in module/entity lab6_2 does not have driver. [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:12]
-WARNING: [Synth 8-3848] Net data in module/entity lab6_2 does not have driver. [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:39]
-INFO: [Synth 8-6155] done synthesizing module 'lab6_2' (9#1) [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:1]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port clk
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port rst
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[511]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[510]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[509]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[508]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[507]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[506]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[505]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[504]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[503]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[502]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[501]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[500]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[499]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[498]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[497]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[496]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[495]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[494]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[493]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[492]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[491]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[490]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[489]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[488]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[487]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[486]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[485]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[484]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[483]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[482]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[481]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[480]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[479]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[478]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[477]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[476]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[475]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[474]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[473]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[472]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[471]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[470]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[469]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[468]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[467]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[466]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[465]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[464]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[463]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[462]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[461]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[460]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[459]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[458]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[457]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[456]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[455]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[454]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[453]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[452]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[451]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[450]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[449]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[448]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[447]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[446]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[445]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[444]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[443]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[442]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[441]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[440]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[439]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[438]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[437]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[436]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[435]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[434]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[433]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[432]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[431]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[430]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[429]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[428]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[427]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[426]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[425]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[424]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[423]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[422]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[421]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[420]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[419]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[418]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[417]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[416]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[415]
-WARNING: [Synth 8-3331] design mem_addr_gen has unconnected port key_down[414]
-INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3848] Net data in module/entity lab6_2 does not have driver. [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'lab6_2' (8#1) [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:1]
+WARNING: [Synth 8-3331] design lab6_2 has unconnected port pass
+WARNING: [Synth 8-3331] design lab6_2 has unconnected port hint
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 855.527 ; gain = 309.875
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 855.320 ; gain = 310.258
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -177,12 +76,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 855.527 ; gain = 309.875
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 855.320 ; gain = 310.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 855.527 ; gain = 309.875
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 855.320 ; gain = 310.258
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 855.527 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 855.320 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -197,20 +96,20 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/lab6_2_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 941.875 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 953.965 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 941.875 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 953.965 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 941.875 ; gain = 396.223
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 953.965 ; gain = 408.902
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 941.875 ; gain = 396.223
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 953.965 ; gain = 408.902
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -222,12 +121,11 @@ Applied set_property CLOCK_BUFFER_TYPE = NONE for PS2_DATA. (constraint file  c:
 Applied set_property DONT_TOUCH = true for kd/inst. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for blk_mem_gen_0_inst. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 941.875 ; gain = 396.223
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 953.965 ; gain = 408.902
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'KeyboardDecoder'
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:188]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:245]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:207]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:220]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:211]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -237,10 +135,10 @@ INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To p
             WAIT_RELEASE |                               11 |                               11
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'KeyboardDecoder'
-WARNING: [Synth 8-327] inferring latch for variable 'h_reg' [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:167]
-WARNING: [Synth 8-327] inferring latch for variable 'v_reg' [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:167]
+WARNING: [Synth 8-327] inferring latch for variable 'h_reg' [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:148]
+WARNING: [Synth 8-327] inferring latch for variable 'v_reg' [C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/lab6_2.v:148]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 941.875 ; gain = 396.223
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 953.965 ; gain = 408.902
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -253,8 +151,7 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     10 Bit       Adders := 3     
-	   2 Input      8 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 2     
 +---Registers : 
 	              512 Bit    Registers := 1     
 	               10 Bit    Registers := 3     
@@ -263,7 +160,7 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input    512 Bit        Muxes := 1     
 	   4 Input     10 Bit        Muxes := 1     
-	   2 Input     10 Bit        Muxes := 7     
+	   2 Input     10 Bit        Muxes := 4     
 	   4 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 3     
 	   2 Input      1 Bit        Muxes := 17    
@@ -275,6 +172,11 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
+Module lab6_2 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 6     
 Module debounce 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -298,14 +200,6 @@ Detailed RTL Component Info :
 	   2 Input      2 Bit        Muxes := 3     
 	   2 Input      1 Bit        Muxes := 8     
 	   4 Input      1 Bit        Muxes := 7     
-Module mem_addr_gen 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     10 Bit       Adders := 1     
-	   2 Input      8 Bit       Adders := 1     
-+---Muxes : 
-	   2 Input     10 Bit        Muxes := 5     
-	   2 Input      1 Bit        Muxes := 6     
 Module vga_controller 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -332,30 +226,16 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design lab6_2 has unconnected port pass
+WARNING: [Synth 8-3331] design lab6_2 has unconnected port hint
 WARNING: [Synth 8-3332] Sequential element (kd/FSM_sequential_state_reg[1]) is unused and will be removed from module lab6_2.
 WARNING: [Synth 8-3332] Sequential element (kd/FSM_sequential_state_reg[0]) is unused and will be removed from module lab6_2.
-WARNING: [Synth 8-3332] Sequential element (mem_addr_gen_inst/h_reg[0]) is unused and will be removed from module lab6_2.
-WARNING: [Synth 8-3332] Sequential element (mem_addr_gen_inst/v_reg[0]) is unused and will be removed from module lab6_2.
-WARNING: [Synth 8-3332] Sequential element (mem_addr_gen_inst/h_reg[9]) is unused and will be removed from module lab6_2.
-WARNING: [Synth 8-3332] Sequential element (mem_addr_gen_inst/h_reg[8]) is unused and will be removed from module lab6_2.
-WARNING: [Synth 8-3332] Sequential element (mem_addr_gen_inst/h_reg[7]) is unused and will be removed from module lab6_2.
-WARNING: [Synth 8-3332] Sequential element (mem_addr_gen_inst/h_reg[6]) is unused and will be removed from module lab6_2.
-WARNING: [Synth 8-3332] Sequential element (mem_addr_gen_inst/h_reg[5]) is unused and will be removed from module lab6_2.
-WARNING: [Synth 8-3332] Sequential element (mem_addr_gen_inst/h_reg[4]) is unused and will be removed from module lab6_2.
-WARNING: [Synth 8-3332] Sequential element (mem_addr_gen_inst/h_reg[3]) is unused and will be removed from module lab6_2.
-WARNING: [Synth 8-3332] Sequential element (mem_addr_gen_inst/h_reg[2]) is unused and will be removed from module lab6_2.
-WARNING: [Synth 8-3332] Sequential element (mem_addr_gen_inst/h_reg[1]) is unused and will be removed from module lab6_2.
-WARNING: [Synth 8-3332] Sequential element (mem_addr_gen_inst/v_reg[9]) is unused and will be removed from module lab6_2.
-WARNING: [Synth 8-3332] Sequential element (mem_addr_gen_inst/v_reg[8]) is unused and will be removed from module lab6_2.
-WARNING: [Synth 8-3332] Sequential element (mem_addr_gen_inst/v_reg[7]) is unused and will be removed from module lab6_2.
-WARNING: [Synth 8-3332] Sequential element (mem_addr_gen_inst/v_reg[6]) is unused and will be removed from module lab6_2.
-WARNING: [Synth 8-3332] Sequential element (mem_addr_gen_inst/v_reg[5]) is unused and will be removed from module lab6_2.
-WARNING: [Synth 8-3332] Sequential element (mem_addr_gen_inst/v_reg[4]) is unused and will be removed from module lab6_2.
-WARNING: [Synth 8-3332] Sequential element (mem_addr_gen_inst/v_reg[3]) is unused and will be removed from module lab6_2.
-WARNING: [Synth 8-3332] Sequential element (mem_addr_gen_inst/v_reg[2]) is unused and will be removed from module lab6_2.
-WARNING: [Synth 8-3332] Sequential element (mem_addr_gen_inst/v_reg[1]) is unused and will be removed from module lab6_2.
+WARNING: [Synth 8-3332] Sequential element (h_reg[0]) is unused and will be removed from module lab6_2.
+WARNING: [Synth 8-3332] Sequential element (v_reg[0]) is unused and will be removed from module lab6_2.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\v_reg[9] )
+WARNING: [Synth 8-3332] Sequential element (v_reg[9]) is unused and will be removed from module lab6_2.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 941.875 ; gain = 396.223
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 953.965 ; gain = 408.902
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -367,13 +247,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 941.875 ; gain = 396.223
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 953.965 ; gain = 408.902
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 942.266 ; gain = 396.613
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 953.965 ; gain = 408.902
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -385,7 +265,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:20 . Memory (MB): peak = 952.855 ; gain = 407.203
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 953.965 ; gain = 408.902
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -421,13 +301,13 @@ CRITICAL WARNING: [Synth 8-4442] BlackBox module blk_mem_gen_0_inst has unconnec
 CRITICAL WARNING: [Synth 8-4442] BlackBox module blk_mem_gen_0_inst has unconnected pin dina[1]
 CRITICAL WARNING: [Synth 8-4442] BlackBox module blk_mem_gen_0_inst has unconnected pin dina[0]
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:23 . Memory (MB): peak = 958.664 ; gain = 413.012
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 955.875 ; gain = 410.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:23 . Memory (MB): peak = 958.664 ; gain = 413.012
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 955.875 ; gain = 410.812
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -446,25 +326,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:23 . Memory (MB): peak = 958.664 ; gain = 413.012
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 955.875 ; gain = 410.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:23 . Memory (MB): peak = 958.664 ; gain = 413.012
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 955.875 ; gain = 410.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:23 . Memory (MB): peak = 958.664 ; gain = 413.012
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 955.875 ; gain = 410.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:23 . Memory (MB): peak = 958.664 ; gain = 413.012
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 955.875 ; gain = 410.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -485,55 +365,56 @@ Report Cell Usage:
 |1     |KeyboardCtrl_0 |     1|
 |2     |blk_mem_gen_0  |     1|
 |3     |BUFG           |     1|
-|4     |CARRY4         |    23|
-|5     |LUT1           |    13|
-|6     |LUT2           |    41|
-|7     |LUT3           |    19|
-|8     |LUT4           |    33|
-|9     |LUT5           |    29|
-|10    |LUT6           |    31|
+|4     |CARRY4         |    21|
+|5     |LUT1           |    20|
+|6     |LUT2           |    52|
+|7     |LUT3           |    15|
+|8     |LUT4           |    13|
+|9     |LUT5           |    13|
+|10    |LUT6           |    15|
 |11    |FDRE           |    28|
 |12    |FDSE           |     2|
-|13    |IBUF           |     2|
-|14    |OBUF           |    14|
-|15    |OBUFT          |     1|
+|13    |LD             |    17|
+|14    |IBUF           |     2|
+|15    |OBUF           |    14|
+|16    |OBUFT          |     1|
 +------+---------------+------+
 
 Report Instance Areas: 
-+------+--------------------+----------------+------+
-|      |Instance            |Module          |Cells |
-+------+--------------------+----------------+------+
-|1     |top                 |                |   261|
-|2     |  clk_wiz_0_inst    |clock_divider   |     4|
-|3     |  a1                |debounce        |     6|
-|4     |  a2                |one_pulse       |     2|
-|5     |  kd                |KeyboardDecoder |    12|
-|6     |  mem_addr_gen_inst |mem_addr_gen    |    55|
-|7     |  vga_inst          |vga_controller  |   152|
-+------+--------------------+----------------+------+
++------+-----------------+----------------+------+
+|      |Instance         |Module          |Cells |
++------+-----------------+----------------+------+
+|1     |top              |                |   238|
+|2     |  a1             |debounce        |     6|
+|3     |  a2             |one_pulse       |     3|
+|4     |  clk_wiz_0_inst |clock_divider   |     4|
+|5     |  kd             |KeyboardDecoder |    12|
+|6     |  vga_inst       |vga_controller  |    87|
++------+-----------------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:23 . Memory (MB): peak = 958.664 ; gain = 413.012
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 955.875 ; gain = 410.812
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 12 critical warnings and 26 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:21 . Memory (MB): peak = 958.664 ; gain = 326.664
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:23 . Memory (MB): peak = 958.664 ; gain = 413.012
+Synthesis finished with 0 errors, 12 critical warnings and 9 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 955.875 ; gain = 312.168
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 955.875 ; gain = 410.812
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 970.695 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 23 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 966.926 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 38 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 971.691 ; gain = 0.000
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 17 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 971.859 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 17 instances were transformed.
+  LD => LDCE (inverted pins: G): 17 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-40 Infos, 126 Warnings, 12 Critical Warnings and 0 Errors encountered.
+37 Infos, 13 Warnings, 12 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:28 . Memory (MB): peak = 971.691 ; gain = 673.637
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 971.691 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 971.859 ; gain = 674.102
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 971.859 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/user/verilog602/verilog602.runs/synth_1/lab6_2.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file lab6_2_utilization_synth.rpt -pb lab6_2_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Nov 10 17:44:52 2023...
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 10 20:04:48 2023...
