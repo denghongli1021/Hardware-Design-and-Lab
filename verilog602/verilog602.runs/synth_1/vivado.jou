@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Fri Nov 10 20:04:22 2023
-# Process ID: 49976
+# Start of session at: Sat Nov 11 00:42:42 2023
+# Process ID: 24360
 # Current directory: C:/Users/user/verilog602/verilog602.runs/synth_1
 # Command line: vivado.exe -log lab6_2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab6_2.tcl
 # Log file: C:/Users/user/verilog602/verilog602.runs/synth_1/lab6_2.vds

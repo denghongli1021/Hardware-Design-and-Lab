@@ -19,25 +19,25 @@ module lab6_2(
 //    f : 1111
     // add your design here
     // KEY_CODE
-    // parameter [8:0] LEFT_SHIFT = 9'b0_0001_0010;
-    // parameter [8:0] KEY_CODES [0:15] = {
-    //     9'b0_0001_0110, // 1 (16)
-    //     9'b0_0001_0101, // Q (15)
-    //     9'b0_0001_1100, // A (1C)
-    //     9'b0_0001_1010, // Z (1A) 
-    //     9'b0_0001_1110, // 2 (1E)
-    //     9'b0_0001_1101, // W (1D)
-    //     9'b0_0001_1011, // S (1B)
-    //     9'b0_0010_0010, // X (22) 
-    //     9'b0_0010_0110, // 3 (26)
-    //     9'b0_0010_0100, // E (24)
-    //     9'b0_0010_0011, // D (23)
-    //     9'b0_0010_0001, // C (21)
-    //     9'b0_0010_0101, // 4 (25)
-    //     9'b0_0010_1101, // R (2D)
-    //     9'b0_0010_1011, // F (2B)
-    //     9'b0_0010_1010 // V (2A)
-    // };
+    parameter [8:0] LEFT_SHIFT = 9'b0_0001_0010;
+    parameter [8:0] KEY_CODES [0:15] = {
+        9'b0_0001_0110, // 1 (16)
+        9'b0_0001_0101, // Q (15)
+        9'b0_0001_1100, // A (1C)
+        9'b0_0001_1010, // Z (1A) 
+        9'b0_0001_1110, // 2 (1E)
+        9'b0_0001_1101, // W (1D)
+        9'b0_0001_1011, // S (1B)
+        9'b0_0010_0010, // X (22) 
+        9'b0_0010_0110, // 3 (26)
+        9'b0_0010_0100, // E (24)
+        9'b0_0010_0011, // D (23)
+        9'b0_0010_0001, // C (21)
+        9'b0_0010_0101, // 4 (25)
+        9'b0_0010_1101, // R (2D)
+        9'b0_0010_1011, // F (2B)
+        9'b0_0010_1010 // V (2A)
+    };
     // RST button (btnC)
     wire rst1 , rst2;
     debounce a1 (
@@ -97,256 +97,259 @@ module lab6_2(
       .v_cnt(v_cnt)
     );
     reg [9:0] h,v;
-    reg pic1 = 0;
-    reg pic2 = 0;
-    reg pic3 = 0;
-    reg pic4 = 0;
-    reg pic5 = 0;
-    reg pic6 = 0;
-    reg pic7 = 0;
-    reg pic8 = 0;
-    reg pic9 = 0;
-    reg pic10 = 0;
-    reg pic11 = 0;
-    reg pic12 = 0;
-    reg pic13 = 0;
-    reg pic14 = 0;
-    reg pic15 = 0;
-    reg pic16 = 0;
-    reg [9:0] x1 = 0 ;
-    reg [9:0] y1 = 0 ;
-    reg [9:0] x2 = 0;
-    reg [9:0] y2 = 120;
-    reg [9:0] x3 =0;
-    reg [9:0] y3 =240;
-    reg [9:0] x4 =0;
-    reg [9:0] y4 =360;
-    reg [9:0] x5 =160;
-    reg [9:0] y5 =0;
-    reg [9:0] x6 =160;
-    reg [9:0] y6 =120;
-    reg [9:0] x7 =160;
-    reg [9:0] y7 =240;
-    reg [9:0] x8 =160;
-    reg [9:0] y8 =360;
-    reg [9:0] x9 =320;
-    reg [9:0] y9 =0;
-    reg [9:0] x10 =320;
-    reg [9:0] y10 =120;
-    reg [9:0] x11 =320;
-    reg [9:0] y11 =240;
-    reg [9:0] x12 =320;
-    reg [9:0] y12 =360;
-    reg [9:0] x13 =480;
-    reg [9:0] y13 =0;
-    reg [9:0] x14 =480;
-    reg [9:0] y14 =120;
-    reg [9:0] x15 =480;
-    reg [9:0] y15 =240;
-    reg [9:0] x16 =480;
-    reg [9:0] y16 =360;
+    reg pic [0:16] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
+    // reg pic1 = 0;reg pic2 = 0;reg pic3 = 0;reg pic4 = 0;
+    // reg pic5 = 0;reg pic6 = 0;reg pic7 = 0;reg pic8 = 0;
+    // reg pic9 = 0;reg pic10 = 0;reg pic11 = 0;reg pic12 = 0;
+    // reg pic13 = 0;reg pic14 = 0;reg pic15 = 0;reg pic16 = 0;
+    reg [9:0] x [0:16] = {
+        0,
+        0,0,0,0,
+        160,160,160,160,
+        320,320,320,320,
+        480,480,480,480
+    };
+    reg [9:0] y [0:16] = {
+        0,
+        0,120,240,360,
+        0,120,240,360,
+        0,120,240,360,
+        0,120,240,360
+    };
+    // reg [9:0] x1 = 0 ;
+    // reg [9:0] y1 = 0 ;
+    // reg [9:0] x2 = 0;
+    // reg [9:0] y2 = 120;
+    // reg [9:0] x3 =0;
+    // reg [9:0] y3 =240;
+    // reg [9:0] x4 =0;
+    // reg [9:0] y4 =360;
+    // reg [9:0] x5 =160;
+    // reg [9:0] y5 =0;
+    // reg [9:0] x6 =160;
+    // reg [9:0] y6 =120;
+    // reg [9:0] x7 =160;
+    // reg [9:0] y7 =240;
+    // reg [9:0] x8 =160;
+    // reg [9:0] y8 =360;
+    // reg [9:0] x9 =320;
+    // reg [9:0] y9 =0;
+    // reg [9:0] x10 =320;
+    // reg [9:0] y10 =120;
+    // reg [9:0] x11 =320;
+    // reg [9:0] y11 =240;
+    // reg [9:0] x12 =320;
+    // reg [9:0] y12 =360;
+    // reg [9:0] x13 =480;
+    // reg [9:0] y13 =0;
+    // reg [9:0] x14 =480;
+    // reg [9:0] y14 =120;
+    // reg [9:0] x15 =480;
+    // reg [9:0] y15 =240;
+    // reg [9:0] x16 =480;
+    // reg [9:0] y16 =360;
     assign pixel_addr = ((h>>1)+(v>>1)*320)% 76800;
     always @ (*) begin
         if (rst2) begin
-            pic1 = 0;
-            pic2 = 0;
-            pic3 = 0;
-            pic4 = 0;
-            pic5 = 0;
-            pic6 = 0;
-            pic7 = 0;
-            pic8 = 0;
-            pic9 = 0;
-            pic10 = 0;
-            pic11 = 0;
-            pic12 = 0;
-            pic13 = 0;
-            pic14 = 0;
-            pic15 = 0;
-            pic16 = 0;
-            x1 = 0 ;
-            y1 = 0 ;
-            x2 = 0;
-            y2 = 120;
-            x3 =0;
-            y3 =240;
-            x4 =0;
-            y4 =360;
-            x5 =160;
-            y5 =0;
-            x6 =160;
-            y6 =120;
-            x7 =160;
-            y7 =240;
-            x8 =160;
-            y8 =360;
-            x9 =320;
-            y9 =0;
-            x10 =320;
-            y10 =120;
-            x11 =320;
-            y11 =240;
-            x12 =320;
-            y12 =360;
-            x13 =480;
-            y13 =0;
-            x14 =480;
-            y14 =120;
-            x15 =480;
-            y15 =240;
-            x16 =480;
-            y16 =360;
+            pic[1] = 0;
+            pic[2] = 0;
+            pic[3] = 0;
+            pic[4] = 0;
+            pic[5] = 0;
+            pic[6] = 0;
+            pic[7] = 0;
+            pic[8] = 0;
+            pic[9] = 0;
+            pic[10] = 0;
+            pic[11] = 0;
+            pic[12] = 0;
+            pic[13] = 0;
+            pic[14] = 0;
+            pic[15] = 0;
+            pic[16] = 0;
+            x[1] = 0 ;
+            y[1] = 0 ;
+            x[2] = 0;
+            y[2] = 120;
+            x[3] =0;
+            y[3] =240;
+            x[4] =0;
+            y[4] =360;
+            x[5] =160;
+            y[5] =0;
+            x[6] =160;
+            y[6] =120;
+            x[7] =160;
+            y[7] =240;
+            x[8] =160;
+            y[8] =360;
+            x[9] =320;
+            y[9] =0;
+            x[10] =320;
+            y[10] =120;
+            x[11] =320;
+            y[11] =240;
+            x[12] =320;
+            y[12] =360;
+            x[13] =480;
+            y[13] =0;
+            x[14] =480;
+            y[14] =120;
+            x[15] =480;
+            y[15] =240;
+            x[16] =480;
+            y[16] =360;
         end
         else begin
             if (h_cnt <= 160) begin 
                 if (v_cnt <= 120) begin
-                    h = h_cnt + x1 - 0;
-                    if (pic1) begin
-                        v = y1 + 120 - (v_cnt - 0); 
+                    h = h_cnt + x[1] - 0;
+                    if (pic[1]) begin
+                        v = y[1] + 120 - (v_cnt - 0); 
                     end
                     else begin
-                        v = v_cnt + y1 - 0;
+                        v = v_cnt + y[1] - 0;
                     end
                 end
                 else if (v_cnt > 120 && v_cnt <= 240) begin
-                    h = h_cnt + x2 - 0;
-                    if (pic2) begin
-                        v = y2 + 120 - (v_cnt - 120);
+                    h = h_cnt + x[2] - 0;
+                    if (pic[2]) begin
+                        v = y[2] + 120 - (v_cnt - 120);
                     end
                     else begin
-                        v = v_cnt + y2 - 120;
+                        v = v_cnt + y[2] - 120;
                     end
                 end
                 else if (v_cnt >240 && v_cnt <= 360) begin
-                    h = h_cnt + x3 - 0;
-                    if (pic3) begin
-                        v = y3 + 120 - (v_cnt - 240);
+                    h = h_cnt + x[3] - 0;
+                    if (pic[3]) begin
+                        v = y[3] + 120 - (v_cnt - 240);
                     end
                     else begin
-                        v = v_cnt + y3 - 240;
+                        v = v_cnt + y[3] - 240;
                     end
                 end
                 else if (v_cnt > 360) begin
-                    h = h_cnt + x4 - 0;
-                    if (pic4) begin
-                        v = y4 + 120 - (v_cnt - 360);
+                    h = h_cnt + x[4] - 0;
+                    if (pic[4]) begin
+                        v = y[4] + 120 - (v_cnt - 360);
                     end
                     else begin
-                        v = v_cnt + y4 - 360;
+                        v = v_cnt + y[4] - 360;
                     end
                 end
             end
             else if (h_cnt > 160 && h_cnt <= 320) begin
                 if (v_cnt <= 120) begin
-                    h = h_cnt + x5 - 160;
-                    if (pic5) begin
-                        v = y5 + 120 - (v_cnt - 0);
+                    h = h_cnt + x[5] - 160;
+                    if (pic[5]) begin
+                        v = y[5] + 120 - (v_cnt - 0);
                     end
                     else begin
-                        v = v_cnt + y5 - 0;
+                        v = v_cnt + y[5] - 0;
                     end
                 end
                 else if (v_cnt > 120 && v_cnt <= 240) begin
-                    h = h_cnt + x6 - 160;
-                    if (pic6) begin
-                        v = y6 + 120 - (v_cnt - 120);
+                    h = h_cnt + x[6] - 160;
+                    if (pic[6]) begin
+                        v = y[6] + 120 - (v_cnt - 120);
                     end
                     else begin
-                        v = v_cnt + y6 - 120;
+                        v = v_cnt + y[6] - 120;
                     end
                 end
                 else if (v_cnt >240 && v_cnt <= 360) begin
-                    h = h_cnt + x7 - 160;
-                    if (pic7) begin
-                        v = y7 + 120 - (v_cnt - 240);
+                    h = h_cnt + x[7] - 160;
+                    if (pic[7]) begin
+                        v = y[7] + 120 - (v_cnt - 240);
                     end
                     else begin
-                        v = v_cnt + y7 - 240;
+                        v = v_cnt + y[7] - 240;
                     end
                 end
                 else if (v_cnt > 360) begin
-                    h = h_cnt + x8 - 160;
-                    if (pic8) begin
-                        v = y8 + 120 - (v_cnt - 360);
+                    h = h_cnt + x[8] - 160;
+                    if (pic[8]) begin
+                        v = y[8] + 120 - (v_cnt - 360);
                     end
                     else begin
-                        v = v_cnt + y8 - 360;
+                        v = v_cnt + y[8] - 360;
                     end
                 end
             end
             else if (h_cnt >320 && h_cnt <= 480) begin
                 if (v_cnt <= 120) begin
-                    h = h_cnt + x9 - 320;
-                    if (pic9) begin
-                        v = y9 + 120 - (v_cnt - 0);
+                    h = h_cnt + x[9] - 320;
+                    if (pic[9]) begin
+                        v = y[9] + 120 - (v_cnt - 0);
                     end
                     else begin
-                        v = v_cnt + y9 - 0;
+                        v = v_cnt + y[9] - 0;
                     end
                 end
                 else if (v_cnt > 120 && v_cnt <= 240) begin
-                    h = h_cnt + x10 - 320;
-                    if (pic10) begin
-                        v = y10 + 120 - (v_cnt - 120);
+                    h = h_cnt + x[10] - 320;
+                    if (pic[10]) begin
+                        v = y[10] + 120 - (v_cnt - 120);
                     end
                     else begin
-                        v = v_cnt + y10 - 120;
+                        v = v_cnt + y[10] - 120;
                     end
                 end
                 else if (v_cnt >240 && v_cnt <= 360) begin
-                    h = h_cnt + x11 - 320;
-                    if (pic11) begin
-                        v = y11 + 120 - (v_cnt - 240);
+                    h = h_cnt + x[11] - 320;
+                    if (pic[11]) begin
+                        v = y[11] + 120 - (v_cnt - 240);
                     end
                     else begin
-                        v = v_cnt + y11 - 240;
+                        v = v_cnt + y[11] - 240;
                     end
                 end
                 else if (v_cnt > 360) begin
-                    h = h_cnt + x12 - 320;
-                    if (pic12) begin
-                        v = y12 + 120 - (v_cnt - 360);
+                    h = h_cnt + x[12] - 320;
+                    if (pic[12]) begin
+                        v = y[12] + 120 - (v_cnt - 360);
                     end
                     else begin
-                        v = v_cnt + y12 - 360;
+                        v = v_cnt + y[12] - 360;
                     end
                 end
             end
             else if (h_cnt > 480) begin
                 if (v_cnt <= 120) begin
-                    h = h_cnt + x13 - 480;
-                    if (pic13) begin
-                        v = y14 + 120 - (v_cnt - 0);
+                    h = h_cnt + x[13] - 480;
+                    if (pic[13]) begin
+                        v = y[13] + 120 - (v_cnt - 0);
                     end
                     else begin
-                        v = v_cnt + y13 - 0;
+                        v = v_cnt + y[13] - 0;
                     end
                 end
                 else if (v_cnt > 120 && v_cnt <= 240) begin
-                    h = h_cnt + x14 - 480;
-                    if (pic14) begin
-                        v = y14 + 120 - (v_cnt - 120);
+                    h = h_cnt + x[14] - 480;
+                    if (pic[14]) begin
+                        v = y[14] + 120 - (v_cnt - 120);
                     end
                     else begin
-                        v = v_cnt + y14 - 120;
+                        v = v_cnt + y[14] - 120;
                     end
                 end
                 else if (v_cnt >240 && v_cnt <= 360) begin
-                    h = h_cnt + x15 - 480;
-                    if (pic15) begin
-                        v = y15 + 120 - (v_cnt - 240);
+                    h = h_cnt + x[15] - 480;
+                    if (pic[15]) begin
+                        v = y[15] + 120 - (v_cnt - 240);
                     end
                     else begin
-                        v = v_cnt + y15 - 240;
+                        v = v_cnt + y[15] - 240;
                     end
                 end
                 else if (v_cnt > 360) begin
-                    h = h_cnt + x16 - 480;
-                    if (pic16) begin
-                        v = y16 + 120 - (v_cnt - 360);
+                    h = h_cnt + x[16] - 480;
+                    if (pic[16]) begin
+                        v = y[16] + 120 - (v_cnt - 360);
                     end
                     else begin
-                        v = v_cnt + y16 - 360;
+                        v = v_cnt + y[16] - 360;
                     end
                 end
             end
