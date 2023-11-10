@@ -125,9 +125,9 @@ module mem_addr_gen(
     reg pic15 = 0;
     reg pic16 = 0;
     reg [9:0] x1 = 0 ;
-    reg [9:0] y1 = 0 ;
+    reg [9:0] y1 = 120 ;
     reg [9:0] x2 = 0;
-    reg [9:0] y2 = 120;
+    reg [9:0] y2 = 0;
     reg [9:0] x3 =0;
     reg [9:0] y3 =240;
     reg [9:0] x4 =0;
