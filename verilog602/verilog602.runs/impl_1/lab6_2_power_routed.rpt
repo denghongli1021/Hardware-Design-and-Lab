@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Sun Nov 12 00:16:40 2023
+| Date             : Sun Nov 12 01:20:05 2023
 | Host             : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command          : report_power -file lab6_2_power_routed.rpt -pb lab6_2_power_summary_routed.pb -rpx lab6_2_power_routed.rpx
 | Design           : lab6_2
@@ -52,15 +52,15 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |     1719 |       --- |             --- |
-|   LUT as Logic |     0.002 |      958 |     20800 |            4.61 |
+| Clocks         |     0.002 |        3 |       --- |             --- |
+| Slice Logic    |     0.002 |     1749 |       --- |             --- |
+|   LUT as Logic |     0.002 |      993 |     20800 |            4.77 |
 |   CARRY4       |    <0.001 |      105 |      8150 |            1.29 |
-|   Register     |    <0.001 |      305 |     41600 |            0.73 |
-|   F7/F8 Muxes  |    <0.001 |       65 |     32600 |            0.20 |
+|   Register     |    <0.001 |      303 |     41600 |            0.73 |
+|   F7/F8 Muxes  |    <0.001 |       95 |     32600 |            0.29 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |       66 |       --- |             --- |
-| Signals        |     0.004 |     1326 |       --- |             --- |
+| Signals        |     0.004 |     1304 |       --- |             --- |
 | Block RAM      |    <0.001 |     26.5 |        50 |           53.00 |
 | I/O            |     0.011 |       19 |       106 |           17.92 |
 | Static Power   |     0.073 |          |           |                 |
@@ -148,7 +148,9 @@ Table of Contents
 |     U0                 |     0.003 |
 |       inst_blk_mem_gen |     0.003 |
 |   kd                   |     0.002 |
-|   vga_inst             |     0.002 |
+|     inst               |     0.001 |
+|       inst             |     0.001 |
+|   vga_inst             |     0.001 |
 +------------------------+-----------+
 
 

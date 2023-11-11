@@ -315,42 +315,42 @@ module lab6_2(
     reg [8:0] key_1_code = 0;
     reg [5:0] key_2 = 0;
     reg [8:0] key_2_code = 0;
-    always@(posedge clk or posedge rst2) begin
-        if (rst2) begin
-            key_1 = 0;
-            key_1_code = 0;
-            key_2 = 0;
-            key_2_code = 0;
-        end
-        else if (key_num != 0) begin
-            if (key_1 == 0) begin
-                if (key_down[last_change] == 1) begin
-                    key_1 = key_num;
-                    key_1_code = last_change; 
-                    // pass = 1; //
-                end
-            end
-            else if (key_1 != 0) begin
-                if (key_down[key_1_code] == 0) begin 
-                    key_1 = 0;
-                    key_1_code = 0;
-                    // pass = 0; //
-                end
-            end
-            if (key_1 != 0 && key_2 == 0) begin
-                if (key_down[last_change] == 1) begin
-                    key_2 = key_num;
-                    key_2_code = last_change;
-                end
-            end
-            else if (key_2 != 0) begin
-                if (key_down[key_2_code] == 0) begin
-                    key_2 = 0;
-                    key_2_code = 0;
-                end
-            end
-        end
-    end
+    // always@(posedge clk or posedge rst2) begin
+    //     if (rst2) begin
+    //         key_1 = 0;
+    //         key_1_code = 0;
+    //         key_2 = 0;
+    //         key_2_code = 0;
+    //     end
+    //     else if (key_num != 0) begin
+    //         if (key_1 == 0) begin
+    //             if (key_down[last_change] == 1) begin
+    //                 key_1 = key_num;
+    //                 key_1_code = last_change; 
+    //                 // pass = 1; //
+    //             end
+    //         end
+    //         else if (key_1 != 0) begin
+    //             if (key_down[key_1_code] == 0) begin 
+    //                 key_1 = 0;
+    //                 key_1_code = 0;
+    //                 // pass = 0; //
+    //             end
+    //         end
+    //         if (key_1 != 0 && key_2 == 0) begin
+    //             if (key_down[last_change] == 1) begin
+    //                 key_2 = key_num;
+    //                 key_2_code = last_change;
+    //             end
+    //         end
+    //         else if (key_2 != 0) begin
+    //             if (key_down[key_2_code] == 0) begin
+    //                 key_2 = 0;
+    //                 key_2_code = 0;
+    //             end
+    //         end
+    //     end
+    // end
     reg [1:0] press_shift = 0;
     reg [1:0] task_finish = 0;
     reg [5:0] tmp;
@@ -415,7 +415,35 @@ module lab6_2(
             y[16] =360;
         end
         else begin
-            //out = 1;
+            if (key_num != 0) begin
+                if (key_1 == 0) begin
+                    if (key_down[last_change] == 1) begin
+                        key_1 = key_num;
+                        key_1_code = last_change; 
+                        // pass = 1; //
+                    end
+                end
+                else if (key_1 != 0) begin
+                    if (key_down[key_1_code] == 0) begin 
+                        key_1 = 0;
+                        key_1_code = 0;
+                        // pass = 0; //
+                    end
+                end
+                if (key_1 != 0 && key_2 == 0) begin
+                    if (key_down[last_change] == 1) begin
+                        key_2 = key_num;
+                        key_2_code = last_change;
+                    end
+                end
+                else if (key_2 != 0) begin
+                    if (key_down[key_2_code] == 0) begin
+                        key_2 = 0;
+                        key_2_code = 0;
+                    end
+                end
+            end
+                //out = 1;
             if (press_shift == 1 && key_down[key_1_code] == 1 && task_finish == 0) begin
                 pic[key_1] = pic[key_1] ^ 1;
                 task_finish = 1;
