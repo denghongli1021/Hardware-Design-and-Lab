@@ -9,7 +9,7 @@ module lab6_2(
     output [3:0] vgaBlue,
     output hsync,
     output vsync,
-    output pass
+    output reg pass
     );
 //    a : 1010
 //    b : 1011
@@ -36,7 +36,8 @@ module lab6_2(
         9'b0_0010_0101, // 4 (25)
         9'b0_0010_1101, // R (2D)
         9'b0_0010_1011, // F (2B)
-        9'b0_0010_1010 // V (2A)
+        9'b0_0010_1010 // V (2A) 
+        // 9'b0_0001_0010  // left shift (12)
     };
     // RST button (btnC)
     wire rst1 , rst2;
@@ -51,7 +52,7 @@ module lab6_2(
         .pb_out(rst2)
     );
     // keyboard
-    wire [511:0] key_down;
+    wire [127:0] key_down;
 	wire [8:0] last_change;
 	wire key_valid;
     KeyboardDecoder kd(
@@ -306,7 +307,7 @@ module lab6_2(
 			KEY_CODES[13] : key_num = 14;
 			KEY_CODES[14] : key_num = 15;
 			KEY_CODES[15] : key_num = 16;
-            9'b0_0001_0010 : key_num = 17; // left_shift
+            //KEY_CODES[16] : key_num = 17; // left_shift
 			default		  : key_num = 0;
 	    endcase
     end
@@ -321,17 +322,19 @@ module lab6_2(
             key_2 = 0;
             key_2_code = 0;
         end
-        else begin
+        else if (key_num != 0) begin
             if (key_1 == 0) begin
                 if (key_down[last_change] == 1) begin
                     key_1 = key_num;
                     key_1_code = last_change; 
+                    // pass = 1; //
                 end
             end
             else if (key_1 != 0) begin
                 if (key_down[key_1_code] == 0) begin 
                     key_1 = 0;
                     key_1_code = 0;
+                    // pass = 0; //
                 end
             end
             if (key_1 != 0 && key_2 == 0) begin
@@ -348,10 +351,20 @@ module lab6_2(
             end
         end
     end
+    reg [1:0] press_shift = 0;
     reg [1:0] task_finish = 0;
     reg [5:0] tmp;
+    always@(posedge clk) begin
+        if (key_down[LEFT_SHIFT] == 1) begin
+            press_shift = 1;
+        end
+        else if (key_down[LEFT_SHIFT] == 0) begin
+            press_shift = 0;
+        end
+    end
     always@(posedge clk or posedge rst2) begin
         if (rst2) begin
+            task_finish = 0;
             pic[1] = 0;
             pic[2] = 0;
             pic[3] = 0;
@@ -402,33 +415,42 @@ module lab6_2(
             y[16] =360;
         end
         else begin
-            if (key_1 == 17 || key_2 == 17 && key_1 != 0 && key_2 !=0 && task_finish == 0) begin // 做旋轉
-                if (key_1 == 17) begin
-                    pic[key_2] = pic[key_2] ^ 1;
-                    task_finish = 1;
-                end
-                else if (key_2 == 17) begin
-                    pic[key_1] = pic[key_1] ^ 1;
-                    task_finish = 1;
-                end
-            end
-            else if (key_1 != 0 && key_2 != 0 && task_finish == 0) begin
-                tmp = x[key_1];
-                x[key_1] = x[key_2]; // x 交換
-                x[key_2] = tmp;
-
-                tmp = y[key_1];
-                y[key_1] = y[key_2]; // y 交換
-                y[key_2] = tmp;
-
-                tmp = pic[key_1];
-                pic[key_1] = pic[key_2]; // pic 交換
-                pic[key_2] = tmp;
+            //out = 1;
+            if (press_shift == 1 && key_down[key_1_code] == 1 && task_finish == 0) begin
+                pic[key_1] = pic[key_1] ^ 1;
                 task_finish = 1;
-            end
-            else if (key_1 == 0 || key_2 == 0) begin
+            end 
+            else if (key_down[key_1_code] == 0) begin
                 task_finish = 0;
             end
+            // else
+            // if (key_down[KEY_CODES[key_1-1]] == 1 && key_down[KEY_CODES[key_2-1]] == 1 && task_finish == 0) begin // 做旋轉
+            //     if (key_1 == 17) begin
+            //         pic[key_2] = pic[key_2] ^ 1;
+            //         task_finish = 1;
+            //     end
+            //     else if (key_2 == 17) begin
+            //         pic[key_1] = pic[key_1] ^ 1;
+            //         task_finish = 1;
+            //     end
+            // end
+            // else if (key_1 != 0 && key_2 != 0 && task_finish == 0) begin
+            //     tmp = x[key_1];
+            //     x[key_1] = x[key_2]; // x 交換
+            //     x[key_2] = tmp;
+
+            //     tmp = y[key_1];
+            //     y[key_1] = y[key_2]; // y 交換
+            //     y[key_2] = tmp;
+
+            //     tmp = pic[key_1];
+            //     pic[key_1] = pic[key_2]; // pic 交換
+            //     pic[key_2] = tmp;
+            //     task_finish = 1;
+            // end
+            // else if (key_1 == 0 && key_2 == 0) begin
+            //     task_finish = 0;
+            // end
         end
     end
 endmodule

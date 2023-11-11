@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Sat Nov 11 14:05:56 2023
+| Date             : Sun Nov 12 00:16:40 2023
 | Host             : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command          : report_power -file lab6_2_power_routed.rpt -pb lab6_2_power_summary_routed.pb -rpx lab6_2_power_routed.rpx
 | Design           : lab6_2
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.104        |
+| Total On-Chip Power (W)  | 0.093        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.031        |
+| Dynamic (W)              | 0.020        |
 | Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.5         |
@@ -52,19 +52,19 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |     0.007 |     4179 |       --- |             --- |
-|   LUT as Logic |     0.006 |     2351 |     20800 |           11.30 |
-|   CARRY4       |    <0.001 |      160 |      8150 |            1.96 |
-|   F7/F8 Muxes  |    <0.001 |      359 |     32600 |            1.10 |
-|   Register     |    <0.001 |      892 |     41600 |            2.14 |
+| Clocks         |     0.001 |        3 |       --- |             --- |
+| Slice Logic    |     0.002 |     1719 |       --- |             --- |
+|   LUT as Logic |     0.002 |      958 |     20800 |            4.61 |
+|   CARRY4       |    <0.001 |      105 |      8150 |            1.29 |
+|   Register     |    <0.001 |      305 |     41600 |            0.73 |
+|   F7/F8 Muxes  |    <0.001 |       65 |     32600 |            0.20 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |       66 |       --- |             --- |
-| Signals        |     0.009 |     2578 |       --- |             --- |
-| Block RAM      |     0.001 |     26.5 |        50 |           53.00 |
+| Signals        |     0.004 |     1326 |       --- |             --- |
+| Block RAM      |    <0.001 |     26.5 |        50 |           53.00 |
 | I/O            |     0.011 |       19 |       106 |           17.92 |
 | Static Power   |     0.073 |          |           |                 |
-| Total          |     0.104 |          |           |                 |
+| Total          |     0.093 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.030 |       0.020 |      0.010 |
+| Vccint    |       1.000 |     0.019 |       0.009 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.004 |       0.003 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -143,12 +143,12 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| lab6_2                 |     0.031 |
-|   blk_mem_gen_0_inst   |     0.004 |
-|     U0                 |     0.004 |
-|       inst_blk_mem_gen |     0.004 |
-|   kd                   |     0.004 |
-|   vga_inst             |     0.004 |
+| lab6_2                 |     0.020 |
+|   blk_mem_gen_0_inst   |     0.003 |
+|     U0                 |     0.003 |
+|       inst_blk_mem_gen |     0.003 |
+|   kd                   |     0.002 |
+|   vga_inst             |     0.002 |
 +------------------------+-----------+
 
 
