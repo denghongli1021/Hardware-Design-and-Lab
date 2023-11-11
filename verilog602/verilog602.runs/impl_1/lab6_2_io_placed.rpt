@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date                      : Sun Nov 12 02:56:07 2023
+| Date                      : Sun Nov 12 03:16:58 2023
 | Host                      : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command                   : report_io -file lab6_2_io_placed.rpt
 | Design                    : lab6_2
@@ -231,7 +231,7 @@ Table of Contents
 | U13        |             | High Range | VCCO_14                      | VCCO          |             |      14 |            |      |                     |                      |    3.30 |            |           |          |      |                  |              |                   |              |
 | U14        |             | High Range | IO_25_14                     | User IO       |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | U15        |             | High Range | IO_L23P_T3_A03_D19_14        | User IO       |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| U16        | pass        | High Range | IO_L23N_T3_A02_D18_14        | TRISTATE      | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| U16        | pass        | High Range | IO_L23N_T3_A02_D18_14        | OUTPUT        | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | U17        |             | High Range | IO_L18P_T2_A12_D28_14        | User IO       |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | U18        | rst         | High Range | IO_L18N_T2_A11_D27_14        | INPUT         | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | U19        |             | High Range | IO_L15P_T2_DQS_RDWR_B_14     | User IO       |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |

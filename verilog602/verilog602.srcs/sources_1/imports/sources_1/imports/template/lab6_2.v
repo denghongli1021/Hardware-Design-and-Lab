@@ -473,8 +473,12 @@ module lab6_2(
             end
         end
     end
-    always@(*) begin
-        if(pic[1] == 0 &&
+    always@(posedge clk or posedge rst2) begin
+        if (rst2) begin
+            finish = 0;
+            pass = 0;
+        end
+        else if(pic[1] == 0 &&
             pic[2] == 0 &&
             pic[3] == 0 &&
             pic[4] == 0&&
@@ -524,6 +528,7 @@ module lab6_2(
             y[16] ==360
             ) begin
             finish = 1;
+            pass = 1;
         end
     end
 endmodule
