@@ -1,0 +1,27 @@
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|              sys_clk_pin |              sys_clk_pin |                                                                                           pic_reg[15]_C/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                           pic_reg[16]_C/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            pic_reg[7]_C/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            pic_reg[3]_C/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                      task_finish_reg[0]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            pic_reg[9]_C/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                           pic_reg[10]_C/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            pic_reg[6]_C/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            pic_reg[0]_C/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                           pic_reg[13]_C/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            pic_reg[8]_C/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            pic_reg[1]_C/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            y_reg[12][6]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                             x_reg[5][5]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                             y_reg[4][9]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            pic_reg[4]_C/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                             y_reg[9][9]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            y_reg[16][9]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            y_reg[15][9]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                             x_reg[9][8]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                             x_reg[9][6]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            y_reg[12][9]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                            x_reg[16][4]/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+

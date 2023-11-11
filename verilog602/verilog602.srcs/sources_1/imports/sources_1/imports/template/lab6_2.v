@@ -353,8 +353,9 @@ module lab6_2(
     // end
     reg [1:0] press_shift = 0;
     reg [1:0] task_finish = 0;
+    //reg [1:0] task_finish2 = 0;
     reg [5:0] tmp;
-    always@(posedge clk) begin
+    always@(*) begin
         if (key_down[LEFT_SHIFT] == 1) begin
             press_shift = 1;
         end
@@ -430,7 +431,7 @@ module lab6_2(
                         // pass = 0; //
                     end
                 end
-                if (key_1 != 0 && key_2 == 0) begin
+                if (key_1 != 0 && key_2 == 0 && last_change != key_1_code) begin
                     if (key_down[last_change] == 1) begin
                         key_2 = key_num;
                         key_2_code = last_change;
@@ -441,6 +442,10 @@ module lab6_2(
                         key_2 = 0;
                         key_2_code = 0;
                     end
+                    else if (key_down[key_1_code] == 0) begin
+                        key_1 = key_2;
+                        key_1_code = key_2_code;
+                    end
                 end
             end
                 //out = 1;
@@ -450,6 +455,20 @@ module lab6_2(
             end 
             else if (key_down[key_1_code] == 0) begin
                 task_finish = 0;
+            end
+            else if (press_shift == 0) begin
+                if (key_down[key_1_code] == 1 && key_down[key_2_code] == 1 && task_finish == 0) begin
+                    x[key_1] <= x[key_2];
+                    x[key_2] <= x[key_1];
+                    y[key_1] <= y[key_2];
+                    y[key_2] <= y[key_1];
+                    pic[key_1] <= pic[key_2];
+                    pic[key_2] <= pic[key_1];
+                    task_finish = 1;
+                end
+                else if (key_down[key_1_code] == 0 && key_down[key_2_code] == 0) begin
+                    task_finish = 0;
+                end
             end
             // else
             // if (key_down[KEY_CODES[key_1-1]] == 1 && key_down[KEY_CODES[key_2-1]] == 1 && task_finish == 0) begin // 做旋轉
