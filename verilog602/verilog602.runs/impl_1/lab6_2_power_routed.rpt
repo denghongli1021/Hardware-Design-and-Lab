@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Sun Nov 12 02:37:30 2023
+| Date             : Sun Nov 12 02:57:16 2023
 | Host             : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command          : report_power -file lab6_2_power_routed.rpt -pb lab6_2_power_summary_routed.pb -rpx lab6_2_power_routed.rpx
 | Design           : lab6_2
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.097        |
+| Total On-Chip Power (W)  | 0.096        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.024        |
+| Dynamic (W)              | 0.023        |
 | Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.5         |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |     0.003 |     3564 |       --- |             --- |
-|   LUT as Logic |     0.003 |     2161 |     20800 |           10.39 |
+| Slice Logic    |     0.003 |     3705 |       --- |             --- |
+|   LUT as Logic |     0.002 |     2420 |     20800 |           11.63 |
 |   CARRY4       |    <0.001 |      161 |      8150 |            1.98 |
+|   F7/F8 Muxes  |    <0.001 |      178 |     32600 |            0.55 |
 |   Register     |    <0.001 |      661 |     41600 |            1.59 |
-|   F7/F8 Muxes  |    <0.001 |      193 |     32600 |            0.59 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |       68 |       --- |             --- |
-| Signals        |     0.005 |     2635 |       --- |             --- |
+|   Others       |     0.000 |       69 |       --- |             --- |
+| Signals        |     0.006 |     2719 |       --- |             --- |
 | Block RAM      |     0.001 |     26.5 |        50 |           53.00 |
 | I/O            |     0.011 |       19 |       106 |           17.92 |
 | Static Power   |     0.073 |          |           |                 |
-| Total          |     0.097 |          |           |                 |
+| Total          |     0.096 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.023 |       0.013 |      0.010 |
+| Vccint    |       1.000 |     0.023 |       0.012 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.004 |       0.003 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -143,7 +143,7 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| lab6_2                 |     0.024 |
+| lab6_2                 |     0.023 |
 |   blk_mem_gen_0_inst   |     0.004 |
 |     U0                 |     0.004 |
 |       inst_blk_mem_gen |     0.004 |

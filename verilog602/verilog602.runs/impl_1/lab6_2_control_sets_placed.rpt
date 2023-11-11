@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Sun Nov 12 02:34:05 2023
+| Date         : Sun Nov 12 02:56:07 2023
 | Host         : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file lab6_2_control_sets_placed.rpt
 | Design       : lab6_2
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |    44 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   134 |
+| Unused register locations in slices containing registers |   131 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -40,9 +40,9 @@ Table of Contents
 |       Fanout       | Count |
 +--------------------+-------+
 | Total control sets |    44 |
-| >= 0 to < 4        |     2 |
-| >= 4 to < 6        |     7 |
-| >= 6 to < 8        |     4 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     4 |
+| >= 6 to < 8        |     6 |
 | >= 8 to < 10       |     5 |
 | >= 10 to < 12      |     5 |
 | >= 12 to < 14      |     3 |
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              28 |           12 |
-| No           | No                    | Yes                    |              78 |           28 |
-| No           | Yes                   | No                     |              14 |            8 |
-| Yes          | No                    | No                     |             119 |           58 |
-| Yes          | No                    | Yes                    |             409 |          149 |
-| Yes          | Yes                   | No                     |              10 |            3 |
+| No           | No                    | No                     |              30 |           16 |
+| No           | No                    | Yes                    |              78 |           30 |
+| No           | Yes                   | No                     |              14 |            7 |
+| Yes          | No                    | No                     |             120 |           69 |
+| Yes          | No                    | Yes                    |             409 |          156 |
+| Yes          | Yes                   | No                     |              10 |            4 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -74,49 +74,49 @@ Table of Contents
 |         Clock Signal        |                 Enable Signal                 |        Set/Reset Signal       | Slice Load Count | Bel Load Count |
 +-----------------------------+-----------------------------------------------+-------------------------------+------------------+----------------+
 | ~kd/key_down_reg[18]_0[0]   |                                               | kd/key_down_reg[18]_0[0]      |                1 |              1 |
+|  finish0                    |                                               |                               |                1 |              1 |
 |  clk_wiz_0_inst/out_BUFG[0] |                                               | a2/rst2                       |                2 |              2 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_12                      |                               |                2 |              4 |
 |  clk_IBUF_BUFG              | kd/task_finish_reg[0]_2                       |                               |                2 |              4 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_10                      |                               |                3 |              4 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_11                      |                               |                2 |              4 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_3                       |                               |                1 |              4 |
-|  clk_IBUF_BUFG              | kd/inst/inst/Ps2Interface_i/bits_count        | a2/rst2                       |                1 |              4 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_7                       |                               |                3 |              5 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_6                       |                               |                2 |              6 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_5                       |                               |                2 |              6 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_10                      |                               |                2 |              4 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_8                       |                               |                3 |              4 |
+|  clk_IBUF_BUFG              | kd/inst/inst/Ps2Interface_i/bits_count        | a2/rst2                       |                2 |              4 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_13                      |                               |                5 |              6 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_6                       |                               |                4 |              6 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_9                       |                               |                3 |              6 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_7                       |                               |                3 |              6 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_11                      |                               |                3 |              6 |
 |  clk_IBUF_BUFG              | kd/task_finish_reg[0]_4                       |                               |                3 |              6 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_8                       |                               |                2 |              6 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_0                       |                               |                4 |              8 |
-|  clk_IBUF_BUFG              | kd/inst/inst/Ps2Interface_i/rx_finish         | a2/rst2                       |                2 |              8 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_1                       |                               |                3 |              8 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]                         |                               |                3 |              8 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]                         |                               |                5 |              8 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_14                      |                               |                3 |              8 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_12                      |                               |                2 |              8 |
 |  clk_IBUF_BUFG              | kd/inst/inst/Ps2Interface_i/rx_valid          | a2/rst2                       |                2 |              8 |
-|  clk_wiz_0_inst/out_BUFG[0] |                                               |                               |                3 |             10 |
-|  clk_wiz_0_inst/out_BUFG[0] | vga_inst/line_cnt                             | vga_inst/line_cnt[9]_i_1_n_0  |                3 |             10 |
+|  clk_IBUF_BUFG              | kd/inst/inst/Ps2Interface_i/rx_finish         | a2/rst2                       |                2 |              8 |
+|  clk_wiz_0_inst/out_BUFG[0] |                                               |                               |                5 |             10 |
+|  clk_wiz_0_inst/out_BUFG[0] | vga_inst/line_cnt                             | vga_inst/line_cnt[9]_i_1_n_0  |                4 |             10 |
 |  clk_IBUF_BUFG              | kd/key                                        | a2/rst2                       |                3 |             10 |
-|  clk_wiz_0_inst/out_BUFG[0] |                                               | vga_inst/pixel_cnt[9]_i_1_n_0 |                5 |             11 |
-|  clk_IBUF_BUFG              | kd/inst/inst/Ps2Interface_i/frame[10]_i_1_n_0 | a2/rst2                       |                2 |             11 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]                         | a2/rst2                       |                4 |             12 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_0                       | a2/rst2                       |                5 |             12 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_1                       | a2/rst2                       |                4 |             12 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_3                       | a2/rst2                       |                4 |             14 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_6                       | a2/rst2                       |                7 |             14 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_5                       | a2/rst2                       |                9 |             14 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_4                       | a2/rst2                       |                6 |             14 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_8                       | a2/rst2                       |                8 |             14 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_7                       | a2/rst2                       |                7 |             14 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_2                       | a2/rst2                       |                7 |             16 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_10                      | a2/rst2                       |                6 |             16 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_12                      | a2/rst2                       |                7 |             16 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_11                      | a2/rst2                       |                6 |             16 |
-|  clk_IBUF_BUFG              |                                               |                               |                9 |             18 |
-|  clk_IBUF_BUFG              | kd/E[0]                                       | a2/rst2                       |                8 |             18 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_9[0]                    | a2/rst2                       |                4 |             18 |
-|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_13[0]                   | a2/rst2                       |                6 |             20 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg[0]                              |                               |                6 |             20 |
-|  clk_IBUF_BUFG              | a2/E[0]                                       |                               |               20 |             26 |
-|  clk_IBUF_BUFG              |                                               | a2/rst2                       |               28 |             78 |
-|  clk_IBUF_BUFG              | kd/op/E[0]                                    | a2/rst2                       |               41 |            128 |
+|  clk_wiz_0_inst/out_BUFG[0] |                                               | vga_inst/pixel_cnt[9]_i_1_n_0 |                4 |             11 |
+|  clk_IBUF_BUFG              | kd/inst/inst/Ps2Interface_i/frame[10]_i_1_n_0 | a2/rst2                       |                3 |             11 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_14                      | a2/rst2                       |                5 |             12 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]                         | a2/rst2                       |                7 |             12 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_12                      | a2/rst2                       |                3 |             12 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_13                      | a2/rst2                       |                6 |             14 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_4                       | a2/rst2                       |                9 |             14 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_6                       | a2/rst2                       |                8 |             14 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_11                      | a2/rst2                       |                4 |             14 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_9                       | a2/rst2                       |                4 |             14 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_7                       | a2/rst2                       |               10 |             14 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_1                       | a2/rst2                       |                9 |             16 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_8                       | a2/rst2                       |                7 |             16 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_10                      | a2/rst2                       |                7 |             16 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_2                       | a2/rst2                       |                6 |             16 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_5[0]                    | a2/rst2                       |                5 |             18 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_3[0]                    | a2/rst2                       |                6 |             18 |
+|  clk_IBUF_BUFG              |                                               |                               |               10 |             19 |
+|  clk_IBUF_BUFG              | kd/E[0]                                       |                               |               10 |             20 |
+|  clk_IBUF_BUFG              | kd/task_finish_reg[0]_0[0]                    | a2/rst2                       |               10 |             20 |
+|  clk_IBUF_BUFG              | a2/E[0]                                       |                               |               21 |             28 |
+|  clk_IBUF_BUFG              |                                               | a2/rst2                       |               30 |             78 |
+|  clk_IBUF_BUFG              | kd/op/E[0]                                    | a2/rst2                       |               38 |            128 |
 +-----------------------------+-----------------------------------------------+-------------------------------+------------------+----------------+
 
 

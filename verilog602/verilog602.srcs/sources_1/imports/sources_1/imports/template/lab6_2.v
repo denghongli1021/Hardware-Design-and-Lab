@@ -73,7 +73,7 @@ module lab6_2(
     wire [9:0] h_cnt; //640
     wire [9:0] v_cnt;  //480
     reg [9:0] h,v;
-    reg pic [0:16] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
+    reg pic [0:16] = { 0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0 };
     // reg pic1 = 0;reg pic2 = 0;reg pic3 = 0;reg pic4 = 0;
     // reg pic5 = 0;reg pic6 = 0;reg pic7 = 0;reg pic8 = 0;
     // reg pic9 = 0;reg pic10 = 0;reg pic11 = 0;reg pic12 = 0;
@@ -355,6 +355,7 @@ module lab6_2(
     reg [1:0] task_finish = 0;
     //reg [1:0] task_finish2 = 0;
     reg [5:0] tmp;
+    reg [1:0] finish = 0;
     always@(*) begin
         if (key_down[LEFT_SHIFT] == 1) begin
             press_shift = 1;
@@ -366,10 +367,10 @@ module lab6_2(
     always@(posedge clk or posedge rst2) begin
         if (rst2) begin
             task_finish = 0;
-            pic[1] = 0;
-            pic[2] = 0;
-            pic[3] = 0;
-            pic[4] = 0;
+            pic[1] = 1;
+            pic[2] = 1;
+            pic[3] = 1;
+            pic[4] = 1;
             pic[5] = 0;
             pic[6] = 0;
             pic[7] = 0;
@@ -415,7 +416,7 @@ module lab6_2(
             x[16] =480;
             y[16] =360;
         end
-        else begin
+        else if (finish == 0) begin
             if (key_num != 0) begin
                 if (key_1 == 0) begin
                     if (key_down[last_change] == 1) begin
@@ -470,34 +471,59 @@ module lab6_2(
                     task_finish = 0;
                 end
             end
-            // else
-            // if (key_down[KEY_CODES[key_1-1]] == 1 && key_down[KEY_CODES[key_2-1]] == 1 && task_finish == 0) begin // 做旋轉
-            //     if (key_1 == 17) begin
-            //         pic[key_2] = pic[key_2] ^ 1;
-            //         task_finish = 1;
-            //     end
-            //     else if (key_2 == 17) begin
-            //         pic[key_1] = pic[key_1] ^ 1;
-            //         task_finish = 1;
-            //     end
-            // end
-            // else if (key_1 != 0 && key_2 != 0 && task_finish == 0) begin
-            //     tmp = x[key_1];
-            //     x[key_1] = x[key_2]; // x 交換
-            //     x[key_2] = tmp;
-
-            //     tmp = y[key_1];
-            //     y[key_1] = y[key_2]; // y 交換
-            //     y[key_2] = tmp;
-
-            //     tmp = pic[key_1];
-            //     pic[key_1] = pic[key_2]; // pic 交換
-            //     pic[key_2] = tmp;
-            //     task_finish = 1;
-            // end
-            // else if (key_1 == 0 && key_2 == 0) begin
-            //     task_finish = 0;
-            // end
+        end
+    end
+    always@(*) begin
+        if(pic[1] == 0 &&
+            pic[2] == 0 &&
+            pic[3] == 0 &&
+            pic[4] == 0&&
+            pic[5] == 0&&
+            pic[6] == 0&&
+            pic[7] == 0&&
+            pic[8] == 0&&
+            pic[9] == 0&&
+            pic[10] == 0&&
+            pic[11] == 0&&
+            pic[12] == 0&&
+            pic[13] == 0&&
+            pic[14] == 0&&
+            pic[15] == 0&&
+            pic[16] == 0&&
+            x[1] == 0 &&
+            y[1] == 0 &&
+            x[2] == 0&&
+            y[2] == 120&&
+            x[3] ==0&&
+            y[3] ==240&&
+            x[4] ==0&&
+            y[4] ==360&&
+            x[5] ==160&&
+            y[5] ==0&&
+            x[6] ==160&&
+            y[6] ==120&&
+            x[7] ==160&&
+            y[7] ==240&&
+            x[8] ==160&&
+            y[8] ==360&&
+            x[9] ==320&&
+            y[9] ==0&&
+            x[10] ==320&&
+            y[10] ==120&&
+            x[11] ==320&&
+            y[11] ==240&&
+            x[12] ==320&&
+            y[12] ==360&&
+            x[13] ==480&&
+            y[13] ==0&&
+            x[14] ==480&&
+            y[14] ==120&&
+            x[15] ==480&&
+            y[15] ==240&&
+            x[16] ==480&&
+            y[16] ==360
+            ) begin
+            finish = 1;
         end
     end
 endmodule
