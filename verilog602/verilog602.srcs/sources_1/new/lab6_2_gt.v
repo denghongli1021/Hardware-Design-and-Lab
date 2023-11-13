@@ -89,6 +89,7 @@ module mem_addr_gen(
   output reg pass,
   output reg [16:0] pixel_addr
 );
+  parameter [8:0] SHIFT = 9'b000010010;
   parameter [8:0] KEY_CODES [0:15] = {
     9'b000010110, // 1 => 16
     9'b000011110, // 2 => 1E
@@ -107,12 +108,15 @@ module mem_addr_gen(
     9'b000100001, // C
     9'b000101010  // V
   };
-  parameter [8:0] SHIFT = 9'b000010010;
+  parameter [3:0] random [0:15] = {
+    4'd3, 4'd10, 4'd1, 4'd15, 4'd5, 4'd0, 4'd8, 4'd12,
+    4'd4, 4'd9, 4'd11, 4'd13, 4'd14, 4'd2, 4'd6, 4'd7
+  };
   reg [8:0] last_change2;
-  reg [3:0] blocks [0:15], id, id2;
+  reg [3:0] blocks [0:15];
+  reg [4:0] j;
   reg [15:0] rotate;
   reg next_pass;
-  reg pushed;
   wire [16:0] BX, BY, PX, PY;
   wire [3:0] curX, curY;
   wire shift_down;
@@ -130,81 +134,46 @@ module mem_addr_gen(
       else pixel_addr = (curY * 80 + PY) + 320 * (curX * 60 + PX);
     end
   end
-
+  always @(*) begin
+    case (last_change)
+      KEY_CODES[0]: j = 0;
+      KEY_CODES[1]: j = 1;
+      KEY_CODES[2]: j = 2;
+      KEY_CODES[3]: j = 3;
+      KEY_CODES[4]: j = 4;
+      KEY_CODES[5]: j = 5;
+      KEY_CODES[6]: j = 6;
+      KEY_CODES[7]: j = 7;
+      KEY_CODES[8]: j = 8;
+      KEY_CODES[9]: j = 9;
+      KEY_CODES[10]: j = 10;
+      KEY_CODES[11]: j = 11;
+      KEY_CODES[12]: j = 12;
+      KEY_CODES[13]: j = 13;
+      KEY_CODES[14]: j = 14;
+      KEY_CODES[15]: j = 15;
+      default: j = 31;
+    endcase
+  end
   always @(posedge clk, posedge rst) begin
     if (rst) begin
-      // blocks[0] <= 3;
-      // blocks[1] <= 10;
-      // blocks[2] <= 1;
-      // blocks[3] <= 15;
-      // blocks[4] <= 5;
-      // blocks[5] <= 0;
-      // blocks[6] <= 8;
-      // blocks[7] <= 12;
-      // blocks[8] <= 4;
-      // blocks[9] <= 9;
-      // blocks[10] <= 11;
-      // blocks[11] <= 13;
-      // blocks[12] <= 14;
-      // blocks[13] <= 2;
-      // blocks[14] <= 6;
-      // blocks[15] <= 7;
-      blocks[0] <= 0;
-      blocks[1] <= 1;
-      blocks[2] <= 2;
-      blocks[3] <= 3;
-      blocks[4] <= 4;
-      blocks[5] <= 5;
-      blocks[6] <= 6;
-      blocks[7] <= 7;
-      blocks[8] <= 8;
-      blocks[9] <= 9;
-      blocks[10] <= 10;
-      blocks[11] <= 11;
-      blocks[12] <= 12;
-      blocks[13] <= 13;
-      blocks[14] <= 15;
-      blocks[15] <= 14;
-      // blocks <= {3, 10, 1, 15, 5, 0, 8, 12, 4, 9, 11, 13, 14, 2, 6, 7};
-      // rotate <= 16'b0000010001110111;
-      rotate <= 0;
+      for (i = 0; i < 16; i = i + 1) blocks[i] <= random[i];
+      rotate <= 16'b0000010001110111;
     end
     else begin
-      // blocks <= blocks;
-      blocks[0] <= blocks[0];
-      blocks[1] <= blocks[1];
-      blocks[2] <= blocks[2];
-      blocks[3] <= blocks[3];
-      blocks[4] <= blocks[4];
-      blocks[5] <= blocks[5];
-      blocks[6] <= blocks[6];
-      blocks[7] <= blocks[7];
-      blocks[8] <= blocks[8];
-      blocks[9] <= blocks[9];
-      blocks[10] <= blocks[10];
-      blocks[11] <= blocks[11];
-      blocks[12] <= blocks[12];
-      blocks[13] <= blocks[13];
-      blocks[14] <= blocks[14];
-      blocks[15] <= blocks[15];
+      for (i = 0; i < 16; i = i + 1) blocks[i] <= blocks[i];
       rotate <= rotate;
-      if (id != id2) begin
-        blocks[id] <= blocks[id2];
-        blocks[id2] <= blocks[id];
+      if (been_ready && key_down[last_change]) begin
+        if (shift_down && j != 5'b11111) rotate[j] <= ~rotate[j];
+        else begin
+          for (i = 0; i < 16; i = i + 1)
+            if (last_change != KEY_CODES[i] && key_down[KEY_CODES[i]]) begin
+              blocks[i] <= blocks[j];
+              blocks[j] <= blocks[i];
+            end
+        end
       end
     end
-  end
-  always @(posedge clk, posedge rst) begin
-    if (rst) last_change2 <= 0;
-    else last_change2 <= last_change;
-  end
-  always @(*) begin
-    // if (been_ready && key_down[last_change]) begin
-    for (i = 0; i < 16; i = i + 1) begin
-      if (last_change == KEY_CODES[i]) id = i;
-      if (last_change2 == KEY_CODES[i]) id2 = i;
-    end
-    // end
   end
   always @(posedge clk, posedge rst) begin
     if (rst) pass <= 0;
