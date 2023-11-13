@@ -35,7 +35,7 @@ module lab6_1(
     wire [9:0] h_cnt; //640
     wire [9:0] v_cnt;  //480
 
-  assign {vgaRed, vgaGreen, vgaBlue} = (valid==1'b1) ? pixel:12'h0;
+  assign {vgaRed, vgaGreen, vgaBlue} = (valid==1'b1) ? pixel:12'h0; //~pixel 負片
 
     clock_divider clk_wiz_0_inst(
       .clk(clk),

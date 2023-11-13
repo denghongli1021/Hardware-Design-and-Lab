@@ -18,7 +18,7 @@ module lab6_2_gt(
   wire valid;
   wire [9:0] h_cnt, v_cnt;  // 640 * 480
   wire rst2, rst3;
-  wire [511:0] key_down;
+  wire [127:0] key_down;
   wire [8:0] last_change;
   wire been_ready;
 
@@ -49,7 +49,7 @@ module lab6_2_gt(
     .clk22(clk_22)
   );
   mem_addr_gen mem_addr_gen_inst(
-    .clk(clk_22),
+    .clk(clk),
     .rst(rst3),
     .h_cnt(h_cnt),
     .v_cnt(v_cnt),
@@ -83,7 +83,7 @@ module mem_addr_gen(
   input [9:0] h_cnt,
   input [9:0] v_cnt,
   input hint,
-  input [511:0] key_down,
+  input [127:0] key_down,
   input [8:0] last_change,
   input been_ready,
   output reg pass,
@@ -108,15 +108,18 @@ module mem_addr_gen(
     9'b000100001, // C
     9'b000101010  // V
   };
+  // parameter [3:0] random [0:15] = {
+  //   4'd3, 4'd10, 4'd1, 4'd15, 4'd5, 4'd0, 4'd8, 4'd12,
+  //   4'd4, 4'd9, 4'd11, 4'd13, 4'd14, 4'd2, 4'd6, 4'd7
+  // };
   parameter [3:0] random [0:15] = {
-    4'd3, 4'd10, 4'd1, 4'd15, 4'd5, 4'd0, 4'd8, 4'd12,
-    4'd4, 4'd9, 4'd11, 4'd13, 4'd14, 4'd2, 4'd6, 4'd7
+    4'd1, 4'd0, 4'd2, 4'd3, 4'd4, 4'd5, 4'd6, 4'd7,
+    4'd8, 4'd9, 4'd10, 4'd11, 4'd12, 4'd13, 4'd14, 4'd15
   };
-  reg [8:0] last_change2;
   reg [3:0] blocks [0:15];
-  reg [4:0] j;
+  reg [4:0] j, k1 = 31, k2 = 31;
   reg [15:0] rotate;
-  reg next_pass;
+  reg next_pass, done;
   wire [16:0] BX, BY, PX, PY;
   wire [3:0] curX, curY;
   wire shift_down;
@@ -158,19 +161,36 @@ module mem_addr_gen(
   always @(posedge clk, posedge rst) begin
     if (rst) begin
       for (i = 0; i < 16; i = i + 1) blocks[i] <= random[i];
-      rotate <= 16'b0000010001110111;
+      // rotate <= 16'b0000010001110111;
+      rotate <= 16'b1100000000000000;
+      done = 0;
+      k1 = 31;
+      k2 = 31;
     end
     else begin
       for (i = 0; i < 16; i = i + 1) blocks[i] <= blocks[i];
       rotate <= rotate;
-      if (been_ready && key_down[last_change]) begin
-        if (shift_down && j != 5'b11111) rotate[j] <= ~rotate[j];
-        else begin
-          for (i = 0; i < 16; i = i + 1)
-            if (last_change != KEY_CODES[i] && key_down[KEY_CODES[i]]) begin
-              blocks[i] <= blocks[j];
-              blocks[j] <= blocks[i];
-            end
+      if (!pass) begin
+        if (j != 31) begin
+          if (k1 == 31 && key_down[last_change]) k1 = j;
+          else if (k1 != 31 && key_down[KEY_CODES[k1]] == 0) k1 = 31;
+          if (k1 != 31 && k2 == 31 && last_change != KEY_CODES[k1] && key_down[last_change]) k2 = j;
+          else if (k2 != 31 && key_down[KEY_CODES[k2]]) k2 = 31;
+          else if (k2 != 31 && key_down[KEY_CODES[k1]] == 0) k1 = k2;
+        end
+
+        if (shift_down && key_down[KEY_CODES[k1]] && !done) begin
+          rotate[blocks[k1]] <= ~rotate[blocks[k1]];
+          done = 1;
+        end
+        else if (!key_down[KEY_CODES[k1]]) done = 0;
+        else if (!shift_down) begin // !shift_down
+          if (key_down[KEY_CODES[k1]] && key_down[KEY_CODES[k2]] && !done) begin
+            blocks[k1] <= blocks[k2];
+            blocks[k2] <= blocks[k1];
+            done = 1;
+          end
+          else if (!key_down[KEY_CODES[k1]] && !key_down[KEY_CODES[k2]]) done = 0;
         end
       end
     end
