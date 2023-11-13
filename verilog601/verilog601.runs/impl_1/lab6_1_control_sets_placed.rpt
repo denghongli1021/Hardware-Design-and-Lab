@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Wed Nov  8 01:35:38 2023
+| Date         : Mon Nov 13 22:17:59 2023
 | Host         : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file lab6_1_control_sets_placed.rpt
 | Design       : lab6_1
@@ -74,10 +74,10 @@ Table of Contents
 |         Clock Signal        |   Enable Signal   |        Set/Reset Signal       | Slice Load Count | Bel Load Count |
 +-----------------------------+-------------------+-------------------------------+------------------+----------------+
 |  clk_wiz_0_inst/out_BUFG[0] |                   | a2/rst2                       |                2 |              2 |
-|  clk_wiz_0_inst/out_BUFG[1] | en_IBUF           | a2/rst2                       |                4 |             10 |
 |  clk_wiz_0_inst/out_BUFG[0] |                   |                               |                4 |             10 |
 |  clk_wiz_0_inst/out_BUFG[0] |                   | vga_inst/pixel_cnt[9]_i_1_n_0 |                2 |             10 |
 |  clk_wiz_0_inst/out_BUFG[0] | vga_inst/line_cnt | vga_inst/line_cnt[9]_i_1_n_0  |                4 |             10 |
+|  clk_wiz_0_inst/out_BUFG[1] | en_IBUF           | a2/rst2                       |                4 |             10 |
 |  clk_IBUF_BUFG              |                   |                               |                8 |             28 |
 +-----------------------------+-------------------+-------------------------------+------------------+----------------+
 
