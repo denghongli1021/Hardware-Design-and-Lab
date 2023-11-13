@@ -88,7 +88,7 @@ module lab6_2(
     reg [9:0] y [0:16] = {
         0,
         0,240,120,360,
-        0,120,240,360,
+        0,240,120,360,
         0,120,240,360,
         0,120,240,360
     };
@@ -133,161 +133,6 @@ module lab6_2(
       .h_cnt(h_cnt),
       .v_cnt(v_cnt)
     );
-    // process pic
-    always @ (*) begin
-        if (h_cnt <= 160) begin 
-            if (v_cnt <= 120) begin
-                h = h_cnt + x[1] - 0;
-                if (pic[1]) begin
-                    v = y[1] + 120 - (v_cnt - 0); 
-                end
-                else begin
-                    v = v_cnt + y[1] - 0;
-                end
-            end
-            else if (v_cnt > 120 && v_cnt <= 240) begin
-                h = h_cnt + x[2] - 0;
-                if (pic[2]) begin
-                    v = y[2] + 120 - (v_cnt - 120);
-                end
-                else begin
-                    v = v_cnt + y[2] - 120;
-                end
-            end
-            else if (v_cnt >240 && v_cnt <= 360) begin
-                h = h_cnt + x[3] - 0;
-                if (pic[3]) begin
-                    v = y[3] + 120 - (v_cnt - 240);
-                end
-                else begin
-                    v = v_cnt + y[3] - 240;
-                end
-            end
-            else if (v_cnt > 360) begin
-                h = h_cnt + x[4] - 0;
-                if (pic[4]) begin
-                    v = y[4] + 120 - (v_cnt - 360);
-                end
-                else begin
-                    v = v_cnt + y[4] - 360;
-                end
-            end
-        end
-        else if (h_cnt > 160 && h_cnt <= 320) begin
-            if (v_cnt <= 120) begin
-                h = h_cnt + x[5] - 160;
-                if (pic[5]) begin
-                    v = y[5] + 120 - (v_cnt - 0);
-                end
-                else begin
-                    v = v_cnt + y[5] - 0;
-                end
-            end
-            else if (v_cnt > 120 && v_cnt <= 240) begin
-                h = h_cnt + x[6] - 160;
-                if (pic[6]) begin
-                    v = y[6] + 120 - (v_cnt - 120);
-                end
-                else begin
-                    v = v_cnt + y[6] - 120;
-                end
-            end
-            else if (v_cnt >240 && v_cnt <= 360) begin
-                h = h_cnt + x[7] - 160;
-                if (pic[7]) begin
-                    v = y[7] + 120 - (v_cnt - 240);
-                end
-                else begin
-                    v = v_cnt + y[7] - 240;
-                end
-            end
-            else if (v_cnt > 360) begin
-                h = h_cnt + x[8] - 160;
-                if (pic[8]) begin
-                    v = y[8] + 120 - (v_cnt - 360);
-                end
-                else begin
-                    v = v_cnt + y[8] - 360;
-                end
-            end
-        end
-        else if (h_cnt >320 && h_cnt <= 480) begin
-            if (v_cnt <= 120) begin
-                h = h_cnt + x[9] - 320;
-                if (pic[9]) begin
-                    v = y[9] + 120 - (v_cnt - 0);
-                end
-                else begin
-                    v = v_cnt + y[9] - 0;
-                end
-            end
-            else if (v_cnt > 120 && v_cnt <= 240) begin
-                h = h_cnt + x[10] - 320;
-                if (pic[10]) begin
-                    v = y[10] + 120 - (v_cnt - 120);
-                end
-                else begin
-                    v = v_cnt + y[10] - 120;
-                end
-            end
-            else if (v_cnt >240 && v_cnt <= 360) begin
-                h = h_cnt + x[11] - 320;
-                if (pic[11]) begin
-                    v = y[11] + 120 - (v_cnt - 240);
-                end
-                else begin
-                    v = v_cnt + y[11] - 240;
-                end
-            end
-            else if (v_cnt > 360) begin
-                h = h_cnt + x[12] - 320;
-                if (pic[12]) begin
-                    v = y[12] + 120 - (v_cnt - 360);
-                end
-                else begin
-                    v = v_cnt + y[12] - 360;
-                end
-            end
-        end
-        else if (h_cnt > 480) begin
-            if (v_cnt <= 120) begin
-                h = h_cnt + x[13] - 480;
-                if (pic[13]) begin
-                    v = y[13] + 120 - (v_cnt - 0);
-                end
-                else begin
-                    v = v_cnt + y[13] - 0;
-                end
-            end
-            else if (v_cnt > 120 && v_cnt <= 240) begin
-                h = h_cnt + x[14] - 480;
-                if (pic[14]) begin
-                    v = y[14] + 120 - (v_cnt - 120);
-                end
-                else begin
-                    v = v_cnt + y[14] - 120;
-                end
-            end
-            else if (v_cnt >240 && v_cnt <= 360) begin
-                h = h_cnt + x[15] - 480;
-                if (pic[15]) begin
-                    v = y[15] + 120 - (v_cnt - 240);
-                end
-                else begin
-                    v = v_cnt + y[15] - 240;
-                end
-            end
-            else if (v_cnt > 360) begin
-                h = h_cnt + x[16] - 480;
-                if (pic[16]) begin
-                    v = y[16] + 120 - (v_cnt - 360);
-                end
-                else begin
-                    v = v_cnt + y[16] - 360;
-                end
-            end
-        end
-    end
     reg [4:0] key_num;
     always @ (*) begin
 		case (last_change)
@@ -315,58 +160,15 @@ module lab6_2(
     reg [8:0] key_1_code = 0;
     reg [5:0] key_2 = 0;
     reg [8:0] key_2_code = 0;
-    // always@(posedge clk or posedge rst2) begin
-    //     if (rst2) begin
-    //         key_1 = 0;
-    //         key_1_code = 0;
-    //         key_2 = 0;
-    //         key_2_code = 0;
-    //     end
-    //     else if (key_num != 0) begin
-    //         if (key_1 == 0) begin
-    //             if (key_down[last_change] == 1) begin
-    //                 key_1 = key_num;
-    //                 key_1_code = last_change; 
-    //                 // pass = 1; //
-    //             end
-    //         end
-    //         else if (key_1 != 0) begin
-    //             if (key_down[key_1_code] == 0) begin 
-    //                 key_1 = 0;
-    //                 key_1_code = 0;
-    //                 // pass = 0; //
-    //             end
-    //         end
-    //         if (key_1 != 0 && key_2 == 0) begin
-    //             if (key_down[last_change] == 1) begin
-    //                 key_2 = key_num;
-    //                 key_2_code = last_change;
-    //             end
-    //         end
-    //         else if (key_2 != 0) begin
-    //             if (key_down[key_2_code] == 0) begin
-    //                 key_2 = 0;
-    //                 key_2_code = 0;
-    //             end
-    //         end
-    //     end
-    // end
     reg [1:0] press_shift = 0;
     reg [1:0] task_finish = 0;
     //reg [1:0] task_finish2 = 0;
     reg [5:0] tmp;
     reg [1:0] finish = 0;
-    always@(*) begin
-        if (key_down[LEFT_SHIFT] == 1) begin
-            press_shift = 1;
-        end
-        else if (key_down[LEFT_SHIFT] == 0) begin
-            press_shift = 0;
-        end
-    end
-    always@(posedge clk or posedge rst2) begin
+    // process pic
+    always @ (posedge clk) begin
         if (rst2) begin
-            task_finish = 0;
+            // task_finish = 0;
             pic[1] = 1;
             pic[2] = 1;
             pic[3] = 1;
@@ -386,17 +188,17 @@ module lab6_2(
             x[1] = 0 ;
             y[1] = 0 ;
             x[2] = 0;
-            y[2] = 120;
+            y[2] = 240;
             x[3] =0;
-            y[3] =240;
+            y[3] =120;
             x[4] =0;
             y[4] =360;
             x[5] =160;
             y[5] =0;
             x[6] =160;
-            y[6] =120;
+            y[6] =240;
             x[7] =160;
-            y[7] =240;
+            y[7] =120;
             x[8] =160;
             y[8] =360;
             x[9] =320;
@@ -416,61 +218,223 @@ module lab6_2(
             x[16] =480;
             y[16] =360;
         end
-        else if (finish == 0) begin
-            if (key_num != 0) begin
-                if (key_1 == 0) begin
-                    if (key_down[last_change] == 1) begin
-                        key_1 = key_num;
-                        key_1_code = last_change; 
-                        // pass = 1; //
+        else begin
+            if (finish == 0) begin
+                if (key_num != 0) begin
+                    if (key_1 == 0) begin
+                        if (key_down[last_change] == 1) begin
+                            key_1 = key_num;
+                            key_1_code = last_change; 
+                            // pass = 1; //
+                        end
+                    end
+                    else if (key_1 != 0) begin
+                        if (key_down[key_1_code] == 0) begin 
+                            key_1 = 0;
+                            key_1_code = 0;
+                            // pass = 0; //
+                        end
+                    end
+                    if (key_1 != 0 && key_2 == 0 && last_change != key_1_code) begin
+                        if (key_down[last_change] == 1) begin
+                            key_2 = key_num;
+                            key_2_code = last_change;
+                        end
+                    end
+                    else if (key_2 != 0) begin
+                        if (key_down[key_2_code] == 0) begin
+                            key_2 = 0;
+                            key_2_code = 0;
+                        end
+                        else if (key_down[key_1_code] == 0) begin
+                            key_1 = key_2;
+                            key_1_code = key_2_code;
+                        end
                     end
                 end
-                else if (key_1 != 0) begin
-                    if (key_down[key_1_code] == 0) begin 
-                        key_1 = 0;
-                        key_1_code = 0;
-                        // pass = 0; //
-                    end
-                end
-                if (key_1 != 0 && key_2 == 0 && last_change != key_1_code) begin
-                    if (key_down[last_change] == 1) begin
-                        key_2 = key_num;
-                        key_2_code = last_change;
-                    end
-                end
-                else if (key_2 != 0) begin
-                    if (key_down[key_2_code] == 0) begin
-                        key_2 = 0;
-                        key_2_code = 0;
-                    end
-                    else if (key_down[key_1_code] == 0) begin
-                        key_1 = key_2;
-                        key_1_code = key_2_code;
-                    end
-                end
-            end
-                //out = 1;
-            if (press_shift == 1 && key_down[key_1_code] == 1 && task_finish == 0) begin
-                pic[key_1] = pic[key_1] ^ 1;
-                task_finish = 1;
-            end 
-            else if (key_down[key_1_code] == 0) begin
-                task_finish = 0;
-            end
-            else if (press_shift == 0) begin
-                if (key_down[key_1_code] == 1 && key_down[key_2_code] == 1 && task_finish == 0) begin
-                    x[key_1] <= x[key_2];
-                    x[key_2] <= x[key_1];
-                    y[key_1] <= y[key_2];
-                    y[key_2] <= y[key_1];
-                    pic[key_1] <= pic[key_2];
-                    pic[key_2] <= pic[key_1];
+                    //out = 1;
+                if (press_shift == 1 && key_down[key_1_code] == 1 && task_finish == 0) begin
+                    pic[key_1] = pic[key_1] ^ 1;
                     task_finish = 1;
-                end
-                else if (key_down[key_1_code] == 0 && key_down[key_2_code] == 0) begin
+                end 
+                else if (key_down[key_1_code] == 0) begin
                     task_finish = 0;
                 end
+                else if (press_shift == 0) begin
+                    if (key_down[key_1_code] == 1 && key_down[key_2_code] == 1 && task_finish == 0) begin
+                        x[key_1] <= x[key_2];
+                        x[key_2] <= x[key_1];
+                        y[key_1] <= y[key_2];
+                        y[key_2] <= y[key_1];
+                        pic[key_1] <= pic[key_2];
+                        pic[key_2] <= pic[key_1];
+                        task_finish = 1;
+                    end
+                    else if (key_down[key_1_code] == 0 && key_down[key_2_code] == 0) begin
+                        task_finish = 0;
+                    end
+                end
             end
+            if (h_cnt <= 160) begin 
+                if (v_cnt <= 120) begin
+                    h = h_cnt + x[1] - 0;
+                    if (pic[1]) begin
+                        v = y[1] + 120 - (v_cnt - 0); 
+                    end
+                    else begin
+                        v = v_cnt + y[1] - 0;
+                    end
+                end
+                else if (v_cnt > 120 && v_cnt <= 240) begin
+                    h = h_cnt + x[2] - 0;
+                    if (pic[2]) begin
+                        v = y[2] + 120 - (v_cnt - 120);
+                    end
+                    else begin
+                        v = v_cnt + y[2] - 120;
+                    end
+                end
+                else if (v_cnt >240 && v_cnt <= 360) begin
+                    h = h_cnt + x[3] - 0;
+                    if (pic[3]) begin
+                        v = y[3] + 120 - (v_cnt - 240);
+                    end
+                    else begin
+                        v = v_cnt + y[3] - 240;
+                    end
+                end
+                else if (v_cnt > 360) begin
+                    h = h_cnt + x[4] - 0;
+                    if (pic[4]) begin
+                        v = y[4] + 120 - (v_cnt - 360);
+                    end
+                    else begin
+                        v = v_cnt + y[4] - 360;
+                    end
+                end
+            end
+            else if (h_cnt > 160 && h_cnt <= 320) begin
+                if (v_cnt <= 120) begin
+                    h = h_cnt + x[5] - 160;
+                    if (pic[5]) begin
+                        v = y[5] + 120 - (v_cnt - 0);
+                    end
+                    else begin
+                        v = v_cnt + y[5] - 0;
+                    end
+                end
+                else if (v_cnt > 120 && v_cnt <= 240) begin
+                    h = h_cnt + x[6] - 160;
+                    if (pic[6]) begin
+                        v = y[6] + 120 - (v_cnt - 120);
+                    end
+                    else begin
+                        v = v_cnt + y[6] - 120;
+                    end
+                end
+                else if (v_cnt >240 && v_cnt <= 360) begin
+                    h = h_cnt + x[7] - 160;
+                    if (pic[7]) begin
+                        v = y[7] + 120 - (v_cnt - 240);
+                    end
+                    else begin
+                        v = v_cnt + y[7] - 240;
+                    end
+                end
+                else if (v_cnt > 360) begin
+                    h = h_cnt + x[8] - 160;
+                    if (pic[8]) begin
+                        v = y[8] + 120 - (v_cnt - 360);
+                    end
+                    else begin
+                        v = v_cnt + y[8] - 360;
+                    end
+                end
+            end
+            else if (h_cnt >320 && h_cnt <= 480) begin
+                if (v_cnt <= 120) begin
+                    h = h_cnt + x[9] - 320;
+                    if (pic[9]) begin
+                        v = y[9] + 120 - (v_cnt - 0);
+                    end
+                    else begin
+                        v = v_cnt + y[9] - 0;
+                    end
+                end
+                else if (v_cnt > 120 && v_cnt <= 240) begin
+                    h = h_cnt + x[10] - 320;
+                    if (pic[10]) begin
+                        v = y[10] + 120 - (v_cnt - 120);
+                    end
+                    else begin
+                        v = v_cnt + y[10] - 120;
+                    end
+                end
+                else if (v_cnt >240 && v_cnt <= 360) begin
+                    h = h_cnt + x[11] - 320;
+                    if (pic[11]) begin
+                        v = y[11] + 120 - (v_cnt - 240);
+                    end
+                    else begin
+                        v = v_cnt + y[11] - 240;
+                    end
+                end
+                else if (v_cnt > 360) begin
+                    h = h_cnt + x[12] - 320;
+                    if (pic[12]) begin
+                        v = y[12] + 120 - (v_cnt - 360);
+                    end
+                    else begin
+                        v = v_cnt + y[12] - 360;
+                    end
+                end
+            end
+            else if (h_cnt > 480) begin
+                if (v_cnt <= 120) begin
+                    h = h_cnt + x[13] - 480;
+                    if (pic[13]) begin
+                        v = y[13] + 120 - (v_cnt - 0);
+                    end
+                    else begin
+                        v = v_cnt + y[13] - 0;
+                    end
+                end
+                else if (v_cnt > 120 && v_cnt <= 240) begin
+                    h = h_cnt + x[14] - 480;
+                    if (pic[14]) begin
+                        v = y[14] + 120 - (v_cnt - 120);
+                    end
+                    else begin
+                        v = v_cnt + y[14] - 120;
+                    end
+                end
+                else if (v_cnt >240 && v_cnt <= 360) begin
+                    h = h_cnt + x[15] - 480;
+                    if (pic[15]) begin
+                        v = y[15] + 120 - (v_cnt - 240);
+                    end
+                    else begin
+                        v = v_cnt + y[15] - 240;
+                    end
+                end
+                else if (v_cnt > 360) begin
+                    h = h_cnt + x[16] - 480;
+                    if (pic[16]) begin
+                        v = y[16] + 120 - (v_cnt - 360);
+                    end
+                    else begin
+                        v = v_cnt + y[16] - 360;
+                    end
+                end
+            end
+        end
+    end
+    always@(*) begin
+        if (key_down[LEFT_SHIFT] == 1) begin
+            press_shift = 1;
+        end
+        else if (key_down[LEFT_SHIFT] == 0) begin
+            press_shift = 0;
         end
     end
     always@(posedge clk or posedge rst2) begin
