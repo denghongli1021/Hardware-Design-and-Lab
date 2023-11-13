@@ -161,6 +161,7 @@ module lab6_2(
     reg [5:0] key_2 = 0;
     reg [8:0] key_2_code = 0;
     reg [1:0] press_shift = 0;
+    reg [1:0] release_shift = 1;
     reg [1:0] task_finish = 0;
     //reg [1:0] task_finish2 = 0;
     reg [5:0] tmp;
@@ -169,6 +170,7 @@ module lab6_2(
     always @ (posedge clk) begin
         if (rst2) begin
             // task_finish = 0;
+            release_shift = 1;
             pic[1] = 1;
             pic[2] = 1;
             pic[3] = 1;
@@ -253,10 +255,14 @@ module lab6_2(
                     end
                 end
                     //out = 1;
-                if (press_shift == 1 && key_down[key_1_code] == 1 && task_finish == 0) begin
+                if (press_shift == 1 && key_down[key_1_code] == 1 && task_finish == 0 && release_shift == 1) begin
                     pic[key_1] = pic[key_1] ^ 1;
                     task_finish = 1;
+                    release_shift = 0;
                 end 
+                else if (key_down[LEFT_SHIFT] == 0 && release_shift == 0) begin
+                    release_shift = 1;
+                end
                 else if (key_down[key_1_code] == 0) begin
                     task_finish = 0;
                 end
