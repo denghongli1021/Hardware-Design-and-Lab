@@ -126,7 +126,6 @@ module lab6_2(
     vga_controller  vga_inst(
       .pclk(clk_25MHz),
       .reset(rst2),
-      //.en(en),
       .hsync(hsync),
       .vsync(vsync),
       .valid(valid),
@@ -163,7 +162,6 @@ module lab6_2(
     reg [1:0] press_shift = 0;
     reg [1:0] release_shift = 1;
     reg [1:0] task_finish = 0;
-    //reg [1:0] task_finish2 = 0;
     reg [5:0] tmp;
     reg [1:0] finish = 0;
     // process pic
@@ -171,54 +169,18 @@ module lab6_2(
         if (rst2) begin
             // task_finish = 0;
             release_shift = 1;
-            pic[1] = 1;
-            pic[2] = 1;
-            pic[3] = 1;
-            pic[4] = 1;
-            pic[5] = 0;
-            pic[6] = 0;
-            pic[7] = 0;
-            pic[8] = 0;
-            pic[9] = 0;
-            pic[10] = 0;
-            pic[11] = 0;
-            pic[12] = 0;
-            pic[13] = 0;
-            pic[14] = 0;
-            pic[15] = 0;
-            pic[16] = 0;
-            x[1] = 0 ;
-            y[1] = 0 ;
-            x[2] = 0;
-            y[2] = 240;
-            x[3] =0;
-            y[3] =120;
-            x[4] =0;
-            y[4] =360;
-            x[5] =160;
-            y[5] =0;
-            x[6] =160;
-            y[6] =240;
-            x[7] =160;
-            y[7] =120;
-            x[8] =160;
-            y[8] =360;
-            x[9] =320;
-            y[9] =0;
-            x[10] =320;
-            y[10] =120;
-            x[11] =320;
-            y[11] =240;
-            x[12] =320;
-            y[12] =360;
-            x[13] =480;
-            y[13] =0;
-            x[14] =480;
-            y[14] =120;
-            x[15] =480;
-            y[15] =240;
-            x[16] =480;
-            y[16] =360;
+            pic[1] = 1;pic[2] = 1;pic[3] = 1;pic[4] = 1;
+            pic[5] = 0;pic[6] = 0;pic[7] = 0;pic[8] = 0;
+            pic[9] = 0;pic[10] = 0;pic[11] = 0;pic[12] = 0;
+            pic[13] = 0;pic[14] = 0;pic[15] = 0;pic[16] = 0;
+            x[1] = 0 ;y[1] = 0 ;x[2] = 0;y[2] = 240;
+            x[3] =0;y[3] =120;x[4] =0;y[4] =360;
+            x[5] =160;y[5] =0;x[6] =160;y[6] =240;
+            x[7] =160;y[7] =120;x[8] =160;y[8] =360;
+            x[9] =320;y[9] =0;x[10] =320;y[10] =120;
+            x[11] =320;y[11] =240;x[12] =320;y[12] =360;
+            x[13] =480;y[13] =0;x[14] =480;y[14] =120;
+            x[15] =480;y[15] =240;x[16] =480;y[16] =360;
         end
         else begin
             if (finish == 0) begin
@@ -227,14 +189,12 @@ module lab6_2(
                         if (key_down[last_change] == 1) begin
                             key_1 = key_num;
                             key_1_code = last_change; 
-                            // pass = 1; //
                         end
                     end
                     else if (key_1 != 0) begin
                         if (key_down[key_1_code] == 0) begin 
                             key_1 = 0;
                             key_1_code = 0;
-                            // pass = 0; //
                         end
                     end
                     if (key_1 != 0 && key_2 == 0 && last_change != key_1_code) begin
@@ -254,7 +214,6 @@ module lab6_2(
                         end
                     end
                 end
-                    //out = 1;
                 if (press_shift == 1 && key_down[key_1_code] == 1 && task_finish == 0 && release_shift == 1) begin
                     pic[key_1] = pic[key_1] ^ 1;
                     task_finish = 1;
@@ -451,50 +410,50 @@ module lab6_2(
         else if(pic[1] == 0 &&
             pic[2] == 0 &&
             pic[3] == 0 &&
-            pic[4] == 0&&
-            pic[5] == 0&&
-            pic[6] == 0&&
-            pic[7] == 0&&
-            pic[8] == 0&&
-            pic[9] == 0&&
-            pic[10] == 0&&
-            pic[11] == 0&&
-            pic[12] == 0&&
-            pic[13] == 0&&
-            pic[14] == 0&&
-            pic[15] == 0&&
-            pic[16] == 0&&
+            pic[4] == 0 &&
+            pic[5] == 0 &&
+            pic[6] == 0 &&
+            pic[7] == 0 &&
+            pic[8] == 0 &&
+            pic[9] == 0 &&
+            pic[10] == 0 &&
+            pic[11] == 0 &&
+            pic[12] == 0 &&
+            pic[13] == 0 &&
+            pic[14] == 0 &&
+            pic[15] == 0 &&
+            pic[16] == 0 &&
             x[1] == 0 &&
             y[1] == 0 &&
-            x[2] == 0&&
-            y[2] == 120&&
-            x[3] ==0&&
-            y[3] ==240&&
-            x[4] ==0&&
-            y[4] ==360&&
-            x[5] ==160&&
-            y[5] ==0&&
-            x[6] ==160&&
-            y[6] ==120&&
-            x[7] ==160&&
-            y[7] ==240&&
-            x[8] ==160&&
-            y[8] ==360&&
-            x[9] ==320&&
-            y[9] ==0&&
-            x[10] ==320&&
-            y[10] ==120&&
-            x[11] ==320&&
-            y[11] ==240&&
-            x[12] ==320&&
-            y[12] ==360&&
-            x[13] ==480&&
-            y[13] ==0&&
-            x[14] ==480&&
-            y[14] ==120&&
-            x[15] ==480&&
-            y[15] ==240&&
-            x[16] ==480&&
+            x[2] == 0 &&
+            y[2] == 120 &&
+            x[3] ==0 &&
+            y[3] ==240 &&
+            x[4] ==0 &&
+            y[4] ==360 &&
+            x[5] ==160 &&
+            y[5] ==0 &&
+            x[6] ==160 &&
+            y[6] ==120 &&
+            x[7] ==160 &&
+            y[7] ==240 &&
+            x[8] ==160 &&
+            y[8] ==360 &&
+            x[9] ==320 &&
+            y[9] ==0 &&
+            x[10] ==320 &&
+            y[10] ==120 &&
+            x[11] ==320 &&
+            y[11] ==240 &&
+            x[12] ==320 &&
+            y[12] ==360 &&
+            x[13] ==480 &&
+            y[13] ==0 &&
+            x[14] ==480 &&
+            y[14] ==120 &&
+            x[15] ==480 &&
+            y[15] ==240 &&
+            x[16] ==480 &&
             y[16] ==360
             ) begin
             finish = 1;
@@ -504,17 +463,143 @@ module lab6_2(
 endmodule
 
 module clock_divider(clk1, clk, clk22);
-input clk;
-output clk1;
-output clk22;
-reg [21:0] num;
-wire [21:0] next_num;
+    input clk;
+    output clk1;
+    output clk22;
+    reg [21:0] num;
+    wire [21:0] next_num;
 
-always @(posedge clk) begin
-  num <= next_num;
-end
+    always @(posedge clk) begin
+    num <= next_num;
+    end
 
-assign next_num = num + 1'b1;
-assign clk1 = num[1];
-assign clk22 = num[21];
+    assign next_num = num + 1'b1;
+    assign clk1 = num[1];
+    assign clk22 = num[21];
+endmodule
+module KeyboardDecoder(
+	output reg [127:0] key_down,
+	output wire [8:0] last_change,
+	output reg key_valid,
+	inout wire PS2_DATA,
+	inout wire PS2_CLK,
+	input wire rst,
+	input wire clk
+    );
+    
+    parameter [1:0] INIT			= 2'b00;
+    parameter [1:0] WAIT_FOR_SIGNAL = 2'b01;
+    parameter [1:0] GET_SIGNAL_DOWN = 2'b10;
+    parameter [1:0] WAIT_RELEASE    = 2'b11;
+    
+	parameter [7:0] IS_INIT			= 8'hAA;
+    parameter [7:0] IS_EXTEND		= 8'hE0;
+    parameter [7:0] IS_BREAK		= 8'hF0;
+    
+    reg [9:0] key;		// key = {been_extend, been_break, key_in}
+    reg [1:0] state;
+    reg been_ready, been_extend, been_break;
+    
+    wire [7:0] key_in;
+    wire is_extend;
+    wire is_break;
+    wire valid;
+    wire err;
+    
+    wire [511:0] key_decode = 1 << last_change;
+    assign last_change = {key[9], key[7:0]};
+    
+    KeyboardCtrl_0 inst (
+		.key_in(key_in),
+		.is_extend(is_extend),
+		.is_break(is_break),
+		.valid(valid),
+		.err(err),
+		.PS2_DATA(PS2_DATA),
+		.PS2_CLK(PS2_CLK),
+		.rst(rst),
+		.clk(clk)
+	);
+	
+	one_pulse op (
+		.pb_out(pulse_been_ready),
+		.pb_in(been_ready),
+		.clk(clk)
+	);
+    
+    always @ (posedge clk, posedge rst) begin
+    	if (rst) begin
+    		state <= INIT;
+    		been_ready  <= 1'b0;
+    		been_extend <= 1'b0;
+    		been_break  <= 1'b0;
+    		key <= 10'b0_0_0000_0000;
+    	end else begin
+    		state <= state;
+			been_ready  <= been_ready;
+			been_extend <= (is_extend) ? 1'b1 : been_extend;
+			been_break  <= (is_break ) ? 1'b1 : been_break;
+			key <= key;
+    		case (state)
+    			INIT : begin
+    					if (key_in == IS_INIT) begin
+    						state <= WAIT_FOR_SIGNAL;
+    						been_ready  <= 1'b0;
+							been_extend <= 1'b0;
+							been_break  <= 1'b0;
+							key <= 10'b0_0_0000_0000;
+    					end else begin
+    						state <= INIT;
+    					end
+    				end
+    			WAIT_FOR_SIGNAL : begin
+    					if (valid == 0) begin
+    						state <= WAIT_FOR_SIGNAL;
+    						been_ready <= 1'b0;
+    					end else begin
+    						state <= GET_SIGNAL_DOWN;
+    					end
+    				end
+    			GET_SIGNAL_DOWN : begin
+						state <= WAIT_RELEASE;
+						key <= {been_extend, been_break, key_in};
+						been_ready  <= 1'b1;
+    				end
+    			WAIT_RELEASE : begin
+    					if (valid == 1) begin
+    						state <= WAIT_RELEASE;
+    					end else begin
+    						state <= WAIT_FOR_SIGNAL;
+    						been_extend <= 1'b0;
+    						been_break  <= 1'b0;
+    					end
+    				end
+    			default : begin
+    					state <= INIT;
+						been_ready  <= 1'b0;
+						been_extend <= 1'b0;
+						been_break  <= 1'b0;
+						key <= 10'b0_0_0000_0000;
+    				end
+    		endcase
+    	end
+    end
+    
+    always @ (posedge clk, posedge rst) begin
+    	if (rst) begin
+    		key_valid <= 1'b0;
+    		key_down <= 511'b0;
+    	end else if (key_decode[last_change] && pulse_been_ready) begin
+    		key_valid <= 1'b1;
+    		if (key[8] == 0) begin
+    			key_down <= key_down | key_decode;
+    		end else begin
+    			key_down <= key_down & (~key_decode);
+    		end
+    	end else begin
+    		key_valid <= 1'b0;
+			key_down <= key_down;
+    	end
+    end
+
 endmodule

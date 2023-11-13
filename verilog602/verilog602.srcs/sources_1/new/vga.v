@@ -32,7 +32,7 @@ module vga_controller (
             pixel_cnt <= 0;
         else
             if (pixel_cnt < (HT - 1))
-                pixel_cnt <= pixel_cnt + 1; 
+                pixel_cnt <= pixel_cnt + 1;
             else
                 pixel_cnt <= 0;
 

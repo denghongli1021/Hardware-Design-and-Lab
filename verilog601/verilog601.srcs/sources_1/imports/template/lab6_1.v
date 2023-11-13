@@ -37,7 +37,7 @@ module lab6_1(
 
   assign {vgaRed, vgaGreen, vgaBlue} = (valid==1'b1) ? pixel:12'h0;
 
-     clock_divider clk_wiz_0_inst(
+    clock_divider clk_wiz_0_inst(
       .clk(clk),
       .clk1(clk_25MHz),
       .clk22(clk_22)
@@ -68,7 +68,6 @@ module lab6_1(
     vga_controller   vga_inst(
       .pclk(clk_25MHz),
       .reset(rst2),
-      .en(en),
       .hsync(hsync),
       .vsync(vsync),
       .valid(valid),

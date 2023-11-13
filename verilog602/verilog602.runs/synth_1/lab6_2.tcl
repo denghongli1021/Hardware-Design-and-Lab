@@ -36,7 +36,6 @@ set_property ip_output_repo c:/Users/user/verilog602/verilog602.cache/ip [curren
 set_property ip_cache_permissions {read write} [current_project]
 add_files C:/Users/user/verilogPictrans/piskeandusagi.coe
 read_verilog -library xil_defaultlib {
-  C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/KeyboardDecoder.v
   C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/debounce.v
   C:/Users/user/verilog602/verilog602.srcs/sources_1/imports/sources_1/imports/template/one_pulse.v
   C:/Users/user/verilog602/verilog602.srcs/sources_1/new/vga.v
