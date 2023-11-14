@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Tue Nov 14 01:41:38 2023
+| Date         : Tue Nov 14 16:04:40 2023
 | Host         : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file lab6_2_control_sets_placed.rpt
 | Design       : lab6_2
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    45 |
-|    Minimum number of control sets                        |    45 |
+| Total control sets                                       |    33 |
+|    Minimum number of control sets                        |    33 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   163 |
+| Unused register locations in slices containing registers |   145 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    45 |
+| Total control sets |    33 |
 | >= 0 to < 4        |     3 |
-| >= 4 to < 6        |    13 |
-| >= 6 to < 8        |     5 |
-| >= 8 to < 10       |     6 |
-| >= 10 to < 12      |     9 |
-| >= 12 to < 14      |     1 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     2 |
+| >= 10 to < 12      |     5 |
+| >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     8 |
+| >= 16              |    22 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              80 |           42 |
-| No           | No                    | Yes                    |              62 |           21 |
-| No           | Yes                   | No                     |              20 |           11 |
-| Yes          | No                    | No                     |              61 |           41 |
-| Yes          | No                    | Yes                    |             170 |           54 |
-| Yes          | Yes                   | No                     |             220 |          105 |
+| No           | No                    | No                     |              32 |           17 |
+| No           | No                    | Yes                    |              62 |           25 |
+| No           | Yes                   | No                     |              25 |           13 |
+| Yes          | No                    | No                     |              64 |           42 |
+| Yes          | No                    | Yes                    |             170 |           57 |
+| Yes          | Yes                   | No                     |             326 |          159 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -73,51 +73,39 @@ Table of Contents
 +-----------------------------+-----------------------------------------------+-------------------------------+------------------+----------------+
 |         Clock Signal        |                 Enable Signal                 |        Set/Reset Signal       | Slice Load Count | Bel Load Count |
 +-----------------------------+-----------------------------------------------+-------------------------------+------------------+----------------+
-|  clk_IBUF_BUFG              | finish0                                       | a2/rst2                       |                1 |              1 |
 | ~kd/key_down_reg[18]_0[0]   |                                               | kd/key_down_reg[18]_0[0]      |                1 |              1 |
+|  clk_IBUF_BUFG              | finish0                                       | a2/rst2                       |                1 |              1 |
 |  clk_wiz_0_inst/out_BUFG[0] |                                               | a2/rst2                       |                2 |              2 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_22                              | kd/release_shift_reg[0]_2     |                3 |              4 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_25                              | a2/rst2                       |                3 |              4 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_26                              | kd/release_shift_reg[0]_2     |                1 |              4 |
 |  clk_IBUF_BUFG              | kd/inst/inst/Ps2Interface_i/bits_count        | a2/rst2                       |                2 |              4 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_112                             | a2/rst2                       |                3 |              5 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_97                              | kd/release_shift_reg[0]_2     |                2 |              5 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_20                              | a2/rst2                       |                3 |              5 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_27                              | a2/rst2                       |                2 |              5 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_20                              | kd/release_shift_reg[0]_2     |                3 |              5 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_21                              | kd/release_shift_reg[0]_2     |                2 |              5 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_21                              | a2/rst2                       |                3 |              5 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_28                              | kd/release_shift_reg[0]_2     |                2 |              5 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_24                              | kd/release_shift_reg[0]_2     |                2 |              5 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_25                              | kd/release_shift_reg[0]_2     |                3 |              6 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_23                              | a2/rst2                       |                3 |              6 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_104                             | kd/release_shift_reg[0]_2     |                3 |              6 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_28                              | a2/rst2                       |                3 |              7 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_27                              | kd/release_shift_reg[0]_2     |                3 |              7 |
 |  clk_IBUF_BUFG              | kd/inst/inst/Ps2Interface_i/rx_finish         | a2/rst2                       |                3 |              8 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_23                              | kd/release_shift_reg[0]_2     |                2 |              8 |
-|  clk_IBUF_BUFG              | kd/inst/inst/Ps2Interface_i/rx_valid          | a2/rst2                       |                3 |              8 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_24                              | a2/rst2                       |                3 |              9 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_97                              | a2/rst2                       |                4 |              9 |
-|  clk_IBUF_BUFG              | kd/release_shift_reg[0]_1                     | a2/rst2                       |                5 |              9 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_104                             | a2/rst2                       |                3 |             10 |
-|  clk_IBUF_BUFG              | kd/key                                        | a2/rst2                       |                3 |             10 |
-|  clk_wiz_0_inst/out_BUFG[0] | vga_inst/line_cnt                             | vga_inst/line_cnt[9]_i_1_n_0  |                3 |             10 |
-|  clk_wiz_0_inst/out_BUFG[0] |                                               |                               |                4 |             10 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_19                              | kd/release_shift_reg[0]_2     |                5 |             11 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_22                              | a2/rst2                       |                8 |             11 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_112                             | kd/release_shift_reg[0]_2     |                6 |             11 |
-|  clk_IBUF_BUFG              | kd/pb_out_reg_26                              | a2/rst2                       |                5 |             11 |
-|  clk_IBUF_BUFG              | kd/inst/inst/Ps2Interface_i/frame[10]_i_1_n_0 | a2/rst2                       |                2 |             11 |
-|  clk_wiz_0_inst/out_BUFG[0] |                                               | vga_inst/pixel_cnt[9]_i_1_n_0 |                4 |             12 |
-|  clk_IBUF_BUFG              | kd/release_shift_reg[0]                       | a2/rst2                       |                8 |             16 |
-|  clk_IBUF_BUFG              | kd/release_shift_reg[0]_0                     | a2/rst2                       |                9 |             16 |
-|  clk_IBUF_BUFG              | kd/E[0]                                       |                               |                8 |             16 |
-|  clk_IBUF_BUFG              | a2/pb_out_reg_2[0]                            |                               |               15 |             18 |
-|  clk_IBUF_BUFG              | a2/E[0]                                       |                               |               18 |             27 |
-|  clk_IBUF_BUFG              |                                               | a2/rst2                       |               25 |             67 |
-|  clk_IBUF_BUFG              |                                               |                               |               38 |             70 |
-|  clk_IBUF_BUFG              | kd/op/E[0]                                    | a2/rst2                       |               40 |            128 |
+|  clk_IBUF_BUFG              | kd/inst/inst/Ps2Interface_i/rx_valid          | a2/rst2                       |                2 |              8 |
+|  clk_wiz_0_inst/out_BUFG[0] |                                               |                               |                5 |             10 |
+|  clk_wiz_0_inst/out_BUFG[0] | vga_inst/line_cnt                             | vga_inst/line_cnt[9]_i_1_n_0  |                5 |             10 |
+|  clk_IBUF_BUFG              | kd/key                                        | a2/rst2                       |                4 |             10 |
+|  clk_wiz_0_inst/out_BUFG[0] |                                               | vga_inst/pixel_cnt[9]_i_1_n_0 |                4 |             11 |
+|  clk_IBUF_BUFG              | kd/inst/inst/Ps2Interface_i/frame[10]_i_1_n_0 | a2/rst2                       |                3 |             11 |
+|  clk_IBUF_BUFG              | a2/E[0]                                       |                               |               14 |             18 |
+|  clk_IBUF_BUFG              | kd/finish_reg[0]_13                           | a2/rst2                       |               10 |             18 |
+|  clk_IBUF_BUFG              | kd/finish_reg[0]_9                            | a2/rst2                       |                6 |             18 |
+|  clk_IBUF_BUFG              | kd/E[0]                                       |                               |               11 |             20 |
+|  clk_IBUF_BUFG              | kd/finish_reg[0]_15                           | a2/rst2                       |                8 |             20 |
+|  clk_IBUF_BUFG              | kd/finish_reg[0]_10                           | a2/rst2                       |               11 |             20 |
+|  clk_IBUF_BUFG              | kd/finish_reg[0]_17                           | a2/rst2                       |                9 |             20 |
+|  clk_IBUF_BUFG              | kd/finish_reg[0]_3                            | a2/rst2                       |               12 |             20 |
+|  clk_IBUF_BUFG              | kd/finish_reg[0]_8                            | a2/rst2                       |               13 |             20 |
+|  clk_IBUF_BUFG              | kd/finish_reg[0]_19                           | a2/rst2                       |                8 |             20 |
+|  clk_IBUF_BUFG              | kd/finish_reg[0]_11                           | a2/rst2                       |                9 |             20 |
+|  clk_IBUF_BUFG              | kd/finish_reg[0]_14                           | a2/rst2                       |                6 |             20 |
+|  clk_IBUF_BUFG              | kd/finish_reg[0]_16                           | a2/rst2                       |                8 |             20 |
+|  clk_IBUF_BUFG              | kd/finish_reg[0]_7                            | a2/rst2                       |               12 |             20 |
+|  clk_IBUF_BUFG              | kd/finish_reg[0]_12                           | a2/rst2                       |                8 |             20 |
+|  clk_IBUF_BUFG              | kd/finish_reg[0]_6                            | a2/rst2                       |                9 |             20 |
+|  clk_IBUF_BUFG              | kd/finish_reg[0]_4                            | a2/rst2                       |               13 |             20 |
+|  clk_IBUF_BUFG              | kd/finish_reg[0]_5                            | a2/rst2                       |               12 |             20 |
+|  clk_IBUF_BUFG              |                                               |                               |               12 |             22 |
+|  clk_IBUF_BUFG              | a2/finish_reg[0]_3                            |                               |               17 |             26 |
+|  clk_IBUF_BUFG              |                                               | a2/rst2                       |               31 |             73 |
+|  clk_IBUF_BUFG              | kd/op/E[0]                                    | a2/rst2                       |               42 |            128 |
 +-----------------------------+-----------------------------------------------+-------------------------------+------------------+----------------+
 
 
