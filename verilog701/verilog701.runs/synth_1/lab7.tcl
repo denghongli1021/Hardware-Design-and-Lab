@@ -24,6 +24,7 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
+set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir C:/Users/user/verilog701/verilog701.cache/wt [current_project]
 set_property parent.project_path C:/Users/user/verilog701/verilog701.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
@@ -35,6 +36,7 @@ set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/clock_divider.v
   C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/debounce.v
+  C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/keyboard_decoder.v
   C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/music_example.v
   C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/note_gen.v
   C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/onepulse.v
@@ -42,6 +44,8 @@ read_verilog -library xil_defaultlib {
   C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/speaker_control.v
   C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/lab7.v
 }
+read_ip -quiet C:/Users/user/verilog701/verilog701.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
+
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be

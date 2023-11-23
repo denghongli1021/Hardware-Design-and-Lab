@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1700755005">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1700757823">
   <File Type="PA-TCL" Name="lab7.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="lab7_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="lab7_reports.tcl"/>
@@ -23,6 +23,15 @@
     <File Path="$PSRCDIR/sources_1/imports/lab7_template/debounce.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/debounce.v"/>
+        <Attr Name="ImportTime" Val="1699963711"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab7_template/keyboard_decoder.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/keyboard_decoder.v"/>
         <Attr Name="ImportTime" Val="1699963711"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -83,11 +92,11 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/lab7_template/keyboard_decoder.v">
+    <File Path="$PSRCDIR/sources_1/imports/lab5/SevenSegment.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/keyboard_decoder.v"/>
-        <Attr Name="ImportTime" Val="1699963711"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/SevenSegment.v"/>
+        <Attr Name="ImportTime" Val="1697898584"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -122,4 +131,5 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="KeyboardCtrl_0"/>
 </GenRun>

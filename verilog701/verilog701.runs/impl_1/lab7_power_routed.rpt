@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Thu Nov 23 23:58:19 2023
+| Date             : Fri Nov 24 00:45:14 2023
 | Host             : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command          : report_power -file lab7_power_routed.rpt -pb lab7_power_summary_routed.pb -rpx lab7_power_routed.rpx
 | Design           : lab7
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 33.951 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 31.307 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 33.465                           |
+| Dynamic (W)              | 30.821                           |
 | Device Static (W)        | 0.486                            |
 | Effective TJA (C/W)      | 5.0                              |
 | Max Ambient (C)          | 0.0                              |
@@ -52,16 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |    16.496 |     2110 |       --- |             --- |
-|   LUT as Logic |    13.639 |     1483 |     20800 |            7.13 |
-|   CARRY4       |     2.814 |      412 |      8150 |            5.06 |
-|   Register     |     0.037 |      137 |     41600 |            0.33 |
+| Slice Logic    |    11.158 |     2718 |       --- |             --- |
+|   LUT as Logic |     9.374 |     1838 |     20800 |            8.84 |
+|   CARRY4       |     1.721 |      489 |      8150 |            6.00 |
+|   Register     |     0.057 |      244 |     41600 |            0.59 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |       22 |       --- |             --- |
-| Signals        |    13.728 |     1882 |       --- |             --- |
-| I/O            |     3.240 |       37 |       106 |           34.91 |
+|   F7/F8 Muxes  |    <0.001 |        1 |     32600 |           <0.01 |
+|   Others       |     0.000 |       30 |       --- |             --- |
+| Signals        |     9.258 |     2397 |       --- |             --- |
+| I/O            |    10.404 |       39 |       106 |           36.79 |
 | Static Power   |     0.486 |          |           |                 |
-| Total          |    33.951 |          |           |                 |
+| Total          |    31.307 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,9 +72,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |    30.581 |      30.241 |      0.341 |
-| Vccaux    |       1.800 |     0.172 |       0.118 |      0.053 |
-| Vcco33    |       3.300 |     0.913 |       0.912 |      0.001 |
+| Vccint    |       1.000 |    20.774 |      20.433 |      0.341 |
+| Vccaux    |       1.800 |     0.434 |       0.381 |      0.053 |
+| Vcco33    |       3.300 |     2.941 |       2.940 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -138,13 +139,18 @@ Table of Contents
 +-----------------+-----------+
 | Name            | Power (W) |
 +-----------------+-----------+
-| lab7            |    33.465 |
-|   clock_22      |     0.063 |
-|   d1            |     0.021 |
-|   e1            |     0.025 |
-|   noteGen_00    |     1.733 |
-|   playerCtrl_00 |    24.372 |
-|   sc            |     1.640 |
+| lab7            |    30.821 |
+|   clk_d         |     0.060 |
+|   clock_22      |     0.062 |
+|   d1            |     0.022 |
+|   e1            |     0.024 |
+|   kd            |     0.352 |
+|     inst        |     0.352 |
+|       inst      |     0.352 |
+|   music_00      |     0.008 |
+|   noteGen_00    |     0.894 |
+|   playerCtrl_00 |    16.793 |
+|   sc            |     0.202 |
 +-----------------+-----------+
 
 

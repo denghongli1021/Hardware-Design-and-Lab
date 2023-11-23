@@ -16,14 +16,14 @@ module lab7(
     output audio_lrck, // left-right clock
     output audio_sck,  // serial clock
     output audio_sdin, // serial audio data input
-    output [6:0] DISPLAY,    
-    output [3:0] DIGIT
+    output reg [6:0] DISPLAY,    
+    output reg [3:0] DIGIT
     );        
     
     // Modify these
     //reg [15:0] _led = 16'b1110_0000_0000_0111;
-    assign DIGIT = 4'b0000;
-    assign DISPLAY = 7'b0111111;
+    // assign DIGIT = 4'b0000;
+    // assign DISPLAY = 7'b0111111;
 
     // Internal Signal
     wire [15:0] audio_in_left, audio_in_right;
@@ -52,7 +52,7 @@ module lab7(
     // [out] left & right raw frequency
     music_example music_00 (
         .ibeatNum(ibeatNum),
-        .en(1'b1),
+        .en(_play),
         .toneL(freqL),
         .toneR(freqR)
     );
@@ -122,7 +122,20 @@ module lab7(
         .clk(clk), 
         .op(rst2)
     );
-    
+    // keyboard
+    wire [511:0] key_down;
+    wire [8:0] last_change;
+    wire key_valid;
+    KeyboardDecoder kd(
+        .rst(rst2),
+        .clk(clk),
+        .PS2_DATA(PS2_DATA),
+        .PS2_CLK(PS2_CLK),
+        .key_down(key_down),
+        .last_change(last_change),
+        .key_valid(key_valid)
+    );
+    // vol 加減
     always@(posedge clk or posedge rst2) begin
         if (rst2) begin
             vol = 2;
@@ -134,6 +147,7 @@ module lab7(
             vol = vol - 1;
         end
     end
+    // led 顯示 音量大小 (vol) _led
     always@(*) begin
         case(vol)
         0 : begin
@@ -154,6 +168,123 @@ module lab7(
         default : begin
             _led[4:0] = 5'b00000;
         end
+        endcase
+    end
+    reg [4:0] val;
+    clock_divider #(15) clk_d (
+        .clk(clk),
+        .clk_div(clk_div_use)
+    );
+    always@(posedge clk_div_use) begin
+        case (DIGIT) 
+            4'b0111 :  begin
+                val = 17;
+                DIGIT = 4'b1011;
+            end
+            4'b1011 :  begin
+                case (freqR)
+                    /*
+                    `define c   32'd262   
+                    `define g   32'd392   
+                    `define b   32'd494   
+                    `define hc  32'd524   
+                    `define hd  32'd588   
+                    `define he  32'd660   
+                    `define hf  32'd698   
+                    `define hg  32'd784
+                    */
+                    262  : begin
+                        val = 10;
+                    end
+                    392  : begin
+                        val = 14;
+                    end  
+                    494  : begin
+                        val = 16;
+                    end 
+                    524  : begin
+                        val = 10;
+                    end
+                    588  : begin
+                        val = 11;
+                    end 
+                    660  : begin
+                        val = 12;
+                    end
+                    698  : begin
+                        val = 13;
+                    end
+                    784 : begin
+                        val = 14;
+                    end
+                    default : begin
+                        val = 17;
+                    end
+                endcase
+                DIGIT = 4'b1101;
+            end
+            4'b1101 :  begin
+                case (freqR)
+                    262  : begin
+                        val = 4;
+                    end
+                    392  : begin
+                        val = 4;
+                    end  
+                    494  : begin
+                        val = 4;
+                    end 
+                    524  : begin
+                        val = 5;
+                    end
+                    588  : begin
+                        val = 5;
+                    end 
+                    660  : begin
+                        val = 5;
+                    end
+                    698  : begin
+                        val = 5;
+                    end
+                    784 : begin
+                        val = 5;
+                    end
+                    default : begin
+                        val = 17;
+                    end
+                endcase
+                DIGIT = 4'b1110;
+            end
+            4'b1110 :  begin
+                val = 17;
+                DIGIT = 4'b0111;
+            end
+            default :  begin
+                val = 17;
+                DIGIT = 4'b0111;
+            end
+        endcase
+    end
+    always @(*) begin 
+        case (val)
+            4'd0: DISPLAY = 7'b100_0000;
+            4'd1: DISPLAY = 7'b111_1001;
+            4'd2: DISPLAY = 7'b010_0100;
+            4'd3: DISPLAY = 7'b011_0000;
+            4'd4: DISPLAY = 7'b001_1001;
+            4'd5: DISPLAY = 7'b001_0010;
+            4'd6: DISPLAY = 7'b000_0010;
+            4'd7: DISPLAY = 7'b111_1000;
+            4'd8: DISPLAY = 7'b000_0000;
+            4'd9: DISPLAY = 7'b001_0000;
+            4'd10: DISPLAY = 7'b100_0110; // C
+            4'd11: DISPLAY = 7'b010_0001; // D (d)
+            4'd12: DISPLAY = 7'b000_0110; // E
+            4'd13: DISPLAY = 7'b000_1110; // F
+            4'd14: DISPLAY = 7'b001_0000; // G
+            4'd15: DISPLAY = 7'b000_1000; // A
+            4'd16: DISPLAY = 7'b000_0011; // B
+            default: DISPLAY = 7'b011_1111;
         endcase
     end
 endmodule

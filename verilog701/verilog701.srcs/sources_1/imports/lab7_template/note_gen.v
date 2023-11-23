@@ -70,9 +70,9 @@ module note_gen(
         if (note_div_left == 22'd1) begin
             audio_left = 16'h0000;
         end
-        else if (play == 0) begin
-            audio_left = 16'h0000;
-        end
+        // else if (play == 0) begin
+        //     audio_left = 16'h0000;
+        // end
         else if (mute) begin
             audio_left = 16'h0000;
         end
@@ -106,9 +106,9 @@ module note_gen(
         if (note_div_right == 22'd1) begin
             audio_right = 16'h0000;
         end
-        else if (play == 0) begin
-            audio_right = 16'h0000;
-        end
+        // else if (play == 0) begin
+        //     audio_right = 16'h0000;
+        // end
         else if (mute) begin
             audio_right = 16'h0000;
         end

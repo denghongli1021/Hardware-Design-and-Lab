@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Thu Nov 23 23:57:23 2023
+| Date         : Fri Nov 24 00:44:20 2023
 | Host         : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command      : report_utilization -file lab7_utilization_synth.rpt -pb lab7_utilization_synth.pb
 | Design       : lab7
@@ -30,13 +30,13 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 1488 |     0 |     20800 |  7.15 |
-|   LUT as Logic          | 1488 |     0 |     20800 |  7.15 |
+| Slice LUTs*             | 1779 |     0 |     20800 |  8.55 |
+|   LUT as Logic          | 1779 |     0 |     20800 |  8.55 |
 |   LUT as Memory         |    0 |     0 |      9600 |  0.00 |
-| Slice Registers         |  137 |     0 |     41600 |  0.33 |
-|   Register as Flip Flop |  130 |     0 |     41600 |  0.31 |
-|   Register as Latch     |    7 |     0 |     41600 |  0.02 |
-| F7 Muxes                |    0 |     0 |     16300 |  0.00 |
+| Slice Registers         |  168 |     0 |     41600 |  0.40 |
+|   Register as Flip Flop |  154 |     0 |     41600 |  0.37 |
+|   Register as Latch     |   14 |     0 |     41600 |  0.03 |
+| F7 Muxes                |    1 |     0 |     16300 | <0.01 |
 | F8 Muxes                |    0 |     0 |      8150 |  0.00 |
 +-------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -54,10 +54,10 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 1     |          Yes |           - |          Set |
-| 87    |          Yes |           - |        Reset |
+| 3     |          Yes |           - |          Set |
+| 92    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 49    |          Yes |       Reset |            - |
+| 73    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -149,19 +149,21 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT2     |  756 |                 LUT |
-| LUT3     |  574 |                 LUT |
-| CARRY4   |  412 |          CarryLogic |
-| LUT4     |  116 |                 LUT |
+| LUT3     |  941 |                 LUT |
+| LUT2     |  728 |                 LUT |
+| CARRY4   |  485 |          CarryLogic |
+| LUT1     |   84 |                 LUT |
 | FDCE     |   80 |        Flop & Latch |
-| LUT6     |   71 |                 LUT |
-| FDRE     |   49 |        Flop & Latch |
+| LUT6     |   76 |                 LUT |
+| FDRE     |   73 |        Flop & Latch |
+| LUT4     |   32 |                 LUT |
+| LUT5     |   30 |                 LUT |
 | OBUF     |   20 |                  IO |
-| LUT1     |   17 |                 LUT |
-| LUT5     |   14 |                 LUT |
+| LDCE     |   12 |        Flop & Latch |
 | OBUFT    |   11 |                  IO |
-| LDCE     |    7 |        Flop & Latch |
 | IBUF     |    6 |                  IO |
+| LDPE     |    2 |        Flop & Latch |
+| MUXF7    |    1 |               MuxFx |
 | FDPE     |    1 |        Flop & Latch |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
@@ -170,9 +172,11 @@ Table of Contents
 8. Black Boxes
 --------------
 
-+----------+------+
-| Ref Name | Used |
-+----------+------+
++----------------+------+
+|    Ref Name    | Used |
++----------------+------+
+| KeyboardCtrl_0 |    1 |
++----------------+------+
 
 
 9. Instantiated Netlists
