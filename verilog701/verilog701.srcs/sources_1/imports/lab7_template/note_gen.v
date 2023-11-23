@@ -1,12 +1,12 @@
 module note_gen(
     input clk, // clock from crystal
     input rst, // active high reset
-    
+    //input mute,
     input [2:0] volume, 
     input [21:0] note_div_left, // div for note generation
     input [21:0] note_div_right,
-    output [15:0] audio_left,
-    output [15:0] audio_right
+    output reg [15:0] audio_left,
+    output reg [15:0] audio_right
     );
 
     // Declare internal signals
@@ -61,8 +61,76 @@ module note_gen(
 
     // Assign the amplitude of the note
     // Volume is controlled here
-    assign audio_left = (note_div_left == 22'd1) ? 16'h0000 : 
-                                (b_clk == 1'b0) ? 16'hE000 : 16'h2000;
-    assign audio_right = (note_div_right == 22'd1) ? 16'h0000 : 
-                                (c_clk == 1'b0) ? 16'hE000 : 16'h2000;
+    // assign audio_left = (note_div_left == 22'd1) ? 16'h0000 : 
+    //                             (b_clk == 1'b0) ? 16'hE000 : 16'h2000;
+    // assign audio_right = (note_div_right == 22'd1) ? 16'h0000 : 
+    //                             (c_clk == 1'b0) ? 16'hE000 : 16'h2000;
+    always@(*) begin
+        if (note_div_left == 22'd1) begin
+            audio_left = 16'h0000;
+        end
+        // else if (mute) begin
+        //     audio_left = 16'h0000;
+        // end
+        else begin
+            case(volume)
+                3'd0 : begin
+                    if (b_clk == 0) audio_left = 16'hE000 >> 5;
+                    else audio_left = 16'h2000 >> 5;
+                end
+                3'd1 : begin
+                    if (b_clk == 0) audio_left = 16'hE000 >> 4;
+                    else audio_left = 16'h2000 >> 4;
+                end
+                3'd2 : begin
+                    if (b_clk == 0) audio_left = 16'hE000 >> 3;
+                    else audio_left = 16'h2000 >> 3;
+                end
+                3'd3 : begin
+                    if (b_clk == 0) audio_left = 16'hE000 >> 2;
+                    else audio_left = 16'h2000 >> 2;
+                end
+                3'd4 : begin
+                    if (b_clk == 0) audio_left = 16'hE000 >> 1;
+                    else audio_left = 16'h2000 >> 1;
+                end
+                default : begin
+                    audio_left = 0;
+                end
+            endcase
+        end
+        if (note_div_right == 22'd1) begin
+            audio_right = 16'h0000;
+        end
+        // else if (mute) begin
+        //     audio_right = 16'h0000;
+        // end
+        else begin
+            case(volume)
+                3'd0 : begin
+                    if (c_clk == 0) audio_right = 16'hE000 >> 5;
+                    else audio_right = 16'h2000 >> 5;
+                end
+                3'd1 : begin
+                    if (c_clk == 0) audio_right = 16'hE000 >> 4;
+                    else audio_right = 16'h2000 >> 4;
+                end
+                3'd2 : begin
+                    if (c_clk == 0) audio_right = 16'hE000 >> 3;
+                    else audio_right = 16'h2000 >> 3;
+                end
+                3'd3 : begin
+                    if (c_clk == 0) audio_right = 16'hE000 >> 2;
+                    else audio_right = 16'h2000 >> 2;
+                end
+                3'd4 : begin
+                    if (c_clk == 0) audio_right = 16'hE000 >>1;
+                    else audio_right = 16'h2000 >> 1;
+                end
+                default : begin
+                    audio_left = 0;
+                end
+            endcase
+        end
+    end
 endmodule

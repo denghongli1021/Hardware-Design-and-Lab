@@ -11,7 +11,7 @@ module lab7(
     input _volDOWN,   // BTND: Vol down
     inout PS2_DATA,   // Keyboard I/O
     inout PS2_CLK,    // Keyboard I/O
-    output [15:0] _led,       // LED: [15:9] key & [4:0] volume
+    output reg [15:0] _led,       // LED: [15:9] key & [4:0] volume
     output audio_mclk, // master clock
     output audio_lrck, // left-right clock
     output audio_sck,  // serial clock
@@ -21,7 +21,7 @@ module lab7(
     );        
     
     // Modify these
-    assign _led = 16'b1110_0000_0001_1111;
+    //reg [15:0] _led = 16'b1110_0000_0000_0111;
     assign DIGIT = 4'b0000;
     assign DISPLAY = 7'b0111111;
 
@@ -65,10 +65,12 @@ module lab7(
     // Note generation
     // [in]  processed frequency
     // [out] audio wave signal (using square wave here)
+    reg [2:0] vol = 2;
     note_gen noteGen_00(
         .clk(clk), 
         .rst(rst), 
-        .volume(3'b000),
+        .volume(vol),
+        //.mute(_mute),
         .note_div_left(freq_outL), 
         .note_div_right(freq_outR), 
         .audio_left(audio_in_left),     // left sound audio
@@ -86,5 +88,71 @@ module lab7(
         .audio_sck(audio_sck),              // serial clock
         .audio_sdin(audio_sdin)             // serial audio data input
     );
-
+    wire up1,up2;
+    debounce d1 (
+        .pb_debounced(up1), 
+        .pb(_volUP),
+        .clk(clk)
+    );
+    onepulse d2(
+        .signal(up1), 
+        .clk(clk), 
+        .op(up2)
+    );
+    wire dw1,dw2;
+    debounce e1 (
+        .pb_debounced(dw1), 
+        .pb(_volDOWN),
+        .clk(clk)
+    );
+    onepulse e2 (
+        .signal(dw1), 
+        .clk(clk), 
+        .op(dw2)
+    );
+    wire rst1,rst2;
+    debounce c1 (
+        .pb_debounced(rst1), 
+        .pb(rst),
+        .clk(clk)
+    );
+    onepulse c2 (
+        .signal(rst1), 
+        .clk(clk), 
+        .op(rst2)
+    );
+    reg[2:0] tmp_vol;
+    always@(posedge clk or posedge rst2) begin
+        if (rst2) begin
+            vol = 2;
+        end
+        else if (up2 && vol <= 3) begin
+            vol = vol + 1;
+        end
+        else if (dw2 && vol >= 1) begin
+            vol = vol - 1;
+        end
+    end
+    always@(*) begin
+        case(vol)
+        0 : begin
+            _led[4:0] = 5'b00001;
+        end
+        1 : begin
+            _led[4:0] = 5'b00011;
+        end
+        2 : begin
+            _led[4:0] = 5'b00111;
+        end
+        3 : begin
+            _led[4:0] = 5'b01111;
+        end
+        4 : begin
+            _led[4:0] = 5'b11111;
+        end
+        default : begin
+            _led[4:0] = 5'b00000;
+        end
+        endcase
+    end
 endmodule

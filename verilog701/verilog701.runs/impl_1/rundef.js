@@ -23,9 +23,9 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 // pre-commands:
-ISETouchFile( "init_design", "begin" );
+ISETouchFile( "place_design", "begin" );
 ISEStep( "vivado",
-         "-log lab7.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source lab7.tcl -notrace" );
+         "-log KeyboardDecoder.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source KeyboardDecoder.tcl -notrace" );
 
 
 

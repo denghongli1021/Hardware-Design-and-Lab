@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log lab7.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab7.tcl
+    with args -log KeyboardDecoder.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source KeyboardDecoder.tcl
 
 
 ****** Vivado v2019.2 (64-bit)
@@ -8,79 +8,36 @@
   **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
-source lab7.tcl -notrace
+source KeyboardDecoder.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/user/Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/ip'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
-Command: synth_design -top lab7 -part xc7a35tcpg236-1
+Command: synth_design -top KeyboardDecoder -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 61464 
+INFO: Helper process launched with PID 53512 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 778.277 ; gain = 234.367
+Starting RTL Elaboration : Time (s): cpu = 00:00:00 ; elapsed = 00:00:04 . Memory (MB): peak = 778.879 ; gain = 235.176
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'lab7' [C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/lab7.v:3]
-INFO: [Synth 8-6157] synthesizing module 'clock_divider' [C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/clock_divider.v:1]
-	Parameter n bound to: 22 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (1#1) [C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/clock_divider.v:1]
-INFO: [Synth 8-6157] synthesizing module 'player_control' [C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/player_control.v:1]
-	Parameter LEN bound to: 128 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'player_control' (2#1) [C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/player_control.v:1]
-WARNING: [Synth 8-7023] instance 'playerCtrl_00' of module 'player_control' has 6 connections declared, but only 5 given [C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/lab7.v:42]
-INFO: [Synth 8-6157] synthesizing module 'music_example' [C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/music_example.v:12]
-INFO: [Synth 8-6155] done synthesizing module 'music_example' (3#1) [C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/music_example.v:12]
-INFO: [Synth 8-6157] synthesizing module 'note_gen' [C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/note_gen.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'note_gen' (4#1) [C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/note_gen.v:1]
-INFO: [Synth 8-6157] synthesizing module 'speaker_control' [C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/speaker_control.v:1]
-INFO: [Synth 8-226] default block is never used [C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/speaker_control.v:45]
-INFO: [Synth 8-6155] done synthesizing module 'speaker_control' (5#1) [C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/speaker_control.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'lab7' (6#1) [C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/lab7.v:3]
-WARNING: [Synth 8-3917] design lab7 has port _led[15] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port _led[14] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port _led[13] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port _led[12] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port _led[11] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port _led[10] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port _led[9] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port _led[8] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port _led[7] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port _led[6] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port _led[5] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port _led[4] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port _led[3] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port _led[2] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port _led[1] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port _led[0] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port DISPLAY[6] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port DISPLAY[5] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port DISPLAY[4] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port DISPLAY[3] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port DISPLAY[2] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port DISPLAY[1] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port DISPLAY[0] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port DIGIT[3] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port DIGIT[2] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port DIGIT[1] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port DIGIT[0] driven by constant 0
-WARNING: [Synth 8-3331] design note_gen has unconnected port volume[2]
-WARNING: [Synth 8-3331] design note_gen has unconnected port volume[1]
-WARNING: [Synth 8-3331] design note_gen has unconnected port volume[0]
-WARNING: [Synth 8-3331] design player_control has unconnected port _play
-WARNING: [Synth 8-3331] design player_control has unconnected port _slow
-WARNING: [Synth 8-3331] design player_control has unconnected port _mode
-WARNING: [Synth 8-3331] design lab7 has unconnected port PS2_DATA
-WARNING: [Synth 8-3331] design lab7 has unconnected port PS2_CLK
-WARNING: [Synth 8-3331] design lab7 has unconnected port _play
-WARNING: [Synth 8-3331] design lab7 has unconnected port _start
-WARNING: [Synth 8-3331] design lab7 has unconnected port _mute
-WARNING: [Synth 8-3331] design lab7 has unconnected port _mode
-WARNING: [Synth 8-3331] design lab7 has unconnected port _volUP
-WARNING: [Synth 8-3331] design lab7 has unconnected port _volDOWN
+INFO: [Synth 8-6157] synthesizing module 'KeyboardDecoder' [C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/keyboard_decoder.v:1]
+	Parameter INIT bound to: 2'b00 
+	Parameter WAIT_FOR_SIGNAL bound to: 2'b01 
+	Parameter GET_SIGNAL_DOWN bound to: 2'b10 
+	Parameter WAIT_RELEASE bound to: 2'b11 
+	Parameter IS_INIT bound to: 8'b10101010 
+	Parameter IS_EXTEND bound to: 8'b11100000 
+	Parameter IS_BREAK bound to: 8'b11110000 
+INFO: [Synth 8-6157] synthesizing module 'KeyboardCtrl_0' [C:/Users/user/verilog701/verilog701.runs/synth_1/.Xil/Vivado-60628-LAPTOP-FQ5SKUKF/realtime/KeyboardCtrl_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'KeyboardCtrl_0' (1#1) [C:/Users/user/verilog701/verilog701.runs/synth_1/.Xil/Vivado-60628-LAPTOP-FQ5SKUKF/realtime/KeyboardCtrl_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'onepulse' [C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/onepulse.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'onepulse' (2#1) [C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/onepulse.v:1]
+INFO: [Synth 8-226] default block is never used [C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/keyboard_decoder.v:64]
+INFO: [Synth 8-6155] done synthesizing module 'KeyboardDecoder' (3#1) [C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/keyboard_decoder.v:1]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 851.914 ; gain = 308.004
+Finished RTL Elaboration : Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 851.719 ; gain = 308.016
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -93,47 +50,137 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 851.914 ; gain = 308.004
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 851.719 ; gain = 308.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 851.914 ; gain = 308.004
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 851.719 ; gain = 308.016
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 851.914 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 851.719 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
+Parsing XDC File [c:/Users/user/verilog701/verilog701.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc] for cell 'inst'
+Finished Parsing XDC File [c:/Users/user/verilog701/verilog701.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc] for cell 'inst'
 Parsing XDC File [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc]
+WARNING: [Vivado 12-584] No ports matched '_play'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:6]
+WARNING: [Vivado 12-584] No ports matched '_play'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:7]
+WARNING: [Vivado 12-584] No ports matched '_start'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:8]
+WARNING: [Vivado 12-584] No ports matched '_start'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:9]
+WARNING: [Vivado 12-584] No ports matched '_mute'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:34]
+WARNING: [Vivado 12-584] No ports matched '_mute'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:35]
+WARNING: [Vivado 12-584] No ports matched '_mode'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:36]
+WARNING: [Vivado 12-584] No ports matched '_mode'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:37]
+WARNING: [Vivado 12-584] No ports matched '_led[0]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:40]
+WARNING: [Vivado 12-584] No ports matched '_led[0]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:41]
+WARNING: [Vivado 12-584] No ports matched '_led[1]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:42]
+WARNING: [Vivado 12-584] No ports matched '_led[1]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:43]
+WARNING: [Vivado 12-584] No ports matched '_led[2]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:44]
+WARNING: [Vivado 12-584] No ports matched '_led[2]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:45]
+WARNING: [Vivado 12-584] No ports matched '_led[3]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:46]
+WARNING: [Vivado 12-584] No ports matched '_led[3]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:47]
+WARNING: [Vivado 12-584] No ports matched '_led[4]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:48]
+WARNING: [Vivado 12-584] No ports matched '_led[4]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:49]
+WARNING: [Vivado 12-584] No ports matched '_led[5]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:50]
+WARNING: [Vivado 12-584] No ports matched '_led[5]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:51]
+WARNING: [Vivado 12-584] No ports matched '_led[6]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:52]
+WARNING: [Vivado 12-584] No ports matched '_led[6]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:53]
+WARNING: [Vivado 12-584] No ports matched '_led[7]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:54]
+WARNING: [Vivado 12-584] No ports matched '_led[7]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:55]
+WARNING: [Vivado 12-584] No ports matched '_led[8]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:56]
+WARNING: [Vivado 12-584] No ports matched '_led[8]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:57]
+WARNING: [Vivado 12-584] No ports matched '_led[9]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:58]
+WARNING: [Vivado 12-584] No ports matched '_led[9]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:59]
+WARNING: [Vivado 12-584] No ports matched '_led[10]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:60]
+WARNING: [Vivado 12-584] No ports matched '_led[10]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:61]
+WARNING: [Vivado 12-584] No ports matched '_led[11]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:62]
+WARNING: [Vivado 12-584] No ports matched '_led[11]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:63]
+WARNING: [Vivado 12-584] No ports matched '_led[12]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:64]
+WARNING: [Vivado 12-584] No ports matched '_led[12]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:65]
+WARNING: [Vivado 12-584] No ports matched '_led[13]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:66]
+WARNING: [Vivado 12-584] No ports matched '_led[13]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:67]
+WARNING: [Vivado 12-584] No ports matched '_led[14]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:68]
+WARNING: [Vivado 12-584] No ports matched '_led[14]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:69]
+WARNING: [Vivado 12-584] No ports matched '_led[15]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:70]
+WARNING: [Vivado 12-584] No ports matched '_led[15]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:71]
+WARNING: [Vivado 12-584] No ports matched 'DISPLAY[0]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:74]
+WARNING: [Vivado 12-584] No ports matched 'DISPLAY[0]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:75]
+WARNING: [Vivado 12-584] No ports matched 'DISPLAY[1]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:76]
+WARNING: [Vivado 12-584] No ports matched 'DISPLAY[1]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:77]
+WARNING: [Vivado 12-584] No ports matched 'DISPLAY[2]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:78]
+WARNING: [Vivado 12-584] No ports matched 'DISPLAY[2]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:79]
+WARNING: [Vivado 12-584] No ports matched 'DISPLAY[3]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:80]
+WARNING: [Vivado 12-584] No ports matched 'DISPLAY[3]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:81]
+WARNING: [Vivado 12-584] No ports matched 'DISPLAY[4]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:82]
+WARNING: [Vivado 12-584] No ports matched 'DISPLAY[4]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:83]
+WARNING: [Vivado 12-584] No ports matched 'DISPLAY[5]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:84]
+WARNING: [Vivado 12-584] No ports matched 'DISPLAY[5]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:85]
+WARNING: [Vivado 12-584] No ports matched 'DISPLAY[6]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:86]
+WARNING: [Vivado 12-584] No ports matched 'DISPLAY[6]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:87]
+WARNING: [Vivado 12-584] No ports matched 'DIGIT[0]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:92]
+WARNING: [Vivado 12-584] No ports matched 'DIGIT[0]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:93]
+WARNING: [Vivado 12-584] No ports matched 'DIGIT[1]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:94]
+WARNING: [Vivado 12-584] No ports matched 'DIGIT[1]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:95]
+WARNING: [Vivado 12-584] No ports matched 'DIGIT[2]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:96]
+WARNING: [Vivado 12-584] No ports matched 'DIGIT[2]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:97]
+WARNING: [Vivado 12-584] No ports matched 'DIGIT[3]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:98]
+WARNING: [Vivado 12-584] No ports matched 'DIGIT[3]'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:99]
+WARNING: [Vivado 12-584] No ports matched '_volUP'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:104]
+WARNING: [Vivado 12-584] No ports matched '_volUP'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:105]
+WARNING: [Vivado 12-584] No ports matched '_volDOWN'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:106]
+WARNING: [Vivado 12-584] No ports matched '_volDOWN'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:107]
+WARNING: [Vivado 12-584] No ports matched 'audio_mclk'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:141]
+WARNING: [Vivado 12-584] No ports matched 'audio_mclk'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:142]
+WARNING: [Vivado 12-584] No ports matched 'audio_lrck'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:144]
+WARNING: [Vivado 12-584] No ports matched 'audio_lrck'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:145]
+WARNING: [Vivado 12-584] No ports matched 'audio_sck'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:147]
+WARNING: [Vivado 12-584] No ports matched 'audio_sck'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:148]
+WARNING: [Vivado 12-584] No ports matched 'audio_sdin'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:150]
+WARNING: [Vivado 12-584] No ports matched 'audio_sdin'. [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc:151]
 Finished Parsing XDC File [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/lab7_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/lab7_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/KeyboardDecoder_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/KeyboardDecoder_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/KeyboardDecoder_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 942.602 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 926.949 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 942.602 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 926.949 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 942.602 ; gain = 398.691
+Finished Constraint Validation : Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 926.949 ; gain = 383.246
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 942.602 ; gain = 398.691
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 926.949 ; gain = 383.246
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for PS2_CLK. (constraint file  c:/Users/user/verilog701/verilog701.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc, line 1).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for PS2_CLK. (constraint file  c:/Users/user/verilog701/verilog701.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc, line 2).
+Applied set_property IO_BUFFER_TYPE = NONE for PS2_DATA. (constraint file  c:/Users/user/verilog701/verilog701.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for PS2_DATA. (constraint file  c:/Users/user/verilog701/verilog701.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for inst. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 942.602 ; gain = 398.691
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 926.949 ; gain = 383.246
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5546] ROM "toneL" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "toneR" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'KeyboardDecoder'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    INIT |                               00 |                               00
+         WAIT_FOR_SIGNAL |                               01 |                               01
+         GET_SIGNAL_DOWN |                               10 |                               10
+            WAIT_RELEASE |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'KeyboardDecoder'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 942.602 ; gain = 398.691
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 926.949 ; gain = 383.246
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -145,19 +192,17 @@ Report RTL Partitions:
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     13 Bit       Adders := 1     
-	   2 Input      9 Bit       Adders := 1     
-	   2 Input      7 Bit       Adders := 1     
 +---Registers : 
-	               16 Bit    Registers := 2     
-	               12 Bit    Registers := 1     
-	                9 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
+	              512 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
 +---Muxes : 
-	 130 Input     26 Bit        Muxes := 2     
-	   2 Input     16 Bit        Muxes := 4     
-	   2 Input      7 Bit        Muxes := 1     
+	   2 Input    512 Bit        Muxes := 1     
+	   4 Input     10 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 8     
+	   4 Input      1 Bit        Muxes := 7     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -165,32 +210,23 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module player_control 
+Module KeyboardDecoder 
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     13 Bit       Adders := 1     
-	   2 Input      7 Bit       Adders := 1     
 +---Registers : 
-	               12 Bit    Registers := 1     
+	              512 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
 +---Muxes : 
-	   2 Input      7 Bit        Muxes := 1     
-Module music_example 
-Detailed RTL Component Info : 
-+---Muxes : 
-	 130 Input     26 Bit        Muxes := 2     
-Module note_gen 
+	   2 Input    512 Bit        Muxes := 1     
+	   4 Input     10 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 8     
+	   4 Input      1 Bit        Muxes := 7     
+Module onepulse 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     16 Bit        Muxes := 4     
-Module speaker_control 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      9 Bit       Adders := 1     
-+---Registers : 
-	               16 Bit    Registers := 2     
-	                9 Bit    Registers := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -207,82 +243,8 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3917] design lab7 has port _led[15] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port _led[14] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port _led[13] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port _led[12] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port _led[11] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port _led[10] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port _led[9] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port _led[8] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port _led[7] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port _led[6] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port _led[5] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port _led[4] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port _led[3] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port _led[2] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port _led[1] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port _led[0] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port DISPLAY[6] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port DISPLAY[5] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port DISPLAY[4] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port DISPLAY[3] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port DISPLAY[2] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port DISPLAY[1] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port DISPLAY[0] driven by constant 1
-WARNING: [Synth 8-3917] design lab7 has port DIGIT[3] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port DIGIT[2] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port DIGIT[1] driven by constant 0
-WARNING: [Synth 8-3917] design lab7 has port DIGIT[0] driven by constant 0
-WARNING: [Synth 8-3331] design note_gen has unconnected port volume[2]
-WARNING: [Synth 8-3331] design note_gen has unconnected port volume[1]
-WARNING: [Synth 8-3331] design note_gen has unconnected port volume[0]
-WARNING: [Synth 8-3331] design player_control has unconnected port _play
-WARNING: [Synth 8-3331] design player_control has unconnected port _slow
-WARNING: [Synth 8-3331] design player_control has unconnected port _mode
-WARNING: [Synth 8-3331] design lab7 has unconnected port PS2_DATA
-WARNING: [Synth 8-3331] design lab7 has unconnected port PS2_CLK
-WARNING: [Synth 8-3331] design lab7 has unconnected port _play
-WARNING: [Synth 8-3331] design lab7 has unconnected port _start
-WARNING: [Synth 8-3331] design lab7 has unconnected port _mute
-WARNING: [Synth 8-3331] design lab7 has unconnected port _mode
-WARNING: [Synth 8-3331] design lab7 has unconnected port _volUP
-WARNING: [Synth 8-3331] design lab7 has unconnected port _volDOWN
-INFO: [Synth 8-3886] merging instance 'playerCtrl_00/ibeat_reg[10]' (FDC) to 'playerCtrl_00/ibeat_reg[11]'
-INFO: [Synth 8-3886] merging instance 'playerCtrl_00/ibeat_reg[11]' (FDC) to 'playerCtrl_00/ibeat_reg[9]'
-INFO: [Synth 8-3886] merging instance 'playerCtrl_00/ibeat_reg[9]' (FDC) to 'playerCtrl_00/ibeat_reg[8]'
-INFO: [Synth 8-3886] merging instance 'playerCtrl_00/ibeat_reg[8]' (FDC) to 'playerCtrl_00/ibeat_reg[7]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\playerCtrl_00/ibeat_reg[7] )
-INFO: [Synth 8-3886] merging instance 'sc/audio_right_reg[1]' (FDC) to 'sc/audio_right_reg[12]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_right_reg[2]' (FDC) to 'sc/audio_right_reg[12]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_right_reg[3]' (FDC) to 'sc/audio_right_reg[12]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_right_reg[4]' (FDC) to 'sc/audio_right_reg[12]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_right_reg[5]' (FDC) to 'sc/audio_right_reg[12]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_right_reg[6]' (FDC) to 'sc/audio_right_reg[12]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_right_reg[7]' (FDC) to 'sc/audio_right_reg[12]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_right_reg[8]' (FDC) to 'sc/audio_right_reg[12]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_right_reg[9]' (FDC) to 'sc/audio_right_reg[12]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_right_reg[10]' (FDC) to 'sc/audio_right_reg[12]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_right_reg[11]' (FDC) to 'sc/audio_right_reg[12]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_right_reg[12]' (FDC) to 'sc/audio_right_reg[0]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_right_reg[14]' (FDC) to 'sc/audio_right_reg[15]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_left_reg[0]' (FDC) to 'sc/audio_right_reg[0]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_left_reg[1]' (FDC) to 'sc/audio_right_reg[0]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_left_reg[2]' (FDC) to 'sc/audio_right_reg[0]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_left_reg[3]' (FDC) to 'sc/audio_right_reg[0]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_left_reg[4]' (FDC) to 'sc/audio_right_reg[0]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_left_reg[5]' (FDC) to 'sc/audio_right_reg[0]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_left_reg[6]' (FDC) to 'sc/audio_right_reg[0]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_left_reg[7]' (FDC) to 'sc/audio_right_reg[0]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_left_reg[8]' (FDC) to 'sc/audio_right_reg[0]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_left_reg[9]' (FDC) to 'sc/audio_right_reg[0]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_left_reg[10]' (FDC) to 'sc/audio_right_reg[0]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_left_reg[11]' (FDC) to 'sc/audio_right_reg[0]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_left_reg[12]' (FDC) to 'sc/audio_right_reg[0]'
-INFO: [Synth 8-3886] merging instance 'sc/audio_left_reg[14]' (FDC) to 'sc/audio_left_reg[15]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sc/audio_right_reg[0] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 942.602 ; gain = 398.691
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:02 ; elapsed = 00:00:18 . Memory (MB): peak = 926.949 ; gain = 383.246
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -294,13 +256,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 942.602 ; gain = 398.691
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:03 ; elapsed = 00:00:26 . Memory (MB): peak = 934.855 ; gain = 391.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 942.602 ; gain = 398.691
+Finished Timing Optimization : Time (s): cpu = 00:00:03 ; elapsed = 00:00:26 . Memory (MB): peak = 935.930 ; gain = 392.227
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -312,7 +274,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 949.375 ; gain = 405.465
+Finished Technology Mapping : Time (s): cpu = 00:00:03 ; elapsed = 00:00:27 . Memory (MB): peak = 967.578 ; gain = 423.875
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -336,13 +298,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 963.152 ; gain = 419.242
+Finished IO Insertion : Time (s): cpu = 00:00:04 ; elapsed = 00:00:30 . Memory (MB): peak = 972.828 ; gain = 429.125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 963.152 ; gain = 419.242
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:04 ; elapsed = 00:00:30 . Memory (MB): peak = 972.828 ; gain = 429.125
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -361,88 +323,83 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 963.152 ; gain = 419.242
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:04 ; elapsed = 00:00:30 . Memory (MB): peak = 972.828 ; gain = 429.125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 963.152 ; gain = 419.242
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:04 ; elapsed = 00:00:30 . Memory (MB): peak = 972.828 ; gain = 429.125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 963.152 ; gain = 419.242
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:30 . Memory (MB): peak = 972.828 ; gain = 429.125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 963.152 ; gain = 419.242
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:04 ; elapsed = 00:00:30 . Memory (MB): peak = 972.828 ; gain = 429.125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
++------+---------------+----------+
+|      |BlackBox name  |Instances |
++------+---------------+----------+
+|1     |KeyboardCtrl_0 |         1|
++------+---------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     1|
-|2     |CARRY4 |   404|
-|3     |LUT1   |    43|
-|4     |LUT2   |   697|
-|5     |LUT3   |   561|
-|6     |LUT4   |    83|
-|7     |LUT5   |    53|
-|8     |LUT6   |    50|
-|9     |MUXF7  |     1|
-|10    |FDCE   |    69|
-|11    |FDRE   |    22|
-|12    |IBUF   |     2|
-|13    |OBUF   |    31|
-+------+-------+------+
++------+---------------+------+
+|      |Cell           |Count |
++------+---------------+------+
+|1     |KeyboardCtrl_0 |     1|
+|2     |BUFG           |     1|
+|3     |LUT2           |    11|
+|4     |LUT3           |     2|
+|5     |LUT4           |   530|
+|6     |LUT5           |    34|
+|7     |LUT6           |     2|
+|8     |FDCE           |   528|
+|9     |FDRE           |     2|
+|10    |IBUF           |     2|
+|11    |OBUF           |   522|
++------+---------------+------+
 
 Report Instance Areas: 
-+------+----------------+----------------+------+
-|      |Instance        |Module          |Cells |
-+------+----------------+----------------+------+
-|1     |top             |                |  2017|
-|2     |  clock_22      |clock_divider   |    29|
-|3     |  noteGen_00    |note_gen        |   126|
-|4     |  playerCtrl_00 |player_control  |  1271|
-|5     |  sc            |speaker_control |   337|
-+------+----------------+----------------+------+
++------+---------+---------+------+
+|      |Instance |Module   |Cells |
++------+---------+---------+------+
+|1     |top      |         |  1646|
+|2     |  op     |onepulse |     3|
++------+---------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 963.152 ; gain = 419.242
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:04 ; elapsed = 00:00:30 . Memory (MB): peak = 972.828 ; gain = 429.125
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 41 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:20 . Memory (MB): peak = 963.152 ; gain = 328.555
-Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 963.152 ; gain = 419.242
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:03 ; elapsed = 00:00:29 . Memory (MB): peak = 972.828 ; gain = 353.895
+Synthesis Optimization Complete : Time (s): cpu = 00:00:04 ; elapsed = 00:00:31 . Memory (MB): peak = 972.828 ; gain = 429.125
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 963.152 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 405 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 984.875 ; gain = 0.000
+WARNING: [Netlist 29-101] Netlist 'KeyboardDecoder' is not ideal for floorplanning, since the cellview 'KeyboardDecoder' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 968.715 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 984.875 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-63 Infos, 83 Warnings, 0 Critical Warnings and 0 Errors encountered.
+22 Infos, 76 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:26 . Memory (MB): peak = 968.715 ; gain = 672.625
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 968.715 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:05 ; elapsed = 00:00:36 . Memory (MB): peak = 984.875 ; gain = 686.938
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 984.875 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/user/verilog701/verilog701.runs/synth_1/lab7.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file lab7_utilization_synth.rpt -pb lab7_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Nov 18 14:13:44 2023...
+INFO: [Common 17-1381] The checkpoint 'C:/Users/user/verilog701/verilog701.runs/synth_1/KeyboardDecoder.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file KeyboardDecoder_utilization_synth.rpt -pb KeyboardDecoder_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 23 22:16:09 2023...
