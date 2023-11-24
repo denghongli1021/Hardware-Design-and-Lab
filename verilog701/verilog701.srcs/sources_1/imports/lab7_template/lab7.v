@@ -1,3 +1,24 @@
+`define c   32'd262  
+`define d   32'd294
+`define e   32'd330 
+`define f   32'd349
+`define g   32'd392  
+`define a   32'd440
+`define b   32'd494   
+`define hc  32'd524   
+`define hd  32'd588   
+`define he  32'd660   
+`define hf  32'd698   
+`define hg  32'd784 
+`define ha  32'd880
+`define hb  32'd988  
+`define lc   32'd131 
+`define ld   32'd197
+`define le   32'd165
+`define lf   32'd175
+`define lg   32'd196
+`define la   32'd220
+`define lb   32'd247
 `define silence   32'd50000000
 
 module lab7(
@@ -19,16 +40,29 @@ module lab7(
     output reg [6:0] DISPLAY,    
     output reg [3:0] DIGIT
     );        
-    
+
     // Modify these
+    // keyboard
+    wire [511:0] key_down;
+    wire [8:0] last_change;
+    wire key_valid;
+    KeyboardDecoder kd(
+        .rst(rst2),
+        .clk(clk),
+        .PS2_DATA(PS2_DATA),
+        .PS2_CLK(PS2_CLK),
+        .key_down(key_down),
+        .last_change(last_change),
+        .key_valid(key_valid)
+    );
     //reg [15:0] _led = 16'b1110_0000_0000_0111;
     // assign DIGIT = 4'b0000;
     // assign DISPLAY = 7'b0111111;
 
     // Internal Signal
     wire [15:0] audio_in_left, audio_in_right;
-
     wire [11:0] ibeatNum;               // Beat counter
+    wire [11:0] ibeatNum2; 
     wire [31:0] freqL, freqR;           // Raw frequency, produced by music module
     wire [21:0] freq_outL, freq_outR;    // Processed frequency, adapted to the clock rate of Basys3
 
@@ -46,17 +80,36 @@ module lab7(
         ._mode(_mode),
         .ibeat(ibeatNum)
     );
-
+    player_control2 #(.LEN(512)) playerCtrl_helper ( 
+        .clk(clkDiv22),
+        .reset(rst),
+        ._play(_play), 
+        ._mode(_mode),
+        .ibeat(ibeatNum2)
+    );
     // Music module
     // [in]  beat number and en
     // [out] left & right raw frequency
     music_example music_00 (
         .ibeatNum(ibeatNum),
+        .mode(_mode),
         .en(_play),
+        .key_down(key_down),
+        .last_change(last_change),
+        .key_valid(key_valid),
         .toneL(freqL),
         .toneR(freqR)
     );
-
+    music_example music_helper (
+        .ibeatNum(ibeatNum),
+        .mode(_mode),
+        .en(_play),
+        .key_down(key_down),
+        .last_change(last_change),
+        .key_valid(key_valid),
+        .toneL(freqL),
+        .toneR(freqR)
+    );
     // freq_outL, freq_outR
     // Note gen makes no sound, if freq_out = 50000000 / `silence = 1
     assign freq_outL = 50000000 / freqL;
@@ -122,19 +175,6 @@ module lab7(
         .clk(clk), 
         .op(rst2)
     );
-    // keyboard
-    wire [511:0] key_down;
-    wire [8:0] last_change;
-    wire key_valid;
-    KeyboardDecoder kd(
-        .rst(rst2),
-        .clk(clk),
-        .PS2_DATA(PS2_DATA),
-        .PS2_CLK(PS2_CLK),
-        .key_down(key_down),
-        .last_change(last_change),
-        .key_valid(key_valid)
-    );
     // vol 加減
     always@(posedge clk or posedge rst2) begin
         if (rst2) begin
@@ -149,26 +189,101 @@ module lab7(
     end
     // led 顯示 音量大小 (vol) _led
     always@(*) begin
-        case(vol)
-        0 : begin
-            _led[4:0] = 5'b00001;
-        end
-        1 : begin
-            _led[4:0] = 5'b00011;
-        end
-        2 : begin
-            _led[4:0] = 5'b00111;
-        end
-        3 : begin
-            _led[4:0] = 5'b01111;
-        end
-        4 : begin
-            _led[4:0] = 5'b11111;
-        end
-        default : begin
+        if (_mute) begin
             _led[4:0] = 5'b00000;
         end
-        endcase
+        else begin
+            case(vol)
+            0 : begin
+                _led[4:0] = 5'b00001;
+            end
+            1 : begin
+                _led[4:0] = 5'b00011;
+            end
+            2 : begin
+                _led[4:0] = 5'b00111;
+            end
+            3 : begin
+                _led[4:0] = 5'b01111;
+            end
+            4 : begin
+                _led[4:0] = 5'b11111;
+            end
+            default : begin
+                _led[4:0] = 5'b00000;
+            end
+            endcase
+        end
+        if (_mode == 0 && _play == 1) begin
+            case (freqR)
+                `c  : begin
+                    _led[15:9] = 7'b1000000;
+                end
+                `d  : begin
+                    _led[15:9] = 7'b0100000;
+                end
+                `e  : begin
+                    _led[15:9] = 7'b0010000;
+                end
+                `f  : begin
+                    _led[15:9] = 7'b0001000;
+                end
+                `g  : begin
+                    _led[15:9] = 7'b0000100;
+                end  
+                `a  : begin
+                    _led[15:9] = 7'b0000010;
+                end  
+                `b  : begin
+                    _led[15:9] = 7'b0000001;
+                end 
+                `hc  : begin
+                    _led[15:9] = 7'b1000000;
+                end
+                `hd  : begin
+                    _led[15:9] = 7'b0100000;
+                end
+                `he  : begin
+                    _led[15:9] = 7'b0010000;
+                end
+                `hf  : begin
+                    _led[15:9] = 7'b0001000;
+                end
+                `hg  : begin
+                    _led[15:9] = 7'b0000100;
+                end  
+                `ha  : begin
+                    _led[15:9] = 7'b0000010;
+                end  
+                `hb  : begin
+                    _led[15:9] = 7'b0000001;
+                end 
+                `lc  : begin
+                    _led[15:9] = 7'b1000000;
+                end
+                `ld  : begin
+                    _led[15:9] = 7'b0100000;
+                end
+                `le  : begin
+                    _led[15:9] = 7'b0010000;
+                end
+                `lf  : begin
+                    _led[15:9] = 7'b0001000;
+                end
+                `lg  : begin
+                    _led[15:9] = 7'b0000100;
+                end  
+                `la  : begin
+                    _led[15:9] = 7'b0000010;
+                end  
+                `lb  : begin
+                    _led[15:9] = 7'b0000001;
+                end 
+                default : begin
+                    _led[15:9] = 7'b0000000;
+                end
+            endcase
+        end
     end
     reg [4:0] val;
     clock_divider #(15) clk_d (
@@ -184,39 +299,91 @@ module lab7(
             4'b1011 :  begin
                 case (freqR)
                     /*
-                    `define c   32'd262   
-                    `define g   32'd392   
+                    `define c   32'd262  
+                    `define d   32'd294
+                    `define e   32'd330 
+                    `define f   32'd349
+                    `define g   32'd392  
+                    `define a   32'd440
                     `define b   32'd494   
                     `define hc  32'd524   
                     `define hd  32'd588   
                     `define he  32'd660   
                     `define hf  32'd698   
-                    `define hg  32'd784
+                    `define hg  32'd784 
+                    `define ha  32'd880
+                    `define hb  32'd988  
+                    `define lc   32'd131 
+                    `define ld   32'd197
+                    `define le   32'd165
+                    `define lf   32'd175
+                    `define lg   32'd196
+                    `define la   32'd220
+                    `define lb   32'd247
                     */
-                    262  : begin
+                    `c  : begin
                         val = 10;
                     end
-                    392  : begin
-                        val = 14;
-                    end  
-                    494  : begin
-                        val = 16;
-                    end 
-                    524  : begin
-                        val = 10;
-                    end
-                    588  : begin
+                    `d  : begin
                         val = 11;
-                    end 
-                    660  : begin
+                    end
+                    `e  : begin
                         val = 12;
                     end
-                    698  : begin
+                    `f  : begin
                         val = 13;
                     end
-                    784 : begin
+                    `g  : begin
                         val = 14;
+                    end  
+                    `a  : begin
+                        val = 15;
+                    end  
+                    `b  : begin
+                        val = 16;
+                    end 
+                    `hc  : begin
+                        val = 10;
                     end
+                    `hd  : begin
+                        val = 11;
+                    end
+                    `he  : begin
+                        val = 12;
+                    end
+                    `hf  : begin
+                        val = 13;
+                    end
+                    `hg  : begin
+                        val = 14;
+                    end  
+                    `ha  : begin
+                        val = 15;
+                    end  
+                    `hb  : begin
+                        val = 16;
+                    end 
+                    `lc  : begin
+                        val = 10;
+                    end
+                    `ld  : begin
+                        val = 11;
+                    end
+                    `le  : begin
+                        val = 12;
+                    end
+                    `lf  : begin
+                        val = 13;
+                    end
+                    `lg  : begin
+                        val = 14;
+                    end  
+                    `la  : begin
+                        val = 15;
+                    end  
+                    `lb  : begin
+                        val = 16;
+                    end 
                     default : begin
                         val = 17;
                     end
@@ -225,29 +392,68 @@ module lab7(
             end
             4'b1101 :  begin
                 case (freqR)
-                    262  : begin
+                    `c  : begin
                         val = 4;
                     end
-                    392  : begin
+                    `d  : begin
+                        val = 4;
+                    end
+                    `e  : begin
+                        val = 4;
+                    end
+                    `f  : begin
+                        val = 4;
+                    end
+                    `g  : begin
                         val = 4;
                     end  
-                    494  : begin
+                    `a  : begin
+                        val = 4;
+                    end  
+                    `b  : begin
                         val = 4;
                     end 
-                    524  : begin
+                    `hc  : begin
                         val = 5;
                     end
-                    588  : begin
+                    `hd  : begin
+                        val = 5;
+                    end
+                    `he  : begin
+                        val = 5;
+                    end
+                    `hf  : begin
+                        val = 5;
+                    end
+                    `hg  : begin
+                        val = 5;
+                    end  
+                    `ha  : begin
+                        val = 5;
+                    end  
+                    `hb  : begin
                         val = 5;
                     end 
-                    660  : begin
-                        val = 5;
+                    `lc  : begin
+                        val = 3;
                     end
-                    698  : begin
-                        val = 5;
+                    `ld  : begin
+                        val = 3;
                     end
-                    784 : begin
-                        val = 5;
+                    `le  : begin
+                        val = 3;
+                    end
+                    `lf  : begin
+                        val = 3;
+                    end
+                    `lg  : begin
+                        val = 3;
+                    end  
+                    `la  : begin
+                        val = 3;
+                    end  
+                    `lb  : begin
+                        val = 3;
                     end
                     default : begin
                         val = 17;
@@ -267,23 +473,23 @@ module lab7(
     end
     always @(*) begin 
         case (val)
-            4'd0: DISPLAY = 7'b100_0000;
-            4'd1: DISPLAY = 7'b111_1001;
-            4'd2: DISPLAY = 7'b010_0100;
-            4'd3: DISPLAY = 7'b011_0000;
-            4'd4: DISPLAY = 7'b001_1001;
-            4'd5: DISPLAY = 7'b001_0010;
-            4'd6: DISPLAY = 7'b000_0010;
-            4'd7: DISPLAY = 7'b111_1000;
-            4'd8: DISPLAY = 7'b000_0000;
-            4'd9: DISPLAY = 7'b001_0000;
-            4'd10: DISPLAY = 7'b100_0110; // C
-            4'd11: DISPLAY = 7'b010_0001; // D (d)
-            4'd12: DISPLAY = 7'b000_0110; // E
-            4'd13: DISPLAY = 7'b000_1110; // F
-            4'd14: DISPLAY = 7'b001_0000; // G
-            4'd15: DISPLAY = 7'b000_1000; // A
-            4'd16: DISPLAY = 7'b000_0011; // B
+            5'd0: DISPLAY = 7'b100_0000;
+            5'd1: DISPLAY = 7'b111_1001;
+            5'd2: DISPLAY = 7'b010_0100;
+            5'd3: DISPLAY = 7'b011_0000;
+            5'd4: DISPLAY = 7'b001_1001;
+            5'd5: DISPLAY = 7'b001_0010;
+            5'd6: DISPLAY = 7'b000_0010;
+            5'd7: DISPLAY = 7'b111_1000;
+            5'd8: DISPLAY = 7'b000_0000;
+            5'd9: DISPLAY = 7'b001_0000;
+            5'd10: DISPLAY = 7'b100_0110; // C
+            5'd11: DISPLAY = 7'b010_0001; // D (d)
+            5'd12: DISPLAY = 7'b000_0110; // E
+            5'd13: DISPLAY = 7'b000_1110; // F
+            5'd14: DISPLAY = 7'b001_0000; // G
+            5'd15: DISPLAY = 7'b000_1000; // A
+            5'd16: DISPLAY = 7'b000_0011; // B
             default: DISPLAY = 7'b011_1111;
         endcase
     end

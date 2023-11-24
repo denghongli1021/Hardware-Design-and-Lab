@@ -1,23 +1,69 @@
-`define c   32'd262   
-`define g   32'd392   
+`define c   32'd262  
+`define d   32'd294
+`define e   32'd330 
+`define f   32'd349
+`define g   32'd392  
+`define a   32'd440
 `define b   32'd494   
 `define hc  32'd524   
 `define hd  32'd588   
 `define he  32'd660   
 `define hf  32'd698   
-`define hg  32'd784   
-
+`define hg  32'd784 
+`define ha  32'd880
+`define hb  32'd988  
+`define lc   32'd131 
+`define ld   32'd197
+`define le   32'd165
+`define lf   32'd175
+`define lg   32'd196
+`define la   32'd220
+`define lb   32'd247
 `define sil   32'd50000000 // slience
 
 module music_example (
 	input [11:0] ibeatNum,
 	input en,
+    input mode,
+    input [511:0] key_down,
+    input [8:0] last_change,
+    input key_valid,
 	output reg [31:0] toneL,
     output reg [31:0] toneR
-);
+);  
+    reg [4:0] i;
+    parameter [8:0] KEY_CODES [0:20] = {
+        9'b0_0001_0101, // Q (15)
+        9'b0_0001_1100, // A (1C)
+        9'b0_0001_1010, // Z (1A) 
 
+        9'b0_0001_1101, // W (1D)
+        9'b0_0001_1011, // S (1B)
+        9'b0_0010_0010, // X (22) 
+
+        9'b0_0010_0100, // E (24)
+        9'b0_0010_0011, // D (23)
+        9'b0_0010_0001, // C (21)
+
+        9'b0_0010_1101, // R (2D)
+        9'b0_0010_1011, // F (2B)
+        9'b0_0010_1010, // V (2A) 
+
+        9'b0_0010_1100, // T (2C)
+        9'b0_0011_0100, // G (34)
+        9'b0_0011_0010, // B (32)
+
+        9'b0_0011_0101, // Y (35)
+        9'b0_0011_0011, // H (33)
+        9'b0_0011_0001, // N (31)
+
+        9'b0_0011_1100, // U (3C) 
+        9'b0_0011_1011, // J (3B) 
+        9'b0_0011_1010 // M (3A) 
+        // 9'b0_0001_0010  // left shift (12)
+    };
     always @* begin
-        if(en == 1) begin
+        if(en == 1 && mode == 1) begin
             case(ibeatNum)
                 // --- Measure 1 ---
                 12'd0: toneR = `hg;      12'd1: toneR = `hg; // HG (half-beat)
@@ -317,13 +363,160 @@ module music_example (
 
                 default: toneR = `sil;
             endcase
-        end else begin
+        end 
+        else if (mode == 0) begin
+            if (key_down[KEY_CODES[0]] == 1) begin
+                toneR = `hc;
+            end
+            else if (key_down[KEY_CODES[1]] == 1) begin
+                toneR = `c;
+            end
+            else if (key_down[KEY_CODES[2]] == 1) begin
+                toneR = `lc;
+            end
+            else if (key_down[KEY_CODES[3]] == 1) begin
+                toneR = `hd;
+            end
+            else if (key_down[KEY_CODES[4]] == 1) begin
+                toneR = `d;
+            end
+            else if (key_down[KEY_CODES[5]] == 1) begin
+                toneR = `ld;
+            end
+            else if (key_down[KEY_CODES[6]] == 1) begin
+                toneR = `he;
+            end
+            else if (key_down[KEY_CODES[7]] == 1) begin
+                toneR = `e;
+            end
+            else if (key_down[KEY_CODES[8]] == 1) begin
+                toneR = `le;
+            end
+            else if (key_down[KEY_CODES[9]] == 1) begin
+                toneR = `hf;
+            end
+            else if (key_down[KEY_CODES[10]] == 1) begin
+                toneR = `f;
+            end
+            else if (key_down[KEY_CODES[11]] == 1) begin
+                toneR = `lf;
+            end
+            else if (key_down[KEY_CODES[12]] == 1) begin
+                toneR = `hg;
+            end
+            else if (key_down[KEY_CODES[13]] == 1) begin
+                toneR = `g;
+            end
+            else if (key_down[KEY_CODES[14]] == 1) begin
+                toneR = `lg;
+            end
+            else if (key_down[KEY_CODES[15]] == 1) begin
+                toneR = `ha;
+            end
+            else if (key_down[KEY_CODES[16]] == 1) begin
+                toneR = `a;
+            end
+            else if (key_down[KEY_CODES[17]] == 1) begin
+                toneR = `la;
+            end
+            else if (key_down[KEY_CODES[18]] == 1) begin
+                toneR = `hb;
+            end
+            else if (key_down[KEY_CODES[19]] == 1) begin
+                toneR = `b;
+            end
+            else if (key_down[KEY_CODES[20]] == 1) begin
+                toneR = `lb;
+            end
+            else begin
+                toneR = `sil;
+            end
+//             for (i=0;i<=20;i=i+1) begin
+//                 if (key_down[KEY_CODES[i]] == 1) begin
+//                     case(i) 
+//                     0 : begin
+//                         toneR = 524;
+//                     end
+//                     1: begin // C4
+//                         toneR = 262;
+//                     end
+//                     2: begin
+//                         toneR = 131;
+//                     end
+// /////////////////////////////////
+//                     3: begin
+//                         toneR = 294*2;
+//                     end
+//                     4: begin // D4
+//                         toneR = 294;
+//                     end
+//                     5: begin
+//                         toneR = 197;
+//                     end
+// /////////////////////////////////
+//                     6: begin
+//                         toneR = 660;
+//                     end
+//                     7: begin // E4
+//                         toneR = 330;
+//                     end
+//                     8: begin
+//                         toneR = 165;
+//                     end
+// /////////////////////////////////
+//                     9: begin
+//                         toneR = 698;
+//                     end
+//                     10: begin // F4
+//                         toneR = 349;
+//                     end
+//                     11: begin
+//                         toneR = 175;
+//                     end
+// /////////////////////////////////
+//                     12: begin
+//                         toneR = 784;
+//                     end
+//                     13: begin // G4
+//                         toneR = 392;
+//                     end
+//                     14: begin
+//                         toneR = 196;
+//                     end
+// /////////////////////////////////
+//                     15: begin
+//                         toneR = 880;
+//                     end
+//                     16: begin // A4
+//                         toneR = 440;
+//                     end
+//                     17: begin
+//                         toneR = 220;
+//                     end
+// /////////////////////////////////
+    //                     18: begin
+    //                         toneR = 988;
+    //                     end
+    //                     19: begin // B4
+    //                         toneR = 494;
+    //                     end
+    //                     20: begin
+    //                         toneR = 247;
+    //                     end
+    //                     default : begin
+    //                         toneR = `sil;
+    //                     end
+    //                     endcase
+    //                 end
+//             end
+        end
+        else begin
             toneR = `sil;
         end
     end
     reg [11:0] temp_beatnum;
     always @(*) begin
-        if(en == 1)begin
+        if(en == 1 && mode == 1)begin
             if (ibeatNum < 128) begin
                 case(ibeatNum)
                     12'd0: toneL = `hc;  	12'd1: toneL = `hc; // HC (two-beat)
