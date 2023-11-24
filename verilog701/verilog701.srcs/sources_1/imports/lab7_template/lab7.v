@@ -40,21 +40,45 @@ module lab7(
     output reg [6:0] DISPLAY,    
     output reg [3:0] DIGIT
     );        
-
+    wire up1,up2;
+    debounce d1 (
+        .pb_debounced(up1), 
+        .pb(_volUP),
+        .clk(clk)
+    );
+    onepulse d2(
+        .signal(up1), 
+        .clk(clk), 
+        .op(up2)
+    );
+    wire dw1,dw2;
+    debounce e1 (
+        .pb_debounced(dw1), 
+        .pb(_volDOWN),
+        .clk(clk)
+    );
+    onepulse e2 (
+        .signal(dw1), 
+        .clk(clk), 
+        .op(dw2)
+    );
+    wire rst1,rst2;
+    debounce c1 (
+        .pb_debounced(rst1), 
+        .pb(rst),
+        .clk(clk)
+    );
+    onepulse c2 (
+        .signal(rst1), 
+        .clk(clk), 
+        .op(rst2)
+    );
     // Modify these
     // keyboard
     wire [511:0] key_down;
     wire [8:0] last_change;
     wire key_valid;
-    KeyboardDecoder kd(
-        .rst(rst2),
-        .clk(clk),
-        .PS2_DATA(PS2_DATA),
-        .PS2_CLK(PS2_CLK),
-        .key_down(key_down),
-        .last_change(last_change),
-        .key_valid(key_valid)
-    );
+    reg [2:0] vol = 2;
     //reg [15:0] _led = 16'b1110_0000_0000_0111;
     // assign DIGIT = 4'b0000;
     // assign DISPLAY = 7'b0111111;
@@ -66,7 +90,7 @@ module lab7(
     wire [31:0] freqL, freqR;           // Raw frequency, produced by music module
     wire [31:0] freqR2;
     wire [21:0] freq_outL, freq_outR;    // Processed frequency, adapted to the clock rate of Basys3
-
+    reg [4:0] val;
     // clkDiv22
     wire clkDiv22;
     clock_divider #(.n(22)) clock_22(.clk(clk), .clk_div(clkDiv22));    // for audio
@@ -118,7 +142,6 @@ module lab7(
     // Note generation
     // [in]  processed frequency
     // [out] audio wave signal (using square wave here)
-    reg [2:0] vol = 2;
     note_gen noteGen_00(
         .clk(clk), 
         .rst(rst), 
@@ -142,38 +165,14 @@ module lab7(
         .audio_sck(audio_sck),              // serial clock
         .audio_sdin(audio_sdin)             // serial audio data input
     );
-    wire up1,up2;
-    debounce d1 (
-        .pb_debounced(up1), 
-        .pb(_volUP),
-        .clk(clk)
-    );
-    onepulse d2(
-        .signal(up1), 
-        .clk(clk), 
-        .op(up2)
-    );
-    wire dw1,dw2;
-    debounce e1 (
-        .pb_debounced(dw1), 
-        .pb(_volDOWN),
-        .clk(clk)
-    );
-    onepulse e2 (
-        .signal(dw1), 
-        .clk(clk), 
-        .op(dw2)
-    );
-    wire rst1,rst2;
-    debounce c1 (
-        .pb_debounced(rst1), 
-        .pb(rst),
-        .clk(clk)
-    );
-    onepulse c2 (
-        .signal(rst1), 
-        .clk(clk), 
-        .op(rst2)
+    KeyboardDecoder kd(
+        .rst(rst2),
+        .clk(clk),
+        .PS2_DATA(PS2_DATA),
+        .PS2_CLK(PS2_CLK),
+        .key_down(key_down),
+        .last_change(last_change),
+        .key_valid(key_valid)
     );
     // vol ??��??
     always@(posedge clk or posedge rst2) begin
@@ -284,8 +283,10 @@ module lab7(
                 end
             endcase
         end
+        else if (mode == 0) begin
+            _led[15:9] = 5'b00000;
+        end
     end
-    reg [4:0] val;
     clock_divider #(15) clk_d (
         .clk(clk),
         .clk_div(clk_div_use)
