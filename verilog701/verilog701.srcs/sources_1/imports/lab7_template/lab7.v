@@ -92,6 +92,10 @@ module lab7(
     wire [31:0] freqR2;
     wire [21:0] freq_outL, freq_outR;    // Processed frequency, adapted to the clock rate of Basys3
     reg [4:0] val;
+    reg allow_point = 1;
+    reg [6:0] point = 0;
+    reg [31:0] frequency_1;
+    reg [31:0] frequency_2;
     // clkDiv22
     wire clkDiv22;
     clock_divider #(.n(22)) clock_22(.clk(clk), .clk_div(clkDiv22));    // for audio
@@ -626,5 +630,17 @@ module lab7(
             5'd16: DISPLAY = 7'b000_0011; // B
             default: DISPLAY = 7'b011_1111;
         endcase
+    end
+    
+    always@(posedge clk) begin
+        frequency_1 = frequency_2;
+        frequency_2 = freqR2;
+        if (frequency_1 != frequency_2) begin
+            allow_point = 1;
+        end
+        else if (freqR == frequency_1 && allow_point == 1) begin
+            point = point + 1;
+            allow_point = 0;
+        end
     end
 endmodule

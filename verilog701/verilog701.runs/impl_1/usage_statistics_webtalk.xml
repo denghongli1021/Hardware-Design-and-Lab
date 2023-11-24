@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Fri Nov 24 23:24:56 2023'>
+<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Fri Nov 24 23:35:49 2023'>
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="FALSE" description="" />
   <keyValuePair key="build_version" value="2708876" description="" />
-  <keyValuePair key="date_generated" value="Fri Nov 24 23:24:56 2023" description="" />
+  <keyValuePair key="date_generated" value="Fri Nov 24 23:35:49 2023" description="" />
   <keyValuePair key="os_platform" value="WIN64" description="" />
   <keyValuePair key="product_version" value="Vivado v2019.2 (64-bit)" description="" />
   <keyValuePair key="project_id" value="0410c15b791d4d518eabbf26820fd0d7" description="" />
-  <keyValuePair key="project_iteration" value="48" description="" />
+  <keyValuePair key="project_iteration" value="49" description="" />
   <keyValuePair key="random_id" value="87c8cda51613571db6195e47f483b61c" description="" />
   <keyValuePair key="registration_id" value="87c8cda51613571db6195e47f483b61c" description="" />
   <keyValuePair key="route_design" value="TRUE" description="" />
@@ -517,10 +517,10 @@
    <keyValuePair key="-verilog_define" value="default::[not_specified]" description="" />
   </section>
   <section name="usage" level="2" order="2" description="">
-   <keyValuePair key="elapsed" value="00:00:34s" description="" />
+   <keyValuePair key="elapsed" value="00:00:31s" description="" />
    <keyValuePair key="hls_ip" value="0" description="" />
-   <keyValuePair key="memory_gain" value="687.598MB" description="" />
-   <keyValuePair key="memory_peak" value="986.090MB" description="" />
+   <keyValuePair key="memory_gain" value="688.043MB" description="" />
+   <keyValuePair key="memory_peak" value="985.973MB" description="" />
   </section>
  </section>
  <section name="unisim_transformation" level="1" order="10" description="">
@@ -577,15 +577,15 @@
    <keyValuePair key="addsrcwizard_specify_hdl_netlist_block_design" value="1" description="" />
    <keyValuePair key="addsrcwizard_specify_or_create_constraint_files" value="1" description="" />
    <keyValuePair key="basedialog_apply" value="1" description="" />
-   <keyValuePair key="basedialog_cancel" value="40" description="" />
-   <keyValuePair key="basedialog_ok" value="128" description="" />
-   <keyValuePair key="basedialog_yes" value="81" description="" />
+   <keyValuePair key="basedialog_cancel" value="41" description="" />
+   <keyValuePair key="basedialog_ok" value="130" description="" />
+   <keyValuePair key="basedialog_yes" value="82" description="" />
    <keyValuePair key="cmdmsgdialog_ok" value="1" description="" />
    <keyValuePair key="constraintschooserpanel_add_files" value="3" description="" />
    <keyValuePair key="constraintschooserpanel_copy_constraints_files_into_project" value="1" description="" />
    <keyValuePair key="coretreetablepanel_core_tree_table" value="5" description="" />
-   <keyValuePair key="filesetpanel_file_set_panel_tree" value="23" description="" />
-   <keyValuePair key="flownavigatortreepanel_flow_navigator_tree" value="93" description="" />
+   <keyValuePair key="filesetpanel_file_set_panel_tree" value="24" description="" />
+   <keyValuePair key="flownavigatortreepanel_flow_navigator_tree" value="94" description="" />
    <keyValuePair key="fpgachooser_family" value="1" description="" />
    <keyValuePair key="fpgachooser_fpga_table" value="1" description="" />
    <keyValuePair key="fpgachooser_package" value="1" description="" />
@@ -631,7 +631,7 @@
    <keyValuePair key="stalemoreaction_out_of_date_details" value="1" description="" />
    <keyValuePair key="syntheticagettingstartedview_recent_projects" value="2" description="" />
    <keyValuePair key="syntheticastatemonitor_cancel" value="2" description="" />
-   <keyValuePair key="taskbanner_close" value="7" description="" />
+   <keyValuePair key="taskbanner_close" value="8" description="" />
    <keyValuePair key="touchpointsurveydialog_no" value="3" description="" />
   </section>
   <section name="java_command_handlers" level="2" order="2" description="">
@@ -646,7 +646,7 @@
    <keyValuePair key="openhardwaremanager" value="11" description="" />
    <keyValuePair key="openproject" value="2" description="" />
    <keyValuePair key="openrecenttarget" value="1" description="" />
-   <keyValuePair key="runbitgen" value="82" description="" />
+   <keyValuePair key="runbitgen" value="83" description="" />
    <keyValuePair key="settopnode" value="1" description="" />
    <keyValuePair key="showview" value="30" description="" />
    <keyValuePair key="toolssettings" value="2" description="" />
