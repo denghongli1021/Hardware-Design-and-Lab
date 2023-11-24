@@ -310,7 +310,12 @@ module lab7(
     always@(posedge clk_div_use) begin
         case (DIGIT) 
             4'b0111 :  begin
-                val = 17;
+                if (_mode == 0 && _play == 1) begin
+                    val = point % 10;
+                end
+                else begin
+                    val = 17;
+                end
                 DIGIT = 4'b1011;
             end
             4'b1011 :  begin
@@ -600,7 +605,12 @@ module lab7(
                 DIGIT = 4'b1110;
             end
             4'b1110 :  begin
-                val = 17;
+                if (_mode == 0 && _play == 1) begin
+                    val = point / 10;
+                end
+                else begin
+                    val = 17;
+                end
                 DIGIT = 4'b0111;
             end
             default :  begin

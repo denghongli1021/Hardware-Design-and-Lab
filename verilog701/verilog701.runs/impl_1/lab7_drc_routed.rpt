@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Fri Nov 24 23:35:37 2023
+| Date         : Fri Nov 24 23:44:58 2023
 | Host         : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command      : report_drc -file lab7_drc_routed.rpt -pb lab7_drc_routed.pb -rpx lab7_drc_routed.rpx
 | Design       : lab7
@@ -24,12 +24,12 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 3
+             Violations found: 2
 +----------+----------+-----------------------------------------------------+------------+
 | Rule     | Severity | Description                                         | Violations |
 +----------+----------+-----------------------------------------------------+------------+
 | CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-| PDRC-153 | Warning  | Gated clock check                                   | 2          |
+| PDRC-153 | Warning  | Gated clock check                                   | 1          |
 +----------+----------+-----------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -50,11 +50,6 @@ Related violations: <none>
 PDRC-153#1 Warning
 Gated clock check  
 Net noteGen_00/audio_right_reg[14]_i_2_n_0 is a gated clock net sourced by a combinational pin noteGen_00/audio_right_reg[14]_i_2/O, cell noteGen_00/audio_right_reg[14]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#2 Warning
-Gated clock check  
-Net playerCtrl_helper/E[0] is a gated clock net sourced by a combinational pin playerCtrl_helper/ibeat[9]_i_1/O, cell playerCtrl_helper/ibeat[9]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 
