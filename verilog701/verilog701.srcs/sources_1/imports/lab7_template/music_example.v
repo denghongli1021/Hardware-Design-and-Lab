@@ -25,6 +25,7 @@ module music_example (
 	input [11:0] ibeatNum,
 	input en,
     input mode,
+    input finish,
     input [511:0] key_down,
     input [8:0] last_change,
     input key_valid,
@@ -364,7 +365,7 @@ module music_example (
                 default: toneR = `sil;
             endcase
         end 
-        else if (mode == 0) begin
+        else if (mode == 0 && finish == 0) begin
             if (key_down[KEY_CODES[0]] == 1) begin
                 toneR = `hc;
             end

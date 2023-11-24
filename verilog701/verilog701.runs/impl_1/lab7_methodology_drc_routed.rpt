@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Fri Nov 24 22:19:16 2023
+| Date         : Fri Nov 24 23:24:45 2023
 | Host         : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command      : report_methodology -file lab7_methodology_drc_routed.rpt -pb lab7_methodology_drc_routed.pb -rpx lab7_methodology_drc_routed.rpx
 | Design       : lab7
@@ -23,13 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 302
+             Violations found: 299
 +-----------+------------------+------------------------------+------------+
 | Rule      | Severity         | Description                  | Violations |
 +-----------+------------------+------------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell  | 288        |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell  | 289        |
 | LUTAR-1   | Warning          | LUT drives async reset alert | 2          |
-| TIMING-20 | Warning          | Non-clocked latch            | 12         |
+| TIMING-20 | Warning          | Non-clocked latch            | 8          |
 +-----------+------------------+------------------------------+------------+
 
 2. REPORT DETAILS
@@ -1321,155 +1321,160 @@ Related violations: <none>
 
 TIMING-17#258 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/audio_left_reg[10]/C is not reached by a timing clock
+The clock pin playerCtrl_helper/ibeat_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#259 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/audio_left_reg[11]/C is not reached by a timing clock
+The clock pin sc/audio_left_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#260 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/audio_left_reg[12]/C is not reached by a timing clock
+The clock pin sc/audio_left_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#261 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/audio_left_reg[13]/C is not reached by a timing clock
+The clock pin sc/audio_left_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#262 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/audio_left_reg[14]/C is not reached by a timing clock
+The clock pin sc/audio_left_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#263 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/audio_left_reg[8]/C is not reached by a timing clock
+The clock pin sc/audio_left_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#264 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/audio_left_reg[9]/C is not reached by a timing clock
+The clock pin sc/audio_left_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#265 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/audio_right_reg[10]/C is not reached by a timing clock
+The clock pin sc/audio_left_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#266 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/audio_right_reg[11]/C is not reached by a timing clock
+The clock pin sc/audio_right_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#267 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/audio_right_reg[12]/C is not reached by a timing clock
+The clock pin sc/audio_right_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#268 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/audio_right_reg[13]/C is not reached by a timing clock
+The clock pin sc/audio_right_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#269 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/audio_right_reg[14]/C is not reached by a timing clock
+The clock pin sc/audio_right_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#270 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/audio_right_reg[8]/C is not reached by a timing clock
+The clock pin sc/audio_right_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#271 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/audio_right_reg[9]/C is not reached by a timing clock
+The clock pin sc/audio_right_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#272 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/clk_cnt_reg[0]/C is not reached by a timing clock
+The clock pin sc/audio_right_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#273 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/clk_cnt_reg[1]/C is not reached by a timing clock
+The clock pin sc/clk_cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#274 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/clk_cnt_reg[2]/C is not reached by a timing clock
+The clock pin sc/clk_cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#275 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/clk_cnt_reg[3]/C is not reached by a timing clock
+The clock pin sc/clk_cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#276 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/clk_cnt_reg[4]/C is not reached by a timing clock
+The clock pin sc/clk_cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#277 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/clk_cnt_reg[5]/C is not reached by a timing clock
+The clock pin sc/clk_cnt_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#278 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/clk_cnt_reg[6]/C is not reached by a timing clock
+The clock pin sc/clk_cnt_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#279 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/clk_cnt_reg[7]/C is not reached by a timing clock
+The clock pin sc/clk_cnt_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#280 Critical Warning
 Non-clocked sequential cell  
-The clock pin sc/clk_cnt_reg[8]/C is not reached by a timing clock
+The clock pin sc/clk_cnt_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#281 Critical Warning
 Non-clocked sequential cell  
-The clock pin val_reg[0]/C is not reached by a timing clock
+The clock pin sc/clk_cnt_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#282 Critical Warning
 Non-clocked sequential cell  
-The clock pin val_reg[1]/C is not reached by a timing clock
+The clock pin val_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#283 Critical Warning
 Non-clocked sequential cell  
-The clock pin val_reg[2]/C is not reached by a timing clock
+The clock pin val_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#284 Critical Warning
 Non-clocked sequential cell  
-The clock pin val_reg[3]/C is not reached by a timing clock
+The clock pin val_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#285 Critical Warning
 Non-clocked sequential cell  
-The clock pin val_reg[4]/C is not reached by a timing clock
+The clock pin val_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#286 Critical Warning
 Non-clocked sequential cell  
-The clock pin vol_reg[0]/C is not reached by a timing clock
+The clock pin val_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#287 Critical Warning
 Non-clocked sequential cell  
-The clock pin vol_reg[1]/C is not reached by a timing clock
+The clock pin vol_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#288 Critical Warning
+Non-clocked sequential cell  
+The clock pin vol_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#289 Critical Warning
 Non-clocked sequential cell  
 The clock pin vol_reg[2]/C is not reached by a timing clock
 Related violations: <none>
@@ -1486,60 +1491,40 @@ Related violations: <none>
 
 TIMING-20#1 Warning
 Non-clocked latch  
-The latch _led_reg[11] cannot be properly analyzed as its control pin _led_reg[11]/G is not reached by a timing clock
+The latch finish_reg cannot be properly analyzed as its control pin finish_reg/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#2 Warning
 Non-clocked latch  
-The latch _led_reg[12] cannot be properly analyzed as its control pin _led_reg[12]/G is not reached by a timing clock
+The latch noteGen_00/audio_right_reg[10] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[10]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#3 Warning
 Non-clocked latch  
-The latch _led_reg[13] cannot be properly analyzed as its control pin _led_reg[13]/G is not reached by a timing clock
+The latch noteGen_00/audio_right_reg[11] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[11]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#4 Warning
 Non-clocked latch  
-The latch _led_reg[14] cannot be properly analyzed as its control pin _led_reg[14]/G is not reached by a timing clock
+The latch noteGen_00/audio_right_reg[12] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[12]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#5 Warning
 Non-clocked latch  
-The latch _led_reg[15] cannot be properly analyzed as its control pin _led_reg[15]/G is not reached by a timing clock
+The latch noteGen_00/audio_right_reg[13] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[13]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#6 Warning
 Non-clocked latch  
-The latch noteGen_00/audio_right_reg[10] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[10]/G is not reached by a timing clock
+The latch noteGen_00/audio_right_reg[14] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[14]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#7 Warning
 Non-clocked latch  
-The latch noteGen_00/audio_right_reg[11] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[11]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#8 Warning
-Non-clocked latch  
-The latch noteGen_00/audio_right_reg[12] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[12]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#9 Warning
-Non-clocked latch  
-The latch noteGen_00/audio_right_reg[13] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[13]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#10 Warning
-Non-clocked latch  
-The latch noteGen_00/audio_right_reg[14] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[14]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#11 Warning
-Non-clocked latch  
 The latch noteGen_00/audio_right_reg[8] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[8]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#12 Warning
+TIMING-20#8 Warning
 Non-clocked latch  
 The latch noteGen_00/audio_right_reg[9] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[9]/G is not reached by a timing clock
 Related violations: <none>

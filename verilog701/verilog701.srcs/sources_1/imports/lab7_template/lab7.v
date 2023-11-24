@@ -79,6 +79,7 @@ module lab7(
     wire [8:0] last_change;
     wire key_valid;
     reg [2:0] vol = 2;
+    reg finish = 0;
     //reg [15:0] _led = 16'b1110_0000_0000_0111;
     // assign DIGIT = 4'b0000;
     // assign DISPLAY = 7'b0111111;
@@ -119,6 +120,7 @@ module lab7(
         .ibeatNum(ibeatNum),
         .mode(_mode),
         .en(_play),
+        .finish(finish),
         .key_down(key_down),
         .last_change(last_change),
         .key_valid(key_valid),
@@ -214,78 +216,88 @@ module lab7(
             endcase
         end
         if (_mode == 0 && _play == 1) begin
-            case (freqR2)
-                `c  : begin
-                    _led[15:9] = 7'b1000000;
-                end
-                `d  : begin
-                    _led[15:9] = 7'b0100000;
-                end
-                `e  : begin
-                    _led[15:9] = 7'b0010000;
-                end
-                `f  : begin
-                    _led[15:9] = 7'b0001000;
-                end
-                `g  : begin
-                    _led[15:9] = 7'b0000100;
-                end  
-                `a  : begin
-                    _led[15:9] = 7'b0000010;
-                end  
-                `b  : begin
-                    _led[15:9] = 7'b0000001;
-                end 
-                `hc  : begin
-                    _led[15:9] = 7'b1000000;
-                end
-                `hd  : begin
-                    _led[15:9] = 7'b0100000;
-                end
-                `he  : begin
-                    _led[15:9] = 7'b0010000;
-                end
-                `hf  : begin
-                    _led[15:9] = 7'b0001000;
-                end
-                `hg  : begin
-                    _led[15:9] = 7'b0000100;
-                end  
-                `ha  : begin
-                    _led[15:9] = 7'b0000010;
-                end  
-                `hb  : begin
-                    _led[15:9] = 7'b0000001;
-                end 
-                `lc  : begin
-                    _led[15:9] = 7'b1000000;
-                end
-                `ld  : begin
-                    _led[15:9] = 7'b0100000;
-                end
-                `le  : begin
-                    _led[15:9] = 7'b0010000;
-                end
-                `lf  : begin
-                    _led[15:9] = 7'b0001000;
-                end
-                `lg  : begin
-                    _led[15:9] = 7'b0000100;
-                end  
-                `la  : begin
-                    _led[15:9] = 7'b0000010;
-                end  
-                `lb  : begin
-                    _led[15:9] = 7'b0000001;
-                end 
-                default : begin
-                    _led[15:9] = 7'b0000000;
-                end
-            endcase
+            if (ibeatNum2 == 512) begin
+                _led[15:9] = 7'b1111111;
+                finish = 1;
+            end
+            else begin
+                finish = 0;
+                case (freqR2)
+                    `c  : begin
+                        _led[15:9] = 7'b1000000;
+                    end
+                    `d  : begin
+                        _led[15:9] = 7'b0100000;
+                    end
+                    `e  : begin
+                        _led[15:9] = 7'b0010000;
+                    end
+                    `f  : begin
+                        _led[15:9] = 7'b0001000;
+                    end
+                    `g  : begin
+                        _led[15:9] = 7'b0000100;
+                    end  
+                    `a  : begin
+                        _led[15:9] = 7'b0000010;
+                    end  
+                    `b  : begin
+                        _led[15:9] = 7'b0000001;
+                    end 
+                    `hc  : begin
+                        _led[15:9] = 7'b1000000;
+                    end
+                    `hd  : begin
+                        _led[15:9] = 7'b0100000;
+                    end
+                    `he  : begin
+                        _led[15:9] = 7'b0010000;
+                    end
+                    `hf  : begin
+                        _led[15:9] = 7'b0001000;
+                    end
+                    `hg  : begin
+                        _led[15:9] = 7'b0000100;
+                    end  
+                    `ha  : begin
+                        _led[15:9] = 7'b0000010;
+                    end  
+                    `hb  : begin
+                        _led[15:9] = 7'b0000001;
+                    end 
+                    `lc  : begin
+                        _led[15:9] = 7'b1000000;
+                    end
+                    `ld  : begin
+                        _led[15:9] = 7'b0100000;
+                    end
+                    `le  : begin
+                        _led[15:9] = 7'b0010000;
+                    end
+                    `lf  : begin
+                        _led[15:9] = 7'b0001000;
+                    end
+                    `lg  : begin
+                        _led[15:9] = 7'b0000100;
+                    end  
+                    `la  : begin
+                        _led[15:9] = 7'b0000010;
+                    end  
+                    `lb  : begin
+                        _led[15:9] = 7'b0000001;
+                    end 
+                    default : begin
+                        _led[15:9] = 7'b0000000;
+                    end
+                endcase
+            end
         end
-        else if (mode == 0) begin
-            _led[15:9] = 5'b00000;
+        else begin
+            _led[15:9] = 7'b0000000;
         end
+        // else if (_mode == 0) begin
+        //     _led[15:9] = 5'b00000;
+        // end
     end
     clock_divider #(15) clk_d (
         .clk(clk),
