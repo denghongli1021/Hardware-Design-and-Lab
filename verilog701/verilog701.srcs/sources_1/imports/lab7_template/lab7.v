@@ -64,6 +64,7 @@ module lab7(
     wire [11:0] ibeatNum;               // Beat counter
     wire [11:0] ibeatNum2; 
     wire [31:0] freqL, freqR;           // Raw frequency, produced by music module
+    wire [31:0] freqR2;
     wire [21:0] freq_outL, freq_outR;    // Processed frequency, adapted to the clock rate of Basys3
 
     // clkDiv22
@@ -100,15 +101,14 @@ module lab7(
         .toneL(freqL),
         .toneR(freqR)
     );
-    music_example music_helper (
-        .ibeatNum(ibeatNum),
+    music_example2 music_helper (
+        .ibeatNum(ibeatNum2),
         .mode(_mode),
         .en(_play),
         .key_down(key_down),
         .last_change(last_change),
         .key_valid(key_valid),
-        .toneL(freqL),
-        .toneR(freqR)
+        .toneR(freqR2)
     );
     // freq_outL, freq_outR
     // Note gen makes no sound, if freq_out = 50000000 / `silence = 1
@@ -175,7 +175,7 @@ module lab7(
         .clk(clk), 
         .op(rst2)
     );
-    // vol 加減
+    // vol ??��??
     always@(posedge clk or posedge rst2) begin
         if (rst2) begin
             vol = 2;
@@ -187,7 +187,7 @@ module lab7(
             vol = vol - 1;
         end
     end
-    // led 顯示 音量大小 (vol) _led
+    // led 顯示 ?��??�大�? (vol) _led
     always@(*) begin
         if (_mute) begin
             _led[4:0] = 5'b00000;
@@ -215,7 +215,7 @@ module lab7(
             endcase
         end
         if (_mode == 0 && _play == 1) begin
-            case (freqR)
+            case (freqR2)
                 `c  : begin
                     _led[15:9] = 7'b1000000;
                 end
@@ -297,168 +297,289 @@ module lab7(
                 DIGIT = 4'b1011;
             end
             4'b1011 :  begin
-                case (freqR)
-                    /*
-                    `define c   32'd262  
-                    `define d   32'd294
-                    `define e   32'd330 
-                    `define f   32'd349
-                    `define g   32'd392  
-                    `define a   32'd440
-                    `define b   32'd494   
-                    `define hc  32'd524   
-                    `define hd  32'd588   
-                    `define he  32'd660   
-                    `define hf  32'd698   
-                    `define hg  32'd784 
-                    `define ha  32'd880
-                    `define hb  32'd988  
-                    `define lc   32'd131 
-                    `define ld   32'd197
-                    `define le   32'd165
-                    `define lf   32'd175
-                    `define lg   32'd196
-                    `define la   32'd220
-                    `define lb   32'd247
-                    */
-                    `c  : begin
-                        val = 10;
-                    end
-                    `d  : begin
-                        val = 11;
-                    end
-                    `e  : begin
-                        val = 12;
-                    end
-                    `f  : begin
-                        val = 13;
-                    end
-                    `g  : begin
-                        val = 14;
-                    end  
-                    `a  : begin
-                        val = 15;
-                    end  
-                    `b  : begin
-                        val = 16;
-                    end 
-                    `hc  : begin
-                        val = 10;
-                    end
-                    `hd  : begin
-                        val = 11;
-                    end
-                    `he  : begin
-                        val = 12;
-                    end
-                    `hf  : begin
-                        val = 13;
-                    end
-                    `hg  : begin
-                        val = 14;
-                    end  
-                    `ha  : begin
-                        val = 15;
-                    end  
-                    `hb  : begin
-                        val = 16;
-                    end 
-                    `lc  : begin
-                        val = 10;
-                    end
-                    `ld  : begin
-                        val = 11;
-                    end
-                    `le  : begin
-                        val = 12;
-                    end
-                    `lf  : begin
-                        val = 13;
-                    end
-                    `lg  : begin
-                        val = 14;
-                    end  
-                    `la  : begin
-                        val = 15;
-                    end  
-                    `lb  : begin
-                        val = 16;
-                    end 
-                    default : begin
-                        val = 17;
-                    end
-                endcase
+                if (_mode == 0 && _play == 1) begin
+                    case (freqR2)
+                        `c  : begin
+                            val = 10;
+                        end
+                        `d  : begin
+                            val = 11;
+                        end
+                        `e  : begin
+                            val = 12;
+                        end
+                        `f  : begin
+                            val = 13;
+                        end
+                        `g  : begin
+                            val = 14;
+                        end  
+                        `a  : begin
+                            val = 15;
+                        end  
+                        `b  : begin
+                            val = 16;
+                        end 
+                        `hc  : begin
+                            val = 10;
+                        end
+                        `hd  : begin
+                            val = 11;
+                        end
+                        `he  : begin
+                            val = 12;
+                        end
+                        `hf  : begin
+                            val = 13;
+                        end
+                        `hg  : begin
+                            val = 14;
+                        end  
+                        `ha  : begin
+                            val = 15;
+                        end  
+                        `hb  : begin
+                            val = 16;
+                        end 
+                        `lc  : begin
+                            val = 10;
+                        end
+                        `ld  : begin
+                            val = 11;
+                        end
+                        `le  : begin
+                            val = 12;
+                        end
+                        `lf  : begin
+                            val = 13;
+                        end
+                        `lg  : begin
+                            val = 14;
+                        end  
+                        `la  : begin
+                            val = 15;
+                        end  
+                        `lb  : begin
+                            val = 16;
+                        end 
+                        default : begin
+                            val = 17;
+                        end
+                    endcase
+                end
+                else begin
+                    case (freqR)
+                        `c  : begin
+                            val = 10;
+                        end
+                        `d  : begin
+                            val = 11;
+                        end
+                        `e  : begin
+                            val = 12;
+                        end
+                        `f  : begin
+                            val = 13;
+                        end
+                        `g  : begin
+                            val = 14;
+                        end  
+                        `a  : begin
+                            val = 15;
+                        end  
+                        `b  : begin
+                            val = 16;
+                        end 
+                        `hc  : begin
+                            val = 10;
+                        end
+                        `hd  : begin
+                            val = 11;
+                        end
+                        `he  : begin
+                            val = 12;
+                        end
+                        `hf  : begin
+                            val = 13;
+                        end
+                        `hg  : begin
+                            val = 14;
+                        end  
+                        `ha  : begin
+                            val = 15;
+                        end  
+                        `hb  : begin
+                            val = 16;
+                        end 
+                        `lc  : begin
+                            val = 10;
+                        end
+                        `ld  : begin
+                            val = 11;
+                        end
+                        `le  : begin
+                            val = 12;
+                        end
+                        `lf  : begin
+                            val = 13;
+                        end
+                        `lg  : begin
+                            val = 14;
+                        end  
+                        `la  : begin
+                            val = 15;
+                        end  
+                        `lb  : begin
+                            val = 16;
+                        end 
+                        default : begin
+                            val = 17;
+                        end
+                    endcase
+                end
                 DIGIT = 4'b1101;
             end
             4'b1101 :  begin
-                case (freqR)
-                    `c  : begin
-                        val = 4;
-                    end
-                    `d  : begin
-                        val = 4;
-                    end
-                    `e  : begin
-                        val = 4;
-                    end
-                    `f  : begin
-                        val = 4;
-                    end
-                    `g  : begin
-                        val = 4;
-                    end  
-                    `a  : begin
-                        val = 4;
-                    end  
-                    `b  : begin
-                        val = 4;
-                    end 
-                    `hc  : begin
-                        val = 5;
-                    end
-                    `hd  : begin
-                        val = 5;
-                    end
-                    `he  : begin
-                        val = 5;
-                    end
-                    `hf  : begin
-                        val = 5;
-                    end
-                    `hg  : begin
-                        val = 5;
-                    end  
-                    `ha  : begin
-                        val = 5;
-                    end  
-                    `hb  : begin
-                        val = 5;
-                    end 
-                    `lc  : begin
-                        val = 3;
-                    end
-                    `ld  : begin
-                        val = 3;
-                    end
-                    `le  : begin
-                        val = 3;
-                    end
-                    `lf  : begin
-                        val = 3;
-                    end
-                    `lg  : begin
-                        val = 3;
-                    end  
-                    `la  : begin
-                        val = 3;
-                    end  
-                    `lb  : begin
-                        val = 3;
-                    end
-                    default : begin
-                        val = 17;
-                    end
-                endcase
+                if (_mode == 0 && _play == 1) begin
+                    case (freqR2)
+                        `c  : begin
+                            val = 4;
+                        end
+                        `d  : begin
+                            val = 4;
+                        end
+                        `e  : begin
+                            val = 4;
+                        end
+                        `f  : begin
+                            val = 4;
+                        end
+                        `g  : begin
+                            val = 4;
+                        end  
+                        `a  : begin
+                            val = 4;
+                        end  
+                        `b  : begin
+                            val = 4;
+                        end 
+                        `hc  : begin
+                            val = 5;
+                        end
+                        `hd  : begin
+                            val = 5;
+                        end
+                        `he  : begin
+                            val = 5;
+                        end
+                        `hf  : begin
+                            val = 5;
+                        end
+                        `hg  : begin
+                            val = 5;
+                        end  
+                        `ha  : begin
+                            val = 5;
+                        end  
+                        `hb  : begin
+                            val = 5;
+                        end 
+                        `lc  : begin
+                            val = 3;
+                        end
+                        `ld  : begin
+                            val = 3;
+                        end
+                        `le  : begin
+                            val = 3;
+                        end
+                        `lf  : begin
+                            val = 3;
+                        end
+                        `lg  : begin
+                            val = 3;
+                        end  
+                        `la  : begin
+                            val = 3;
+                        end  
+                        `lb  : begin
+                            val = 3;
+                        end
+                        default : begin
+                            val = 17;
+                        end
+                    endcase
+                end
+                else begin
+                    case (freqR)
+                        `c  : begin
+                            val = 4;
+                        end
+                        `d  : begin
+                            val = 4;
+                        end
+                        `e  : begin
+                            val = 4;
+                        end
+                        `f  : begin
+                            val = 4;
+                        end
+                        `g  : begin
+                            val = 4;
+                        end  
+                        `a  : begin
+                            val = 4;
+                        end  
+                        `b  : begin
+                            val = 4;
+                        end 
+                        `hc  : begin
+                            val = 5;
+                        end
+                        `hd  : begin
+                            val = 5;
+                        end
+                        `he  : begin
+                            val = 5;
+                        end
+                        `hf  : begin
+                            val = 5;
+                        end
+                        `hg  : begin
+                            val = 5;
+                        end  
+                        `ha  : begin
+                            val = 5;
+                        end  
+                        `hb  : begin
+                            val = 5;
+                        end 
+                        `lc  : begin
+                            val = 3;
+                        end
+                        `ld  : begin
+                            val = 3;
+                        end
+                        `le  : begin
+                            val = 3;
+                        end
+                        `lf  : begin
+                            val = 3;
+                        end
+                        `lg  : begin
+                            val = 3;
+                        end  
+                        `la  : begin
+                            val = 3;
+                        end  
+                        `lb  : begin
+                            val = 3;
+                        end
+                        default : begin
+                            val = 17;
+                        end
+                    endcase
+                end
                 DIGIT = 4'b1110;
             end
             4'b1110 :  begin

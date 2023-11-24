@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1700833581">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1700835457">
   <File Type="PA-TCL" Name="lab7.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="lab7_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="lab7_reports.tcl"/>
