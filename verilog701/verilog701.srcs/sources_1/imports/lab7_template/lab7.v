@@ -708,7 +708,7 @@ module lab7(
             point = 0;
         end
         else if (finish == 0) begin
-            if ((ibeatNum+1)%4==0) begin
+            if (key_down[last_change] == 0) begin
                 task_finish = 1;
             end
             else if (key_down[last_change] == 1 && task_finish == 1) begin
