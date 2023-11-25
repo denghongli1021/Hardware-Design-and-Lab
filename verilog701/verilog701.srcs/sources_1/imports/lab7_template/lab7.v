@@ -712,7 +712,7 @@ module lab7(
             if (key_down[last_change] == 0) begin
                 task_finish = 1;
             end
-            else if (key_down[last_change] == 1 && task_finish == 1) begin
+            else if (key_down[last_change] == 1 && task_finish == 1 && point <= 98) begin
                 case(key_num)
                     0 : begin
                         if (freqR2 == 524) begin

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Sat Nov 25 10:30:12 2023
+| Date         : Sat Nov 25 10:37:21 2023
 | Host         : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file lab7_control_sets_placed.rpt
 | Design       : lab7
@@ -58,11 +58,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              82 |           32 |
+| No           | No                    | No                     |              82 |           29 |
 | No           | No                    | Yes                    |             142 |           46 |
-| No           | Yes                   | No                     |              20 |           10 |
+| No           | Yes                   | No                     |              20 |            7 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |             576 |          211 |
+| Yes          | No                    | Yes                    |             576 |          197 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -73,24 +73,24 @@ Table of Contents
 +------------------+-----------------------------------------------+--------------------------------+------------------+----------------+
 |   Clock Signal   |                 Enable Signal                 |        Set/Reset Signal        | Slice Load Count | Bel Load Count |
 +------------------+-----------------------------------------------+--------------------------------+------------------+----------------+
-|  clk_IBUF_BUFG   | kd/inst/inst/Ps2Interface_i/bits_count        | rst2_BUFG                      |                2 |              4 |
-|                  |                                               | _mute_IBUF                     |                3 |              5 |
+|  clk_IBUF_BUFG   | kd/inst/inst/Ps2Interface_i/bits_count        | rst2_BUFG                      |                1 |              4 |
+|                  |                                               | _mute_IBUF                     |                2 |              5 |
 | ~rst2_BUFG       |                                               |                                |                5 |              6 |
-|  clk_IBUF_BUFG   | kd/E[0]                                       | rst2_BUFG                      |                2 |              7 |
 |  noteGen_00/E[0] |                                               | kd/AR[0]                       |                2 |              7 |
-|                  |                                               | music_00/toneL_reg[25]_i_1_n_0 |                5 |              8 |
-|  clk_IBUF_BUFG   | kd/inst/inst/Ps2Interface_i/rx_valid          | rst2_BUFG                      |                2 |              8 |
-|  clk_IBUF_BUFG   | kd/inst/inst/Ps2Interface_i/rx_finish         | rst2_BUFG                      |                2 |              8 |
-|  clk_d/CLK       |                                               |                                |                6 |              9 |
-|  clock_22/S[0]   |                                               | rst_IBUF                       |                4 |              9 |
+|  clk_IBUF_BUFG   | kd/E[0]                                       | rst2_BUFG                      |                3 |              7 |
+|                  |                                               | music_00/toneL_reg[25]_i_1_n_0 |                3 |              8 |
+|  clk_IBUF_BUFG   | kd/inst/inst/Ps2Interface_i/rx_finish         | rst2_BUFG                      |                4 |              8 |
+|  clk_IBUF_BUFG   | kd/inst/inst/Ps2Interface_i/rx_valid          | rst2_BUFG                      |                3 |              8 |
+|  clock_22/S[0]   |                                               | rst_IBUF                       |                5 |              9 |
 |  clock_22/S[0]   | playerCtrl_00/ibeat[8]_i_1_n_0                | rst_IBUF                       |                2 |              9 |
-|  clk_IBUF_BUFG   | kd/inst/inst/Ps2Interface_i/frame[10]_i_1_n_0 | rst2_BUFG                      |                2 |             11 |
+|  clk_d/CLK       |                                               |                                |                5 |              9 |
+|  clk_IBUF_BUFG   | kd/inst/inst/Ps2Interface_i/frame[10]_i_1_n_0 | rst2_BUFG                      |                3 |             11 |
 |  sc/out[1]       |                                               | rst_IBUF                       |                5 |             14 |
-|  clk_IBUF_BUFG   | kd/key                                        | rst2_BUFG                      |                8 |             17 |
+|  clk_IBUF_BUFG   | kd/key                                        | rst2_BUFG                      |                6 |             17 |
 |  clk_IBUF_BUFG   |                                               | rst_IBUF                       |               14 |             55 |
-|  clk_IBUF_BUFG   |                                               | rst2_BUFG                      |               23 |             64 |
-|  clk_IBUF_BUFG   |                                               |                                |               21 |             67 |
-|  clk_IBUF_BUFG   | kd/op/E[0]                                    | rst2_BUFG                      |              191 |            512 |
+|  clk_IBUF_BUFG   |                                               | rst2_BUFG                      |               22 |             64 |
+|  clk_IBUF_BUFG   |                                               |                                |               19 |             67 |
+|  clk_IBUF_BUFG   | kd/op/E[0]                                    | rst2_BUFG                      |              175 |            512 |
 +------------------+-----------------------------------------------+--------------------------------+------------------+----------------+
 
 
