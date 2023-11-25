@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="44" Path="C:/Users/user/verilog501/verilog501.xpr">
+<Project Version="7" Minor="44" Path="C:/Users/user/HardwareDesign/verilog501/verilog501.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="2323fe21b6f1445fa64cbccb3312468f"/>
@@ -22,7 +22,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/ip"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/ip"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
@@ -62,7 +62,7 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sources_1/imports/lab5_template/lab5/SevenSegment.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/SevenSegment.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/SevenSegment.v"/>
           <Attr Name="ImportTime" Val="1697898584"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -71,7 +71,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/lab5_template/lab5/lab5.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/lab5.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/lab5.v"/>
           <Attr Name="ImportTime" Val="1697898584"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -80,7 +80,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/lab5_template/lab5/KeyboardDecoder.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/KeyboardDecoder.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/KeyboardDecoder.v"/>
           <Attr Name="ImportTime" Val="1697898584"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -96,7 +96,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/lab5_template/lab5/clock_divider.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/clock_divider.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/clock_divider.v"/>
           <Attr Name="ImportTime" Val="1697898584"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -105,7 +105,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/lab5_template/lab5/debounce.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/debounce.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/debounce.v"/>
           <Attr Name="ImportTime" Val="1697898584"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -121,7 +121,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/lab5_template/lab5/one_pulse.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/one_pulse.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/one_pulse.v"/>
           <Attr Name="ImportTime" Val="1697898584"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -137,14 +137,14 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="Lab5_q2"/>
+        <Option Name="TopModule" Val="Lab5"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
       <Filter Type="Constrs"/>
       <File Path="$PSRCDIR/constrs_1/imports/lab5_template/keyboard_sample/KeyboardConstraints.xdc">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/KeyboardConstraints.xdc"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/keyboard_sample/KeyboardConstraints.xdc"/>
           <Attr Name="ImportTime" Val="1697898583"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -152,7 +152,7 @@
       </File>
       <File Path="$PSRCDIR/constrs_1/imports/lab5_template/lab5/Basys3_Constraints.xdc">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/Basys3_Constraints.xdc"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/Basys3_Constraints.xdc"/>
           <Attr Name="ImportTime" Val="1697898583"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>

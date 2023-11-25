@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Sat Nov 25 10:16:01 2023
+| Date         : Sat Nov 25 10:30:33 2023
 | Host         : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command      : report_methodology -file lab7_methodology_drc_routed.rpt -pb lab7_methodology_drc_routed.pb -rpx lab7_methodology_drc_routed.rpx
 | Design       : lab7
@@ -23,13 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 810
+             Violations found: 809
 +-----------+------------------+------------------------------+------------+
 | Rule      | Severity         | Description                  | Violations |
 +-----------+------------------+------------------------------+------------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell  | 794        |
 | LUTAR-1   | Warning          | LUT drives async reset alert | 2          |
-| TIMING-20 | Warning          | Non-clocked latch            | 14         |
+| TIMING-20 | Warning          | Non-clocked latch            | 13         |
 +-----------+------------------+------------------------------+------------+
 
 2. REPORT DETAILS
@@ -4046,40 +4046,35 @@ Related violations: <none>
 
 TIMING-20#7 Warning
 Non-clocked latch  
-The latch finish_reg cannot be properly analyzed as its control pin finish_reg/G is not reached by a timing clock
+The latch noteGen_00/audio_right_reg[10] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[10]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#8 Warning
 Non-clocked latch  
-The latch noteGen_00/audio_right_reg[10] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[10]/G is not reached by a timing clock
+The latch noteGen_00/audio_right_reg[11] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[11]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#9 Warning
 Non-clocked latch  
-The latch noteGen_00/audio_right_reg[11] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[11]/G is not reached by a timing clock
+The latch noteGen_00/audio_right_reg[12] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[12]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#10 Warning
 Non-clocked latch  
-The latch noteGen_00/audio_right_reg[12] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[12]/G is not reached by a timing clock
+The latch noteGen_00/audio_right_reg[13] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[13]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#11 Warning
 Non-clocked latch  
-The latch noteGen_00/audio_right_reg[13] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[13]/G is not reached by a timing clock
+The latch noteGen_00/audio_right_reg[14] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[14]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#12 Warning
 Non-clocked latch  
-The latch noteGen_00/audio_right_reg[14] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[14]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#13 Warning
-Non-clocked latch  
 The latch noteGen_00/audio_right_reg[8] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[8]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#14 Warning
+TIMING-20#13 Warning
 Non-clocked latch  
 The latch noteGen_00/audio_right_reg[9] cannot be properly analyzed as its control pin noteGen_00/audio_right_reg[9]/G is not reached by a timing clock
 Related violations: <none>

@@ -1,5 +1,5 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/user/verilog501/verilog501.srcs/constrs_1/imports/lab5_template/keyboard_sample/KeyboardConstraints.xdc rfile:../../../verilog501.srcs/constrs_1/imports/lab5_template/keyboard_sample/KeyboardConstraints.xdc id:1} [current_design]
-set_property SRC_FILE_INFO {cfile:C:/Users/user/verilog501/verilog501.srcs/constrs_1/imports/lab5_template/lab5/Basys3_Constraints.xdc rfile:../../../verilog501.srcs/constrs_1/imports/lab5_template/lab5/Basys3_Constraints.xdc id:2} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/user/HardwareDesign/verilog501/verilog501.srcs/constrs_1/imports/lab5_template/keyboard_sample/KeyboardConstraints.xdc rfile:../../../verilog501.srcs/constrs_1/imports/lab5_template/keyboard_sample/KeyboardConstraints.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/user/HardwareDesign/verilog501/verilog501.srcs/constrs_1/imports/lab5_template/lab5/Basys3_Constraints.xdc rfile:../../../verilog501.srcs/constrs_1/imports/lab5_template/lab5/Basys3_Constraints.xdc id:2} [current_design]
 set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W5 [get_ports clk]
 set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]

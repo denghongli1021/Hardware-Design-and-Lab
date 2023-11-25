@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Tue Oct 31 20:46:14 2023
+| Date         : Sat Nov 25 10:21:12 2023
 | Host         : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Lab5_control_sets_placed.rpt
 | Design       : Lab5
@@ -74,10 +74,10 @@ Table of Contents
 |         Clock Signal         |                   Enable Signal                   |  Set/Reset Signal | Slice Load Count | Bel Load Count |
 +------------------------------+---------------------------------------------------+-------------------+------------------+----------------+
 |  clk_IBUF_BUFG               | key_de/inst/inst/Ps2Interface_i/bits_count        | c2/btnC2          |                1 |              4 |
-|  clk_IBUF_BUFG               | c2/E[0]                                           |                   |                3 |              4 |
 |  clk_IBUF_BUFG               | key_de/E[0]                                       | c2/btnC2          |                4 |              4 |
-|  clk_IBUF_BUFG               | key_de/last_last_change                           | key_de/pb_out_reg |                5 |              7 |
+|  clk_IBUF_BUFG               | c2/E[0]                                           |                   |                3 |              4 |
 |  sev_seg/clk_divider_reg[15] |                                                   | c2/btnC2          |                3 |              7 |
+|  clk_IBUF_BUFG               | key_de/last_last_change                           | key_de/pb_out_reg |                5 |              7 |
 |  clk_IBUF_BUFG               | key_de/inst/inst/Ps2Interface_i/rx_finish         | c2/btnC2          |                1 |              8 |
 |  clk_IBUF_BUFG               | key_de/inst/inst/Ps2Interface_i/rx_valid          | c2/btnC2          |                2 |              8 |
 |  clk_IBUF_BUFG               | pay_1[3]_i_1_n_0                                  | c2/btnC2          |                7 |              8 |

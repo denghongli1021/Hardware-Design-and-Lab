@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sat Nov 25 10:18:42 2023
+# Process ID: 55732
+# Current directory: C:/Users/user/HardwareDesign/verilog101
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent31964 C:\Users\user\HardwareDesign\verilog101\verilog101.xpr
+# Log file: C:/Users/user/HardwareDesign/verilog101/vivado.log
+# Journal file: C:/Users/user/HardwareDesign/verilog101\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/user/HardwareDesign/verilog101/verilog101.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/user/verilog101' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 25 10:21:08 2023...
+0:21:05 2023...

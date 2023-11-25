@@ -331,6 +331,7 @@ module lab7(
             end
         end
         else begin
+            finish = 0;
             _led[15:9] = 7'b0000000;
         end
         // else if (_mode == 0) begin

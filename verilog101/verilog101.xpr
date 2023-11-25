@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="44" Path="C:/Users/user/verilog101/verilog101.xpr">
+<Project Version="7" Minor="44" Path="C:/Users/user/HardwareDesign/verilog101/verilog101.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="cc803eb93c7140a590b72e79fbf31614"/>

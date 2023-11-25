@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/user/verilog501/verilog501.runs/impl_1'
+HD_PWD='C:/Users/user/HardwareDesign/verilog501/verilog501.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -42,6 +42,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log Lab5_q2.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source Lab5_q2.tcl -notrace
+EAStep vivado -log Lab5.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source Lab5.tcl -notrace
 
 
