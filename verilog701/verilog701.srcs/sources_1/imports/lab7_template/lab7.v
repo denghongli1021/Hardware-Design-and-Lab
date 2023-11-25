@@ -73,12 +73,43 @@ module lab7(
         .clk(clk), 
         .op(rst2)
     );
+    parameter [8:0] KEY_CODES [0:20] = {
+        9'b0_0001_0101, // Q (15)
+        9'b0_0001_1100, // A (1C)
+        9'b0_0001_1010, // Z (1A) 
+
+        9'b0_0001_1101, // W (1D)
+        9'b0_0001_1011, // S (1B)
+        9'b0_0010_0010, // X (22) 
+
+        9'b0_0010_0100, // E (24)
+        9'b0_0010_0011, // D (23)
+        9'b0_0010_0001, // C (21)
+
+        9'b0_0010_1101, // R (2D)
+        9'b0_0010_1011, // F (2B)
+        9'b0_0010_1010, // V (2A) 
+
+        9'b0_0010_1100, // T (2C)
+        9'b0_0011_0100, // G (34)
+        9'b0_0011_0010, // B (32)
+
+        9'b0_0011_0101, // Y (35)
+        9'b0_0011_0011, // H (33)
+        9'b0_0011_0001, // N (31)
+
+        9'b0_0011_1100, // U (3C) 
+        9'b0_0011_1011, // J (3B) 
+        9'b0_0011_1010 // M (3A) 
+        // 9'b0_0001_0010  // left shift (12)
+    };
     // Modify these
     // keyboard
     wire [511:0] key_down;
     wire [8:0] last_change;
     wire key_valid;
     reg [2:0] vol = 2;
+    reg [5:0] key_num;
     reg finish = 0;
     //reg [15:0] _led = 16'b1110_0000_0000_0111;
     // assign DIGIT = 4'b0000;
@@ -92,14 +123,14 @@ module lab7(
     wire [31:0] freqR2;
     wire [21:0] freq_outL, freq_outR;    // Processed frequency, adapted to the clock rate of Basys3
     reg [4:0] val;
-    reg allow_point = 1;
+    // reg allow_point = 1;
     reg [6:0] point = 0;
-    reg [31:0] frequency_1;
-    reg [31:0] frequency_2;
+    // reg [31:0] frequency_1;
+    // reg [31:0] frequency_2;
     // clkDiv22
     wire clkDiv22;
     clock_divider #(.n(22)) clock_22(.clk(clk), .clk_div(clkDiv22));    // for audio
-
+    clock_divider #(.n(24)) clock_24(.clk(clk), .clk_div(clkDiv24));
     // Player Control
     // [in]  reset, clock, _play, _slow, _music, and _mode
     // [out] beat number
@@ -219,8 +250,11 @@ module lab7(
             end
             endcase
         end
-        if (_mode == 0 && _play == 1) begin
-            if (ibeatNum2 == 512) begin
+        if (rst2) begin
+            finish = 0;
+        end
+        else if (_mode == 0 && _play == 1) begin
+            if (ibeatNum2 == 511) begin
                 _led[15:9] = 7'b1111111;
                 finish = 1;
             end
@@ -641,16 +675,205 @@ module lab7(
             default: DISPLAY = 7'b011_1111;
         endcase
     end
-    
-    always@(posedge clk) begin
-        frequency_1 = frequency_2;
-        frequency_2 = freqR2;
-        if (frequency_1 != frequency_2) begin
-            allow_point = 1;
+    always @ (*) begin
+		case (last_change)
+			KEY_CODES[00] : key_num = 0;
+			KEY_CODES[01] : key_num = 1;
+			KEY_CODES[02] : key_num = 2;
+			KEY_CODES[03] : key_num = 3;
+			KEY_CODES[04] : key_num = 4;
+			KEY_CODES[05] : key_num = 5;
+			KEY_CODES[06] : key_num = 6;
+			KEY_CODES[07] : key_num = 7;
+			KEY_CODES[08] : key_num = 8;
+			KEY_CODES[09] : key_num = 9;
+			KEY_CODES[10] : key_num = 10;
+			KEY_CODES[11] : key_num = 11;
+			KEY_CODES[12] : key_num = 12;
+			KEY_CODES[13] : key_num = 13;
+			KEY_CODES[14] : key_num = 14;
+			KEY_CODES[15] : key_num = 15;
+			KEY_CODES[16] : key_num = 16;
+			KEY_CODES[17] : key_num = 17;
+			KEY_CODES[18] : key_num = 18;
+			KEY_CODES[19] : key_num = 19;
+            KEY_CODES[20] : key_num = 20;
+			default		  : key_num = 21;
+		endcase
+	end
+    reg [8:0] press_key;
+    reg task_finish = 1;
+    always@(posedge clk or posedge rst2) begin
+        if (rst2) begin
+            point = 0;
         end
-        else if (freqR == frequency_1 && allow_point == 1) begin
-            point = point + 1;
-            allow_point = 0;
+        else if (finish == 0) begin
+            if ((ibeatNum+1)%4==0) begin
+                task_finish = 1;
+            end
+            else if (key_down[last_change] == 1 && task_finish == 1) begin
+                case(key_num)
+                    0 : begin
+                        if (freqR2 == 524) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    1 : begin
+                        if (freqR2 == 262) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    2 : begin
+                        if (freqR2 == 131) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    3 : begin
+                        if (freqR2 == 588) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    4 : begin
+                        if (freqR2 == 294) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    5 : begin
+                        if (freqR2 == 197) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    6 : begin 
+                        if (freqR2 == 660) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    7 : begin
+                        if (freqR2 == 330) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    8 : begin
+                        if (freqR2 == 165) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    9 : begin 
+                        if (freqR2 == 698) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    10 : begin
+                        if (freqR2 == 349) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    11 : begin
+                        if (freqR2 == 175) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    12 : begin
+                        if (freqR2 == 784) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    13 : begin
+                        if (freqR2 == 392) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    14 : begin
+                        if (freqR2 == 196) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    15 : begin
+                        if (freqR2 == 880) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    16 : begin
+                        if (freqR2 == 440) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    17 : begin
+                        if (freqR2 == 220) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    18 : begin
+                        if (freqR2 == 988) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    19 : begin
+                        if (freqR2 == 494) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    20 : begin  
+                        if (freqR2 == 247) begin
+                            // press_key = last_change;
+                            task_finish = 0;
+                            point = point + 1;
+                        end
+                    end
+                    default : begin
+                        point = point;
+                    end
+                endcase
+            end    
         end
+        // frequency_1 = frequency_2;
+        // frequency_2 = freqR2;
+        // if (frequency_1 != frequency_2) begin
+        //     allow_point = 1;
+        // end
+        // else if (freqR == frequency_1 && allow_point == 1) begin
+        //     point = point + 1;
+        //     allow_point = 0;
+        // end
     end
 endmodule

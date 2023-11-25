@@ -44,6 +44,9 @@ module player_control2 (
 		else if (_play && _mode == 0) begin
             ibeat <= next_ibeat;
 		end
+		else begin
+			ibeat <= 0; // 每次從頭開始
+		end
 	end
 
     always @* begin
