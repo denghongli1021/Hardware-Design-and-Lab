@@ -37,10 +37,7 @@ read_verilog -library xil_defaultlib {
   C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/clock_divider.v
   C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/debounce.v
   C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/keyboard_decoder.v
-  C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/music_example.v
-  C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/note_gen.v
   C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/onepulse.v
-  C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/player_control.v
   C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/speaker_control.v
   C:/Users/user/verilog701/verilog701.srcs/sources_1/imports/lab7_template/lab7.v
 }
