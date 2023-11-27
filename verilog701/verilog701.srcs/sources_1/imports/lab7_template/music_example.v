@@ -13,7 +13,7 @@
 `define ha  32'd880
 `define hb  32'd988  
 `define lc   32'd131 
-`define ld   32'd197
+`define ld   32'd147
 `define le   32'd165
 `define lf   32'd175
 `define lg   32'd196
@@ -25,6 +25,7 @@ module music_example (
 	input [11:0] ibeatNum,
 	input en,
     input mode,
+    input _start,
     input finish,
     input [511:0] key_down,
     input [8:0] last_change,
@@ -64,7 +65,7 @@ module music_example (
         // 9'b0_0001_0010  // left shift (12)
     };
     always @* begin
-        if(en == 1 && mode == 1) begin
+        if(en == 1 && mode == 1 && _start == 0) begin
             case(ibeatNum)
                 // --- Measure 1 ---
                 12'd0: toneR = `hg;      12'd1: toneR = `hg; // HG (half-beat)
@@ -432,84 +433,6 @@ module music_example (
             else begin
                 toneR = `sil;
             end
-//             for (i=0;i<=20;i=i+1) begin
-//                 if (key_down[KEY_CODES[i]] == 1) begin
-//                     case(i) 
-//                     0 : begin
-//                         toneR = 524;
-//                     end
-//                     1: begin // C4
-//                         toneR = 262;
-//                     end
-//                     2: begin
-//                         toneR = 131;
-//                     end
-// /////////////////////////////////
-//                     3: begin
-//                         toneR = 294*2;
-//                     end
-//                     4: begin // D4
-//                         toneR = 294;
-//                     end
-//                     5: begin
-//                         toneR = 197;
-//                     end
-// /////////////////////////////////
-//                     6: begin
-//                         toneR = 660;
-//                     end
-//                     7: begin // E4
-//                         toneR = 330;
-//                     end
-//                     8: begin
-//                         toneR = 165;
-//                     end
-// /////////////////////////////////
-//                     9: begin
-//                         toneR = 698;
-//                     end
-//                     10: begin // F4
-//                         toneR = 349;
-//                     end
-//                     11: begin
-//                         toneR = 175;
-//                     end
-// /////////////////////////////////
-//                     12: begin
-//                         toneR = 784;
-//                     end
-//                     13: begin // G4
-//                         toneR = 392;
-//                     end
-//                     14: begin
-//                         toneR = 196;
-//                     end
-// /////////////////////////////////
-//                     15: begin
-//                         toneR = 880;
-//                     end
-//                     16: begin // A4
-//                         toneR = 440;
-//                     end
-//                     17: begin
-//                         toneR = 220;
-//                     end
-// /////////////////////////////////
-    //                     18: begin
-    //                         toneR = 988;
-    //                     end
-    //                     19: begin // B4
-    //                         toneR = 494;
-    //                     end
-    //                     20: begin
-    //                         toneR = 247;
-    //                     end
-    //                     default : begin
-    //                         toneR = `sil;
-    //                     end
-    //                     endcase
-    //                 end
-//             end
         end
         else begin
             toneR = `sil;
@@ -517,7 +440,7 @@ module music_example (
     end
     reg [11:0] temp_beatnum;
     always @(*) begin
-        if(en == 1 && mode == 1)begin
+        if(en == 1 && mode == 1 && _start == 0)begin
             if (ibeatNum < 128) begin
                 case(ibeatNum)
                     12'd0: toneL = `hc;  	12'd1: toneL = `hc; // HC (two-beat)

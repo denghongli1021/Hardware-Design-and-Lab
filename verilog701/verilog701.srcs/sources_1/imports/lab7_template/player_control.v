@@ -1,7 +1,8 @@
 module player_control (
 	input clk, 
 	input reset, 
-	input _play, 
+	input _play,
+	input _start, 
 	input _slow, 
 	input _mode, 
 	output reg [11:0] ibeat
@@ -12,7 +13,7 @@ module player_control (
 	always @(posedge clk, posedge reset) begin
 		if (reset) begin
 			ibeat <= 0;
-		end else if (_play && _mode == 1) begin
+		end else if (_play && _mode == 1 && _start == 0) begin
             ibeat <= next_ibeat;
 		end
 	end

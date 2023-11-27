@@ -13,7 +13,7 @@
 `define ha  32'd880
 `define hb  32'd988  
 `define lc   32'd131 
-`define ld   32'd197
+`define ld   32'd147
 `define le   32'd165
 `define lf   32'd175
 `define lg   32'd196
@@ -138,13 +138,14 @@ module lab7(
         .clk(clkDiv22),
         .reset(rst),
         ._play(_play), 
+        ._start(_start),
         ._mode(_mode),
         .ibeat(ibeatNum)
     );
     player_control2 #(.LEN(512)) playerCtrl_helper ( 
         .clk(clkDiv22),
         .reset(rst),
-        ._play(_play), 
+        ._play(_start), 
         ._mode(_mode),
         .ibeat(ibeatNum2)
     );
@@ -155,6 +156,7 @@ module lab7(
         .ibeatNum(ibeatNum),
         .mode(_mode),
         .en(_play),
+        ._start(_start),
         .finish(finish),
         .key_down(key_down),
         .last_change(last_change),
@@ -165,7 +167,7 @@ module lab7(
     music_example2 music_helper (
         .ibeatNum(ibeatNum2),
         .mode(_mode),
-        .en(_play),
+        .en(_start),
         .key_down(key_down),
         .last_change(last_change),
         .key_valid(key_valid),
@@ -253,7 +255,7 @@ module lab7(
         if (rst2) begin
             finish = 0;
         end
-        else if (_mode == 0 && _play == 1) begin
+        else if (_mode == 0 && _start == 1) begin
             if (ibeatNum2 == 511) begin
                 _led[15:9] = 7'b1111111;
                 finish = 1;
@@ -345,7 +347,7 @@ module lab7(
     always@(posedge clk_div_use) begin
         case (DIGIT) 
             4'b0111 :  begin
-                if (_mode == 0 && _play == 1) begin
+                if (_mode == 0 && _start == 1) begin
                     val = point % 10;
                 end
                 else begin
@@ -354,7 +356,7 @@ module lab7(
                 DIGIT = 4'b1011;
             end
             4'b1011 :  begin
-                if (_mode == 0 && _play == 1) begin
+                if (_mode == 0 && _start == 1) begin
                     case (freqR2)
                         `c  : begin
                             val = 10;
@@ -497,7 +499,7 @@ module lab7(
                 DIGIT = 4'b1101;
             end
             4'b1101 :  begin
-                if (_mode == 0 && _play == 1) begin
+                if (_mode == 0 && _start == 1) begin
                     case (freqR2)
                         `c  : begin
                             val = 4;
@@ -640,7 +642,7 @@ module lab7(
                 DIGIT = 4'b1110;
             end
             4'b1110 :  begin
-                if (_mode == 0 && _play == 1) begin
+                if (_mode == 0 && _start == 1) begin
                     val = point / 10;
                 end
                 else begin
@@ -705,7 +707,7 @@ module lab7(
     reg [8:0] press_key;
     reg task_finish = 1;
     always@(posedge clk or posedge rst2) begin
-        if (rst2) begin
+        if (rst2 || _start == 0) begin
             point = 0;
         end
         else if (finish == 0) begin
