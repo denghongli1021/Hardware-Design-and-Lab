@@ -103,6 +103,7 @@ module lab7(
         9'b0_0011_1010 // M (3A) 
         // 9'b0_0001_0010  // left shift (12)
     };
+    reg [11:0] ibeat_add_point = 0;
     // Modify these
     // keyboard
     wire [511:0] key_down;
@@ -711,156 +712,181 @@ module lab7(
             point = 0;
         end
         else if (finish == 0) begin
+            // if (freqR == freqR2 && ibeat_add_point != ibeatNum2) begin
+            //     ibeat_add_point = ibeatNum2;
+            //     point = point + 1;
+            // end
             if (key_down[last_change] == 0) begin
                 task_finish = 1;
             end
             else if (key_down[last_change] == 1 && task_finish == 1 && point <= 98) begin
                 case(key_num)
                     0 : begin
-                        if (freqR2 == 524) begin
+                        if (freqR2 == `hc) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     1 : begin
-                        if (freqR2 == 262) begin
+                        if (freqR2 == `c) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     2 : begin
-                        if (freqR2 == 131) begin
+                        if (freqR2 == `lc) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     3 : begin
-                        if (freqR2 == 588) begin
+                        if (freqR2 == `hd) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     4 : begin
-                        if (freqR2 == 294) begin
+                        if (freqR2 == `d) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     5 : begin
-                        if (freqR2 == 197) begin
+                        if (freqR2 == `ld) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     6 : begin 
-                        if (freqR2 == 660) begin
+                        if (freqR2 == `he) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     7 : begin
-                        if (freqR2 == 330) begin
+                        if (freqR2 == `e) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     8 : begin
-                        if (freqR2 == 165) begin
+                        if (freqR2 == `le) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     9 : begin 
-                        if (freqR2 == 698) begin
+                        if (freqR2 == `hf) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     10 : begin
-                        if (freqR2 == 349) begin
+                        if (freqR2 == `f) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     11 : begin
-                        if (freqR2 == 175) begin
+                        if (freqR2 == `lf) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     12 : begin
-                        if (freqR2 == 784) begin
+                        if (freqR2 == `hg) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     13 : begin
-                        if (freqR2 == 392) begin
+                        if (freqR2 == `g) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     14 : begin
-                        if (freqR2 == 196) begin
+                        if (freqR2 == `lg) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     15 : begin
-                        if (freqR2 == 880) begin
+                        if (freqR2 == `ha) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     16 : begin
-                        if (freqR2 == 440) begin
+                        if (freqR2 == `a) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     17 : begin
-                        if (freqR2 == 220) begin
+                        if (freqR2 == `la) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     18 : begin
-                        if (freqR2 == 988) begin
+                        if (freqR2 == `hb) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     19 : begin
-                        if (freqR2 == 494) begin
+                        if (freqR2 == `b) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     20 : begin  
-                        if (freqR2 == 247) begin
+                        if (freqR2 == `lb) begin
                             // press_key = last_change;
                             task_finish = 0;
                             point = point + 1;
+                            ibeat_add_point = ibeatNum2;
                         end
                     end
                     default : begin
@@ -869,14 +895,5 @@ module lab7(
                 endcase
             end    
         end
-        // frequency_1 = frequency_2;
-        // frequency_2 = freqR2;
-        // if (frequency_1 != frequency_2) begin
-        //     allow_point = 1;
-        // end
-        // else if (freqR == frequency_1 && allow_point == 1) begin
-        //     point = point + 1;
-        //     allow_point = 0;
-        // end
     end
 endmodule
