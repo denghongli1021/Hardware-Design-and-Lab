@@ -113,9 +113,6 @@ module lab7(
     reg [2:0] vol = 2;
     reg [5:0] key_num;
     reg finish = 0;
-    //reg [15:0] _led = 16'b1110_0000_0000_0111;
-    // assign DIGIT = 4'b0000;
-    // assign DISPLAY = 7'b0111111;
 
     // Internal Signal
     wire [15:0] audio_in_left, audio_in_right;
@@ -125,10 +122,7 @@ module lab7(
     wire [31:0] freqR2;
     wire [21:0] freq_outL, freq_outR;    // Processed frequency, adapted to the clock rate of Basys3
     reg [4:0] val;
-    // reg allow_point = 1;
     reg [6:0] point = 0;
-    // reg [31:0] frequency_1;
-    // reg [31:0] frequency_2;
     // clkDiv22
     wire clkDiv22;
     clock_divider #(.n(22)) clock_22(.clk(clk), .clk_div(clkDiv22));    // for audio
@@ -215,7 +209,7 @@ module lab7(
         .last_change(last_change),
         .key_valid(key_valid)
     );
-    // vol ??��??
+    // vol 
     always@(posedge clk or posedge rst2) begin
         if (rst2) begin
             vol = 2;
@@ -227,7 +221,7 @@ module lab7(
             vol = vol - 1;
         end
     end
-    // led 顯示 ?��??�大�? (vol) _led
+    // led 顯示 
     always@(*) begin
         if (_mute) begin
             _led[4:0] = 5'b00000;
@@ -338,9 +332,6 @@ module lab7(
             finish = 0;
             _led[15:9] = 7'b0000000;
         end
-        // else if (_mode == 0) begin
-        //     _led[15:9] = 5'b00000;
-        // end
     end
     clock_divider #(15) clk_d (
         .clk(clk),
@@ -1041,7 +1032,7 @@ module music_example (
         // 9'b0_0001_0010  // left shift (12)
     };
     always @* begin
-        if(en == 1 && mode == 1 && _start == 0) begin
+        if(en == 1 && mode == 1) begin
             case(ibeatNum)
                 // --- Measure 1 ---
                 12'd0: toneR = `hg;      12'd1: toneR = `hg; // HG (half-beat)
@@ -1416,7 +1407,7 @@ module music_example (
     end
     reg [11:0] temp_beatnum;
     always @(*) begin
-        if(en == 1 && mode == 1 && _start == 0)begin
+        if(en == 1 && mode == 1)begin
             if (ibeatNum < 128) begin
                 case(ibeatNum)
                     12'd0: toneL = `hc;  	12'd1: toneL = `hc; // HC (two-beat)
@@ -2098,7 +2089,7 @@ module player_control (
 	always @(posedge clk, posedge reset) begin
 		if (reset) begin
 			ibeat <= 0;
-		end else if (_play && _mode == 1 && _start == 0) begin
+		end else if (_play && _mode == 1) begin
             ibeat <= next_ibeat;
 		end
 	end
@@ -2123,9 +2114,6 @@ module player_control2 (
 		if (reset) begin
 			ibeat <= 0;
 		end 
-		// else if (_play == 0) begin
-		// 	ibeat <= 0;
-		// end // 不確定_play=0要不要重來
 		else if (_play && _mode == 0) begin
             ibeat <= next_ibeat;
 		end
