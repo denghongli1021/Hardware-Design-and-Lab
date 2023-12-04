@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Tue Dec  5 01:34:31 2023
+| Date         : Tue Dec  5 01:55:38 2023
 | Host         : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file exam2_2_control_sets_placed.rpt
 | Design       : exam2_2
@@ -81,9 +81,9 @@ Table of Contents
 |  clk_IBUF_BUFG          | o2/price                                      |                       |                1 |              5 |
 |  clk_IBUF_BUFG          | kd/op/E[0]                                    | o1/rst2               |                3 |              6 |
 |  sg/clk_divider_reg[15] |                                               | o1/rst2               |                3 |              7 |
-|  clk_IBUF_BUFG          | kd/inst/inst/Ps2Interface_i/rx_finish         | o1/rst2               |                1 |              8 |
-|  clk_IBUF_BUFG          | kd/inst/inst/Ps2Interface_i/rx_valid          | o1/rst2               |                2 |              8 |
 |  clk_IBUF_BUFG          | money_2[3]_i_1_n_0                            | o1/rst2               |                4 |              8 |
+|  clk_IBUF_BUFG          | kd/inst/inst/Ps2Interface_i/rx_valid          | o1/rst2               |                2 |              8 |
+|  clk_IBUF_BUFG          | kd/inst/inst/Ps2Interface_i/rx_finish         | o1/rst2               |                1 |              8 |
 |  clk_IBUF_BUFG          | o1/E[0]                                       |                       |                4 |              9 |
 |  clk_IBUF_BUFG          | kd/key                                        | o1/rst2               |                2 |             10 |
 |  clk_IBUF_BUFG          | kd/inst/inst/Ps2Interface_i/frame[10]_i_1_n_0 | o1/rst2               |                2 |             11 |

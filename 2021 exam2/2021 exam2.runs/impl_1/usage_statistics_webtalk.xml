@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Tue Dec  5 01:34:57 2023'>
+<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Tue Dec  5 01:56:06 2023'>
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="FALSE" description="" />
   <keyValuePair key="build_version" value="2708876" description="" />
-  <keyValuePair key="date_generated" value="Tue Dec  5 01:34:57 2023" description="" />
+  <keyValuePair key="date_generated" value="Tue Dec  5 01:56:06 2023" description="" />
   <keyValuePair key="os_platform" value="WIN64" description="" />
   <keyValuePair key="product_version" value="Vivado v2019.2 (64-bit)" description="" />
   <keyValuePair key="project_id" value="03531eaa3c974cf2a0e81c6a251b9435" description="" />
-  <keyValuePair key="project_iteration" value="27" description="" />
+  <keyValuePair key="project_iteration" value="28" description="" />
   <keyValuePair key="random_id" value="87c8cda51613571db6195e47f483b61c" description="" />
   <keyValuePair key="registration_id" value="87c8cda51613571db6195e47f483b61c" description="" />
   <keyValuePair key="route_design" value="TRUE" description="" />
@@ -508,10 +508,10 @@
    <keyValuePair key="-verilog_define" value="default::[not_specified]" description="" />
   </section>
   <section name="usage" level="2" order="2" description="">
-   <keyValuePair key="elapsed" value="00:00:27s" description="" />
+   <keyValuePair key="elapsed" value="00:00:30s" description="" />
    <keyValuePair key="hls_ip" value="0" description="" />
-   <keyValuePair key="memory_gain" value="675.906MB" description="" />
-   <keyValuePair key="memory_peak" value="974.109MB" description="" />
+   <keyValuePair key="memory_gain" value="677.348MB" description="" />
+   <keyValuePair key="memory_peak" value="975.984MB" description="" />
   </section>
  </section>
  <section name="unisim_transformation" level="1" order="10" description="">
@@ -559,15 +559,15 @@
    <keyValuePair key="abstractfileview_reload" value="10" description="" />
    <keyValuePair key="addrepositoryinfodialog_ok" value="1" description="" />
    <keyValuePair key="addsrcwizard_specify_or_create_constraint_files" value="1" description="" />
-   <keyValuePair key="basedialog_cancel" value="23" description="" />
-   <keyValuePair key="basedialog_ok" value="59" description="" />
-   <keyValuePair key="basedialog_yes" value="42" description="" />
+   <keyValuePair key="basedialog_cancel" value="24" description="" />
+   <keyValuePair key="basedialog_ok" value="60" description="" />
+   <keyValuePair key="basedialog_yes" value="43" description="" />
    <keyValuePair key="cmdmsgdialog_messages" value="1" description="" />
    <keyValuePair key="cmdmsgdialog_ok" value="2" description="" />
    <keyValuePair key="constraintschooserpanel_add_files" value="1" description="" />
    <keyValuePair key="coretreetablepanel_core_tree_table" value="8" description="" />
    <keyValuePair key="filesetpanel_file_set_panel_tree" value="18" description="" />
-   <keyValuePair key="flownavigatortreepanel_flow_navigator_tree" value="49" description="" />
+   <keyValuePair key="flownavigatortreepanel_flow_navigator_tree" value="50" description="" />
    <keyValuePair key="gettingstartedview_open_project" value="1" description="" />
    <keyValuePair key="msgtreepanel_message_view_tree" value="10" description="" />
    <keyValuePair key="numjobschooser_number_of_jobs" value="1" description="" />
@@ -578,8 +578,8 @@
    <keyValuePair key="pacommandnames_set_as_top" value="1" description="" />
    <keyValuePair key="paviews_project_summary" value="3" description="" />
    <keyValuePair key="programdebugtab_open_target" value="3" description="" />
-   <keyValuePair key="programdebugtab_program_device" value="36" description="" />
-   <keyValuePair key="programfpgadialog_program" value="36" description="" />
+   <keyValuePair key="programdebugtab_program_device" value="37" description="" />
+   <keyValuePair key="programfpgadialog_program" value="37" description="" />
    <keyValuePair key="settingsdialog_project_tree" value="4" description="" />
    <keyValuePair key="settingsprojectiprepositorypage_add_repository" value="1" description="" />
    <keyValuePair key="simpleoutputproductdialog_generate_output_products_immediately" value="1" description="" />
@@ -599,10 +599,10 @@
    <keyValuePair key="autoconnecttarget" value="3" description="" />
    <keyValuePair key="coreview" value="2" description="" />
    <keyValuePair key="customizecore" value="1" description="" />
-   <keyValuePair key="launchprogramfpga" value="36" description="" />
+   <keyValuePair key="launchprogramfpga" value="37" description="" />
    <keyValuePair key="openhardwaremanager" value="3" description="" />
    <keyValuePair key="openproject" value="1" description="" />
-   <keyValuePair key="runbitgen" value="43" description="" />
+   <keyValuePair key="runbitgen" value="44" description="" />
    <keyValuePair key="settopnode" value="1" description="" />
    <keyValuePair key="showview" value="10" description="" />
    <keyValuePair key="toolssettings" value="1" description="" />
