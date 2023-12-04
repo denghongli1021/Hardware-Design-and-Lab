@@ -1,84 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1701698183">
-  <File Type="BITSTR-BMM" Name="exam2_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="exam2_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="exam2_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR" Name="exam2_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="exam2.tcl"/>
-  <File Type="OPT-TIMING" Name="exam2_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="exam2_opt.dcp"/>
-  <File Type="ROUTE-PWR-SUM" Name="exam2_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="exam2_reports.tcl"/>
-  <File Type="OPT-DRC" Name="exam2_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="exam2.hwdef"/>
-  <File Type="PWROPT-DCP" Name="exam2_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="exam2_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="exam2_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="exam2_placed.dcp"/>
-  <File Type="PLACE-IO" Name="exam2_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="exam2_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="exam2_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="exam2_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="exam2_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="exam2_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="exam2_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="exam2_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="exam2_postplace_pwropt.dcp"/>
-  <File Type="BG-BIN" Name="exam2.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="exam2_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="exam2_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="exam2_drc_physopted.rpt"/>
-  <File Type="BITSTR-MSK" Name="exam2.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="exam2_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="exam2_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="exam2_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="exam2_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="exam2_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="exam2_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="exam2_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="exam2.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="exam2_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="exam2_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="exam2_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="exam2_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="exam2_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="exam2_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="exam2_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="exam2_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="exam2_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="exam2_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="exam2_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="exam2_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="exam2_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="exam2_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="exam2_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="exam2_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="exam2_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="exam2_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="exam2_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="exam2_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="exam2_bus_skew_postroute_physopted.pb"/>
-  <File Type="BG-BIT" Name="exam2.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="exam2_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-RBT" Name="exam2.rbt"/>
-  <File Type="BITSTR-NKY" Name="exam2.nky"/>
-  <File Type="PDI-FILE" Name="exam2.pdi"/>
-  <File Type="RCFI_FILE" Name="exam2.rcfi"/>
-  <File Type="CFI_FILE" Name="exam2.cfi"/>
-  <File Type="RNPI_FILE" Name="exam2.rnpi"/>
-  <File Type="NPI_FILE" Name="exam2.npi"/>
-  <File Type="RBD_FILE" Name="exam2.rbd"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1701711209">
+  <File Type="BITSTR-BMM" Name="exam2_2_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="exam2_2_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="exam2_2_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="exam2_2_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="exam2_2.tcl"/>
+  <File Type="OPT-TIMING" Name="exam2_2_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="exam2_2_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="exam2_2_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="exam2_2_reports.tcl"/>
+  <File Type="OPT-DRC" Name="exam2_2_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="exam2_2.hwdef"/>
+  <File Type="PWROPT-DCP" Name="exam2_2_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="exam2_2_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="exam2_2_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="exam2_2_placed.dcp"/>
+  <File Type="PLACE-IO" Name="exam2_2_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="exam2_2_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="exam2_2_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="exam2_2_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="exam2_2_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="exam2_2_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="exam2_2_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="exam2_2_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="exam2_2_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="exam2_2.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="exam2_2_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="exam2_2_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="exam2_2_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="exam2_2.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="exam2_2_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="exam2_2_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="exam2_2_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="exam2_2_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="exam2_2_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="exam2_2_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="exam2_2_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="exam2_2.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="exam2_2_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="exam2_2_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="exam2_2_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="exam2_2_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="exam2_2_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="exam2_2_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="exam2_2_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="exam2_2_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="exam2_2_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="exam2_2_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="exam2_2_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="exam2_2_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="exam2_2_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="exam2_2_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="exam2_2_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="exam2_2_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="exam2_2_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="exam2_2_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="exam2_2_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="exam2_2_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="exam2_2_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="exam2_2.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="exam2_2_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="exam2_2.rbt"/>
+  <File Type="BITSTR-NKY" Name="exam2_2.nky"/>
+  <File Type="PDI-FILE" Name="exam2_2.pdi"/>
+  <File Type="RCFI_FILE" Name="exam2_2.rcfi"/>
+  <File Type="CFI_FILE" Name="exam2_2.cfi"/>
+  <File Type="RNPI_FILE" Name="exam2_2.rnpi"/>
+  <File Type="NPI_FILE" Name="exam2_2.npi"/>
+  <File Type="RBD_FILE" Name="exam2_2.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="exam2.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="exam2.sysdef"/>
-  <File Type="BG-BGN" Name="exam2.bgn"/>
-  <File Type="BG-DRC" Name="exam2.drc"/>
-  <File Type="RDI-RDI" Name="exam2.vdi"/>
+  <File Type="BITSTR-LTX" Name="exam2_2.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="exam2_2.sysdef"/>
+  <File Type="BG-BGN" Name="exam2_2.bgn"/>
+  <File Type="BG-DRC" Name="exam2_2.drc"/>
+  <File Type="RDI-RDI" Name="exam2_2.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/code/exam2_2.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/2021 exam2_2/13399/code/exam2_2.v"/>
+        <Attr Name="ImportTime" Val="1701699038"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/code/exam2.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/2021 exam2/13387/code/exam2.v"/>
         <Attr Name="ImportTime" Val="1701693372"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -88,7 +98,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="exam2"/>
+      <Option Name="TopModule" Val="exam2_2"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -97,6 +107,14 @@
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/2021 exam2/13387/code/exam2.xdc"/>
         <Attr Name="ImportTime" Val="1701693372"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/imports/code/exam2_2.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/2021 exam2_2/13399/code/exam2_2.xdc"/>
+        <Attr Name="ImportTime" Val="1701699038"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
