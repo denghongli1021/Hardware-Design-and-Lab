@@ -77,7 +77,7 @@ set rc [catch {
   set_property ip_output_repo {{C:/Users/user/2022 exam2/2022 exam2.cache/ip}} [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   add_files -quiet {{C:/Users/user/2022 exam2/2022 exam2.runs/synth_1/exam2_B.dcp}}
-  read_ip -quiet {{c:/Users/user/2022 exam2/2022 exam2.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci}}
+  read_ip -quiet {{C:/Users/user/2022 exam2/2022 exam2.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci}}
   read_xdc {{C:/Users/user/2022 exam2/2022 exam2.srcs/constrs_1/imports/A/exam2_A.xdc}}
   read_xdc {{C:/Users/user/2022 exam2/2022 exam2.srcs/constrs_1/imports/B/exam2_B.xdc}}
   link_design -top exam2_B -part xc7a35tcpg236-1

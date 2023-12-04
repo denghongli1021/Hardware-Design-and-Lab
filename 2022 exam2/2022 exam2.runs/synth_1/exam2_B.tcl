@@ -34,7 +34,7 @@ update_ip_catalog
 set_property ip_output_repo {c:/Users/user/2022 exam2/2022 exam2.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {{C:/Users/user/2022 exam2/2022 exam2.srcs/sources_1/imports/B/exam2_B.v}}
-read_ip -quiet {{c:/Users/user/2022 exam2/2022 exam2.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci}}
+read_ip -quiet {{C:/Users/user/2022 exam2/2022 exam2.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci}}
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
