@@ -1,7 +1,7 @@
-// <111062107> <?��弘利>
+// <111062107> <鄧弘利>
 
 // Add your ID and name to FIRST line of file, or you will get 5 points penalty
-// e.g. 110123456 ??��?��??
+// e.g. 110123456 王小明
 module exam2_B (
     input clk, 
     input rst, 
