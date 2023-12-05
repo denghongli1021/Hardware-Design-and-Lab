@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Tue Dec  5 01:54:30 2023">
+<application name="pa" timeStamp="Tue Dec  5 02:05:58 2023">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="ee341178dfa44c0fb1a1998052925314" type="ProjectID"/>
 <property name="ProjectIteration" value="44" type="ProjectIteration"/>
@@ -21,7 +21,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="AutoConnectTarget" value="3" type="JavaHandler"/>
 <property name="CoreView" value="2" type="JavaHandler"/>
 <property name="CustomizeCore" value="1" type="JavaHandler"/>
-<property name="LaunchProgramFpga" value="37" type="JavaHandler"/>
+<property name="LaunchProgramFpga" value="38" type="JavaHandler"/>
 <property name="OpenHardwareManager" value="3" type="JavaHandler"/>
 <property name="OpenProject" value="1" type="JavaHandler"/>
 <property name="RunBitgen" value="44" type="JavaHandler"/>
@@ -33,7 +33,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="AbstractFileView_RELOAD" value="10" type="GuiHandlerData"/>
 <property name="AddRepositoryInfoDialog_OK" value="1" type="GuiHandlerData"/>
 <property name="AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES" value="1" type="GuiHandlerData"/>
-<property name="BaseDialog_CANCEL" value="24" type="GuiHandlerData"/>
+<property name="BaseDialog_CANCEL" value="25" type="GuiHandlerData"/>
 <property name="BaseDialog_OK" value="60" type="GuiHandlerData"/>
 <property name="BaseDialog_YES" value="43" type="GuiHandlerData"/>
 <property name="CmdMsgDialog_MESSAGES" value="1" type="GuiHandlerData"/>
@@ -52,8 +52,8 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PACommandNames_SET_AS_TOP" value="1" type="GuiHandlerData"/>
 <property name="PAViews_PROJECT_SUMMARY" value="3" type="GuiHandlerData"/>
 <property name="ProgramDebugTab_OPEN_TARGET" value="3" type="GuiHandlerData"/>
-<property name="ProgramDebugTab_PROGRAM_DEVICE" value="37" type="GuiHandlerData"/>
-<property name="ProgramFpgaDialog_PROGRAM" value="37" type="GuiHandlerData"/>
+<property name="ProgramDebugTab_PROGRAM_DEVICE" value="38" type="GuiHandlerData"/>
+<property name="ProgramFpgaDialog_PROGRAM" value="38" type="GuiHandlerData"/>
 <property name="SettingsDialog_PROJECT_TREE" value="4" type="GuiHandlerData"/>
 <property name="SettingsProjectIPRepositoryPage_ADD_REPOSITORY" value="1" type="GuiHandlerData"/>
 <property name="SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY" value="1" type="GuiHandlerData"/>
@@ -67,6 +67,11 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="SyntheticaStateMonitor_CANCEL" value="21" type="GuiHandlerData"/>
 <property name="TaskBanner_CLOSE" value="2" type="GuiHandlerData"/>
 <property name="TouchpointSurveyDialog_NO" value="1" type="GuiHandlerData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="1" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="0" type="TclMode"/>
 </item>
 </section>
 </application>
