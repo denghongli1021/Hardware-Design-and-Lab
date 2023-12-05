@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Tue Dec  5 14:02:41 2023'>
+<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Tue Dec  5 14:47:24 2023'>
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="FALSE" description="" />
   <keyValuePair key="build_version" value="2708876" description="" />
-  <keyValuePair key="date_generated" value="Tue Dec  5 14:02:41 2023" description="" />
+  <keyValuePair key="date_generated" value="Tue Dec  5 14:47:24 2023" description="" />
   <keyValuePair key="os_platform" value="WIN64" description="" />
   <keyValuePair key="product_version" value="Vivado v2019.2 (64-bit)" description="" />
   <keyValuePair key="project_id" value="146601bac7f44e85b5afba729ec492b9" description="" />
-  <keyValuePair key="project_iteration" value="26" description="" />
+  <keyValuePair key="project_iteration" value="27" description="" />
   <keyValuePair key="random_id" value="87c8cda51613571db6195e47f483b61c" description="" />
   <keyValuePair key="registration_id" value="87c8cda51613571db6195e47f483b61c" description="" />
   <keyValuePair key="route_design" value="TRUE" description="" />
@@ -527,10 +527,10 @@
    <keyValuePair key="-verilog_define" value="default::[not_specified]" description="" />
   </section>
   <section name="usage" level="2" order="2" description="">
-   <keyValuePair key="elapsed" value="00:00:55s" description="" />
+   <keyValuePair key="elapsed" value="00:01:03s" description="" />
    <keyValuePair key="hls_ip" value="0" description="" />
-   <keyValuePair key="memory_gain" value="938.695MB" description="" />
-   <keyValuePair key="memory_peak" value="1235.094MB" description="" />
+   <keyValuePair key="memory_gain" value="940.480MB" description="" />
+   <keyValuePair key="memory_peak" value="1238.000MB" description="" />
   </section>
  </section>
  <section name="unisim_transformation" level="1" order="10" description="">
@@ -579,19 +579,19 @@
  </section>
  <section name="vivado_usage" level="1" order="11" description="">
   <section name="gui_handlers" level="2" order="1" description="">
-   <keyValuePair key="abstractfileview_reload" value="7" description="" />
+   <keyValuePair key="abstractfileview_reload" value="8" description="" />
    <keyValuePair key="addrepositoryinfodialog_ok" value="1" description="" />
    <keyValuePair key="addsrcwizard_specify_or_create_constraint_files" value="1" description="" />
    <keyValuePair key="addsrcwizard_specify_simulation_specific_hdl_files" value="1" description="" />
    <keyValuePair key="basedialog_apply" value="1" description="" />
-   <keyValuePair key="basedialog_cancel" value="19" description="" />
-   <keyValuePair key="basedialog_ok" value="62" description="" />
-   <keyValuePair key="basedialog_yes" value="39" description="" />
+   <keyValuePair key="basedialog_cancel" value="20" description="" />
+   <keyValuePair key="basedialog_ok" value="63" description="" />
+   <keyValuePair key="basedialog_yes" value="40" description="" />
    <keyValuePair key="cmdmsgdialog_ok" value="1" description="" />
    <keyValuePair key="constraintschooserpanel_add_files" value="3" description="" />
    <keyValuePair key="coretreetablepanel_core_tree_table" value="6" description="" />
    <keyValuePair key="filesetpanel_file_set_panel_tree" value="25" description="" />
-   <keyValuePair key="flownavigatortreepanel_flow_navigator_tree" value="46" description="" />
+   <keyValuePair key="flownavigatortreepanel_flow_navigator_tree" value="47" description="" />
    <keyValuePair key="fpgachooser_family" value="2" description="" />
    <keyValuePair key="fpgachooser_fpga_table" value="2" description="" />
    <keyValuePair key="fpgachooser_package" value="2" description="" />
@@ -615,9 +615,9 @@
    <keyValuePair key="paviews_ip_catalog" value="1" description="" />
    <keyValuePair key="paviews_project_summary" value="6" description="" />
    <keyValuePair key="programdebugtab_open_target" value="6" description="" />
-   <keyValuePair key="programdebugtab_program_device" value="24" description="" />
+   <keyValuePair key="programdebugtab_program_device" value="26" description="" />
    <keyValuePair key="programdebugtab_refresh_device" value="1" description="" />
-   <keyValuePair key="programfpgadialog_program" value="24" description="" />
+   <keyValuePair key="programfpgadialog_program" value="26" description="" />
    <keyValuePair key="projectnamechooser_project_name" value="2" description="" />
    <keyValuePair key="rdicommands_save_file" value="2" description="" />
    <keyValuePair key="settingsdialog_project_tree" value="3" description="" />
@@ -631,17 +631,18 @@
    <keyValuePair key="statemonitor_reset_run" value="1" description="" />
    <keyValuePair key="syntheticastatemonitor_cancel" value="1" description="" />
    <keyValuePair key="taskbanner_close" value="5" description="" />
+   <keyValuePair key="touchpointsurveydialog_no" value="1" description="" />
   </section>
   <section name="java_command_handlers" level="2" order="2" description="">
    <keyValuePair key="addsources" value="2" description="" />
    <keyValuePair key="autoconnecttarget" value="6" description="" />
    <keyValuePair key="coreview" value="2" description="" />
    <keyValuePair key="customizecore" value="1" description="" />
-   <keyValuePair key="launchprogramfpga" value="24" description="" />
+   <keyValuePair key="launchprogramfpga" value="26" description="" />
    <keyValuePair key="newproject" value="2" description="" />
    <keyValuePair key="openhardwaremanager" value="6" description="" />
    <keyValuePair key="openproject" value="2" description="" />
-   <keyValuePair key="runbitgen" value="39" description="" />
+   <keyValuePair key="runbitgen" value="40" description="" />
    <keyValuePair key="runimplementation" value="1" description="" />
    <keyValuePair key="settopnode" value="8" description="" />
    <keyValuePair key="showview" value="11" description="" />

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Tue Dec  5 14:02:31 2023
+| Date         : Tue Dec  5 14:47:15 2023
 | Host         : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file exam2_B_clock_utilization_routed.rpt
 | Design       : exam2_B
@@ -72,8 +72,8 @@ Table of Contents
 +----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+------------------------------+--------------------+
 | Local Id | Driver Type/Pin | Constraint | Site/BEL         | Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin                   | Net                |
 +----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+------------------------------+--------------------||
-| 0        | FDCE/Q          | None       | SLICE_X42Y50/CFF | X1Y1         |           8 |               1 |              |       | nolabel_line57/num_reg[14]/Q | nolabel_line57/CLK - Static -
-| 1        | FDCE/Q          | None       | SLICE_X44Y52/AFF | X1Y1         |           3 |               1 |              |       | nolabel_line58/num_reg[24]/Q | nolabel_line58/O51 - Static -
+| 0        | FDCE/Q          | None       | SLICE_X42Y50/CFF | X1Y1         |           8 |               1 |              |       | nolabel_line63/num_reg[14]/Q | nolabel_line63/CLK - Static -
+| 1        | FDCE/Q          | None       | SLICE_X44Y52/AFF | X1Y1         |           3 |               1 |              |       | nolabel_line64/num_reg[24]/Q | nolabel_line64/O51 - Static -
 +----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+------------------------------+--------------------||
 * Local Clocks in this context represents only clocks driven by non-global buffers
 ** Clock Loads column represents the clock pin loads (pin count)

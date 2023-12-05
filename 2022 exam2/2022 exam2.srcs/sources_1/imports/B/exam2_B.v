@@ -24,7 +24,6 @@ module exam2_B (
         9'b0_0111_0101, // right_8 => 75
         9'b0_0111_1101  // right_9 => 7D
 	};
-
     // add your design here
     // state
     reg [1:0] state = INIT;
