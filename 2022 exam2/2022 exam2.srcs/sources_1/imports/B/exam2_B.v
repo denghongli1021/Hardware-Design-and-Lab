@@ -26,25 +26,29 @@ module exam2_B (
 	};
 
     // add your design here
-    wire [511:0] key_down;
-    wire [8:0] last_change;
-    wire key_valid;
-    wire clk_div_use;
-    wire clk_25;
-    reg [3:0] d0,d1,d2,d3;
+    // state
     reg [1:0] state = INIT;
     reg [1:0] next_state;
-    wire rst1,rst2,en1,en2;
-    reg [2:0] cnt = 0;
     parameter [1:0] INIT  = 2'b00;
     parameter [1:0] SET   = 2'b01;
     parameter [1:0] GUESS = 2'b10;
     parameter [1:0] CHECK = 2'b11;
+    // for lighting
     reg same = 0;
     wire same_2;
     wire same_3;
     debounce db3(.pb(same), .clk(clk), .pb_debounced(same_2));
     one_pulse db32(.pb_debounced(same_2), .clk(clk), .pb_one_pulse(same_3));
+    // rst en 按鍵
+    wire rst1,rst2,en1,en2;
+    debounce db1(.pb(rst), .clk(clk), .pb_debounced(rst1));
+    one_pulse db12(.pb_debounced(rst1), .clk(clk), .pb_one_pulse(rst2));
+    debounce db2(.pb(en), .clk(clk), .pb_debounced(en1));
+    one_pulse db22(.pb_debounced(en1), .clk(clk),. pb_one_pulse(en2));
+    // keyboard
+    wire [511:0] key_down;
+    wire [8:0] last_change;
+    wire key_valid;
     KeyboardDecoder kd(
         .rst(rst2),
         .clk(clk),
@@ -54,8 +58,13 @@ module exam2_B (
         .last_change(last_change),
         .key_valid(key_valid)
     );
+    // clock
+    wire clk_div_use;
+    wire clk_25;
     clock_divider #(.n(15)) (.clk(clk), .clk_div(clk_div_use) ,.rst(same_3));
     clock_divider #(.n(25)) (.clk(clk), .clk_div(clk_25), .rst(same_3));
+    // 7 seg
+    reg [3:0] d0,d1,d2,d3;
     seven_segment sg(
         .clk(clk_div_use), 
         .digit_0(d0),
@@ -65,11 +74,8 @@ module exam2_B (
         .DIGIT(DIGIT), 
         .DISPLAY(DISPLAY)
     );
-    debounce db1(.pb(rst), .clk(clk), .pb_debounced(rst1));
-    one_pulse db12(.pb_debounced(rst1), .clk(clk), .pb_one_pulse(rst2));
-    debounce db2(.pb(en), .clk(clk), .pb_debounced(en1));
-    one_pulse db22(.pb_debounced(en1), .clk(clk),. pb_one_pulse(en2));
-    
+    // cnt
+    reg [2:0] cnt = 0;
     always @(posedge clk_25) begin
         if (state == CHECK) begin
             cnt = cnt + 1;
