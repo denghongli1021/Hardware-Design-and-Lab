@@ -40,7 +40,11 @@ module exam2_B (
     parameter [1:0] SET   = 2'b01;
     parameter [1:0] GUESS = 2'b10;
     parameter [1:0] CHECK = 2'b11;
-
+    reg same = 0;
+    wire same_2;
+    wire same_3;
+    debounce db3(.pb(same), .clk(clk), .pb_debounced(same_2));
+    one_pulse db32(.pb_debounced(same_2), .clk(clk), .pb_one_pulse(same_3));
     KeyboardDecoder kd(
         .rst(rst2),
         .clk(clk),
@@ -50,8 +54,8 @@ module exam2_B (
         .last_change(last_change),
         .key_valid(key_valid)
     );
-    clock_divider #(.n(15)) (.clk(clk), .clk_div(clk_div_use));
-    clock_divider #(.n(25)) (.clk(clk), .clk_div(clk_25));
+    clock_divider #(.n(15)) (.clk(clk), .clk_div(clk_div_use) ,.rst(same_3));
+    clock_divider #(.n(25)) (.clk(clk), .clk_div(clk_25), .rst(same_3));
     seven_segment sg(
         .clk(clk_div_use), 
         .digit_0(d0),
@@ -65,6 +69,7 @@ module exam2_B (
     one_pulse db12(.pb_debounced(rst1), .clk(clk), .pb_one_pulse(rst2));
     debounce db2(.pb(en), .clk(clk), .pb_debounced(en1));
     one_pulse db22(.pb_debounced(en1), .clk(clk),. pb_one_pulse(en2));
+    
     always @(posedge clk_25) begin
         if (state == CHECK) begin
             cnt = cnt + 1;
@@ -106,9 +111,11 @@ module exam2_B (
             GUESS : begin
                 if (en2) begin
                     next_state = CHECK;
+                    same = 1;
                 end
                 else begin
                     next_state = GUESS;
+                    same = 0;
                 end
             end
             CHECK : begin
@@ -359,15 +366,17 @@ endmodule
 
 
 // provided modules
-module clock_divider #(parameter n=25) (clk, clk_div);
+module clock_divider #(parameter n=25) (clk, clk_div ,rst);
     input clk;
+    input rst; // same_3
     output clk_div;
 
     reg [n-1:0] num = 0;
     wire [n-1:0] next_num;
 
-    always @(posedge clk) begin
-        num <= next_num;
+    always @(posedge clk or posedge rst) begin
+        if (rst) num <= 0;
+        else num <= next_num;
     end
 
     assign next_num = num + 1;

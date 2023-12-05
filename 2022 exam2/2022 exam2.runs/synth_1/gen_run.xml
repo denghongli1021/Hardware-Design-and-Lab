@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1701755004">
-  <File Type="PA-TCL" Name="exam2_A.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="exam2_A_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="exam2_A_reports.tcl"/>
-  <File Type="RDS-RDS" Name="exam2_A.vds"/>
-  <File Type="RDS-UTIL" Name="exam2_A_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="exam2_A_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="exam2_A.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="exam2_A_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="exam2_A_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1701756011">
+  <File Type="PA-TCL" Name="exam2_B.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="exam2_B_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="exam2_B_reports.tcl"/>
+  <File Type="RDS-RDS" Name="exam2_B.vds"/>
+  <File Type="RDS-UTIL" Name="exam2_B_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="exam2_B_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="exam2_B.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="exam2_B_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="exam2_B_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/B/exam2_B.v">
@@ -22,6 +22,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/A/exam2_A.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/2022 exam2/13739/13739/A/exam2_A.v"/>
         <Attr Name="ImportTime" Val="1701341289"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -31,7 +32,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="exam2_A"/>
+      <Option Name="TopModule" Val="exam2_B"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -66,4 +67,5 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="KeyboardCtrl_0"/>
 </GenRun>
