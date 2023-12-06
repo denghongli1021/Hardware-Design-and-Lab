@@ -1,0 +1,95 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Thu Dec  7 02:44:59 2023
+| Host         : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file main_control_control_sets_placed.rpt
+| Design       : main_control
+| Device       : xc7a35t
+-----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    17 |
+|    Minimum number of control sets                        |    17 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    76 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    17 |
+| >= 0 to < 4        |     5 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     3 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     5 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              19 |            6 |
+| No           | No                    | Yes                    |               7 |            3 |
+| No           | Yes                   | No                     |              35 |           12 |
+| Yes          | No                    | No                     |              20 |            6 |
+| Yes          | No                    | Yes                    |             155 |           40 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------------------+-----------------------------------------+----------------------------------------+------------------+----------------+
+|          Clock Signal         |              Enable Signal              |            Set/Reset Signal            | Slice Load Count | Bel Load Count |
++-------------------------------+-----------------------------------------+----------------------------------------+------------------+----------------+
+|  nolabel_line59/inst/clk_out1 |                                         | nolabel_line65/SR[0]                   |                1 |              1 |
+|  nolabel_line59/inst/clk_out1 |                                         | nolabel_line65/SR[1]                   |                1 |              1 |
+|  nolabel_line59/inst/clk_out1 |                                         | nolabel_line65/SR[2]                   |                1 |              1 |
+|  nolabel_line59/inst/clk_out1 | start_IBUF                              | reset_IBUF                             |                1 |              1 |
+|  nolabel_line59/inst/clk_out1 | nolabel_line65/vertical_scanning_buffer |                                        |                1 |              1 |
+|  nolabel_line59/inst/clk_out1 | nolabel_line62/E[0]                     | player1_score1                         |                1 |              4 |
+|  nolabel_line59/inst/clk_out1 | nolabel_line62/player2_score_reg[3][0]  | player2_score1                         |                2 |              4 |
+|  nolabel_line59/inst/clk_out1 |                                         | reset_IBUF                             |                3 |              7 |
+|  nolabel_line59/inst/clk_out1 | nolabel_line65/y_counter                |                                        |                2 |              9 |
+|  nolabel_line59/inst/clk_out1 | nolabel_line65/counter_h[9]_i_1_n_0     | reset_IBUF                             |                3 |             10 |
+|  nolabel_line59/inst/clk_out1 | nolabel_line65/counter_v                | reset_IBUF                             |                3 |             10 |
+|  nolabel_line59/inst/clk_out1 | nolabel_line65/x_counter                |                                        |                3 |             10 |
+|  nolabel_line59/inst/clk_out1 |                                         |                                        |                6 |             19 |
+|  nolabel_line59/inst/clk_out1 | nolabel_line62/bottombar_l[1]_i_1_n_0   | reset_IBUF                             |                8 |             31 |
+|  nolabel_line59/inst/clk_out1 | nolabel_line62/topbar_l[1]_i_1_n_0      | reset_IBUF                             |                8 |             31 |
+|  nolabel_line59/inst/clk_out1 |                                         | nolabel_line62/refresh_reg[31]_i_1_n_0 |                9 |             32 |
+|  nolabel_line59/inst/clk_out1 | nolabel_line62/refresh_rate             | reset_IBUF                             |               14 |             64 |
++-------------------------------+-----------------------------------------+----------------------------------------+------------------+----------------+
+
+

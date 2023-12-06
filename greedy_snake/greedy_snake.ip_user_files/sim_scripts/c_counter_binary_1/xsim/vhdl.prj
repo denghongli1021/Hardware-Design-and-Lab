@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../greedy_snake.srcs/sources_1/ip/c_counter_binary_1/sim/c_counter_binary_1.vhd" \
+
+nosort

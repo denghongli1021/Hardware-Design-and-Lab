@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Dec  7 03:01:42 2023
+# Process ID: 31240
+# Current directory: C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/c_counter_binary_0_synth_1
+# Command line: vivado.exe -log c_counter_binary_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source c_counter_binary_0.tcl
+# Log file: C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/c_counter_binary_0_synth_1/c_counter_binary_0.vds
+# Journal file: C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/c_counter_binary_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source c_counter_binary_0.tcl -notrace
