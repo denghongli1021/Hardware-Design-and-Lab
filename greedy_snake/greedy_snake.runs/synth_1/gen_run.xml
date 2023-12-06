@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1701889461">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1701889640">
   <File Type="PA-TCL" Name="top.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_reports.tcl"/>
@@ -19,13 +19,6 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/ip/c_counter_binary_2/c_counter_binary_2.xci">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/ip/c_counter_binary_1/c_counter_binary_1.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -183,4 +176,5 @@
   <BlockFileSet Type="BlockSrcs" Name="c_counter_binary_0"/>
   <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_0"/>
   <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="c_counter_binary_1"/>
 </GenRun>

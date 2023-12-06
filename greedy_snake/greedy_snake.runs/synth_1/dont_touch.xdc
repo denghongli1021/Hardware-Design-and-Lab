@@ -8,6 +8,3 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==c_counter_binar
 
 # IP: ip/c_counter_binary_2/c_counter_binary_2.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==c_counter_binary_2 || ORIG_REF_NAME==c_counter_binary_2} -quiet] -quiet
-
-# IP: ip/c_counter_binary_1/c_counter_binary_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==c_counter_binary_1 || ORIG_REF_NAME==c_counter_binary_1} -quiet] -quiet

@@ -59,6 +59,9 @@ USE c_counter_binary_v12_0_14.c_counter_binary_v12_0_14;
 ENTITY c_counter_binary_3 IS
   PORT (
     CLK : IN STD_LOGIC;
+    CE : IN STD_LOGIC;
+    SCLR : IN STD_LOGIC;
+    SSET : IN STD_LOGIC;
     Q : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
   );
 END c_counter_binary_3;
@@ -108,6 +111,12 @@ ARCHITECTURE c_counter_binary_3_arch OF c_counter_binary_3 IS
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER OF Q: SIGNAL IS "XIL_INTERFACENAME q_intf, LAYERED_METADATA undef";
   ATTRIBUTE X_INTERFACE_INFO OF Q: SIGNAL IS "xilinx.com:signal:data:1.0 q_intf DATA";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF SSET: SIGNAL IS "XIL_INTERFACENAME sset_intf, LAYERED_METADATA undef";
+  ATTRIBUTE X_INTERFACE_INFO OF SSET: SIGNAL IS "xilinx.com:signal:data:1.0 sset_intf DATA";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF SCLR: SIGNAL IS "XIL_INTERFACENAME sclr_intf, POLARITY ACTIVE_HIGH, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF SCLR: SIGNAL IS "xilinx.com:signal:reset:1.0 sclr_intf RST";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF CE: SIGNAL IS "XIL_INTERFACENAME ce_intf, POLARITY ACTIVE_HIGH";
+  ATTRIBUTE X_INTERFACE_INFO OF CE: SIGNAL IS "xilinx.com:signal:clockenable:1.0 ce_intf CE";
   ATTRIBUTE X_INTERFACE_PARAMETER OF CLK: SIGNAL IS "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF q_intf:thresh0_intf:l_intf:load_intf:up_intf:sinit_intf:sset_intf, ASSOCIATED_RESET SCLR, ASSOCIATED_CLKEN CE, FREQ_HZ 10000000, PHASE 0.000, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF CLK: SIGNAL IS "xilinx.com:signal:clock:1.0 clk_intf CLK";
 BEGIN
@@ -117,8 +126,8 @@ BEGIN
       C_VERBOSITY => 0,
       C_XDEVICEFAMILY => "artix7",
       C_WIDTH => 16,
-      C_HAS_CE => 0,
-      C_HAS_SCLR => 0,
+      C_HAS_CE => 1,
+      C_HAS_SCLR => 1,
       C_RESTRICT_COUNT => 0,
       C_COUNT_TO => "1",
       C_COUNT_BY => "1",
@@ -133,14 +142,14 @@ BEGIN
       C_AINIT_VAL => "0",
       C_SINIT_VAL => "0",
       C_SCLR_OVERRIDES_SSET => 1,
-      C_HAS_SSET => 0,
+      C_HAS_SSET => 1,
       C_HAS_SINIT => 0
     )
     PORT MAP (
       CLK => CLK,
-      CE => '1',
-      SCLR => '0',
-      SSET => '0',
+      CE => CE,
+      SCLR => SCLR,
+      SSET => SSET,
       SINIT => '0',
       UP => '1',
       LOAD => '0',

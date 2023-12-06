@@ -55,6 +55,9 @@
 COMPONENT c_counter_binary_2
   PORT (
     CLK : IN STD_LOGIC;
+    CE : IN STD_LOGIC;
+    SCLR : IN STD_LOGIC;
+    SSET : IN STD_LOGIC;
     Q : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
   );
 END COMPONENT;
@@ -67,6 +70,9 @@ END COMPONENT;
 your_instance_name : c_counter_binary_2
   PORT MAP (
     CLK => CLK,
+    CE => CE,
+    SCLR => SCLR,
+    SSET => SSET,
     Q => Q
   );
 -- INST_TAG_END ------ End INSTANTIATION Template ---------

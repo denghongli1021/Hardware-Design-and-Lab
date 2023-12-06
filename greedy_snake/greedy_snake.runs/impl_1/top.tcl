@@ -78,10 +78,10 @@ set rc [catch {
   add_files -quiet C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/top.dcp
   read_ip -quiet c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_3/c_counter_binary_3.xci
   read_ip -quiet c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_2/c_counter_binary_2.xci
-  read_ip -quiet c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_1/c_counter_binary_1.xci
   read_ip -quiet c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
   read_ip -quiet c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
   read_ip -quiet c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_0/c_counter_binary_0.xci
+  read_ip -quiet c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_1/c_counter_binary_1.xci
   read_xdc C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/constrs_1/imports/xdc/Nexys4DDR_Master.xdc
   link_design -top top -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb

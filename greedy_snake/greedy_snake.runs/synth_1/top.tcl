@@ -51,9 +51,6 @@ set_property used_in_implementation false [get_files -all c:/Users/user/Hardware
 read_ip -quiet c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_2/c_counter_binary_2.xci
 set_property used_in_implementation false [get_files -all c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_2/c_counter_binary_2_ooc.xdc]
 
-read_ip -quiet c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_1/c_counter_binary_1.xci
-set_property used_in_implementation false [get_files -all c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_1/c_counter_binary_1_ooc.xdc]
-
 read_ip -quiet c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
 set_property used_in_implementation false [get_files -all c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_ooc.xdc]
 
@@ -64,6 +61,9 @@ set_property used_in_implementation false [get_files -all c:/Users/user/Hardware
 
 read_ip -quiet c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_0/c_counter_binary_0.xci
 set_property used_in_implementation false [get_files -all c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_0/c_counter_binary_0_ooc.xdc]
+
+read_ip -quiet c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_1/c_counter_binary_1.xci
+set_property used_in_implementation false [get_files -all c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_1/c_counter_binary_1_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

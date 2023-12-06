@@ -55,8 +55,11 @@
 
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 c_counter_binary_1 your_instance_name (
-  .CLK(CLK),  // input wire CLK
-  .Q(Q)      // output wire [15 : 0] Q
+  .CLK(CLK),    // input wire CLK
+  .CE(CE),      // input wire CE
+  .SCLR(SCLR),  // input wire SCLR
+  .SSET(SSET),  // input wire SSET
+  .Q(Q)        // output wire [15 : 0] Q
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Thu Dec  7 03:04:23 2023
-# Process ID: 32868
+# Start of session at: Thu Dec  7 03:07:22 2023
+# Process ID: 34336
 # Current directory: C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/top.vds
@@ -16,13 +16,13 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 30612 
+INFO: Helper process launched with PID 12112 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 781.066 ; gain = 234.066
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 782.176 ; gain = 235.090
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/top.v:3]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/.Xil/Vivado-32868-LAPTOP-FQ5SKUKF/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/.Xil/Vivado-32868-LAPTOP-FQ5SKUKF/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/.Xil/Vivado-34336-LAPTOP-FQ5SKUKF/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/.Xil/Vivado-34336-LAPTOP-FQ5SKUKF/realtime/clk_wiz_0_stub.v:5]
 WARNING: [Synth 8-7023] instance 'nolabel_line53' of module 'clk_wiz_0' has 4 connections declared, but only 2 given [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/top.v:53]
 INFO: [Synth 8-6157] synthesizing module 'display' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/display.v:1]
 	Parameter LAUNCHING bound to: 2'b00 
@@ -48,8 +48,8 @@ INFO: [Synth 8-6157] synthesizing module 'vga_sync_generator' [C:/Users/user/Har
 	Parameter v_total_piexls bound to: 1125 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'vga_sync_generator' (2#1) [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/vga_sync_generator.v:3]
 WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/display.v:81]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/.Xil/Vivado-32868-LAPTOP-FQ5SKUKF/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (3#1) [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/.Xil/Vivado-32868-LAPTOP-FQ5SKUKF/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/.Xil/Vivado-34336-LAPTOP-FQ5SKUKF/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (3#1) [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/.Xil/Vivado-34336-LAPTOP-FQ5SKUKF/realtime/blk_mem_gen_0_stub.v:6]
 WARNING: [Synth 8-689] width (20) of port connection 'wea' does not match port width (1) of module 'blk_mem_gen_0' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/display.v:81]
 WARNING: [Synth 8-7023] instance 'nolabel_line81' of module 'blk_mem_gen_0' has 5 connections declared, but only 3 given [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/display.v:81]
 WARNING: [Synth 8-3848] Net data in module/entity display does not have driver. [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/display.v:34]
@@ -89,22 +89,478 @@ INFO: [Synth 8-6157] synthesizing module 'score' [C:/Users/user/HardwareDesign/g
 	Parameter PLAYING bound to: 2'b01 
 	Parameter DIE_FLASHING bound to: 2'b10 
 	Parameter INITIALIZING bound to: 2'b11 
-INFO: [Synth 8-6157] synthesizing module 'c_counter_binary_0' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/.Xil/Vivado-32868-LAPTOP-FQ5SKUKF/realtime/c_counter_binary_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'c_counter_binary_0' (9#1) [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/.Xil/Vivado-32868-LAPTOP-FQ5SKUKF/realtime/c_counter_binary_0_stub.v:6]
-WARNING: [Synth 8-689] width (1) of port connection 'Q' does not match port width (16) of module 'c_counter_binary_0' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/score.v:28]
-ERROR: [Synth 8-349] instance 'nolabel_line28' of module 'c_counter_binary_0' passed 5 connections, but takes just 2 [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/score.v:28]
-ERROR: [Synth 8-349] instance 'nolabel_line28' of module 'c_counter_binary_0' passed 5 connections, but takes just 2 [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/score.v:28]
-ERROR: [Synth 8-349] instance 'nolabel_line28' of module 'c_counter_binary_0' passed 5 connections, but takes just 2 [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/score.v:28]
-INFO: [Synth 8-6157] synthesizing module 'c_counter_binary_1' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/.Xil/Vivado-32868-LAPTOP-FQ5SKUKF/realtime/c_counter_binary_1_stub.v:6]
-ERROR: [Synth 8-6156] failed synthesizing module 'c_counter_binary_1' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/.Xil/Vivado-32868-LAPTOP-FQ5SKUKF/realtime/c_counter_binary_1_stub.v:6]
-ERROR: [Synth 8-6156] failed synthesizing module 'score' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/score.v:3]
-ERROR: [Synth 8-6156] failed synthesizing module 'top' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/top.v:3]
+INFO: [Synth 8-6157] synthesizing module 'c_counter_binary_0' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/.Xil/Vivado-34336-LAPTOP-FQ5SKUKF/realtime/c_counter_binary_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'c_counter_binary_0' (9#1) [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/.Xil/Vivado-34336-LAPTOP-FQ5SKUKF/realtime/c_counter_binary_0_stub.v:6]
+WARNING: [Synth 8-689] width (4) of port connection 'Q' does not match port width (16) of module 'c_counter_binary_0' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/score.v:28]
+INFO: [Synth 8-6157] synthesizing module 'c_counter_binary_1' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/.Xil/Vivado-34336-LAPTOP-FQ5SKUKF/realtime/c_counter_binary_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'c_counter_binary_1' (10#1) [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/.Xil/Vivado-34336-LAPTOP-FQ5SKUKF/realtime/c_counter_binary_1_stub.v:6]
+WARNING: [Synth 8-689] width (4) of port connection 'Q' does not match port width (16) of module 'c_counter_binary_1' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/score.v:29]
+INFO: [Synth 8-6157] synthesizing module 'c_counter_binary_2' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/.Xil/Vivado-34336-LAPTOP-FQ5SKUKF/realtime/c_counter_binary_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'c_counter_binary_2' (11#1) [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/.Xil/Vivado-34336-LAPTOP-FQ5SKUKF/realtime/c_counter_binary_2_stub.v:6]
+WARNING: [Synth 8-689] width (4) of port connection 'Q' does not match port width (16) of module 'c_counter_binary_2' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/score.v:30]
+INFO: [Synth 8-6157] synthesizing module 'c_counter_binary_3' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/.Xil/Vivado-34336-LAPTOP-FQ5SKUKF/realtime/c_counter_binary_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'c_counter_binary_3' (12#1) [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/.Xil/Vivado-34336-LAPTOP-FQ5SKUKF/realtime/c_counter_binary_3_stub.v:6]
+WARNING: [Synth 8-689] width (4) of port connection 'Q' does not match port width (16) of module 'c_counter_binary_3' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/score.v:31]
+INFO: [Synth 8-6157] synthesizing module 'seg' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/seg.v:3]
+INFO: [Synth 8-6157] synthesizing module 'bcdto8segment_dataflow' [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/bcdto8segment_dataflow.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'bcdto8segment_dataflow' (13#1) [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/bcdto8segment_dataflow.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'seg' (14#1) [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/seg.v:3]
+WARNING: [Synth 8-3848] Net threshold in module/entity score does not have driver. [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/score.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'score' (15#1) [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/score.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'top' (16#1) [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/top.v:3]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 857.094 ; gain = 310.094
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 857.621 ; gain = 310.535
 ---------------------------------------------------------------------------------
-RTL Elaboration failed
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 857.621 ; gain = 310.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 857.621 ; gain = 310.535
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 857.621 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_3/c_counter_binary_3/c_counter_binary_0_in_context.xdc] for cell 'nolabel_line115/nolabel_line31'
+Finished Parsing XDC File [c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_3/c_counter_binary_3/c_counter_binary_0_in_context.xdc] for cell 'nolabel_line115/nolabel_line31'
+Parsing XDC File [c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_2/c_counter_binary_2/c_counter_binary_0_in_context.xdc] for cell 'nolabel_line115/nolabel_line30'
+Finished Parsing XDC File [c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_2/c_counter_binary_2/c_counter_binary_0_in_context.xdc] for cell 'nolabel_line115/nolabel_line30'
+Parsing XDC File [c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'nolabel_line55/nolabel_line81'
+Finished Parsing XDC File [c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'nolabel_line55/nolabel_line81'
+Parsing XDC File [c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'nolabel_line53'
+Finished Parsing XDC File [c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'nolabel_line53'
+Parsing XDC File [c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_0/c_counter_binary_0/c_counter_binary_0_in_context.xdc] for cell 'nolabel_line115/nolabel_line28'
+Finished Parsing XDC File [c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_0/c_counter_binary_0/c_counter_binary_0_in_context.xdc] for cell 'nolabel_line115/nolabel_line28'
+Parsing XDC File [c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_1/c_counter_binary_1/c_counter_binary_1_in_context.xdc] for cell 'nolabel_line115/nolabel_line29'
+Finished Parsing XDC File [c:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/ip/c_counter_binary_1/c_counter_binary_1/c_counter_binary_1_in_context.xdc] for cell 'nolabel_line115/nolabel_line29'
+Parsing XDC File [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/constrs_1/imports/xdc/Nexys4DDR_Master.xdc]
+Finished Parsing XDC File [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/constrs_1/imports/xdc/Nexys4DDR_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/constrs_1/imports/xdc/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 969.926 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 969.926 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'nolabel_line115/nolabel_line28' at clock pin 'CLK' is different from the actual clock period '10.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'nolabel_line115/nolabel_line29' at clock pin 'CLK' is different from the actual clock period '10.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'nolabel_line115/nolabel_line30' at clock pin 'CLK' is different from the actual clock period '10.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'nolabel_line115/nolabel_line31' at clock pin 'CLK' is different from the actual clock period '10.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'nolabel_line55/nolabel_line81' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:13 . Memory (MB): peak = 973.031 ; gain = 425.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:13 . Memory (MB): peak = 973.031 ; gain = 425.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for nolabel_line115/nolabel_line31. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for nolabel_line115/nolabel_line30. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for nolabel_line55/nolabel_line81. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for nolabel_line53. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for nolabel_line115/nolabel_line28. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for nolabel_line115/nolabel_line29. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:03 ; elapsed = 00:00:13 . Memory (MB): peak = 973.031 ; gain = 425.945
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/snake.v:144]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/snake.v:144]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:14 . Memory (MB): peak = 973.031 ; gain = 425.945
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     30 Bit       Adders := 1     
+	   2 Input     28 Bit       Adders := 1     
+	   2 Input     20 Bit       Adders := 4     
+	   2 Input     19 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 5     
++---Registers : 
+	               32 Bit    Registers := 2     
+	               30 Bit    Registers := 1     
+	               28 Bit    Registers := 1     
+	               20 Bit    Registers := 1     
+	               19 Bit    Registers := 1     
+	               12 Bit    Registers := 2     
+	               11 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                6 Bit    Registers := 66    
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 6     
++---Multipliers : 
+	                20x20  Multipliers := 1     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     30 Bit        Muxes := 1     
+	   5 Input     19 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 4     
+	   2 Input      8 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 7     
+	   3 Input      2 Bit        Muxes := 2     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 22    
+	   4 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module vga_sync_generator 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
+Module display 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     20 Bit       Adders := 4     
++---Registers : 
+	               20 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
++---Multipliers : 
+	                20x20  Multipliers := 1     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 4     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module snake 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 2     
+	                6 Bit    Registers := 64    
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 11    
+	   4 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+Module fsm 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     30 Bit       Adders := 1     
+	   2 Input     28 Bit       Adders := 1     
++---Registers : 
+	               30 Bit    Registers := 1     
+	               28 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     30 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 8     
+	   3 Input      1 Bit        Muxes := 1     
+Module turn 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 2     
+	   6 Input      2 Bit        Muxes := 1     
+Module apple 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 3     
++---Registers : 
+	               12 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module seg 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     19 Bit       Adders := 1     
++---Registers : 
+	               19 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
++---Muxes : 
+	   5 Input     19 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 2     
+	   5 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3936] Found unconnected internal register 'address_reg' and it is trimmed from '20' to '1' bits. [C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.srcs/sources_1/imports/verilog/display.v:81]
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3886] merging instance 'nolabel_line55/vga_reg[0]' (FDR) to 'nolabel_line55/vga_reg[9]'
+INFO: [Synth 8-3886] merging instance 'nolabel_line55/vga_reg[2]' (FDR) to 'nolabel_line55/vga_reg[10]'
+INFO: [Synth 8-3886] merging instance 'nolabel_line55/vga_reg[3]' (FDR) to 'nolabel_line55/vga_reg[9]'
+INFO: [Synth 8-3886] merging instance 'nolabel_line55/vga_reg[4]' (FDR) to 'nolabel_line55/vga_reg[5]'
+INFO: [Synth 8-3886] merging instance 'nolabel_line55/vga_reg[6]' (FDR) to 'nolabel_line55/vga_reg[11]'
+INFO: [Synth 8-3886] merging instance 'nolabel_line55/vga_reg[8]' (FDR) to 'nolabel_line55/vga_reg[9]'
+INFO: [Synth 8-3886] merging instance 'nolabel_line115/nolabel_line34/an_reg[4]' (FDPE) to 'nolabel_line115/nolabel_line34/an_reg[7]'
+INFO: [Synth 8-3886] merging instance 'nolabel_line115/nolabel_line34/an_reg[5]' (FDPE) to 'nolabel_line115/nolabel_line34/an_reg[7]'
+INFO: [Synth 8-3886] merging instance 'nolabel_line115/nolabel_line34/an_reg[6]' (FDPE) to 'nolabel_line115/nolabel_line34/an_reg[7]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nolabel_line115/nolabel_line34/an_reg[7] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:22 . Memory (MB): peak = 973.031 ; gain = 425.945
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:28 . Memory (MB): peak = 973.031 ; gain = 425.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:34 . Memory (MB): peak = 1098.922 ; gain = 551.836
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nolabel_line107/apple_y_reg[5] )
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 1100.004 ; gain = 552.918
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \nolabel_line55/nolabel_line81  has unconnected pin dina[15]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \nolabel_line55/nolabel_line81  has unconnected pin dina[14]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \nolabel_line55/nolabel_line81  has unconnected pin dina[13]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \nolabel_line55/nolabel_line81  has unconnected pin dina[12]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \nolabel_line55/nolabel_line81  has unconnected pin dina[11]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \nolabel_line55/nolabel_line81  has unconnected pin dina[10]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \nolabel_line55/nolabel_line81  has unconnected pin dina[9]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \nolabel_line55/nolabel_line81  has unconnected pin dina[8]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \nolabel_line55/nolabel_line81  has unconnected pin dina[7]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \nolabel_line55/nolabel_line81  has unconnected pin dina[6]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \nolabel_line55/nolabel_line81  has unconnected pin dina[5]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \nolabel_line55/nolabel_line81  has unconnected pin dina[4]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \nolabel_line55/nolabel_line81  has unconnected pin dina[3]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \nolabel_line55/nolabel_line81  has unconnected pin dina[2]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \nolabel_line55/nolabel_line81  has unconnected pin dina[1]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \nolabel_line55/nolabel_line81  has unconnected pin dina[0]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \nolabel_line115/nolabel_line31  has unconnected pin SSET
+CRITICAL WARNING: [Synth 8-4442] BlackBox module nolabel_line53 has unconnected pin clk_in1
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:37 . Memory (MB): peak = 1100.004 ; gain = 552.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:37 . Memory (MB): peak = 1100.004 ; gain = 552.918
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:37 . Memory (MB): peak = 1100.004 ; gain = 552.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:37 . Memory (MB): peak = 1100.004 ; gain = 552.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:37 . Memory (MB): peak = 1100.004 ; gain = 552.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:37 . Memory (MB): peak = 1100.004 ; gain = 552.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+-------------------+----------+
+|      |BlackBox name      |Instances |
++------+-------------------+----------+
+|1     |clk_wiz_0          |         1|
+|2     |c_counter_binary_0 |         1|
+|3     |c_counter_binary_1 |         1|
+|4     |c_counter_binary_2 |         1|
+|5     |c_counter_binary_3 |         1|
+|6     |blk_mem_gen_0      |         1|
++------+-------------------+----------+
+
+Report Cell Usage: 
++------+-------------------+------+
+|      |Cell               |Count |
++------+-------------------+------+
+|1     |blk_mem_gen_0      |     1|
+|2     |c_counter_binary_0 |     1|
+|3     |c_counter_binary_1 |     1|
+|4     |c_counter_binary_2 |     1|
+|5     |c_counter_binary_3 |     1|
+|6     |clk_wiz_0          |     1|
+|7     |BUFG               |     1|
+|8     |CARRY4             |    62|
+|9     |LUT1               |    15|
+|10    |LUT2               |    99|
+|11    |LUT3               |    60|
+|12    |LUT4               |   171|
+|13    |LUT5               |   131|
+|14    |LUT6               |   390|
+|15    |MUXF7              |     1|
+|16    |FDCE               |    30|
+|17    |FDPE               |     1|
+|18    |FDRE               |   595|
+|19    |FDSE               |    27|
+|20    |IBUF               |     8|
+|21    |OBUF               |    30|
++------+-------------------+------+
+
+Report Instance Areas: 
++------+-------------------+-------------------+------+
+|      |Instance           |Module             |Cells |
++------+-------------------+-------------------+------+
+|1     |top                |                   |  1703|
+|2     |  nolabel_line107  |apple              |    41|
+|3     |  nolabel_line115  |score              |   190|
+|4     |    nolabel_line34 |seg                |   126|
+|5     |  nolabel_line55   |display            |   468|
+|6     |    nolabel_line46 |vga_sync_generator |   417|
+|7     |  nolabel_line68   |snake              |   809|
+|8     |  nolabel_line85   |fsm                |   152|
+|9     |  nolabel_line97   |turn               |     2|
++------+-------------------+-------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:37 . Memory (MB): peak = 1100.004 ; gain = 552.918
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 18 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:35 . Memory (MB): peak = 1100.004 ; gain = 437.508
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:38 . Memory (MB): peak = 1100.004 ; gain = 552.918
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1100.004 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 63 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1100.004 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
 INFO: [Common 17-83] Releasing license: Synthesis
-26 Infos, 6 Warnings, 0 Critical Warnings and 7 Errors encountered.
-synth_design failed
-ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
-INFO: [Common 17-206] Exiting Vivado at Thu Dec  7 03:04:34 2023...
+60 Infos, 16 Warnings, 18 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:43 . Memory (MB): peak = 1100.004 ; gain = 801.031
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1100.004 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/user/HardwareDesign/greedy_snake/greedy_snake.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Dec  7 03:08:09 2023...
