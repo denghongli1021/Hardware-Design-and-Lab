@@ -56,6 +56,138 @@ module Lab8(
 
 endmodule
 
+module tracker_sensor(clk, reset, left_track, right_track, mid_track, state);
+    input clk;
+    input reset;
+    input left_track, right_track, mid_track;
+    output reg [2:0] state;
+
+    // TODO: Receive three tracks and make your own policy.
+    // Hint: You can use output state to change your action.
+    // TODO: 接收三個軌道信號並擬定自己的策略。
+    // 提示：您可以使用輸出狀態來更改您的動作。
+    // 在這裡添加邏輯，根據三個軌道信號制定策略，並更改輸出狀態。
+    // parameter turn_left = 3'b00;
+    // parameter go_straight = 2'b01;
+    // parameter turn_right = 2'b10;
+    reg [2:0] next_state;
+
+    always @(posedge clk or posedge reset)begin
+        if (reset)
+            state <= 3'b000;
+        else
+            state <= next_state;
+    end
+    always @(*) begin
+        // if (left_track == 1 && right_track == 0) // 1: white, 0: black
+        //     next_state = turn_left;
+        // else if (left_track == 0 && right_track == 1)
+        //     next_state = turn_right;
+        // //else if(left_track == 1 && right_track == 1 && mid_track == 1)
+        // //  next_state = turn_left;
+        // else
+        //     next_state = go_straight;
+        next_state = {left_track ,mid_track , right_track};
+    end
+
+endmodule
+
+module motor(
+    input clk,
+    input rst,
+    input [2:0] mode,
+    input stop,
+    output [1:0] pwm,
+    output [1:0] r_IN,
+    output [1:0] l_IN
+    );
+
+    reg [9:0]next_left_motor, next_right_motor;
+    reg [9:0]left_motor, right_motor;
+    wire left_pwm, right_pwm;
+
+    motor_pwm m0(clk, rst, left_motor, left_pwm);
+    motor_pwm m1(clk, rst, right_motor, right_pwm);
+
+    assign pwm = {left_pwm,right_pwm};
+    assign r_IN = 2'b01;
+    assign l_IN = 2'b10;
+
+    // TODO: trace the rest of motor.v and control the speed and direction of the two motors
+    always @(posedge clk or posedge rst)begin
+        if (rst)begin
+            left_motor <= 10'd200;
+            right_motor <= 10'd200;
+        end
+        else if (stop) begin
+            left_motor <= 0;
+            right_motor <= 0;
+        end
+        else begin
+            left_motor <= next_left_motor;
+            right_motor <= next_right_motor;
+        end
+    end
+    always @(*) begin
+        case (mode) 
+            3'b000 : begin // straight
+                next_left_motor = 10'd850;
+                next_right_motor = 10'd850;
+            end
+            // 3'b001 : begin // right
+            //     next_left_motor = 10'd0;
+            //     next_right_motor = 10'd850;
+            // end
+            // 3'b010 : begin // right
+            //     next_left_motor = 10'd850;
+            //     next_right_motor = 10'd0;
+            // end
+            // 3'b011 : begin // right
+            //     next_left_motor = 10'd850;
+            //     next_right_motor = 10'd0;
+            // end
+            // 3'b100 : begin // straight
+            //     next_left_motor = 10'd850;
+            //     next_right_motor = 10'd850;
+            // end
+            // 3'b101 : begin // right
+            //     next_left_motor = 10'd850;
+            //     next_right_motor = 10'd0;
+            // end
+            // 3'b110 : begin // straight
+            //     next_left_motor = 10'd850;
+            //     next_right_motor = 10'd850;
+            // end
+            // 3'b111 : begin // right
+            //     next_left_motor = 10'd850;
+            //     next_right_motor = 10'd0;
+            // end
+            default : begin // stop
+                next_left_motor = 10'd850;
+                next_right_motor = 10'd850;
+                // next_left_motor = 10'd0;
+                // next_right_motor = 10'd0;
+            end
+        endcase
+        // if (mode == 0) begin // turn left
+        //     next_left_motor = 10'd850;
+        //     next_right_motor = 10'd0;
+        // end
+        // else if (mode == 2) begin // turn right
+        //     next_left_motor = 10'd0;
+        //     next_right_motor = 10'd850;
+        // end
+        // else if (mode == 3) begin // stop
+        //     next_left_motor = 10'd0;
+        //     next_right_motor = 10'd0;
+        // end
+        // else begin // straight
+        //     next_left_motor = 10'd200;
+        //     next_right_motor = 10'd200;
+        // end
+    end
+endmodule
+
 // sonic_top is the module to interface with sonic sensors
 // clk = 100MHz
 // <Trig> and <Echo> should connect to the sensor
@@ -209,136 +341,6 @@ module div(clk ,out_clk);
             cnt <= 0;
             out_clk <= 1'b1;
         end
-    end
-endmodule
-
-module tracker_sensor(clk, reset, left_track, right_track, mid_track, state);
-    input clk;
-    input reset;
-    input left_track, right_track, mid_track;
-    output reg [2:0] state;
-
-    // TODO: Receive three tracks and make your own policy.
-    // Hint: You can use output state to change your action.
-    // TODO: 接收三個軌道信號並擬定自己的策略。
-    // 提示：您可以使用輸出狀態來更改您的動作。
-    // 在這裡添加邏輯，根據三個軌道信號制定策略，並更改輸出狀態。
-    // parameter turn_left = 3'b00;
-    // parameter go_straight = 2'b01;
-    // parameter turn_right = 2'b10;
-    reg [2:0] next_state;
-
-    always @(posedge clk or posedge reset)begin
-        if (reset)
-            state <= 3'b000;
-        else
-            state <= next_state;
-    end
-    always @(*) begin
-        // if (left_track == 1 && right_track == 0) // 1: white, 0: black
-        //     next_state = turn_left;
-        // else if (left_track == 0 && right_track == 1)
-        //     next_state = turn_right;
-        // //else if(left_track == 1 && right_track == 1 && mid_track == 1)
-        // //  next_state = turn_left;
-        // else
-        //     next_state = go_straight;
-        next_state = {left_track ,mid_track , right_track};
-    end
-
-endmodule
-
-module motor(
-    input clk,
-    input rst,
-    input [2:0] mode,
-    input stop,
-    output [1:0] pwm,
-    output [1:0] r_IN,
-    output [1:0] l_IN
-    );
-
-    reg [9:0]next_left_motor, next_right_motor;
-    reg [9:0]left_motor, right_motor;
-    wire left_pwm, right_pwm;
-
-    motor_pwm m0(clk, rst, left_motor, left_pwm);
-    motor_pwm m1(clk, rst, right_motor, right_pwm);
-
-    assign pwm = {left_pwm,right_pwm};
-    assign r_IN = 2'b10;
-    assign l_IN = 2'b10;
-
-    // TODO: trace the rest of motor.v and control the speed and direction of the two motors
-    always @(posedge clk or posedge rst)begin
-        if (rst)begin
-            left_motor <= 10'd200;
-            right_motor <= 10'd200;
-        end
-        else if (stop) begin
-            left_motor <= 0;
-            right_motor <= 0;
-        end
-        else begin
-            left_motor <= next_left_motor;
-            right_motor <= next_right_motor;
-        end
-    end
-    always @(*) begin
-        case (mode) 
-            3'b000 : begin // straight
-                next_left_motor = 10'd850;
-                next_right_motor = 10'd850;
-            end
-            3'b001 : begin // right
-                next_left_motor = 10'd0;
-                next_right_motor = 10'd850;
-            end
-            3'b010 : begin // right
-                next_left_motor = 10'd850;
-                next_right_motor = 10'd0;
-            end
-            3'b011 : begin // right
-                next_left_motor = 10'd850;
-                next_right_motor = 10'd0;
-            end
-            3'b100 : begin // straight
-                next_left_motor = 10'd850;
-                next_right_motor = 10'd850;
-            end
-            3'b101 : begin // right
-                next_left_motor = 10'd850;
-                next_right_motor = 10'd0;
-            end
-            3'b110 : begin // right
-                next_left_motor = 10'd850;
-                next_right_motor = 10'd0;
-            end
-            3'b111 : begin // right
-                next_left_motor = 10'd850;
-                next_right_motor = 10'd0;
-            end
-            default : begin // stop
-                next_left_motor = 10'd0;
-                next_right_motor = 10'd0;
-            end
-        endcase
-        // if (mode == 0) begin // turn left
-        //     next_left_motor = 10'd850;
-        //     next_right_motor = 10'd0;
-        // end
-        // else if (mode == 2) begin // turn right
-        //     next_left_motor = 10'd0;
-        //     next_right_motor = 10'd850;
-        // end
-        // else if (mode == 3) begin // stop
-        //     next_left_motor = 10'd0;
-        //     next_right_motor = 10'd0;
-        // end
-        // else begin // straight
-        //     next_left_motor = 10'd200;
-        //     next_right_motor = 10'd200;
-        // end
     end
 endmodule
 
