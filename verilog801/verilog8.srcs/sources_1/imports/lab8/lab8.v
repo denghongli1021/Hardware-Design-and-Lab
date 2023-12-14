@@ -16,20 +16,21 @@ module Lab8(
     // TODO: 根據超聲波傳感器和三軌道傳感器的信息控制馬達。
     // 在這裡添加邏輯以控制馬達，使用超聲波和軌道信息。
     // 請確保根據您的系統需求調整控制邏輯。
-    reg [1:0] mode;
+    reg [2:0] mode;
     wire [2:0] state;
     wire [19:0] distance;
-
+    reg stop = 0;
     always @(posedge clk or posedge rst) begin
         if(rst)
-            mode = 2'd1;
+            mode = 3'b000;
         else begin
             if (distance <= 30) begin
-                mode = 3; // stop
+                stop = 1; // stop
             end
-            else begin  
-                mode = state;
+            else begin
+                stop = 0;
             end
+            mode = state;
         end
     end
 
@@ -39,6 +40,7 @@ module Lab8(
         .clk(clk),
         .rst(rst),
         .mode(mode),  // 這是一個未定義的變數，確保您已經定義了 mode。
+        .stop(stop),
         .pwm({left_pwm, right_pwm}),
         .l_IN({IN1, IN2}),
         .r_IN({IN3, IN4})
@@ -76,66 +78,6 @@ module sonic_top(clk, rst, Echo, Trig, distance);
     // 在這裡添加超聲波模塊的邏輯，以提取距離信息。
 endmodule
 
-// module PosCounter(clk, rst, echo, distance_count); 
-//     input clk, rst, echo;
-//     output[19:0] distance_count;
-
-//     parameter S0 = 2'b00;
-//     parameter S1 = 2'b01; 
-//     parameter S2 = 2'b10;
-    
-//     wire start, finish;
-//     reg[1:0] curr_state, next_state;
-//     reg echo_reg1, echo_reg2;
-//     reg[19:0] count, distance_register;
-//     wire[19:0] distance_count; 
-
-//     always@(posedge clk) begin
-//         if(rst) begin
-//             echo_reg1 <= 0;
-//             echo_reg2 <= 0;
-//             count <= 0;
-//             distance_register  <= 0;
-//             curr_state <= S0;
-//         end
-//         else begin
-//             echo_reg1 <= echo;   
-//             echo_reg2 <= echo_reg1; 
-//             case(curr_state)
-//                 S0:begin
-//                     if (start) curr_state <= next_state; //S1
-//                     else count <= 0;
-//                 end
-//                 S1:begin
-//                     if (finish) curr_state <= next_state; //S2
-//                     else count <= count + 1;
-//                 end
-//                 S2:begin
-//                     distance_register <= count;
-//                     count <= 0;
-//                     curr_state <= next_state; //S0
-//                 end
-//             endcase
-//         end
-//     end
-
-//     always @(*) begin
-//         case(curr_state)
-//             S0:next_state = S1;
-//             S1:next_state = S2;
-//             S2:next_state = S0;
-//             default:next_state = S0;
-//         endcase
-//     end
-
-//     assign start = echo_reg1 & ~echo_reg2;  
-//     assign finish = ~echo_reg1 & echo_reg2;
-
-//     // TODO: trace the code and calculate the distance, output it to <distance_count>
-//     // TODO: 處理來自傳感器的回波信號並計算距離。
-//     // 在這裡添加邏輯，根據回波信號計算距離。
-//     assign distance_count = distance_register * 20'd100 / 20'd58; 
-// endmodule
 module PosCounter(clk, rst, echo, distance_count); 
     input clk, rst, echo;
     output[19:0] distance_count;
@@ -281,14 +223,14 @@ module tracker_sensor(clk, reset, left_track, right_track, mid_track, state);
     // TODO: 接收三個軌道信號並擬定自己的策略。
     // 提示：您可以使用輸出狀態來更改您的動作。
     // 在這裡添加邏輯，根據三個軌道信號制定策略，並更改輸出狀態。
-    parameter turn_left = 2'b00;
-    parameter go_straight = 2'b01;
-    parameter turn_right = 2'b10;
+    // parameter turn_left = 3'b00;
+    // parameter go_straight = 2'b01;
+    // parameter turn_right = 2'b10;
     reg [2:0] next_state;
 
     always @(posedge clk or posedge reset)begin
         if (reset)
-            state <= go_straight;
+            state <= 3'b000;
         else
             state <= next_state;
     end
@@ -306,34 +248,11 @@ module tracker_sensor(clk, reset, left_track, right_track, mid_track, state);
 
 endmodule
 
-// This module take "mode" input and control two motors accordingly.
-// clk should be 100MHz for PWM_gen module to work correctly.
-// You can modify / add more inputs and outputs by yourself.
-// module motor(
-//     input clk,
-//     input rst,
-//     input [1:0]mode,
-//     output [1:0]pwm,
-//     output [1:0]r_IN,
-//     output [1:0]l_IN
-//     );
-
-//     reg [9:0]left_motor, right_motor;
-//     wire left_pwm, right_pwm;
-
-//     motor_pwm m0(clk, rst, left_motor, left_pwm);
-//     motor_pwm m1(clk, rst, right_motor, right_pwm);
-
-//     assign pwm = {left_pwm,right_pwm};
-
-//     // TODO: trace the rest of motor.v and control the speed and direction of the two motors
-//     // 在這裡添加邏輯，基於 mode 控制左右馬達的速度和方向。
-//     // 請確保您根據您的需求調整控制邏輯。
-// endmodule
 module motor(
     input clk,
     input rst,
-    input [1:0] mode,
+    input [2:0] mode,
+    input stop,
     output [1:0] pwm,
     output [1:0] r_IN,
     output [1:0] l_IN
@@ -356,28 +275,70 @@ module motor(
             left_motor <= 10'd200;
             right_motor <= 10'd200;
         end
+        else if (stop) begin
+            left_motor <= 0;
+            right_motor <= 0;
+        end
         else begin
             left_motor <= next_left_motor;
             right_motor <= next_right_motor;
         end
     end
     always @(*) begin
-        if (mode == 0) begin // turn left
-            next_left_motor = 10'd850;
-            next_right_motor = 10'd0;
-        end
-        else if (mode == 2) begin // turn right
-            next_left_motor = 10'd0;
-            next_right_motor = 10'd850;
-        end
-        else if (mode == 3) begin // stop
-            next_left_motor = 10'd0;
-            next_right_motor = 10'd0;
-        end
-        else begin // straight
-            next_left_motor = 10'd200;
-            next_right_motor = 10'd200;
-        end
+        case (mode) 
+            3'b000 : begin // straight
+                next_left_motor = 10'd850;
+                next_right_motor = 10'd850;
+            end
+            3'b001 : begin // right
+                next_left_motor = 10'd0;
+                next_right_motor = 10'd850;
+            end
+            3'b010 : begin // right
+                next_left_motor = 10'd850;
+                next_right_motor = 10'd0;
+            end
+            3'b011 : begin // right
+                next_left_motor = 10'd850;
+                next_right_motor = 10'd0;
+            end
+            3'b100 : begin // straight
+                next_left_motor = 10'd850;
+                next_right_motor = 10'd850;
+            end
+            3'b101 : begin // right
+                next_left_motor = 10'd850;
+                next_right_motor = 10'd0;
+            end
+            3'b110 : begin // right
+                next_left_motor = 10'd850;
+                next_right_motor = 10'd0;
+            end
+            3'b111 : begin // right
+                next_left_motor = 10'd850;
+                next_right_motor = 10'd0;
+            end
+            default : begin // stop
+                next_left_motor = 10'd0;
+                next_right_motor = 10'd0;
+            end
+        endcase
+        // if (mode == 0) begin // turn left
+        //     next_left_motor = 10'd850;
+        //     next_right_motor = 10'd0;
+        // end
+        // else if (mode == 2) begin // turn right
+        //     next_left_motor = 10'd0;
+        //     next_right_motor = 10'd850;
+        // end
+        // else if (mode == 3) begin // stop
+        //     next_left_motor = 10'd0;
+        //     next_right_motor = 10'd0;
+        // end
+        // else begin // straight
+        //     next_left_motor = 10'd200;
+        //     next_right_motor = 10'd200;
+        // end
     end
 endmodule
 
@@ -396,8 +357,6 @@ module motor_pwm (
         .duty(duty), 
         .PWM(pmod_1)
     );
-    
-
 endmodule
 
 //generte PWM by input frequency & duty cycle
