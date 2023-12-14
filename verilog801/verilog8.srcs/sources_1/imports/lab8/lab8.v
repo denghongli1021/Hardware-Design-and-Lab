@@ -17,7 +17,7 @@ module Lab8(
     // 在這裡添加邏輯以控制馬達，使用超聲波和軌道信息。
     // 請確保根據您的系統需求調整控制邏輯。
     reg [1:0] mode;
-    wire [1:0] state;
+    wire [2:0] state;
     wire [19:0] distance;
 
     always @(posedge clk or posedge rst) begin
@@ -274,7 +274,7 @@ module tracker_sensor(clk, reset, left_track, right_track, mid_track, state);
     input clk;
     input reset;
     input left_track, right_track, mid_track;
-    output reg [1:0] state;
+    output reg [2:0] state;
 
     // TODO: Receive three tracks and make your own policy.
     // Hint: You can use output state to change your action.
@@ -284,23 +284,24 @@ module tracker_sensor(clk, reset, left_track, right_track, mid_track, state);
     parameter turn_left = 2'b00;
     parameter go_straight = 2'b01;
     parameter turn_right = 2'b10;
-    reg [1:0] next_state;
+    reg [2:0] next_state;
 
     always @(posedge clk or posedge reset)begin
         if (reset)
-            state <= straight;
+            state <= go_straight;
         else
             state <= next_state;
     end
     always @(*) begin
-        if (left_track == 1 && right_track == 0) // 1: white, 0: black
-            next_state = turn_left;
-        else if (left_track == 0 && right_track == 1)
-            next_state = turn_right;
-        //else if(left_track == 1 && right_track == 1 && mid_track == 1)
-        //  next_state = turn_left;
-        else
-            next_state = go_straight;
+        // if (left_track == 1 && right_track == 0) // 1: white, 0: black
+        //     next_state = turn_left;
+        // else if (left_track == 0 && right_track == 1)
+        //     next_state = turn_right;
+        // //else if(left_track == 1 && right_track == 1 && mid_track == 1)
+        // //  next_state = turn_left;
+        // else
+        //     next_state = go_straight;
+        next_state = {left_track ,mid_track , right_track};
     end
 
 endmodule
@@ -433,3 +434,27 @@ module PWM_gen (
     end
 endmodule
 
+module debounce (pb_debounced, pb, clk);
+    output pb_debounced; 
+    input pb;
+    input clk;
+    reg [4:0] DFF;
+    
+    always @(posedge clk) begin
+        DFF[4:1] <= DFF[3:0];
+        DFF[0] <= pb; 
+    end
+    assign pb_debounced = (&(DFF)); 
+endmodule
+
+module onepulse (PB_debounced, clk, PB_one_pulse);
+    input PB_debounced;
+    input clk;
+    output reg PB_one_pulse;
+    reg PB_debounced_delay;
+
+    always @(posedge clk) begin
+        PB_one_pulse <= PB_debounced & (! PB_debounced_delay);
+        PB_debounced_delay <= PB_debounced;
+    end 
+endmodule

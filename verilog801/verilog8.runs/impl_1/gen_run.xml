@@ -1,95 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1702382519">
-  <File Type="BITSTR-BMM" Name="Lab9_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="Lab9_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="Lab9_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR" Name="Lab9_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="Lab9.tcl"/>
-  <File Type="OPT-TIMING" Name="Lab9_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="Lab9_opt.dcp"/>
-  <File Type="ROUTE-PWR-SUM" Name="Lab9_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="Lab9_reports.tcl"/>
-  <File Type="OPT-DRC" Name="Lab9_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="Lab9.hwdef"/>
-  <File Type="PWROPT-DCP" Name="Lab9_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="Lab9_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="Lab9_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="Lab9_placed.dcp"/>
-  <File Type="PLACE-IO" Name="Lab9_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="Lab9_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="Lab9_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="Lab9_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="Lab9_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="Lab9_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="Lab9_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="Lab9_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="Lab9_postplace_pwropt.dcp"/>
-  <File Type="BG-BIN" Name="Lab9.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="Lab9_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="Lab9_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="Lab9_drc_physopted.rpt"/>
-  <File Type="BITSTR-MSK" Name="Lab9.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="Lab9_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="Lab9_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="Lab9_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="Lab9_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="Lab9_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="Lab9_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="Lab9_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="Lab9.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="Lab9_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Lab9_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Lab9_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="Lab9_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="Lab9_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="Lab9_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="Lab9_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="Lab9_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="Lab9_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="Lab9_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="Lab9_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="Lab9_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="Lab9_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="Lab9_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="Lab9_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="Lab9_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Lab9_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Lab9_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Lab9_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="Lab9_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="Lab9_bus_skew_postroute_physopted.pb"/>
-  <File Type="BG-BIT" Name="Lab9.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="Lab9_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-RBT" Name="Lab9.rbt"/>
-  <File Type="BITSTR-NKY" Name="Lab9.nky"/>
-  <File Type="PDI-FILE" Name="Lab9.pdi"/>
-  <File Type="RCFI_FILE" Name="Lab9.rcfi"/>
-  <File Type="CFI_FILE" Name="Lab9.cfi"/>
-  <File Type="RNPI_FILE" Name="Lab9.rnpi"/>
-  <File Type="NPI_FILE" Name="Lab9.npi"/>
-  <File Type="RBD_FILE" Name="Lab9.rbd"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1702537776">
+  <File Type="BITSTR-BMM" Name="Lab8_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="Lab8_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="Lab8_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="Lab8_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="Lab8.tcl"/>
+  <File Type="OPT-TIMING" Name="Lab8_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="Lab8_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="Lab8_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="Lab8_reports.tcl"/>
+  <File Type="OPT-DRC" Name="Lab8_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="Lab8.hwdef"/>
+  <File Type="PWROPT-DCP" Name="Lab8_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="Lab8_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="Lab8_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="Lab8_placed.dcp"/>
+  <File Type="PLACE-IO" Name="Lab8_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="Lab8_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="Lab8_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="Lab8_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="Lab8_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="Lab8_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="Lab8_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="Lab8_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="Lab8_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="Lab8.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="Lab8_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="Lab8_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="Lab8_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="Lab8.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="Lab8_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="Lab8_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="Lab8_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="Lab8_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="Lab8_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="Lab8_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="Lab8_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="Lab8.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="Lab8_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Lab8_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Lab8_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="Lab8_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="Lab8_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="Lab8_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="Lab8_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="Lab8_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="Lab8_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="Lab8_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="Lab8_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="Lab8_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="Lab8_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="Lab8_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="Lab8_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="Lab8_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Lab8_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Lab8_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Lab8_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="Lab8_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="Lab8_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="Lab8.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="Lab8_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="Lab8.rbt"/>
+  <File Type="BITSTR-NKY" Name="Lab8.nky"/>
+  <File Type="PDI-FILE" Name="Lab8.pdi"/>
+  <File Type="RCFI_FILE" Name="Lab8.rcfi"/>
+  <File Type="CFI_FILE" Name="Lab8.cfi"/>
+  <File Type="RNPI_FILE" Name="Lab8.rnpi"/>
+  <File Type="NPI_FILE" Name="Lab8.npi"/>
+  <File Type="RBD_FILE" Name="Lab8.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="Lab9.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="Lab9.sysdef"/>
-  <File Type="BG-BGN" Name="Lab9.bgn"/>
-  <File Type="BG-DRC" Name="Lab9.drc"/>
-  <File Type="RDI-RDI" Name="Lab9.vdi"/>
+  <File Type="BITSTR-LTX" Name="Lab8.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="Lab8.sysdef"/>
+  <File Type="BG-BGN" Name="Lab8.bgn"/>
+  <File Type="BG-DRC" Name="Lab8.drc"/>
+  <File Type="RDI-RDI" Name="Lab8.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/imports/lab8/sonic.v">
+    <File Path="$PSRCDIR/sources_1/imports/lab8/lab8.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab8/sonic.v"/>
-        <Attr Name="ImportTime" Val="1701587966"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab8/lab8.v"/>
+        <Attr Name="ImportTime" Val="1701587967"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/lab8/tracker_sensor.v">
+    <File Path="$PSRCDIR/sources_1/imports/陳/motor.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab8/tracker_sensor.v"/>
-        <Attr Name="ImportTime" Val="1701587966"/>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab8/陳/motor.v"/>
+        <Attr Name="ImportTime" Val="1702536140"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/陳/sonic.v">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab8/陳/sonic.v"/>
+        <Attr Name="ImportTime" Val="1702536141"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/陳/tracker_sensor.v">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab8/陳/tracker_sensor.v"/>
+        <Attr Name="ImportTime" Val="1702536145"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/陳/top.v">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab8/陳/top.v"/>
+        <Attr Name="ImportTime" Val="1702536144"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -97,16 +128,27 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/sample.v">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/lab8/lab8.v">
+    <File Path="$PSRCDIR/sources_1/imports/lab8/tracker_sensor.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab8/lab8.v"/>
-        <Attr Name="ImportTime" Val="1701587967"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab8/tracker_sensor.v"/>
+        <Attr Name="ImportTime" Val="1701587966"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab8/sonic.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab8/sonic.v"/>
+        <Attr Name="ImportTime" Val="1701587966"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -124,7 +166,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="Lab9"/>
+      <Option Name="TopModule" Val="Lab8"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
