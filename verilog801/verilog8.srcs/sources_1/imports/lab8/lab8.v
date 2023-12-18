@@ -31,7 +31,7 @@ module Lab8(
         if(rst_2)
             mode = 3'b000;
         else begin
-            if (distance <= 30) begin
+            if (distance <= 3000) begin
                 stop = 1; // stop
             end
             else begin
