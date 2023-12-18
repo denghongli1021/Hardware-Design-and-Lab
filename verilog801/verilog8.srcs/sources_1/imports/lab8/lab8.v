@@ -16,12 +16,15 @@ module Lab8(
     // TODO: 根據超聲波傳感器和三軌道傳感器的信息控制馬達。
     // 在這裡添加邏輯以控制馬達，使用超聲波和軌道信息。
     // 請確保根據您的系統需求調整控制邏輯。
+    wire rst_1,rst_2;
+    debounce d1(.pb_debounced(rst_1), .pb(rst), .clk(clk));
+    onepulse d2(.PB_debounced(rst_1), .clk(clk), .PB_one_pulse(rst_2));
     reg [2:0] mode;
     wire [2:0] state;
     wire [19:0] distance;
     reg stop = 0;
-    always @(posedge clk or posedge rst) begin
-        if(rst)
+    always @(posedge clk or posedge rst_2) begin
+        if(rst_2)
             mode = 3'b000;
         else begin
             if (distance <= 30) begin
@@ -34,11 +37,11 @@ module Lab8(
         end
     end
 
-    tracker_sensor t (.clk(clk), .reset(rst), .left_track(left_signal), .right_track(right_track), .mid_track(mid_track), .state(state));
+    tracker_sensor t (.clk(clk), .reset(rst_2), .left_track(left_signal), .right_track(right_track), .mid_track(mid_track), .state(state));
 
     motor A(
         .clk(clk),
-        .rst(rst),
+        .rst(rst_2),
         .mode(mode),  // 這是一個未定義的變數，確保您已經定義了 mode。
         .stop(stop),
         .pwm({left_pwm, right_pwm}),
@@ -48,7 +51,7 @@ module Lab8(
 
     sonic_top B(
         .clk(clk), 
-        .rst(rst), 
+        .rst(rst_2), 
         .Echo(echo), 
         .Trig(trig),
         .distance(distance)
@@ -110,14 +113,14 @@ module motor(
     motor_pwm m1(clk, rst, right_motor, right_pwm);
 
     assign pwm = {left_pwm,right_pwm};
-    assign r_IN = 2'b01;
+    assign r_IN = 2'b10;
     assign l_IN = 2'b10;
 
     // TODO: trace the rest of motor.v and control the speed and direction of the two motors
     always @(posedge clk or posedge rst)begin
         if (rst)begin
-            left_motor <= 10'd200;
-            right_motor <= 10'd200;
+            left_motor <= 10'd0;
+            right_motor <= 10'd0;
         end
         else if (stop) begin
             left_motor <= 0;
@@ -134,39 +137,39 @@ module motor(
                 next_left_motor = 10'd850;
                 next_right_motor = 10'd850;
             end
-            // 3'b001 : begin // right
-            //     next_left_motor = 10'd0;
-            //     next_right_motor = 10'd850;
-            // end
-            // 3'b010 : begin // right
-            //     next_left_motor = 10'd850;
-            //     next_right_motor = 10'd0;
-            // end
-            // 3'b011 : begin // right
-            //     next_left_motor = 10'd850;
-            //     next_right_motor = 10'd0;
-            // end
-            // 3'b100 : begin // straight
-            //     next_left_motor = 10'd850;
-            //     next_right_motor = 10'd850;
-            // end
-            // 3'b101 : begin // right
-            //     next_left_motor = 10'd850;
-            //     next_right_motor = 10'd0;
-            // end
-            // 3'b110 : begin // straight
-            //     next_left_motor = 10'd850;
-            //     next_right_motor = 10'd850;
-            // end
-            // 3'b111 : begin // right
-            //     next_left_motor = 10'd850;
-            //     next_right_motor = 10'd0;
-            // end
-            default : begin // stop
+            3'b001 : begin // right
+                next_left_motor = 10'd0;
+                next_right_motor = 10'd850;
+            end
+            3'b010 : begin // right
                 next_left_motor = 10'd850;
                 next_right_motor = 10'd850;
-                // next_left_motor = 10'd0;
-                // next_right_motor = 10'd0;
+            end
+            3'b011 : begin // right
+                next_left_motor = 10'd850;
+                next_right_motor = 10'd850;
+            end
+            3'b100 : begin // straight
+                next_left_motor = 10'd850;
+                next_right_motor = 10'd0;
+            end
+            3'b101 : begin // right
+                next_left_motor = 10'd850;
+                next_right_motor = 10'd850;
+            end
+            3'b110 : begin // straight
+                next_left_motor = 10'd850;
+                next_right_motor = 10'd850;
+            end
+            3'b111 : begin // stop
+                next_left_motor = 10'd0;
+                next_right_motor = 10'd0;
+            end
+            default : begin // stop
+                // next_left_motor = 10'd850;
+                // next_right_motor = 10'd850;
+                next_left_motor = 10'd0;
+                next_right_motor = 10'd0;
             end
         endcase
         // if (mode == 0) begin // turn left

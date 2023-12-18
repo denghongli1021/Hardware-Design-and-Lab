@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1702557737">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1702893151">
   <File Type="BITSTR-BMM" Name="Lab8_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="Lab8_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="Lab8_timing_summary_init.rpt"/>
@@ -159,6 +159,16 @@
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab8/motor.v"/>
         <Attr Name="ImportTime" Val="1701587968"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/陳/Lab6_Team10_Car_fpga.v">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab8/陳/Lab6_Team10_Car_fpga.v"/>
+        <Attr Name="ImportTime" Val="1702885328"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
