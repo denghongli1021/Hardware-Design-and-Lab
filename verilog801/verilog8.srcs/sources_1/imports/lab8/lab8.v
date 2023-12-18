@@ -117,8 +117,8 @@ module motor(
     motor_pwm m1(clk, rst, right_motor, right_pwm);
 
     assign pwm = {left_pwm,right_pwm};
-    assign r_IN = 2'b10;
-    assign l_IN = 2'b10;
+    assign r_IN = 2'b01;
+    assign l_IN = 2'b01;
 
     // TODO: trace the rest of motor.v and control the speed and direction of the two motors
     always @(posedge clk or posedge rst)begin
