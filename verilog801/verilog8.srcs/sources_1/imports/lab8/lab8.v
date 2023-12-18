@@ -11,7 +11,8 @@ module Lab8(
     output IN3, 
     output IN4,
     output left_pwm,
-    output right_pwm
+    output right_pwm,
+    output wire LED[2:0]
 );
     // TODO: 根據超聲波傳感器和三軌道傳感器的信息控制馬達。
     // 在這裡添加邏輯以控制馬達，使用超聲波和軌道信息。
@@ -23,6 +24,9 @@ module Lab8(
     wire [2:0] state;
     wire [19:0] distance;
     reg stop = 0;
+    assign LED[2] = (left_track == 1) ? 1: 0;
+    assign LED[1] = (mid_track == 1) ? 1: 0;
+    assign LED[0] = (right_track == 1) ? 1: 0;
     always @(posedge clk or posedge rst_2) begin
         if(rst_2)
             mode = 3'b000;

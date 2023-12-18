@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Mon Dec 18 17:53:43 2023
+| Date         : Mon Dec 18 18:07:49 2023
 | Host         : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Lab8_control_sets_placed.rpt
 | Design       : Lab8
@@ -58,8 +58,8 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              14 |            7 |
-| No           | No                    | Yes                    |              58 |           22 |
+| No           | No                    | No                     |              14 |            5 |
+| No           | No                    | Yes                    |              58 |           19 |
 | No           | Yes                   | No                     |               1 |            1 |
 | Yes          | No                    | No                     |               1 |            1 |
 | Yes          | No                    | Yes                    |               1 |            1 |
@@ -74,13 +74,13 @@ Table of Contents
 |  Clock Signal  |      Enable Signal     |    Set/Reset Signal   | Slice Load Count | Bel Load Count |
 +----------------+------------------------+-----------------------+------------------+----------------+
 |  B/clk1/CLK    |                        | d2/AR[0]              |                1 |              1 |
-|  clk_IBUF_BUFG | B/u1/trig0             | d2/AR[0]              |                1 |              1 |
 |  clk_IBUF_BUFG | B/clk1/cnt[5]_i_2_n_0  |                       |                1 |              1 |
-|  B/clk1/CLK    |                        |                       |                2 |              3 |
+|  clk_IBUF_BUFG | B/u1/trig0             | d2/AR[0]              |                1 |              1 |
+|  B/clk1/CLK    |                        |                       |                1 |              3 |
 |  clk_IBUF_BUFG | B/clk1/cnt[5]_i_2_n_0  | B/clk1/cnt[5]_i_1_n_0 |                1 |              4 |
-|  clk_IBUF_BUFG |                        |                       |                5 |             11 |
+|  clk_IBUF_BUFG |                        |                       |                4 |             11 |
 |  B/clk1/CLK    | B/u2/count[19]_i_1_n_0 | d2/AR[0]              |                4 |             20 |
-|  clk_IBUF_BUFG |                        | d2/AR[0]              |               22 |             58 |
+|  clk_IBUF_BUFG |                        | d2/AR[0]              |               19 |             58 |
 +----------------+------------------------+-----------------------+------------------+----------------+
 
 

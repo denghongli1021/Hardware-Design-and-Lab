@@ -15,41 +15,41 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 30632 
+INFO: Helper process launched with PID 40212 
+WARNING: [Synth 8-2539] port LED must not be declared to be an array [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:15]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 769.723 ; gain = 234.664
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 772.656 ; gain = 238.309
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Lab8' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:1]
-INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:401]
-INFO: [Synth 8-6155] done synthesizing module 'debounce' (1#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:401]
-INFO: [Synth 8-6157] synthesizing module 'onepulse' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:414]
-INFO: [Synth 8-6155] done synthesizing module 'onepulse' (2#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:414]
-INFO: [Synth 8-6157] synthesizing module 'tracker_sensor' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:62]
-INFO: [Synth 8-6155] done synthesizing module 'tracker_sensor' (3#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:62]
-INFO: [Synth 8-6157] synthesizing module 'motor' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:98]
-INFO: [Synth 8-6157] synthesizing module 'motor_pwm' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:350]
-INFO: [Synth 8-6157] synthesizing module 'PWM_gen' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:368]
-INFO: [Synth 8-6155] done synthesizing module 'PWM_gen' (4#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:368]
-INFO: [Synth 8-6155] done synthesizing module 'motor_pwm' (5#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:350]
-INFO: [Synth 8-226] default block is never used [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:135]
-INFO: [Synth 8-6155] done synthesizing module 'motor' (6#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:98]
-INFO: [Synth 8-6157] synthesizing module 'sonic_top' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:198]
-INFO: [Synth 8-6157] synthesizing module 'div' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:327]
-INFO: [Synth 8-6155] done synthesizing module 'div' (7#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:327]
-INFO: [Synth 8-6157] synthesizing module 'TrigSignal' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:288]
-INFO: [Synth 8-6155] done synthesizing module 'TrigSignal' (8#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:288]
-INFO: [Synth 8-6157] synthesizing module 'PosCounter' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:216]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:405]
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (1#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:405]
+INFO: [Synth 8-6157] synthesizing module 'onepulse' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:418]
+INFO: [Synth 8-6155] done synthesizing module 'onepulse' (2#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:418]
+INFO: [Synth 8-6157] synthesizing module 'tracker_sensor' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'tracker_sensor' (3#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:66]
+INFO: [Synth 8-6157] synthesizing module 'motor' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:102]
+INFO: [Synth 8-6157] synthesizing module 'motor_pwm' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:354]
+INFO: [Synth 8-6157] synthesizing module 'PWM_gen' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:372]
+INFO: [Synth 8-6155] done synthesizing module 'PWM_gen' (4#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:372]
+INFO: [Synth 8-6155] done synthesizing module 'motor_pwm' (5#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:354]
+INFO: [Synth 8-226] default block is never used [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:139]
+INFO: [Synth 8-6155] done synthesizing module 'motor' (6#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:102]
+INFO: [Synth 8-6157] synthesizing module 'sonic_top' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:202]
+INFO: [Synth 8-6157] synthesizing module 'div' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:331]
+INFO: [Synth 8-6155] done synthesizing module 'div' (7#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:331]
+INFO: [Synth 8-6157] synthesizing module 'TrigSignal' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:292]
+INFO: [Synth 8-6155] done synthesizing module 'TrigSignal' (8#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:292]
+INFO: [Synth 8-6157] synthesizing module 'PosCounter' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:220]
 	Parameter S0 bound to: 2'b00 
 	Parameter S1 bound to: 2'b01 
 	Parameter S2 bound to: 2'b10 
-INFO: [Synth 8-6155] done synthesizing module 'PosCounter' (9#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:216]
-INFO: [Synth 8-6155] done synthesizing module 'sonic_top' (10#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:198]
-WARNING: [Synth 8-5788] Register stop_reg in module Lab8 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:31]
-WARNING: [Synth 8-3848] Net left_signal in module/entity Lab8 does not have driver. [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:40]
+INFO: [Synth 8-6155] done synthesizing module 'PosCounter' (9#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:220]
+INFO: [Synth 8-6155] done synthesizing module 'sonic_top' (10#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:202]
+WARNING: [Synth 8-5788] Register stop_reg in module Lab8 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:35]
+WARNING: [Synth 8-3848] Net left_signal in module/entity Lab8 does not have driver. [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:44]
 INFO: [Synth 8-6155] done synthesizing module 'Lab8' (11#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:1]
-WARNING: [Synth 8-3331] design Lab8 has unconnected port left_track
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 842.648 ; gain = 307.590
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 821.281 ; gain = 286.934
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -62,12 +62,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 842.648 ; gain = 307.590
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 821.281 ; gain = 286.934
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 842.648 ; gain = 307.590
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 821.281 ; gain = 286.934
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 842.648 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 821.281 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -78,30 +78,30 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/Lab8_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 939.250 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 940.332 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 939.250 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 940.332 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 939.250 ; gain = 404.191
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 940.332 ; gain = 405.984
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 939.250 ; gain = 404.191
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 940.332 ; gain = 405.984
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 939.250 ; gain = 404.191
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 940.332 ; gain = 405.984
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:380]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:384]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 939.250 ; gain = 404.191
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 940.332 ; gain = 405.984
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -228,7 +228,6 @@ DSP Report: operator pwm_0/count_duty0 is absorbed into DSP pwm_0/count_duty0.
 DSP Report: Generating DSP B/u2/distance_count0, operation Mode is: A2*(B:0x64).
 DSP Report: register B/u2/distance_register_reg is absorbed into DSP B/u2/distance_count0.
 DSP Report: operator B/u2/distance_count0 is absorbed into DSP B/u2/distance_count0.
-WARNING: [Synth 8-3331] design Lab8 has unconnected port left_track
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\t/state_reg[2] )
 INFO: [Synth 8-3886] merging instance 'mode_reg[2]' (FDC) to 'A/left_motor_reg[7]'
 INFO: [Synth 8-3886] merging instance 'A/right_motor_reg[0]' (FDC) to 'A/left_motor_reg[7]'
@@ -288,7 +287,7 @@ INFO: [Synth 8-3886] merging instance 'i_4/A/m0/pwm_0/count_reg[31]' (FDC) to 'i
 INFO: [Synth 8-3886] merging instance 'i_4/A/m0/pwm_0/count_reg[30]' (FDC) to 'i_4/A/m0/pwm_0/count_reg[16]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_4/\A/m0/pwm_0/count_reg[16] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:04 ; elapsed = 00:00:15 . Memory (MB): peak = 939.250 ; gain = 404.191
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:04 ; elapsed = 00:00:13 . Memory (MB): peak = 940.332 ; gain = 405.984
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -307,8 +306,8 @@ Note: The table above is a preliminary report that shows the DSPs inferred at th
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:112]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:113]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:116]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:117]
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -319,13 +318,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:24 . Memory (MB): peak = 971.422 ; gain = 436.363
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:21 . Memory (MB): peak = 967.441 ; gain = 433.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:24 . Memory (MB): peak = 992.512 ; gain = 457.453
+Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:22 . Memory (MB): peak = 988.602 ; gain = 454.254
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -336,10 +335,10 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:112]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:113]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:116]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:117]
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:08 ; elapsed = 00:00:24 . Memory (MB): peak = 995.133 ; gain = 460.074
+Finished Technology Mapping : Time (s): cpu = 00:00:08 ; elapsed = 00:00:22 . Memory (MB): peak = 991.156 ; gain = 456.809
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -363,13 +362,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 1001.012 ; gain = 465.953
+Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:25 . Memory (MB): peak = 996.941 ; gain = 462.594
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 1001.012 ; gain = 465.953
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:25 . Memory (MB): peak = 996.941 ; gain = 462.594
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -388,25 +387,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 1001.012 ; gain = 465.953
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:25 . Memory (MB): peak = 996.941 ; gain = 462.594
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 1001.012 ; gain = 465.953
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:25 . Memory (MB): peak = 996.941 ; gain = 462.594
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 1001.012 ; gain = 465.953
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:25 . Memory (MB): peak = 996.941 ; gain = 462.594
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 1001.012 ; gain = 465.953
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:25 . Memory (MB): peak = 996.941 ; gain = 462.594
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -434,15 +433,15 @@ Report Cell Usage:
 |10    |LUT6      |    66|
 |11    |FDCE      |    59|
 |12    |FDRE      |    40|
-|13    |IBUF      |     5|
-|14    |OBUF      |     7|
+|13    |IBUF      |     6|
+|14    |OBUF      |    10|
 +------+----------+------+
 
 Report Instance Areas: 
 +------+------------+---------------+------+
 |      |Instance    |Module         |Cells |
 +------+------------+---------------+------+
-|1     |top         |               |   556|
+|1     |top         |               |   560|
 |2     |  A         |motor          |   122|
 |3     |    m0      |motor_pwm      |    59|
 |4     |      pwm_0 |PWM_gen_1      |    59|
@@ -457,28 +456,28 @@ Report Instance Areas:
 |13    |  t         |tracker_sensor |     2|
 +------+------------+---------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 1001.012 ; gain = 465.953
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:25 . Memory (MB): peak = 996.941 ; gain = 462.594
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:26 . Memory (MB): peak = 1001.012 ; gain = 369.352
-Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:29 . Memory (MB): peak = 1001.012 ; gain = 465.953
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:24 . Memory (MB): peak = 996.941 ; gain = 343.543
+Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:26 . Memory (MB): peak = 996.941 ; gain = 462.594
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1001.012 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1009.020 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 62 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1001.012 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1009.020 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-98 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+98 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:34 . Memory (MB): peak = 1001.012 ; gain = 702.488
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1001.012 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:30 . Memory (MB): peak = 1009.020 ; gain = 710.758
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1009.020 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/user/verilog801/verilog8.runs/synth_1/Lab8.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Lab8_utilization_synth.rpt -pb Lab8_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Dec 18 17:53:10 2023...
+INFO: [Common 17-206] Exiting Vivado at Mon Dec 18 18:07:18 2023...
