@@ -67,6 +67,46 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/imports/Downloads/motor.v">
+        <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Downloads/motor.v"/>
+          <Attr Name="ImportTime" Val="1702925370"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/Downloads/sonic.v">
+        <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Downloads/sonic.v"/>
+          <Attr Name="ImportTime" Val="1702925122"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/Downloads/tracker_sensor.v">
+        <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Downloads/tracker_sensor.v"/>
+          <Attr Name="ImportTime" Val="1702925123"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/Downloads/lab9.v">
+        <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Downloads/lab9.v"/>
+          <Attr Name="ImportTime" Val="1702925081"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/陳/motor.v">
         <FileInfo>
           <Attr Name="UserDisabled" Val="1"/>
@@ -148,7 +188,6 @@
       <File Path="$PSRCDIR/sources_1/imports/陳/Lab6_Team10_Car_fpga.v">
         <FileInfo>
           <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab8/陳/Lab6_Team10_Car_fpga.v"/>
           <Attr Name="ImportTime" Val="1702885328"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -167,6 +206,14 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab8/lab8_constrains.xdc"/>
           <Attr Name="ImportTime" Val="1701587968"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/constrs_1/imports/lab9_constrains/lab9_constrains.xdc">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Downloads/lab9_constrains/lab9_constrains.xdc"/>
+          <Attr Name="ImportTime" Val="1702927879"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>

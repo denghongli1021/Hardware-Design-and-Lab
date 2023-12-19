@@ -75,6 +75,7 @@ set rc [catch {
   set_property ip_cache_permissions {read write} [current_project]
   add_files -quiet C:/Users/user/verilog801/verilog8.runs/synth_1/Lab8.dcp
   read_xdc C:/Users/user/verilog801/verilog8.srcs/constrs_1/imports/lab8/lab8_constrains.xdc
+  read_xdc C:/Users/user/verilog801/verilog8.srcs/constrs_1/imports/lab9_constrains/lab9_constrains.xdc
   link_design -top Lab8 -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Mon Dec 18 18:22:50 2023
+| Date         : Tue Dec 19 14:32:28 2023
 | Host         : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command      : report_methodology -file Lab8_methodology_drc_routed.rpt -pb Lab8_methodology_drc_routed.pb -rpx Lab8_methodology_drc_routed.rpx
 | Design       : Lab8
@@ -23,15 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 42
-+-----------+------------------+-------------------------------+------------+
-| Rule      | Severity         | Description                   | Violations |
-+-----------+------------------+-------------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell   | 25         |
-| DPIR-1    | Warning          | Asynchronous driver check     | 10         |
-| SYNTH-13  | Warning          | combinational multiplier      | 1          |
-| TIMING-18 | Warning          | Missing input or output delay | 6          |
-+-----------+------------------+-------------------------------+------------+
+             Violations found: 37
++-----------+------------------+------------------------------------------------------+------------+
+| Rule      | Severity         | Description                                          | Violations |
++-----------+------------------+------------------------------------------------------+------------+
+| TIMING-17 | Critical Warning | Non-clocked sequential cell                          | 25         |
+| TIMING-18 | Warning          | Missing input or output delay                        | 11         |
+| XDCC-4    | Warning          | User Clock constraint overwritten with the same name | 1          |
++-----------+------------------+------------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -160,64 +159,9 @@ Non-clocked sequential cell
 The clock pin B/u2/echo_reg2_reg/C is not reached by a timing clock
 Related violations: <none>
 
-DPIR-1#1 Warning
-Asynchronous driver check  
-DSP A/m0/pwm_0/count_duty0 input pin A/m0/pwm_0/count_duty0/A[1] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
-Related violations: <none>
-
-DPIR-1#2 Warning
-Asynchronous driver check  
-DSP A/m0/pwm_0/count_duty0 input pin A/m0/pwm_0/count_duty0/A[4] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
-Related violations: <none>
-
-DPIR-1#3 Warning
-Asynchronous driver check  
-DSP A/m0/pwm_0/count_duty0 input pin A/m0/pwm_0/count_duty0/A[6] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
-Related violations: <none>
-
-DPIR-1#4 Warning
-Asynchronous driver check  
-DSP A/m0/pwm_0/count_duty0 input pin A/m0/pwm_0/count_duty0/A[8] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
-Related violations: <none>
-
-DPIR-1#5 Warning
-Asynchronous driver check  
-DSP A/m0/pwm_0/count_duty0 input pin A/m0/pwm_0/count_duty0/A[9] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
-Related violations: <none>
-
-DPIR-1#6 Warning
-Asynchronous driver check  
-DSP A/m1/pwm_0/count_duty0 input pin A/m1/pwm_0/count_duty0/A[1] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
-Related violations: <none>
-
-DPIR-1#7 Warning
-Asynchronous driver check  
-DSP A/m1/pwm_0/count_duty0 input pin A/m1/pwm_0/count_duty0/A[4] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
-Related violations: <none>
-
-DPIR-1#8 Warning
-Asynchronous driver check  
-DSP A/m1/pwm_0/count_duty0 input pin A/m1/pwm_0/count_duty0/A[6] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
-Related violations: <none>
-
-DPIR-1#9 Warning
-Asynchronous driver check  
-DSP A/m1/pwm_0/count_duty0 input pin A/m1/pwm_0/count_duty0/A[8] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
-Related violations: <none>
-
-DPIR-1#10 Warning
-Asynchronous driver check  
-DSP A/m1/pwm_0/count_duty0 input pin A/m1/pwm_0/count_duty0/A[9] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
-Related violations: <none>
-
-SYNTH-13#1 Warning
-combinational multiplier  
-Detected combinational multiplier in DSP instance A/m1/pwm_0/count_duty0.
-Related violations: <none>
-
 TIMING-18#1 Warning
 Missing input or output delay  
-An input delay is missing on mid_track relative to clock(s) sys_clk_pin
+An input delay is missing on left_track relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#2 Warning
@@ -232,17 +176,49 @@ Related violations: <none>
 
 TIMING-18#4 Warning
 Missing input or output delay  
-An output delay is missing on left_pwm relative to clock(s) sys_clk_pin
+An input delay is missing on sw relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#5 Warning
 Missing input or output delay  
-An output delay is missing on right_pwm relative to clock(s) sys_clk_pin
+An output delay is missing on IN1 relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#6 Warning
 Missing input or output delay  
+An output delay is missing on IN2 relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An output delay is missing on IN3 relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An output delay is missing on IN4 relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An output delay is missing on left_pwm relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#10 Warning
+Missing input or output delay  
+An output delay is missing on right_pwm relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#11 Warning
+Missing input or output delay  
 An output delay is missing on trig relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+XDCC-4#1 Warning
+User Clock constraint overwritten with the same name  
+A new clock constraint create_clock overrides a previous user clock constraint with the same name.
+New: create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_ports clk] (Source: C:/Users/user/verilog801/verilog8.srcs/constrs_1/imports/lab9_constrains/lab9_constrains.xdc (Line: 10))
+Previous: create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_ports clk] (Source: C:/Users/user/verilog801/verilog8.srcs/constrs_1/imports/lab8/lab8_constrains.xdc (Line: 10))
 Related violations: <none>
 
 

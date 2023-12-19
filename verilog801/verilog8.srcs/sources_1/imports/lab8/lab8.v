@@ -5,6 +5,7 @@ module Lab8(
     input left_track,
     input right_track,
     input mid_track,
+    input sw,
     output trig,
     output IN1,
     output IN2,
@@ -12,11 +13,9 @@ module Lab8(
     output IN4,
     output left_pwm,
     output right_pwm,
-    output wire LED[2:0]
+    output [2:0] LED
+    
 );
-    // TODO: 根據超聲波傳感器和三軌道傳感器的信息控制馬達。
-    // 在這裡添加邏輯以控制馬達，使用超聲波和軌道信息。
-    // 請確保根據您的系統需求調整控制邏輯。
     wire rst_1,rst_2;
     debounce d1(.pb_debounced(rst_1), .pb(rst), .clk(clk));
     onepulse d2(.PB_debounced(rst_1), .clk(clk), .PB_one_pulse(rst_2));
@@ -31,7 +30,7 @@ module Lab8(
         if(rst_2)
             mode = 3'b000;
         else begin
-            if (distance <= 3000) begin
+            if (distance <= 3000 || sw == 1) begin
                 stop = 1; // stop
             end
             else begin
@@ -41,12 +40,12 @@ module Lab8(
         end
     end
 
-    tracker_sensor t (.clk(clk), .reset(rst_2), .left_track(left_signal), .right_track(right_track), .mid_track(mid_track), .state(state));
+    tracker_sensor t (.clk(clk), .reset(rst_2), .left_track(left_track), .right_track(right_track), .mid_track(mid_track), .state(state));
 
     motor A(
         .clk(clk),
         .rst(rst_2),
-        .mode(mode),  // 這是一個未定義的變數，確保您已經定義了 mode。
+        .mode(mode),
         .stop(stop),
         .pwm({left_pwm, right_pwm}),
         .l_IN({IN1, IN2}),
@@ -69,34 +68,10 @@ module tracker_sensor(clk, reset, left_track, right_track, mid_track, state);
     input left_track, right_track, mid_track;
     output reg [2:0] state;
 
-    // TODO: Receive three tracks and make your own policy.
-    // Hint: You can use output state to change your action.
-    // TODO: 接收三個軌道信號並擬定自己的策略。
-    // 提示：您可以使用輸出狀態來更改您的動作。
-    // 在這裡添加邏輯，根據三個軌道信號制定策略，並更改輸出狀態。
-    // parameter turn_left = 3'b00;
-    // parameter go_straight = 2'b01;
-    // parameter turn_right = 2'b10;
-    reg [2:0] next_state;
-
-    always @(posedge clk or posedge reset)begin
-        if (reset)
-            state <= 3'b000;
-        else
-            state <= next_state;
+    always @(posedge clk or posedge reset) begin
+        if (reset) state <= 3'b000;
+        else state <= {left_track, mid_track, right_track};
     end
-    always @(*) begin
-        // if (left_track == 1 && right_track == 0) // 1: white, 0: black
-        //     next_state = turn_left;
-        // else if (left_track == 0 && right_track == 1)
-        //     next_state = turn_right;
-        // //else if(left_track == 1 && right_track == 1 && mid_track == 1)
-        // //  next_state = turn_left;
-        // else
-        //     next_state = go_straight;
-        next_state = {left_track ,mid_track , right_track};
-    end
-
 endmodule
 
 module motor(
@@ -105,94 +80,43 @@ module motor(
     input [2:0] mode,
     input stop,
     output [1:0] pwm,
-    output [1:0] r_IN,
-    output [1:0] l_IN
+    output reg [1:0] r_IN,
+    output reg [1:0] l_IN
     );
-
-    reg [9:0]next_left_motor, next_right_motor;
-    reg [9:0]left_motor, right_motor;
+    wire [9:0] left_motor, right_motor;
     wire left_pwm, right_pwm;
 
     motor_pwm m0(clk, rst, left_motor, left_pwm);
     motor_pwm m1(clk, rst, right_motor, right_pwm);
 
-    assign pwm = {left_pwm,right_pwm};
-    assign r_IN = 2'b01;
-    assign l_IN = 2'b01;
+    assign left_motor = 750, right_motor = 740;
 
-    // TODO: trace the rest of motor.v and control the speed and direction of the two motors
-    always @(posedge clk or posedge rst)begin
-        if (rst)begin
-            left_motor <= 10'd0;
-            right_motor <= 10'd0;
-        end
-        else if (stop) begin
-            left_motor <= 0;
-            right_motor <= 0;
+    assign pwm = {left_pwm,right_pwm};
+
+    always @(*) begin
+        if (stop) begin
+            r_IN = 2'b00;
+            l_IN = 2'b00;
         end
         else begin
-            left_motor <= next_left_motor;
-            right_motor <= next_right_motor;
+            case (mode)
+                3'b110, 3'b100: begin // turn right
+                    r_IN = 2'b01;
+                    l_IN = 2'b10;
+                end
+                3'b011, 3'b001: begin // turn left
+                    r_IN = 2'b10;
+                    l_IN = 2'b01;
+                end
+                default: begin // straight
+                // 111, 000, 101, 010
+                    r_IN = 2'b01;
+                    l_IN = 2'b01;
+                end
+            endcase
         end
     end
-    always @(*) begin
-        case (mode) 
-            3'b000 : begin // straight
-                next_left_motor = 10'd850;
-                next_right_motor = 10'd850;
-            end
-            3'b001 : begin // right
-                next_left_motor = 10'd0;
-                next_right_motor = 10'd850;
-            end
-            3'b010 : begin // right
-                next_left_motor = 10'd850;
-                next_right_motor = 10'd850;
-            end
-            3'b011 : begin // right
-                next_left_motor = 10'd850;
-                next_right_motor = 10'd850;
-            end
-            3'b100 : begin // straight
-                next_left_motor = 10'd850;
-                next_right_motor = 10'd0;
-            end
-            3'b101 : begin // right
-                next_left_motor = 10'd850;
-                next_right_motor = 10'd850;
-            end
-            3'b110 : begin // straight
-                next_left_motor = 10'd850;
-                next_right_motor = 10'd850;
-            end
-            3'b111 : begin // stop
-                next_left_motor = 10'd0;
-                next_right_motor = 10'd0;
-            end
-            default : begin // stop
-                // next_left_motor = 10'd850;
-                // next_right_motor = 10'd850;
-                next_left_motor = 10'd0;
-                next_right_motor = 10'd0;
-            end
-        endcase
-        // if (mode == 0) begin // turn left
-        //     next_left_motor = 10'd850;
-        //     next_right_motor = 10'd0;
-        // end
-        // else if (mode == 2) begin // turn right
-        //     next_left_motor = 10'd0;
-        //     next_right_motor = 10'd850;
-        // end
-        // else if (mode == 3) begin // stop
-        //     next_left_motor = 10'd0;
-        //     next_right_motor = 10'd0;
-        // end
-        // else begin // straight
-        //     next_left_motor = 10'd200;
-        //     next_right_motor = 10'd200;
-        // end
-    end
+
 endmodule
 
 // sonic_top is the module to interface with sonic sensors
@@ -200,21 +124,20 @@ endmodule
 // <Trig> and <Echo> should connect to the sensor
 // <distance> is the output distance in cm
 module sonic_top(clk, rst, Echo, Trig, distance);
-	input clk, rst, Echo;
-	output Trig;
+    input clk, rst, Echo;
+    output Trig;
     output [19:0] distance;
 
-	wire[19:0] dis;
+    wire[19:0] dis;
     wire clk1M;
-	wire clk_2_17;
+    wire clk_2_17;
 
     assign distance = dis;
 
     div clk1(clk ,clk1M);
-	TrigSignal u1(.clk(clk), .rst(rst), .trig(Trig));
-	PosCounter u2(.clk(clk1M), .rst(rst), .echo(Echo), .distance_count(dis));
-    // TODO: 與超聲波傳感器進行接口並提供距離信息。
-    // 在這裡添加超聲波模塊的邏輯，以提取距離信息。
+    TrigSignal u1(.clk(clk), .rst(rst), .trig(Trig));
+    PosCounter u2(.clk(clk1M), .rst(rst), .echo(Echo), .distance_count(dis));
+
 endmodule
 
 module PosCounter(clk, rst, echo, distance_count); 
@@ -321,9 +244,7 @@ module TrigSignal(clk, rst, trig);
             next_trig = trig;
             next_count = count + 1;
         end
-        // TODO: set <next_trig> and <next_count> to let the sensor work properly
-        // TODO: 為傳感器生成觸發信號。
-        // 在這裡添加邏輯，以生成觸發信號，確保按照傳感器的需求進行設置。
+        
     end
 endmodule
 
@@ -333,16 +254,15 @@ module div(clk ,out_clk);
     output out_clk;
     reg out_clk;
     reg [6:0]cnt;
-    // TODO: T = 1us 時鐘的時鐘分頻器。
-    // 在這裡添加分頻器邏輯，以生成 1us 的時鐘。
+   
     always @(posedge clk) begin   
         if(cnt < 7'd50) begin
             cnt <= cnt + 1'b1;
             out_clk <= 1'b1;
         end 
         else if(cnt < 7'd100) begin
-	        cnt <= cnt + 1'b1;
-	        out_clk <= 1'b0;
+            cnt <= cnt + 1'b1;
+            out_clk <= 1'b0;
         end
         else if(cnt == 7'd100) begin
             cnt <= 0;
@@ -355,10 +275,9 @@ module motor_pwm (
     input clk,
     input reset,
     input [9:0]duty,
-	output pmod_1 //PWM
+    output pmod_1 //PWM
     );
-    // TODO: 基於輸入的頻率和占空比生成 PWM 信號。
-    // 在這裡添加 PWM 生成的邏輯，使用輸入的頻率和占空比。  
+    
     PWM_gen pwm_0 ( 
         .clk(clk), 
         .reset(reset), 
@@ -372,14 +291,11 @@ endmodule
 module PWM_gen (
     input wire clk,
     input wire reset,
-	input [31:0] freq,
+    input [31:0] freq,
     input [9:0] duty,
     output reg PWM
     );
-    // TODO: 基於輸入的頻率和占空比生成 PWM 信號。
-    // 在這裡添加 PWM 生成的邏輯，使用輸入的頻率和占空比。
-
-    // 馬力不足可能是因為 duty 
+    
     wire [31:0] count_max = 100_000_000 / freq;
     wire [31:0] count_duty = count_max * duty / 1024;
     reg [31:0] count;
@@ -407,7 +323,7 @@ module debounce (pb_debounced, pb, clk);
     input pb;
     input clk;
     reg [4:0] DFF;
-    
+     
     always @(posedge clk) begin
         DFF[4:1] <= DFF[3:0];
         DFF[0] <= pb; 
