@@ -241,29 +241,33 @@ module motor(
     motor_pwm m0(clk, rst, left_motor, left_pwm);
     motor_pwm m1(clk, rst, right_motor, right_pwm);
 
-    assign left_motor = 750, right_motor = 740;
+    assign left_motor = 720, right_motor = 710;
 
     assign pwm = {left_pwm,right_pwm};
 
-    always @(*) begin
+    always @(posedge clk) begin
         if (stop) begin
-            r_IN = 2'b00;
-            l_IN = 2'b00;
+            r_IN <= 2'b00;
+            l_IN <= 2'b00;
         end
         else begin
             case (mode)
                 3'b110, 3'b100: begin // turn right
-                    r_IN = 2'b01;
-                    l_IN = 2'b10;
+                    r_IN <= 2'b01;
+                    l_IN <= 2'b10;
                 end
                 3'b011, 3'b001: begin // turn left
-                    r_IN = 2'b10;
-                    l_IN = 2'b01;
+                    r_IN <= 2'b10;
+                    l_IN <= 2'b01;
+                end 
+                3'b111: begin
+                    r_IN <= r_IN;
+                    l_IN <= l_IN;
                 end
                 default: begin // straight
-                // 111, 000, 101, 010
-                    r_IN = 2'b01;
-                    l_IN = 2'b01;
+                // 000, 101, 010
+                    r_IN <= 2'b01;
+                    l_IN <= 2'b01;
                 end
             endcase
         end

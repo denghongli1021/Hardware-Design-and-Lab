@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Tue Dec 19 14:32:29 2023
+| Date             : Tue Dec 19 17:51:56 2023
 | Host             : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command          : report_power -file Lab8_power_routed.rpt -pb Lab8_power_summary_routed.pb -rpx Lab8_power_routed.rpx
 | Design           : Lab8
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.081        |
+| Total On-Chip Power (W)  | 0.083        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.009        |
+| Dynamic (W)              | 0.011        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.6         |
@@ -52,17 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |      702 |       --- |             --- |
-|   LUT as Logic |     0.001 |      338 |     20800 |            1.63 |
-|   CARRY4       |    <0.001 |       77 |      8150 |            0.94 |
-|   Register     |    <0.001 |      135 |     41600 |            0.32 |
+| Clocks         |     0.002 |        3 |       --- |             --- |
+| Slice Logic    |     0.003 |      902 |       --- |             --- |
+|   LUT as Logic |     0.003 |      438 |     20800 |            2.11 |
+|   CARRY4       |    <0.001 |      102 |      8150 |            1.25 |
+|   Register     |    <0.001 |      141 |     41600 |            0.34 |
 |   Others       |     0.000 |       23 |       --- |             --- |
-| Signals        |     0.001 |      524 |       --- |             --- |
+| Signals        |     0.002 |      702 |       --- |             --- |
 | DSPs           |    <0.001 |        3 |        90 |            3.33 |
 | I/O            |     0.004 |       17 |       106 |           16.04 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.081 |          |           |                 |
+| Total          |     0.083 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.014 |       0.005 |      0.010 |
+| Vccint    |       1.000 |     0.016 |       0.007 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -141,9 +141,10 @@ Table of Contents
 +--------+-----------+
 | Name   | Power (W) |
 +--------+-----------+
-| Lab8   |     0.009 |
-|   B    |     0.003 |
-|     u2 |     0.002 |
+| Lab8   |     0.011 |
+|   A    |     0.001 |
+|   B    |     0.005 |
+|     u2 |     0.004 |
 +--------+-----------+
 
 
