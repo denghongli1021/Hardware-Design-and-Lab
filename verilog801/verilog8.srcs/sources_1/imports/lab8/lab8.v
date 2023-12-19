@@ -30,7 +30,7 @@ module Lab8(
         if(rst_2)
             mode = 3'b000;
         else begin
-            if (distance <= 3000 || sw == 1) begin
+            if (distance <= 30 || sw == 1) begin
                 stop = 1; // stop
             end
             else begin
@@ -72,51 +72,6 @@ module tracker_sensor(clk, reset, left_track, right_track, mid_track, state);
         if (reset) state <= 3'b000;
         else state <= {left_track, mid_track, right_track};
     end
-endmodule
-
-module motor(
-    input clk,
-    input rst,
-    input [2:0] mode,
-    input stop,
-    output [1:0] pwm,
-    output reg [1:0] r_IN,
-    output reg [1:0] l_IN
-    );
-    wire [9:0] left_motor, right_motor;
-    wire left_pwm, right_pwm;
-
-    motor_pwm m0(clk, rst, left_motor, left_pwm);
-    motor_pwm m1(clk, rst, right_motor, right_pwm);
-
-    assign left_motor = 750, right_motor = 740;
-
-    assign pwm = {left_pwm,right_pwm};
-
-    always @(*) begin
-        if (stop) begin
-            r_IN = 2'b00;
-            l_IN = 2'b00;
-        end
-        else begin
-            case (mode)
-                3'b110, 3'b100: begin // turn right
-                    r_IN = 2'b01;
-                    l_IN = 2'b10;
-                end
-                3'b011, 3'b001: begin // turn left
-                    r_IN = 2'b10;
-                    l_IN = 2'b01;
-                end
-                default: begin // straight
-                // 111, 000, 101, 010
-                    r_IN = 2'b01;
-                    l_IN = 2'b01;
-                end
-            endcase
-        end
-    end
-
 endmodule
 
 // sonic_top is the module to interface with sonic sensors
@@ -206,7 +161,7 @@ module PosCounter(clk, rst, echo, distance_count);
         endcase
     end
 
-    assign distance_count = distance_register * 20'd100 / 20'd58; 
+    assign distance_count = distance_register * 20'd340 / 10000 / 2; 
     assign start = echo_reg1 & ~echo_reg2;  
     assign finish = ~echo_reg1 & echo_reg2; 
 endmodule
@@ -269,6 +224,51 @@ module div(clk ,out_clk);
             out_clk <= 1'b1;
         end
     end
+endmodule
+
+module motor(
+    input clk,
+    input rst,
+    input [2:0] mode,
+    input stop,
+    output [1:0] pwm,
+    output reg [1:0] r_IN,
+    output reg [1:0] l_IN
+    );
+    wire [9:0] left_motor, right_motor;
+    wire left_pwm, right_pwm;
+
+    motor_pwm m0(clk, rst, left_motor, left_pwm);
+    motor_pwm m1(clk, rst, right_motor, right_pwm);
+
+    assign left_motor = 750, right_motor = 740;
+
+    assign pwm = {left_pwm,right_pwm};
+
+    always @(*) begin
+        if (stop) begin
+            r_IN = 2'b00;
+            l_IN = 2'b00;
+        end
+        else begin
+            case (mode)
+                3'b110, 3'b100: begin // turn right
+                    r_IN = 2'b01;
+                    l_IN = 2'b10;
+                end
+                3'b011, 3'b001: begin // turn left
+                    r_IN = 2'b10;
+                    l_IN = 2'b01;
+                end
+                default: begin // straight
+                // 111, 000, 101, 010
+                    r_IN = 2'b01;
+                    l_IN = 2'b01;
+                end
+            endcase
+        end
+    end
+
 endmodule
 
 module motor_pwm (
