@@ -40,12 +40,7 @@ module Lab8(
         end
     end
 
-    tracker_sensor t (.clk(clk), 
-    .reset(rst_2), 
-    .left_track(left_track), 
-    .right_track(right_track), 
-    .mid_track(mid_track), 
-    .state(state));
+    tracker_sensor t (.clk(clk), .reset(rst_2), .left_track(left_track), .right_track(right_track), .mid_track(mid_track), .state(state));
 
     motor A(
         .clk(clk),
@@ -246,33 +241,29 @@ module motor(
     motor_pwm m0(clk, rst, left_motor, left_pwm);
     motor_pwm m1(clk, rst, right_motor, right_pwm);
 
-    assign left_motor = 720, right_motor = 710;
+    assign left_motor = 750, right_motor = 740;
 
     assign pwm = {left_pwm,right_pwm};
 
-    always @(posedge clk) begin
+    always @(*) begin
         if (stop) begin
-            r_IN <= 2'b00;
-            l_IN <= 2'b00;
+            r_IN = 2'b00;
+            l_IN = 2'b00;
         end
         else begin
             case (mode)
                 3'b110, 3'b100: begin // turn right
-                    r_IN <= 2'b01;
-                    l_IN <= 2'b10;
+                    r_IN = 2'b01;
+                    l_IN = 2'b10;
                 end
                 3'b011, 3'b001: begin // turn left
-                    r_IN <= 2'b10;
-                    l_IN <= 2'b01;
-                end 
-                3'b111: begin
-                    r_IN <= r_IN;
-                    l_IN <= l_IN;
+                    r_IN = 2'b10;
+                    l_IN = 2'b01;
                 end
                 default: begin // straight
-                // 000, 101, 010
-                    r_IN <= 2'b01;
-                    l_IN <= 2'b01;
+                // 111, 000, 101, 010
+                    r_IN = 2'b01;
+                    l_IN = 2'b01;
                 end
             endcase
         end
@@ -327,27 +318,3 @@ module PWM_gen (
     end
 endmodule
 
-module debounce (pb_debounced, pb, clk);
-    output pb_debounced; 
-    input pb;
-    input clk;
-    reg [4:0] DFF;
-     
-    always @(posedge clk) begin
-        DFF[4:1] <= DFF[3:0];
-        DFF[0] <= pb; 
-    end
-    assign pb_debounced = (&(DFF)); 
-endmodule
-
-module onepulse (PB_debounced, clk, PB_one_pulse);
-    input PB_debounced;
-    input clk;
-    output reg PB_one_pulse;
-    reg PB_debounced_delay;
-
-    always @(posedge clk) begin
-        PB_one_pulse <= PB_debounced & (! PB_debounced_delay);
-        PB_debounced_delay <= PB_debounced;
-    end 
-endmodule
