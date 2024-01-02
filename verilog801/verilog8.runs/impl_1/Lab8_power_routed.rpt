@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Tue Jan  2 16:23:20 2024
+| Date             : Tue Jan  2 16:59:52 2024
 | Host             : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command          : report_power -file Lab8_power_routed.rpt -pb Lab8_power_summary_routed.pb -rpx Lab8_power_routed.rpx
 | Design           : Lab8
@@ -54,11 +54,11 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        3 |       --- |             --- |
 | Slice Logic    |     0.003 |     1357 |       --- |             --- |
-|   LUT as Logic |     0.003 |      617 |     20800 |            2.97 |
+|   LUT as Logic |     0.003 |      616 |     20800 |            2.96 |
 |   CARRY4       |    <0.001 |      118 |      8150 |            1.45 |
 |   Register     |    <0.001 |      336 |     41600 |            0.81 |
 |   Others       |     0.000 |       27 |       --- |             --- |
-| Signals        |     0.002 |     1032 |       --- |             --- |
+| Signals        |     0.003 |     1031 |       --- |             --- |
 | DSPs           |    <0.001 |        3 |        90 |            3.33 |
 | I/O            |     0.004 |       19 |       106 |           17.92 |
 | Static Power   |     0.072 |          |           |                 |
