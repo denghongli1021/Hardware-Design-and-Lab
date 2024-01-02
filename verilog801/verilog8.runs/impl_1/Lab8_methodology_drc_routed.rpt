@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Tue Dec 19 17:51:55 2023
+| Date         : Tue Jan  2 16:23:19 2024
 | Host         : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command      : report_methodology -file Lab8_methodology_drc_routed.rpt -pb Lab8_methodology_drc_routed.pb -rpx Lab8_methodology_drc_routed.rpx
 | Design       : Lab8
@@ -23,12 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 38
+             Violations found: 37
 +-----------+------------------+------------------------------------------------------+------------+
 | Rule      | Severity         | Description                                          | Violations |
 +-----------+------------------+------------------------------------------------------+------------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell                          | 25         |
-| TIMING-18 | Warning          | Missing input or output delay                        | 12         |
+| TIMING-18 | Warning          | Missing input or output delay                        | 11         |
 | XDCC-4    | Warning          | User Clock constraint overwritten with the same name | 1          |
 +-----------+------------------+------------------------------------------------------+------------+
 
@@ -161,60 +161,55 @@ Related violations: <none>
 
 TIMING-18#1 Warning
 Missing input or output delay  
-An input delay is missing on left_track relative to clock(s) sys_clk_pin
+An input delay is missing on PS2_CLK relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#2 Warning
 Missing input or output delay  
-An input delay is missing on mid_track relative to clock(s) sys_clk_pin
+An input delay is missing on PS2_DATA relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#3 Warning
 Missing input or output delay  
-An input delay is missing on right_track relative to clock(s) sys_clk_pin
+An input delay is missing on rst relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#4 Warning
 Missing input or output delay  
-An input delay is missing on rst relative to clock(s) sys_clk_pin
+An input delay is missing on sw relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#5 Warning
 Missing input or output delay  
-An input delay is missing on sw relative to clock(s) sys_clk_pin
+An output delay is missing on IN1 relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#6 Warning
 Missing input or output delay  
-An output delay is missing on IN1 relative to clock(s) sys_clk_pin
+An output delay is missing on IN2 relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#7 Warning
 Missing input or output delay  
-An output delay is missing on IN2 relative to clock(s) sys_clk_pin
+An output delay is missing on IN3 relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#8 Warning
 Missing input or output delay  
-An output delay is missing on IN3 relative to clock(s) sys_clk_pin
+An output delay is missing on IN4 relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#9 Warning
 Missing input or output delay  
-An output delay is missing on IN4 relative to clock(s) sys_clk_pin
+An output delay is missing on left_pwm relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#10 Warning
 Missing input or output delay  
-An output delay is missing on left_pwm relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#11 Warning
-Missing input or output delay  
 An output delay is missing on right_pwm relative to clock(s) sys_clk_pin
 Related violations: <none>
 
-TIMING-18#12 Warning
+TIMING-18#11 Warning
 Missing input or output delay  
 An output delay is missing on trig relative to clock(s) sys_clk_pin
 Related violations: <none>
@@ -222,8 +217,8 @@ Related violations: <none>
 XDCC-4#1 Warning
 User Clock constraint overwritten with the same name  
 A new clock constraint create_clock overrides a previous user clock constraint with the same name.
-New: create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_ports clk] (Source: C:/Users/user/verilog801/verilog8.srcs/constrs_1/imports/lab9_constrains/lab9_constrains.xdc (Line: 10))
-Previous: create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_ports clk] (Source: C:/Users/user/verilog801/verilog8.srcs/constrs_1/imports/lab8/lab8_constrains.xdc (Line: 10))
+New: create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_ports clk] (Source: C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/constrs_1/imports/lab9_constrains/lab9_constrains.xdc (Line: 10))
+Previous: create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_ports clk] (Source: C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/constrs_1/imports/lab8/lab8_constrains.xdc (Line: 10))
 Related violations: <none>
 
 

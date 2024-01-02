@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Tue Dec 19 17:51:56 2023
+| Date             : Tue Jan  2 16:23:20 2024
 | Host             : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
 | Command          : report_power -file Lab8_power_routed.rpt -pb Lab8_power_summary_routed.pb -rpx Lab8_power_routed.rpx
 | Design           : Lab8
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.083        |
+| Total On-Chip Power (W)  | 0.084        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.011        |
+| Dynamic (W)              | 0.012        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.6         |
@@ -52,17 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.003 |      902 |       --- |             --- |
-|   LUT as Logic |     0.003 |      438 |     20800 |            2.11 |
-|   CARRY4       |    <0.001 |      102 |      8150 |            1.25 |
-|   Register     |    <0.001 |      141 |     41600 |            0.34 |
-|   Others       |     0.000 |       23 |       --- |             --- |
-| Signals        |     0.002 |      702 |       --- |             --- |
+| Clocks         |     0.003 |        3 |       --- |             --- |
+| Slice Logic    |     0.003 |     1357 |       --- |             --- |
+|   LUT as Logic |     0.003 |      617 |     20800 |            2.97 |
+|   CARRY4       |    <0.001 |      118 |      8150 |            1.45 |
+|   Register     |    <0.001 |      336 |     41600 |            0.81 |
+|   Others       |     0.000 |       27 |       --- |             --- |
+| Signals        |     0.002 |     1032 |       --- |             --- |
 | DSPs           |    <0.001 |        3 |        90 |            3.33 |
-| I/O            |     0.004 |       17 |       106 |           16.04 |
+| I/O            |     0.004 |       19 |       106 |           17.92 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.083 |          |           |                 |
+| Total          |     0.084 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.016 |       0.007 |      0.010 |
+| Vccint    |       1.000 |     0.018 |       0.009 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -138,13 +138,15 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+--------+-----------+
-| Name   | Power (W) |
-+--------+-----------+
-| Lab8   |     0.011 |
-|   A    |     0.001 |
-|   B    |     0.005 |
-|     u2 |     0.004 |
-+--------+-----------+
++-------------------------+-----------+
+| Name                    | Power (W) |
++-------------------------+-----------+
+| Lab8                    |     0.012 |
+|   B                     |     0.005 |
+|     u2                  |     0.005 |
+|   mouse_controller      |     0.002 |
+|     MC1                 |     0.002 |
+|       Inst_Ps2Interface |     0.001 |
++-------------------------+-----------+
 
 

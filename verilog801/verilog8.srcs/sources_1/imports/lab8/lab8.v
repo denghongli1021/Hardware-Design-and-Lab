@@ -6,6 +6,8 @@ module Lab8(
     input right_track,
     input mid_track,
     input sw,
+    inout PS2_CLK,
+    inout PS2_DATA,
     output trig,
     output IN1,
     output IN2,
@@ -36,9 +38,31 @@ module Lab8(
             else begin
                 stop = 0;
             end
-            mode = state;
+            // mode = state;
+            if (MOUSE_LEFT) begin
+                mode = 0;
+            end
+            else if (MOUSE_RIGHT) begin
+                mode = 1;
+            end
+            else if (MOUSE_MIDDLE) begin
+                mode = 2;
+            end
+            else mode = 3;
         end
     end
+    wire MOUSE_X_POS,MOUSE_Y_POS,MOUSE_LEFT,MOUSE_MIDDLE,MOUSE_RIGHT,MOUSE_NEW_EVENT;
+    mouse mouse_controller(
+		.clk(clk),
+		.MOUSE_X_POS(MOUSE_X_POS),
+		.MOUSE_Y_POS(MOUSE_Y_POS),
+		.MOUSE_LEFT(MOUSE_LEFT),
+		.MOUSE_MIDDLE(MOUSE_MIDDLE),
+		.MOUSE_RIGHT(MOUSE_RIGHT),
+		.MOUSE_NEW_EVENT(MOUSE_NEW_EVENT),
+		.PS2_CLK(PS2_CLK),
+		.PS2_DATA(PS2_DATA)
+	);
 
     tracker_sensor t (.clk(clk), 
     .reset(rst_2), 
@@ -249,6 +273,7 @@ module motor(
     assign left_motor = 720, right_motor = 710;
 
     assign pwm = {left_pwm,right_pwm};
+    
 
     always @(posedge clk) begin
         if (stop) begin
@@ -256,23 +281,41 @@ module motor(
             l_IN <= 2'b00;
         end
         else begin
+            // case (mode)
+            //     3'b110, 3'b100: begin // turn right
+            //         r_IN <= 2'b01;
+            //         l_IN <= 2'b10;
+            //     end
+            //     3'b011, 3'b001: begin // turn left
+            //         r_IN <= 2'b10;
+            //         l_IN <= 2'b01;
+            //     end 
+            //     3'b111: begin
+            //         r_IN <= r_IN;
+            //         l_IN <= l_IN;
+            //     end
+            //     default: begin // straight
+            //     // 000, 101, 010
+            //         r_IN <= 2'b01;
+            //         l_IN <= 2'b01;
+            //     end
+            // endcase
             case (mode)
-                3'b110, 3'b100: begin // turn right
-                    r_IN <= 2'b01;
-                    l_IN <= 2'b10;
-                end
-                3'b011, 3'b001: begin // turn left
+                0: begin // turn right
                     r_IN <= 2'b10;
                     l_IN <= 2'b01;
-                end 
-                3'b111: begin
-                    r_IN <= r_IN;
-                    l_IN <= l_IN;
                 end
-                default: begin // straight
-                // 000, 101, 010
+                1: begin // turn left
+                    r_IN <= 2'b01;
+                    l_IN <= 2'b10;
+                end 
+                2: begin
                     r_IN <= 2'b01;
                     l_IN <= 2'b01;
+                end
+                default: begin // straight
+                    r_IN <= 2'b00;
+                    l_IN <= 2'b00;
                 end
             endcase
         end

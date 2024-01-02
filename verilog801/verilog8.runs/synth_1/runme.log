@@ -15,40 +15,61 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 22976 
-WARNING: [Synth 8-2490] overwriting previous definition of module debounce [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:325]
-WARNING: [Synth 8-2490] overwriting previous definition of module onepulse [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:338]
+INFO: Helper process launched with PID 48504 
+WARNING: [Synth 8-6901] identifier 'MOUSE_LEFT' is used before its declaration [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:42]
+WARNING: [Synth 8-6901] identifier 'MOUSE_RIGHT' is used before its declaration [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:45]
+WARNING: [Synth 8-6901] identifier 'MOUSE_MIDDLE' is used before its declaration [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:48]
+WARNING: [Synth 8-2490] overwriting previous definition of module debounce [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:373]
+WARNING: [Synth 8-2490] overwriting previous definition of module onepulse [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:386]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 774.559 ; gain = 239.590
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 774.828 ; gain = 239.531
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'Lab8' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:1]
-INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:325]
-INFO: [Synth 8-6155] done synthesizing module 'debounce' (1#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:325]
-INFO: [Synth 8-6157] synthesizing module 'onepulse' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:338]
-INFO: [Synth 8-6155] done synthesizing module 'onepulse' (2#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:338]
-INFO: [Synth 8-6157] synthesizing module 'tracker_sensor' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:65]
-INFO: [Synth 8-6155] done synthesizing module 'tracker_sensor' (3#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:65]
-INFO: [Synth 8-6157] synthesizing module 'motor' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:229]
-INFO: [Synth 8-6157] synthesizing module 'motor_pwm' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:278]
-INFO: [Synth 8-6157] synthesizing module 'PWM_gen' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:295]
-INFO: [Synth 8-6155] done synthesizing module 'PWM_gen' (4#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:295]
-INFO: [Synth 8-6155] done synthesizing module 'motor_pwm' (5#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:278]
-INFO: [Synth 8-6155] done synthesizing module 'motor' (6#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:229]
-INFO: [Synth 8-6157] synthesizing module 'sonic_top' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:81]
-INFO: [Synth 8-6157] synthesizing module 'div' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:207]
-INFO: [Synth 8-6155] done synthesizing module 'div' (7#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:207]
-INFO: [Synth 8-6157] synthesizing module 'TrigSignal' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:170]
-INFO: [Synth 8-6155] done synthesizing module 'TrigSignal' (8#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:170]
-INFO: [Synth 8-6157] synthesizing module 'PosCounter' [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:98]
+INFO: [Synth 8-6157] synthesizing module 'Lab8' [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:1]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:373]
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (1#1) [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:373]
+INFO: [Synth 8-6157] synthesizing module 'onepulse' [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:386]
+INFO: [Synth 8-6155] done synthesizing module 'onepulse' (2#1) [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:386]
+INFO: [Synth 8-6157] synthesizing module 'mouse' [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/mouse_demo/Mouse.v:1]
+INFO: [Synth 8-638] synthesizing module 'MouseCtl' [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/mouse_demo/MouseCtl.vhd:208]
+	Parameter SYSCLK_FREQUENCY_HZ bound to: 200000000 - type: integer 
+	Parameter CHECK_PERIOD_MS bound to: 100 - type: integer 
+	Parameter TIMEOUT_PERIOD_MS bound to: 20 - type: integer 
+INFO: [Synth 8-3491] module 'Ps2Interface' declared at 'C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/mouse_demo/Ps2Interface.vhd:152' bound to instance 'Inst_Ps2Interface' of component 'Ps2Interface' [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/mouse_demo/MouseCtl.vhd:370]
+INFO: [Synth 8-638] synthesizing module 'Ps2Interface' [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/mouse_demo/Ps2Interface.vhd:180]
+INFO: [Synth 8-256] done synthesizing module 'Ps2Interface' (3#1) [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/mouse_demo/Ps2Interface.vhd:180]
+WARNING: [Synth 8-6014] Unused sequential element inc_reg was removed.  [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/mouse_demo/MouseCtl.vhd:451]
+WARNING: [Synth 8-6014] Unused sequential element x_inter_reg was removed.  [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/mouse_demo/MouseCtl.vhd:457]
+WARNING: [Synth 8-6014] Unused sequential element inc_reg was removed.  [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/mouse_demo/MouseCtl.vhd:515]
+WARNING: [Synth 8-6014] Unused sequential element y_inter_reg was removed.  [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/mouse_demo/MouseCtl.vhd:521]
+INFO: [Synth 8-256] done synthesizing module 'MouseCtl' (4#1) [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/mouse_demo/MouseCtl.vhd:208]
+WARNING: [Synth 8-689] width (10) of port connection 'xpos' does not match port width (12) of module 'MouseCtl' [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/mouse_demo/Mouse.v:24]
+WARNING: [Synth 8-689] width (10) of port connection 'ypos' does not match port width (12) of module 'MouseCtl' [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/mouse_demo/Mouse.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'mouse' (5#1) [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/mouse_demo/Mouse.v:1]
+WARNING: [Synth 8-689] width (1) of port connection 'MOUSE_X_POS' does not match port width (10) of module 'mouse' [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:57]
+WARNING: [Synth 8-689] width (1) of port connection 'MOUSE_Y_POS' does not match port width (10) of module 'mouse' [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:58]
+INFO: [Synth 8-6157] synthesizing module 'tracker_sensor' [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:94]
+INFO: [Synth 8-6155] done synthesizing module 'tracker_sensor' (6#1) [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:94]
+INFO: [Synth 8-6157] synthesizing module 'motor' [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:258]
+INFO: [Synth 8-6157] synthesizing module 'motor_pwm' [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:326]
+INFO: [Synth 8-6157] synthesizing module 'PWM_gen' [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:343]
+INFO: [Synth 8-6155] done synthesizing module 'PWM_gen' (7#1) [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:343]
+INFO: [Synth 8-6155] done synthesizing module 'motor_pwm' (8#1) [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:326]
+INFO: [Synth 8-6155] done synthesizing module 'motor' (9#1) [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:258]
+INFO: [Synth 8-6157] synthesizing module 'sonic_top' [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:110]
+INFO: [Synth 8-6157] synthesizing module 'div' [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:236]
+INFO: [Synth 8-6155] done synthesizing module 'div' (10#1) [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:236]
+INFO: [Synth 8-6157] synthesizing module 'TrigSignal' [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:199]
+INFO: [Synth 8-6155] done synthesizing module 'TrigSignal' (11#1) [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:199]
+INFO: [Synth 8-6157] synthesizing module 'PosCounter' [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:127]
 	Parameter S0 bound to: 2'b00 
 	Parameter S1 bound to: 2'b01 
 	Parameter S2 bound to: 2'b10 
-INFO: [Synth 8-6155] done synthesizing module 'PosCounter' (9#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:98]
-INFO: [Synth 8-6155] done synthesizing module 'sonic_top' (10#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:81]
-WARNING: [Synth 8-5788] Register stop_reg in module Lab8 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:34]
-INFO: [Synth 8-6155] done synthesizing module 'Lab8' (11#1) [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'PosCounter' (12#1) [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:127]
+INFO: [Synth 8-6155] done synthesizing module 'sonic_top' (13#1) [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:110]
+WARNING: [Synth 8-5788] Register stop_reg in module Lab8 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:36]
+INFO: [Synth 8-6155] done synthesizing module 'Lab8' (14#1) [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:1]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 822.160 ; gain = 287.191
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 829.969 ; gain = 294.672
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -61,50 +82,121 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:17 . Memory (MB): peak = 822.160 ; gain = 287.191
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 845.656 ; gain = 310.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:17 . Memory (MB): peak = 822.160 ; gain = 287.191
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 845.656 ; gain = 310.359
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 822.160 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 845.656 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/user/verilog801/verilog8.srcs/constrs_1/imports/lab8/lab8_constrains.xdc]
-Finished Parsing XDC File [C:/Users/user/verilog801/verilog8.srcs/constrs_1/imports/lab8/lab8_constrains.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/user/verilog801/verilog8.srcs/constrs_1/imports/lab8/lab8_constrains.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Lab8_propImpl.xdc].
+Parsing XDC File [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/constrs_1/imports/lab8/lab8_constrains.xdc]
+Finished Parsing XDC File [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/constrs_1/imports/lab8/lab8_constrains.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/constrs_1/imports/lab8/lab8_constrains.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Lab8_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Lab8_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [C:/Users/user/verilog801/verilog8.srcs/constrs_1/imports/lab9_constrains/lab9_constrains.xdc]
-Finished Parsing XDC File [C:/Users/user/verilog801/verilog8.srcs/constrs_1/imports/lab9_constrains/lab9_constrains.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/user/verilog801/verilog8.srcs/constrs_1/imports/lab9_constrains/lab9_constrains.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Lab8_propImpl.xdc].
+Parsing XDC File [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/constrs_1/imports/lab9_constrains/lab9_constrains.xdc]
+Finished Parsing XDC File [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/constrs_1/imports/lab9_constrains/lab9_constrains.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/constrs_1/imports/lab9_constrains/lab9_constrains.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Lab8_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Lab8_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 941.395 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 969.586 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 941.395 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 969.586 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:38 . Memory (MB): peak = 941.395 ; gain = 406.426
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 969.586 ; gain = 434.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:38 . Memory (MB): peak = 941.395 ; gain = 406.426
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 969.586 ; gain = 434.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:38 . Memory (MB): peak = 941.395 ; gain = 406.426
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 969.586 ; gain = 434.289
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [C:/Users/user/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:304]
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Ps2Interface'
+INFO: [Synth 8-5546] ROM "read_data" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "load_tx_data" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ps2_clk_h" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'MouseCtl'
+INFO: [Synth 8-5546] ROM "reset_periodic_check_cnt" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "new_event" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/lab8/lab8.v:352]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                00000000000000001 |                            00000
+            rx_down_edge |                00000000000000010 |                            00011
+                rx_clk_l |                00000000000000100 |                            00010
+                rx_clk_h |                00000000000001000 |                            00001
+         rx_error_parity |                00000000000010000 |                            00100
+           rx_data_ready |                00000000000100000 |                            00101
+          tx_force_clk_l |                00000000001000000 |                            00110
+      tx_bring_data_down |                00000000010000000 |                            00111
+          tx_release_clk |                00000000100000000 |                            01000
+ tx_first_wait_down_edge |                00000001000000000 |                            01001
+                tx_clk_l |                00000010000000000 |                            01010
+         tx_wait_up_edge |                00000100000000000 |                            01011
+tx_wait_up_edge_before_ack |                00001000000000000 |                            01101
+             tx_wait_ack |                00010000000000000 |                            01110
+         tx_received_ack |                00100000000000000 |                            01111
+         tx_error_no_ack |                01000000000000000 |                            10000
+                tx_clk_h |                10000000000000000 |                            01100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Ps2Interface'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   reset | 0000000000000000000000000000000000001 |                           000000
+          reset_wait_ack | 0000000000000000000000000000000000010 |                           000001
+reset_wait_bat_completion | 0000000000000000000000000000000000100 |                           000010
+           reset_wait_id | 0000000000000000000000000000000001000 |                           000011
+reset_set_sample_rate_200 | 0000000000000000000000000000000010000 |                           000100
+reset_set_sample_rate_200_wait_ack | 0000000000000000000000000000000100000 |                           000101
+reset_send_sample_rate_200 | 0000000000000000000000000000001000000 |                           000110
+reset_send_sample_rate_200_wait_ack | 0000000000000000000000000000010000000 |                           000111
+reset_set_sample_rate_100 | 0000000000000000000000000000100000000 |                           001000
+reset_set_sample_rate_100_wait_ack | 0000000000000000000000000001000000000 |                           001001
+reset_send_sample_rate_100 | 0000000000000000000000000010000000000 |                           001010
+reset_send_sample_rate_100_wait_ack | 0000000000000000000000000100000000000 |                           001011
+reset_set_sample_rate_80 | 0000000000000000000000001000000000000 |                           001100
+reset_set_sample_rate_80_wait_ack | 0000000000000000000000010000000000000 |                           001101
+reset_send_sample_rate_80 | 0000000000000000000000100000000000000 |                           001110
+reset_send_sample_rate_80_wait_ack | 0000000000000000000001000000000000000 |                           001111
+           reset_read_id | 0000000000000000000010000000000000000 |                           010000
+  reset_read_id_wait_ack | 0000000000000000000100000000000000000 |                           010001
+   reset_read_id_wait_id | 0000000000000000001000000000000000000 |                           010010
+    reset_set_resolution | 0000000000000000010000000000000000000 |                           010011
+reset_set_resolution_wait_ack | 0000000000000000100000000000000000000 |                           010100
+   reset_send_resolution | 0000000000000001000000000000000000000 |                           010101
+reset_send_resolution_wait_ack | 0000000000000010000000000000000000000 |                           010110
+reset_set_sample_rate_40 | 0000000000000100000000000000000000000 |                           010111
+reset_set_sample_rate_40_wait_ack | 0000000000001000000000000000000000000 |                           011000
+reset_send_sample_rate_40 | 0000000000010000000000000000000000000 |                           011001
+reset_send_sample_rate_40_wait_ack | 0000000000100000000000000000000000000 |                           011010
+  reset_enable_reporting | 0000000001000000000000000000000000000 |                           011011
+reset_enable_reporting_wait_ack | 0000000010000000000000000000000000000 |                           011100
+             read_byte_1 | 0000000100000000000000000000000000000 |                           011101
+             read_byte_2 | 0000001000000000000000000000000000000 |                           011110
+             read_byte_3 | 0000010000000000000000000000000000000 |                           011111
+             read_byte_4 | 0000100000000000000000000000000000000 |                           100000
+          mark_new_event | 0001000000000000000000000000000000000 |                           100100
+           check_read_id | 0010000000000000000000000000000000000 |                           100001
+  check_read_id_wait_ack | 0100000000000000000000000000000000000 |                           100010
+   check_read_id_wait_id | 1000000000000000000000000000000000000 |                           100011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'MouseCtl'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:39 . Memory (MB): peak = 941.395 ; gain = 406.426
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 969.586 ; gain = 434.289
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -117,27 +209,52 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input     25 Bit       Adders := 1     
 	   2 Input     24 Bit       Adders := 1     
+	   2 Input     22 Bit       Adders := 1     
 	   2 Input     20 Bit       Adders := 1     
-	   2 Input      7 Bit       Adders := 2     
+	   2 Input     12 Bit       Adders := 4     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 3     
+	   2 Input      4 Bit       Adders := 3     
 +---Registers : 
+	               25 Bit    Registers := 1     
 	               24 Bit    Registers := 1     
+	               22 Bit    Registers := 1     
 	               20 Bit    Registers := 2     
-	                7 Bit    Registers := 1     
+	               12 Bit    Registers := 6     
+	               11 Bit    Registers := 2     
+	                8 Bit    Registers := 4     
+	                7 Bit    Registers := 2     
 	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 4     
 	                3 Bit    Registers := 2     
 	                2 Bit    Registers := 3     
-	                1 Bit    Registers := 9     
+	                1 Bit    Registers := 43    
 +---Muxes : 
+	  37 Input     37 Bit        Muxes := 1     
+	   2 Input     37 Bit        Muxes := 69    
 	   3 Input     24 Bit        Muxes := 1     
+	   2 Input     22 Bit        Muxes := 1     
 	   4 Input     20 Bit        Muxes := 2     
+	  17 Input     17 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 18    
+	   2 Input     12 Bit        Muxes := 10    
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 2     
+	  37 Input      8 Bit        Muxes := 3     
 	   2 Input      7 Bit        Muxes := 2     
-	   4 Input      2 Bit        Muxes := 2     
+	  37 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 3     
 	   3 Input      2 Bit        Muxes := 1     
 	   5 Input      2 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 10    
+	  17 Input      1 Bit        Muxes := 4     
+	  37 Input      1 Bit        Muxes := 20    
 	   3 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -150,6 +267,8 @@ Detailed RTL Component Info :
 +---Registers : 
 	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input      2 Bit        Muxes := 1     
 Module debounce 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -158,6 +277,48 @@ Module onepulse
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 2     
+Module Ps2Interface 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 3     
++---Registers : 
+	               11 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 17    
++---Muxes : 
+	  17 Input     17 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 18    
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	  17 Input      1 Bit        Muxes := 4     
+Module MouseCtl 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     25 Bit       Adders := 1     
+	   2 Input     22 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 4     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               25 Bit    Registers := 1     
+	               22 Bit    Registers := 1     
+	               12 Bit    Registers := 6     
+	                8 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 17    
++---Muxes : 
+	  37 Input     37 Bit        Muxes := 1     
+	   2 Input     37 Bit        Muxes := 69    
+	   2 Input     22 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 10    
+	   2 Input      9 Bit        Muxes := 2     
+	  37 Input      8 Bit        Muxes := 3     
+	  37 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	  37 Input      1 Bit        Muxes := 20    
 Module tracker_sensor 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -171,8 +332,8 @@ Detailed RTL Component Info :
 +---Registers : 
 	                2 Bit    Registers := 2     
 +---Muxes : 
+	   2 Input      2 Bit        Muxes := 2     
 	   4 Input      2 Bit        Muxes := 2     
-	   4 Input      1 Bit        Muxes := 1     
 Module div 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -222,17 +383,20 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3936] Found unconnected internal register 'MC1/xpos_reg' and it is trimmed from '12' to '10' bits. [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/mouse_demo/MouseCtl.vhd:427]
+WARNING: [Synth 8-3936] Found unconnected internal register 'MC1/ypos_reg' and it is trimmed from '12' to '10' bits. [C:/Users/user/HardwareDesign/verilog801/verilog8.srcs/sources_1/imports/mouse_demo/MouseCtl.vhd:430]
 DSP Report: Generating DSP count_duty0, operation Mode is: A*B.
 DSP Report: operator count_duty0 is absorbed into DSP count_duty0.
 DSP Report: operator count_duty0 is absorbed into DSP count_duty0.
 DSP Report: Generating DSP count_duty0, operation Mode is: A*B.
 DSP Report: operator count_duty0 is absorbed into DSP count_duty0.
 DSP Report: operator count_duty0 is absorbed into DSP count_duty0.
-DSP Report: Generating DSP B/u2/distance_count1, operation Mode is: A2*(B:0x154).
-DSP Report: register B/u2/distance_register_reg is absorbed into DSP B/u2/distance_count1.
-DSP Report: operator B/u2/distance_count1 is absorbed into DSP B/u2/distance_count1.
+DSP Report: Generating DSP u2/distance_count1, operation Mode is: A2*(B:0x154).
+DSP Report: register u2/distance_register_reg is absorbed into DSP u2/distance_count1.
+DSP Report: operator u2/distance_count1 is absorbed into DSP u2/distance_count1.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mode_reg[2] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 941.395 ; gain = 406.426
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 969.586 ; gain = 434.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -262,13 +426,13 @@ Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-565] redefining clock 'sys_clk_pin'
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:01:21 . Memory (MB): peak = 972.055 ; gain = 437.086
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:24 . Memory (MB): peak = 975.457 ; gain = 440.160
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:01:21 . Memory (MB): peak = 983.023 ; gain = 448.055
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:24 . Memory (MB): peak = 986.805 ; gain = 451.508
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -280,7 +444,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:01:22 . Memory (MB): peak = 997.035 ; gain = 462.066
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:24 . Memory (MB): peak = 1004.543 ; gain = 469.246
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -300,17 +464,19 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5365] Flop mouse_controller/MC1/Inst_Ps2Interface/ps2_clk_h_reg is being inverted and renamed to mouse_controller/MC1/Inst_Ps2Interface/ps2_clk_h_reg_inv.
+INFO: [Synth 8-5365] Flop mouse_controller/MC1/Inst_Ps2Interface/ps2_data_h_reg is being inverted and renamed to mouse_controller/MC1/Inst_Ps2Interface/ps2_data_h_reg_inv.
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:01:30 . Memory (MB): peak = 1002.832 ; gain = 467.863
+Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:27 . Memory (MB): peak = 1011.820 ; gain = 476.523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:01:30 . Memory (MB): peak = 1002.832 ; gain = 467.863
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:27 . Memory (MB): peak = 1011.820 ; gain = 476.523
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -329,25 +495,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:01:31 . Memory (MB): peak = 1002.832 ; gain = 467.863
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:27 . Memory (MB): peak = 1011.820 ; gain = 476.523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:01:31 . Memory (MB): peak = 1002.832 ; gain = 467.863
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:27 . Memory (MB): peak = 1011.820 ; gain = 476.523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:01:31 . Memory (MB): peak = 1002.832 ; gain = 467.863
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:27 . Memory (MB): peak = 1011.820 ; gain = 476.523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:01:31 . Memory (MB): peak = 1002.832 ; gain = 467.863
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:27 . Memory (MB): peak = 1011.820 ; gain = 476.523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -364,62 +530,66 @@ Report Cell Usage:
 |      |Cell      |Count |
 +------+----------+------+
 |1     |BUFG      |     1|
-|2     |CARRY4    |   102|
+|2     |CARRY4    |   118|
 |3     |DSP48E1   |     2|
 |4     |DSP48E1_1 |     1|
-|5     |LUT1      |    15|
-|6     |LUT2      |   228|
-|7     |LUT3      |   130|
-|8     |LUT4      |   160|
-|9     |LUT5      |    42|
-|10    |LUT6      |    61|
-|11    |FDCE      |    97|
-|12    |FDRE      |    44|
+|5     |LUT1      |    26|
+|6     |LUT2      |   296|
+|7     |LUT3      |   157|
+|8     |LUT4      |   208|
+|9     |LUT5      |    93|
+|10    |LUT6      |    99|
+|11    |FDCE      |    93|
+|12    |FDRE      |   243|
 |13    |IBUF      |     7|
-|14    |OBUF      |    10|
+|14    |IOBUF     |     2|
+|15    |OBUF      |    10|
 +------+----------+------+
 
 Report Instance Areas: 
-+------+------------+---------------+------+
-|      |Instance    |Module         |Cells |
-+------+------------+---------------+------+
-|1     |top         |               |   900|
-|2     |  A         |motor          |   265|
-|3     |    m0      |motor_pwm      |   128|
-|4     |      pwm_0 |PWM_gen_1      |   128|
-|5     |    m1      |motor_pwm_0    |   128|
-|6     |      pwm_0 |PWM_gen        |   128|
-|7     |  B         |sonic_top      |   601|
-|8     |    clk1    |div            |    21|
-|9     |    u1      |TrigSignal     |    66|
-|10    |    u2      |PosCounter     |   514|
-|11    |  d1        |debounce       |     7|
-|12    |  d2        |onepulse       |     2|
-|13    |  t         |tracker_sensor |     3|
-+------+------------+---------------+------+
++------+------------------------+-------------+------+
+|      |Instance                |Module       |Cells |
++------+------------------------+-------------+------+
+|1     |top                     |             |  1356|
+|2     |  A                     |motor        |   264|
+|3     |    m0                  |motor_pwm    |   128|
+|4     |      pwm_0             |PWM_gen_1    |   128|
+|5     |    m1                  |motor_pwm_0  |   128|
+|6     |      pwm_0             |PWM_gen      |   128|
+|7     |  B                     |sonic_top    |   611|
+|8     |    clk1                |div          |    21|
+|9     |    u1                  |TrigSignal   |    66|
+|10    |    u2                  |PosCounter   |   524|
+|11    |  d1                    |debounce     |     7|
+|12    |  d2                    |onepulse     |     2|
+|13    |  mouse_controller      |mouse        |   449|
+|14    |    MC1                 |MouseCtl     |   449|
+|15    |      Inst_Ps2Interface |Ps2Interface |   257|
++------+------------------------+-------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:01:31 . Memory (MB): peak = 1002.832 ; gain = 467.863
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:27 . Memory (MB): peak = 1011.820 ; gain = 476.523
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:01:24 . Memory (MB): peak = 1002.832 ; gain = 348.629
-Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:01:31 . Memory (MB): peak = 1002.832 ; gain = 467.863
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:25 . Memory (MB): peak = 1011.820 ; gain = 352.594
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:27 . Memory (MB): peak = 1011.820 ; gain = 476.523
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1002.832 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 105 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1019.059 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 123 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1002.832 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1019.922 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 2 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-36 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+55 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:01:41 . Memory (MB): peak = 1002.832 ; gain = 704.355
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1002.832 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:33 . Memory (MB): peak = 1019.922 ; gain = 720.574
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1019.922 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/user/verilog801/verilog8.runs/synth_1/Lab8.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/user/HardwareDesign/verilog801/verilog8.runs/synth_1/Lab8.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Lab8_utilization_synth.rpt -pb Lab8_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Dec 19 17:50:19 2023...
+INFO: [Common 17-206] Exiting Vivado at Tue Jan  2 16:22:28 2024...
