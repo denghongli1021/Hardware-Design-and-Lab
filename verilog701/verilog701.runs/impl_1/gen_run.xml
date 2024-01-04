@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1701160462">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1704358373">
   <File Type="BITSTR-BMM" Name="lab7_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="lab7_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="lab7_timing_summary_init.rpt"/>
@@ -79,7 +79,7 @@
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/lab7_template/clock_divider.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/clock_divider.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/clock_divider.v"/>
         <Attr Name="ImportTime" Val="1699963711"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -88,7 +88,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/lab7_template/debounce.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/debounce.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/debounce.v"/>
         <Attr Name="ImportTime" Val="1699963711"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -97,7 +97,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/lab7_template/keyboard_decoder.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/keyboard_decoder.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/keyboard_decoder.v"/>
         <Attr Name="ImportTime" Val="1699963711"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -106,7 +106,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/lab7_template/onepulse.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/onepulse.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/onepulse.v"/>
         <Attr Name="ImportTime" Val="1699963711"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -115,7 +115,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/lab7_template/speaker_control.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/speaker_control.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/speaker_control.v"/>
         <Attr Name="ImportTime" Val="1699963711"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -124,7 +124,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/lab7_template/lab7.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/lab7.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/lab7.v"/>
         <Attr Name="ImportTime" Val="1699963711"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -134,7 +134,7 @@
     <File Path="$PSRCDIR/sources_1/imports/lab7_template/player_control.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/player_control.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/player_control.v"/>
         <Attr Name="ImportTime" Val="1699963711"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -144,7 +144,7 @@
     <File Path="$PSRCDIR/sources_1/imports/lab7_template/music_example.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/music_example.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/music_example.v"/>
         <Attr Name="ImportTime" Val="1699963711"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -154,7 +154,7 @@
     <File Path="$PSRCDIR/sources_1/imports/lab7_template/note_gen.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/note_gen.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/note_gen.v"/>
         <Attr Name="ImportTime" Val="1699963711"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -164,7 +164,7 @@
     <File Path="$PSRCDIR/sources_1/imports/lab5/SevenSegment.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/SevenSegment.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Documents/清大/大二/硬體設計與實驗/lab5/lab5_template/lab5/SevenSegment.v"/>
         <Attr Name="ImportTime" Val="1697898584"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -180,7 +180,7 @@
     <Filter Type="Constrs"/>
     <File Path="$PSRCDIR/constrs_1/imports/lab7_template/lab7_constrain.xdc">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/lab7_constrain.xdc"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/lab7_constrain.xdc"/>
         <Attr Name="ImportTime" Val="1699963711"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

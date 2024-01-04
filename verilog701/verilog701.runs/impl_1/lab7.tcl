@@ -70,15 +70,15 @@ set rc [catch {
   create_project -in_memory -part xc7a35tcpg236-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/user/verilog701/verilog701.cache/wt [current_project]
-  set_property parent.project_path C:/Users/user/verilog701/verilog701.xpr [current_project]
+  set_property webtalk.parent_dir C:/Users/user/HardwareDesign/verilog701/verilog701.cache/wt [current_project]
+  set_property parent.project_path C:/Users/user/HardwareDesign/verilog701/verilog701.xpr [current_project]
   set_property ip_repo_paths C:/Users/user/Documents/清大/大二/硬體設計與實驗/lab7/lab7_template/lab7_template/ip [current_project]
   update_ip_catalog
-  set_property ip_output_repo C:/Users/user/verilog701/verilog701.cache/ip [current_project]
+  set_property ip_output_repo C:/Users/user/HardwareDesign/verilog701/verilog701.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/user/verilog701/verilog701.runs/synth_1/lab7.dcp
-  read_ip -quiet C:/Users/user/verilog701/verilog701.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
-  read_xdc C:/Users/user/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc
+  add_files -quiet C:/Users/user/HardwareDesign/verilog701/verilog701.runs/synth_1/lab7.dcp
+  read_ip -quiet C:/Users/user/HardwareDesign/verilog701/verilog701.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
+  read_xdc C:/Users/user/HardwareDesign/verilog701/verilog701.srcs/constrs_1/imports/lab7_template/lab7_constrain.xdc
   link_design -top lab7 -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]
