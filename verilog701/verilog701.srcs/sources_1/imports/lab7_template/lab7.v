@@ -38,6 +38,12 @@ module lab7(
     output audio_lrck, // left-right clock
     output audio_sck,  // serial clock
     output audio_sdin, // serial audio data input
+
+    // output rx_mclk,
+    // output rx_lrck,
+    // output rx_sclk,
+    // input  rx_data,
+
     output reg [6:0] DISPLAY,    
     output reg [3:0] DIGIT
     );        

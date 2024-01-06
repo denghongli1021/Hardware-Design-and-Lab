@@ -1,0 +1,44 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Fri Jan  5 01:27:03 2024
+| Host         : LAPTOP-FQ5SKUKF running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'clk_wiz_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of clk_wiz_0 from xilinx.com:ip:clk_wiz:5.4 (Rev. 3) to xilinx.com:ip:clk_wiz:6.0 (Rev. 4)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'clk_wiz_0'.
+
+
+-Upgrade has renamed interface 'CLOCK_CLK_IN1' as 'clock_CLK_IN1' (xilinx.com:signal:clock:1.0)
+
+-Upgraded interface 'clock_CLK_IN1' (xilinx.com:signal:clock:1.0) differs from original interface ':::'
+
+-Upgrade has renamed interface 'CLOCK_CLK_OUT1' as 'clock_CLK_OUT1' (xilinx.com:signal:clock:1.0)
+
+-Upgraded interface 'clock_CLK_OUT1' (xilinx.com:signal:clock:1.0) differs from original interface ':::'
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'clk_wiz_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'axis_clk'
+
+-Upgrade has added port 'clk_in1'
+
+
